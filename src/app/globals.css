@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+html, body { background: #03001A; margin: 0; padding: 0; }
+* { box-sizing: border-box; }
+body {
+  font-family: 'Poppins', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #fff;
+}
+a { color: inherit; }
+
+::selection {
+  background: rgba(121, 4, 235, 0.25);
+  color: #fff;
+}
+
+@media (max-width: 880px) {
+  .hero-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+  .how-header { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+}
+@media (max-width: 640px) {
+  .nav-links a:not(:last-child) { display: none; }
+  .footer-grid { grid-template-columns: 1fr !important; }
+}

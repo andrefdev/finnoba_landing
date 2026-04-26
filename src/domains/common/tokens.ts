@@ -1,0 +1,16 @@
+export const COLORS = {
+  deep: "#03001A",
+  navy: "#110458",
+  violet: "#7904EB",
+  magenta: "#FE76FF",
+  lavender: "#D7D3FF",
+  white: "#FFFFFF",
+  ink2: "#3B3173",
+  ink3: "#6B62A0",
+  fgDark1: "#FFFFFF",
+  fgDark2: "#B8B0E0",
+  fgDark3: "#7873A8",
+  success: "#00C68A",
+  line: "rgba(255,255,255,0.06)",
+  lineStrong: "rgba(255,255,255,0.12)",
+} as const;
