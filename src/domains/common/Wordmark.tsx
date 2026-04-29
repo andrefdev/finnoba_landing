@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export function Wordmark({ height = 32 }: { height?: number }) {
+export function Wordmark({ height = 22 }: { height?: number }) {
   return (
     <Image
       src="/assets/logo-finnoba-navy.png"
@@ -8,6 +8,7 @@ export function Wordmark({ height = 32 }: { height?: number }) {
       width={height * 4}
       height={height}
       priority
+      style={{ height, width: "auto", display: "block" }}
     />
   );
 }

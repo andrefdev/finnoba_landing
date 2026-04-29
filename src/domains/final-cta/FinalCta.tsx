@@ -1,44 +1,58 @@
 "use client";
 
-import { COLORS } from "@/domains/common/tokens";
-import { DotGrid } from "@/domains/common/DotGrid";
+import { Eyebrow } from "@/domains/common/Eyebrow";
+import { FONT_DISPLAY, FONT_UI, LIGHT } from "@/domains/common/tokens";
 import { WaitlistForm } from "@/domains/waitlist/WaitlistForm";
 import { useLanding } from "@/lib/i18n/LandingProvider";
 
 export function FinalCta() {
   const { t } = useLanding();
+
   return (
     <section
       data-final-cta
+      id="docs"
       style={{
-        position: "relative",
+        background: LIGHT.bg,
         padding: "140px clamp(20px,4vw,80px)",
-        background: "#03001A",
-        overflow: "hidden",
-        borderBottom: "1px solid rgba(255,255,255,.06)",
+        borderBottom: `1px solid ${LIGHT.line}`,
+        position: "relative",
+        scrollMarginTop: 96,
       }}
     >
       <div
         aria-hidden
         style={{
           position: "absolute",
-          inset: 0,
+          top: 0,
+          bottom: 0,
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "min(1280px, 100% - 40px)",
           pointerEvents: "none",
-          background:
-            "radial-gradient(ellipse 60% 70% at 50% 50%, rgba(121,4,235,0.30) 0%, rgba(121,4,235,0) 60%)",
+          borderLeft: `1px solid ${LIGHT.line}`,
+          borderRight: `1px solid ${LIGHT.line}`,
         }}
       />
-      <DotGrid opacity={0.04} size={40} />
-      <div style={{ position: "relative", maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
+      <div
+        style={{
+          position: "relative",
+          maxWidth: 880,
+          margin: "0 auto",
+          textAlign: "center",
+          padding: "0 40px",
+        }}
+      >
+        <Eyebrow style={{ justifyContent: "center" }}>—</Eyebrow>
         <h2
           style={{
-            fontFamily: "Poppins",
-            fontWeight: 700,
-            fontSize: "clamp(2.25rem, 4.4vw, 3.75rem)",
-            letterSpacing: "-0.03em",
-            lineHeight: 1.05,
-            color: "#fff",
-            margin: "0 0 18px",
+            fontFamily: FONT_DISPLAY,
+            fontWeight: 400,
+            fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
+            letterSpacing: "-0.025em",
+            lineHeight: 1.02,
+            color: LIGHT.ink,
+            margin: "20px 0 18px",
             textWrap: "balance",
           }}
         >
@@ -46,24 +60,27 @@ export function FinalCta() {
         </h2>
         <p
           style={{
-            fontFamily: "Poppins",
+            fontFamily: FONT_UI,
             fontSize: 18,
-            color: COLORS.fgDark2,
-            margin: "0 0 32px",
+            color: LIGHT.ink2,
+            margin: "0 0 36px",
+            lineHeight: 1.5,
           }}
         >
           {t.cta.sub}
         </p>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <WaitlistForm />
+          <div style={{ width: "100%", maxWidth: 480 }}>
+            <WaitlistForm full />
+          </div>
         </div>
         <div
           style={{
             marginTop: 22,
-            color: COLORS.fgDark3,
-            fontFamily: "Poppins",
+            color: LIGHT.ink3,
+            fontFamily: FONT_UI,
             fontSize: 12.5,
-            letterSpacing: ".04em",
+            letterSpacing: "0.04em",
           }}
         >
           {t.cta.foot}

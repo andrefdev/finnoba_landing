@@ -1,120 +1,89 @@
 "use client";
 
-import { COLORS } from "@/domains/common/tokens";
-import { Eyebrow } from "@/domains/common/Eyebrow";
+import { SectionHeader } from "@/domains/common/SectionHeader";
+import { FONT_DISPLAY, FONT_MONO, FONT_UI, LIGHT } from "@/domains/common/tokens";
 import { useLanding } from "@/lib/i18n/LandingProvider";
 
 export function BackedBy() {
   const { t } = useLanding();
   const b = t.backed;
+
   return (
     <section
       id="backed"
       style={{
-        background: "#03001A",
-        color: "#fff",
+        background: "#fff",
         padding: "120px clamp(20px,4vw,80px)",
+        borderBottom: `1px solid ${LIGHT.line}`,
         position: "relative",
-        borderBottom: "1px solid rgba(255,255,255,.06)",
+        scrollMarginTop: 96,
       }}
     >
-      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <Eyebrow>{b.eyebrow}</Eyebrow>
-        <h2
-          style={{
-            fontFamily: "Poppins",
-            fontWeight: 700,
-            fontSize: "clamp(2rem,3.6vw,3rem)",
-            letterSpacing: "-0.025em",
-            lineHeight: 1.1,
-            margin: "14px 0 14px",
-            color: "#fff",
-            maxWidth: 720,
-          }}
-        >
-          {b.title}
-        </h2>
-        <p
-          style={{
-            fontFamily: "Poppins",
-            fontSize: 17,
-            color: COLORS.fgDark2,
-            maxWidth: 620,
-            margin: "0 0 48px",
-            lineHeight: 1.55,
-          }}
-        >
-          {b.sub}
-        </p>
-
+      <div
+        aria-hidden
+        style={{
+          position: "absolute",
+          top: 0,
+          bottom: 0,
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "min(1280px, 100% - 40px)",
+          pointerEvents: "none",
+          borderLeft: `1px solid ${LIGHT.line}`,
+          borderRight: `1px solid ${LIGHT.line}`,
+        }}
+      />
+      <div style={{ position: "relative", maxWidth: 1280, margin: "0 auto", padding: "0 40px" }}>
+        <SectionHeader eyebrow={b.eyebrow} title={b.title} lead={b.sub} />
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))",
-            gap: 16,
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gap: 0,
+            borderTop: `1px solid ${LIGHT.line}`,
+            borderLeft: `1px solid ${LIGHT.line}`,
           }}
         >
           {b.partners.map((p) => (
             <div
               key={p.name}
               style={{
-                padding: "28px 24px",
-                background: "rgba(255,255,255,0.025)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                borderRadius: 12,
-                height: "100%",
-                transition: "all 200ms cubic-bezier(.22,1,.36,1)",
-                position: "relative",
-                overflow: "hidden",
+                padding: "32px 28px",
+                borderRight: `1px solid ${LIGHT.line}`,
+                borderBottom: `1px solid ${LIGHT.line}`,
+                fontFamily: FONT_UI,
+                background: "#fff",
+                transition: "background 160ms ease",
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = "rgba(254,118,255,0.30)";
-                e.currentTarget.style.background = "rgba(255,255,255,0.04)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)";
-                e.currentTarget.style.background = "rgba(255,255,255,0.025)";
-              }}
+              onMouseEnter={(e) => (e.currentTarget.style.background = LIGHT.bgSoft)}
+              onMouseLeave={(e) => (e.currentTarget.style.background = "#fff")}
             >
               <div
                 style={{
-                  display: "inline-block",
-                  fontFamily: "Poppins",
-                  fontWeight: 600,
+                  fontFamily: FONT_MONO,
+                  fontWeight: 500,
                   fontSize: 11,
-                  letterSpacing: ".12em",
-                  textTransform: "uppercase",
-                  color: COLORS.magenta,
-                  marginBottom: 18,
-                  padding: "4px 10px",
-                  borderRadius: 9999,
-                  background: "rgba(254,118,255,0.08)",
-                  border: "1px solid rgba(254,118,255,0.18)",
+                  letterSpacing: "0.04em",
+                  color: LIGHT.ink3,
+                  marginBottom: 20,
                 }}
               >
-                {p.tag}
+                — {p.tag}
               </div>
               <h3
                 style={{
-                  fontFamily: "Poppins",
-                  fontWeight: 700,
-                  fontSize: 22,
-                  letterSpacing: "-0.01em",
-                  color: "#fff",
-                  margin: "0 0 10px",
+                  fontFamily: FONT_DISPLAY,
+                  fontWeight: 400,
+                  fontSize: 26,
+                  letterSpacing: "-0.015em",
+                  color: LIGHT.ink,
+                  margin: "0 0 12px",
+                  lineHeight: 1.1,
                 }}
               >
                 {p.name}
               </h3>
-              <p
-                style={{
-                  fontFamily: "Poppins",
-                  fontSize: 14.5,
-                  lineHeight: 1.55,
-                  color: COLORS.fgDark2,
-                  margin: 0,
-                }}
-              >
+              <p style={{ fontFamily: FONT_UI, fontSize: 14.5, lineHeight: 1.55, color: LIGHT.ink2, margin: 0 }}>
                 {p.body}
               </p>
             </div>

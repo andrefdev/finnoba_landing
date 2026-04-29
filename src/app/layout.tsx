@@ -1,33 +1,38 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({
+const geist = Geist({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-poppins",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-geist",
+  display: "swap",
+});
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-geist-mono",
   display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://finnoba.com"),
   title: {
-    default: "Finnoba — Marketplace P2P de micropréstamos en USDT",
+    default: "Finnoba — Plataforma de inversión en micropréstamos · LATAM",
     template: "%s | Finnoba",
   },
   description:
-    "Marketplace P2P de micropréstamos en USDT. Crédito sin colateral. Yield real para LATAM.",
+    "Plataforma de inversión en micropréstamos. Capital al alcance de emprendedores. Rendimiento real para inversores LATAM.",
   keywords: [
     "Finnoba",
     "micropréstamos",
-    "USDT",
-    "P2P",
-    "marketplace",
-    "crédito",
-    "yield",
+    "inversión",
     "LATAM",
-    "DeFi",
-    "stablecoin",
+    "fintech",
+    "crédito",
+    "rendimiento",
+    "P2P",
   ],
   authors: [{ name: "Finnoba" }],
   creator: "Finnoba",
@@ -42,15 +47,15 @@ export const metadata: Metadata = {
     locale: "es_LA",
     url: "https://finnoba.com",
     siteName: "Finnoba",
-    title: "Finnoba — Marketplace P2P de micropréstamos en USDT",
+    title: "Finnoba — Plataforma de inversión en micropréstamos · LATAM",
     description:
-      "Marketplace P2P de micropréstamos en USDT. Crédito sin colateral. Yield real para LATAM.",
+      "Invierte en micropréstamos a emprendedores LATAM. Diversificación automática, reportes mensuales, retornos objetivo por encima del 10% anual.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Finnoba — Marketplace P2P de micropréstamos en USDT",
+    title: "Finnoba — Plataforma de inversión en micropréstamos · LATAM",
     description:
-      "Marketplace P2P de micropréstamos en USDT. Crédito sin colateral. Yield real para LATAM.",
+      "Invierte en micropréstamos a emprendedores LATAM. Diversificación automática, reportes mensuales.",
   },
   robots: {
     index: true,
@@ -66,8 +71,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={poppins.variable}>
-      <body style={{ fontFamily: "var(--font-poppins), system-ui, sans-serif" }}>{children}</body>
+    <html lang="es" className={`${geist.variable} ${geistMono.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }

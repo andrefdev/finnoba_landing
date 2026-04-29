@@ -1,21 +1,21 @@
 "use client";
 
-import { COLORS } from "@/domains/common/tokens";
 import { Wordmark } from "@/domains/common/Wordmark";
-import { useLanding } from "@/lib/i18n/LandingProvider";
+import { FONT_UI, LIGHT } from "@/domains/common/tokens";
 import type { Lang } from "@/lib/i18n/dictionaries";
+import { useLanding } from "@/lib/i18n/LandingProvider";
 
 function FooterCol({ title, links }: { title: string; links: readonly string[] }) {
   return (
-    <div>
+    <div style={{ fontFamily: FONT_UI }}>
       <div
         style={{
-          color: "#fff",
-          fontWeight: 600,
-          fontSize: 13,
-          marginBottom: 14,
-          fontFamily: "Poppins",
-          letterSpacing: ".04em",
+          color: LIGHT.ink,
+          fontWeight: 500,
+          fontSize: 12,
+          marginBottom: 16,
+          letterSpacing: "0.08em",
+          textTransform: "uppercase",
         }}
       >
         {title}
@@ -26,15 +26,14 @@ function FooterCol({ title, links }: { title: string; links: readonly string[] }
           href="#"
           style={{
             display: "block",
-            color: COLORS.fgDark3,
+            color: LIGHT.ink2,
             textDecoration: "none",
-            fontSize: 13.5,
-            padding: "5px 0",
-            fontFamily: "Poppins",
+            fontSize: 14,
+            padding: "6px 0",
             transition: "color 160ms",
           }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
-          onMouseLeave={(e) => (e.currentTarget.style.color = COLORS.fgDark3)}
+          onMouseEnter={(e) => (e.currentTarget.style.color = LIGHT.ink)}
+          onMouseLeave={(e) => (e.currentTarget.style.color = LIGHT.ink2)}
         >
           {l}
         </a>
@@ -47,33 +46,26 @@ function LangToggle() {
   const { lang, setLang, t } = useLanding();
   const langs: Lang[] = ["es", "en"];
   return (
-    <div style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
-      <span style={{ color: COLORS.fgDark3 }}>{t.footer.lang}:</span>
-      <div
-        style={{
-          display: "inline-flex",
-          background: "rgba(255,255,255,0.04)",
-          border: "1px solid rgba(255,255,255,0.10)",
-          borderRadius: 9999,
-          padding: 3,
-        }}
-      >
-        {langs.map((l) => (
+    <div style={{ display: "inline-flex", alignItems: "center", gap: 12 }}>
+      <span style={{ color: LIGHT.ink3 }}>{t.footer.lang}:</span>
+      <div style={{ display: "inline-flex", border: `1px solid ${LIGHT.lineStrong}`, borderRadius: 2 }}>
+        {langs.map((l, i) => (
           <button
             key={l}
             onClick={() => setLang(l)}
             style={{
               padding: "6px 14px",
-              borderRadius: 9999,
               border: 0,
+              borderLeft: i === 0 ? 0 : `1px solid ${LIGHT.line}`,
+              borderRadius: 0,
               cursor: "pointer",
-              fontFamily: "Poppins",
-              fontWeight: 600,
-              fontSize: 12,
-              letterSpacing: ".04em",
+              fontFamily: FONT_UI,
+              fontWeight: 500,
+              fontSize: 11,
+              letterSpacing: "0.06em",
               textTransform: "uppercase",
-              background: lang === l ? "rgba(254,118,255,0.14)" : "transparent",
-              color: lang === l ? COLORS.magenta : COLORS.fgDark3,
+              background: lang === l ? LIGHT.ink : "#fff",
+              color: lang === l ? "#fff" : LIGHT.ink3,
               transition: "all 160ms",
             }}
           >
@@ -90,34 +82,48 @@ export function Footer() {
   return (
     <footer
       style={{
-        background: "#03001A",
-        color: COLORS.fgDark3,
+        background: "#fff",
+        color: LIGHT.ink2,
         padding: "64px clamp(20px,4vw,80px) 36px",
-        borderTop: "1px solid rgba(254,118,255,.14)",
+        borderTop: `1px solid ${LIGHT.line}`,
         position: "relative",
       }}
     >
-      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+      <div
+        aria-hidden
+        style={{
+          position: "absolute",
+          top: 0,
+          bottom: 0,
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "min(1280px, 100% - 40px)",
+          pointerEvents: "none",
+          borderLeft: `1px solid ${LIGHT.line}`,
+          borderRight: `1px solid ${LIGHT.line}`,
+        }}
+      />
+      <div style={{ position: "relative", maxWidth: 1280, margin: "0 auto", padding: "0 40px" }}>
         <div
           className="footer-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "minmax(0, 1.5fr) repeat(3, minmax(0, 1fr))",
             gap: 40,
-            paddingBottom: 40,
-            borderBottom: "1px solid rgba(255,255,255,0.06)",
+            paddingBottom: 48,
+            borderBottom: `1px solid ${LIGHT.line}`,
           }}
         >
           <div>
-            <Wordmark height={28} />
+            <Wordmark height={26} />
             <p
               style={{
                 marginTop: 18,
-                fontSize: 13.5,
-                lineHeight: 1.6,
+                fontSize: 14,
+                lineHeight: 1.55,
                 maxWidth: 320,
-                color: COLORS.fgDark2,
-                fontFamily: "Poppins",
+                color: LIGHT.ink3,
+                fontFamily: FONT_UI,
               }}
             >
               {t.footer.tagline}
@@ -130,15 +136,14 @@ export function Footer() {
         <div
           style={{
             marginTop: 24,
-            paddingTop: 6,
             display: "flex",
             justifyContent: "space-between",
             flexWrap: "wrap",
             gap: 16,
             alignItems: "center",
-            fontFamily: "Poppins",
+            fontFamily: FONT_UI,
             fontSize: 12.5,
-            color: COLORS.fgDark3,
+            color: LIGHT.ink3,
           }}
         >
           <span>{t.footer.legal}</span>

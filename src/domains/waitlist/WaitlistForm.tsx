@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { COLORS } from "@/domains/common/tokens";
-import { PillButton } from "@/domains/common/PillButton";
+import { ArrowRight } from "@/domains/common/ArrowRight";
+import { FONT_UI, LIGHT } from "@/domains/common/tokens";
 import { useLanding } from "@/lib/i18n/LandingProvider";
 
-export function WaitlistForm({ compact = false }: { compact?: boolean }) {
+export function WaitlistForm({ full = false }: { full?: boolean }) {
   const { t } = useLanding();
   const [email, setEmail] = useState("");
   const [done, setDone] = useState(false);
@@ -25,16 +25,16 @@ export function WaitlistForm({ compact = false }: { compact?: boolean }) {
           alignItems: "center",
           gap: 10,
           padding: "14px 18px",
-          borderRadius: 9999,
-          background: "rgba(0,198,138,0.10)",
-          border: "1px solid rgba(0,198,138,0.35)",
-          color: COLORS.success,
-          fontFamily: "Poppins",
-          fontWeight: 600,
+          borderRadius: 2,
+          background: "#fff",
+          border: `1px solid ${LIGHT.success}`,
+          color: LIGHT.success,
+          fontFamily: FONT_UI,
+          fontWeight: 500,
           fontSize: 14,
         }}
       >
-        <span style={{ width: 8, height: 8, borderRadius: "50%", background: COLORS.success }} />
+        <span style={{ width: 6, height: 6, borderRadius: "50%", background: LIGHT.success }} />
         {t.waitlist.success}
       </div>
     );
@@ -45,15 +45,13 @@ export function WaitlistForm({ compact = false }: { compact?: boolean }) {
       onSubmit={submit}
       style={{
         display: "flex",
-        alignItems: "center",
-        gap: 8,
-        background: "rgba(255,255,255,0.04)",
-        border: `1px solid ${focus ? "rgba(254,118,255,0.45)" : "rgba(255,255,255,0.12)"}`,
-        borderRadius: 9999,
-        padding: 5,
-        maxWidth: 460,
-        transition: "all 200ms",
-        boxShadow: focus ? "0 0 0 4px rgba(121,4,235,0.18)" : "none",
+        alignItems: "stretch",
+        gap: 0,
+        background: "#fff",
+        border: `1px solid ${focus ? LIGHT.ink : LIGHT.lineStrong}`,
+        borderRadius: 2,
+        maxWidth: full ? "100%" : 480,
+        transition: "border-color 160ms",
       }}
     >
       <input
@@ -70,15 +68,33 @@ export function WaitlistForm({ compact = false }: { compact?: boolean }) {
           background: "transparent",
           border: 0,
           outline: "none",
-          color: "#fff",
-          fontFamily: "Poppins",
+          color: LIGHT.ink,
+          fontFamily: FONT_UI,
           fontSize: 14,
-          padding: compact ? "8px 14px" : "10px 18px",
+          padding: "14px 18px",
         }}
       />
-      <PillButton type="submit" variant="grad" size={compact ? "sm" : "md"}>
+      <button
+        type="submit"
+        style={{
+          fontFamily: FONT_UI,
+          fontWeight: 500,
+          fontSize: 14,
+          padding: "0 22px",
+          border: 0,
+          borderLeft: `1px solid ${LIGHT.lineStrong}`,
+          background: LIGHT.ink,
+          color: "#fff",
+          cursor: "pointer",
+          display: "inline-flex",
+          alignItems: "center",
+          gap: 8,
+          borderRadius: 0,
+        }}
+      >
         {t.waitlist.cta}
-      </PillButton>
+        <ArrowRight size={14} />
+      </button>
     </form>
   );
 }

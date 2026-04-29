@@ -1,27 +1,23 @@
 import type { CSSProperties, ReactNode } from "react";
-import { COLORS } from "./tokens";
+import { FONT_UI, LIGHT } from "./tokens";
 
-export function Eyebrow({
-  children,
-  color = COLORS.magenta,
-  style,
-}: {
-  children: ReactNode;
-  color?: string;
-  style?: CSSProperties;
-}) {
+export function Eyebrow({ children, style }: { children: ReactNode; style?: CSSProperties }) {
   return (
     <div
       style={{
-        fontFamily: "Poppins",
-        fontWeight: 600,
+        fontFamily: FONT_UI,
+        fontWeight: 500,
         fontSize: 12,
-        letterSpacing: "0.14em",
+        letterSpacing: "0.06em",
         textTransform: "uppercase",
-        color,
+        color: LIGHT.ink3,
+        display: "inline-flex",
+        alignItems: "center",
+        gap: 10,
         ...style,
       }}
     >
+      <span style={{ width: 18, height: 1, background: LIGHT.lineStrong }} />
       {children}
     </div>
   );

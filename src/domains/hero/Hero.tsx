@@ -1,31 +1,94 @@
 "use client";
 
-import { COLORS } from "@/domains/common/tokens";
-import { Eyebrow } from "@/domains/common/Eyebrow";
-import { ChainGlyph } from "@/domains/common/ChainGlyph";
+import { FONT_DISPLAY, FONT_UI, LIGHT } from "@/domains/common/tokens";
 import { WaitlistForm } from "@/domains/waitlist/WaitlistForm";
 import { useLanding } from "@/lib/i18n/LandingProvider";
 import { SideToggle } from "./SideToggle";
 import { HeroCard } from "./HeroCard";
 
+function CheckMini() {
+  return (
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+      <path
+        d="M2 6L5 9L10 3"
+        stroke={LIGHT.ink}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export function Hero() {
-  const { t, side, heroVariant } = useLanding();
+  const { t, lang, side } = useLanding();
   const sideT = side === "lender" ? t.hero.lender : t.hero.borrower;
 
   return (
     <section
       style={{
         position: "relative",
-        background:
-          heroVariant === "glow"
-            ? "radial-gradient(ellipse 70% 55% at 82% 8%, rgba(121,4,235,0.22) 0%, rgba(121,4,235,0) 55%), radial-gradient(ellipse 50% 45% at 8% 92%, rgba(254,118,255,0.08) 0%, rgba(254,118,255,0) 60%), #03001A"
-            : "#03001A",
-        color: "#fff",
-        padding: "96px clamp(20px,4vw,80px) 120px",
+        background: LIGHT.bg,
+        color: LIGHT.ink,
+        // top padding clears the floating nav (nav top 16 + nav ~50 + breathing room)
+        padding: "120px clamp(20px,4vw,80px) 0",
+        borderBottom: `1px solid ${LIGHT.line}`,
         overflow: "hidden",
-        borderBottom: "1px solid rgba(255,255,255,0.06)",
+        isolation: "isolate",
       }}
     >
+      {/* Aurora */}
+      <div
+        aria-hidden
+        className="hero-aurora"
+        style={{
+          position: "absolute",
+          inset: "-10% -5%",
+          zIndex: 0,
+          pointerEvents: "none",
+          filter: "blur(60px)",
+          opacity: 0.55,
+        }}
+      >
+        <div className="aurora-blob aurora-blob-1" />
+        <div className="aurora-blob aurora-blob-2" />
+        <div className="aurora-blob aurora-blob-3" />
+      </div>
+
+      {/* Dot grid */}
+      <div
+        aria-hidden
+        style={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 0,
+          pointerEvents: "none",
+          backgroundImage: `radial-gradient(${LIGHT.lineStrong} 1px, transparent 1px)`,
+          backgroundSize: "32px 32px",
+          maskImage:
+            "radial-gradient(ellipse 70% 80% at 50% 50%, black 20%, transparent 85%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 70% 80% at 50% 50%, black 20%, transparent 85%)",
+          opacity: 0.35,
+        }}
+      />
+
+      {/* Bottom soft fade */}
+      <div
+        aria-hidden
+        style={{
+          position: "absolute",
+          left: 0,
+          right: 0,
+          bottom: 0,
+          height: 200,
+          zIndex: 0,
+          pointerEvents: "none",
+          background: `linear-gradient(180deg, rgba(250,250,247,0) 0%, ${LIGHT.bg} 100%)`,
+        }}
+      />
+
+      {/* Outer rail hairlines */}
       <div
         aria-hidden
         style={{
@@ -34,75 +97,98 @@ export function Hero() {
           bottom: 0,
           left: "50%",
           transform: "translateX(-50%)",
-          width: "min(1200px, 100% - 40px)",
+          width: "min(1280px, 100% - 40px)",
           pointerEvents: "none",
-          backgroundImage: "linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px)",
-          backgroundSize: "calc(100% / 12) 100%",
-          borderLeft: "1px solid rgba(255,255,255,0.04)",
-          borderRight: "1px solid rgba(255,255,255,0.04)",
-        }}
-      />
-      <div
-        aria-hidden
-        style={{
-          position: "absolute",
-          inset: 0,
-          pointerEvents: "none",
-          backgroundImage: "linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px)",
-          backgroundSize: "100% 160px",
-          maskImage: "linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%)",
+          borderLeft: `1px solid ${LIGHT.line}`,
+          borderRight: `1px solid ${LIGHT.line}`,
+          zIndex: 1,
         }}
       />
 
-      <div style={{ position: "relative", maxWidth: 1200, margin: "0 auto" }}>
+      <div
+        style={{
+          position: "relative",
+          zIndex: 2,
+          maxWidth: 1280,
+          margin: "0 auto",
+          padding: "0 40px",
+        }}
+      >
+        {/* Top meta row */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            paddingBottom: 18,
+            borderBottom: `1px solid ${LIGHT.line}`,
+            fontFamily: FONT_UI,
+            fontSize: 12,
+            color: LIGHT.ink3,
+            gap: 12,
+            flexWrap: "wrap",
+          }}
+        >
+          <span style={{ letterSpacing: "0.08em", textTransform: "uppercase" }}>
+            {t.hero.eyebrow}
+          </span>
+          <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
+            <span
+              style={{
+                width: 6,
+                height: 6,
+                borderRadius: "50%",
+                background: LIGHT.success,
+              }}
+            />
+            {t.hero.waitlistOpen}
+          </span>
+        </div>
+
         <div
           className="hero-grid"
           style={{
             display: "grid",
-            gridTemplateColumns: "minmax(0, 1.05fr) minmax(0, 0.95fr)",
-            gap: 56,
-            alignItems: "center",
+            gridTemplateColumns: "minmax(0, 1.15fr) minmax(0, 0.85fr)",
+            gap: 0,
+            alignItems: "stretch",
           }}
         >
-          <div>
-            <Eyebrow>{t.hero.eyebrow}</Eyebrow>
-            <div style={{ marginTop: 18 }}>
-              <SideToggle />
-            </div>
+          {/* LEFT */}
+          <div
+            className="hero-left"
+            style={{
+              padding: "88px 56px 88px 0",
+              borderRight: `1px solid ${LIGHT.line}`,
+            }}
+          >
+            <SideToggle />
 
             <h1
               style={{
-                fontFamily: "Poppins",
-                fontWeight: 700,
-                fontSize: "clamp(2.5rem, 5.4vw, 4.25rem)",
-                lineHeight: 1.04,
-                letterSpacing: "-0.025em",
-                margin: "24px 0 22px",
+                fontFamily: FONT_DISPLAY,
+                fontWeight: 500,
+                fontSize: "clamp(2.5rem, 5.4vw, 4.75rem)",
+                lineHeight: 1.0,
+                letterSpacing: "-0.04em",
+                margin: "40px 0 28px",
+                color: LIGHT.ink,
                 textWrap: "balance",
               }}
             >
               {sideT.title}
               <br />
-              <span
-                style={{
-                  background: "linear-gradient(135deg,#FE76FF 0%,#C9C2F2 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
-                {sideT.title2}
-              </span>
+              <span style={{ color: LIGHT.ink3 }}>{sideT.title2}</span>
             </h1>
 
             <p
               style={{
-                fontFamily: "Poppins",
+                fontFamily: FONT_UI,
                 fontSize: 18,
                 lineHeight: 1.55,
-                color: COLORS.fgDark2,
+                color: LIGHT.ink2,
                 maxWidth: 540,
-                margin: "0 0 32px",
+                margin: "0 0 36px",
               }}
             >
               {sideT.sub}
@@ -112,39 +198,37 @@ export function Hero() {
 
             <div
               style={{
-                marginTop: 28,
+                marginTop: 32,
+                paddingTop: 24,
+                borderTop: `1px solid ${LIGHT.line}`,
                 display: "flex",
-                gap: 18,
+                gap: 28,
                 alignItems: "center",
-                color: COLORS.fgDark3,
+                color: LIGHT.ink3,
                 fontSize: 12.5,
                 flexWrap: "wrap",
+                fontFamily: FONT_UI,
+                letterSpacing: "0.02em",
               }}
+              aria-label={lang === "es" ? "Garantías" : "Guarantees"}
             >
-              <span style={{ display: "inline-flex", alignItems: "center", gap: 7 }}>
-                <span
-                  style={{
-                    width: 7,
-                    height: 7,
-                    borderRadius: "50%",
-                    background: COLORS.success,
-                    boxShadow: "0 0 0 3px rgba(0,198,138,.15)",
-                  }}
-                />
-                {t.hero.kicker[0]}
-              </span>
-              <span style={{ opacity: 0.4 }}>·</span>
-              <span>{t.hero.kicker[1]}</span>
-              <span style={{ opacity: 0.4 }}>·</span>
-              <span style={{ display: "inline-flex", alignItems: "center", gap: 7 }}>
-                <ChainGlyph chain="polygon" size={16} />
-                <ChainGlyph chain="base" size={16} />
-                Polygon · Base
-              </span>
+              {t.hero.kicker.map((k) => (
+                <span key={k} style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
+                  <CheckMini /> {k}
+                </span>
+              ))}
             </div>
           </div>
 
-          <div style={{ minWidth: 0 }}>
+          {/* RIGHT */}
+          <div
+            className="hero-right"
+            style={{
+              padding: "88px 0 88px 56px",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
             <HeroCard />
           </div>
         </div>
