@@ -82,7 +82,6 @@ export const DICTIONARIES = {
       partners: [
         { name: "Indrox", tag: "Equipo dev", body: "Software house propia. Cero outsourcing, ciclo de release semanal." },
         { name: "ThePrimeWay", tag: "Loop de demanda", body: "Usuarios productivos validados que se convierten en solicitantes calificados." },
-        { name: "Capece", tag: "Comunidad B2B", body: "Acceso directo a microempresarios y emprendedores LATAM para pilotos privados." },
         { name: "La Punta del Iceberg", tag: "Pilotos B2B", body: "Red de operadores en LATAM para distribución del lado solicitante." },
         { name: "HiddenLayer Podcast", tag: "Distribución", body: "Acceso editorial al ecosistema fintech LATAM y comunidades de inversión." },
         { name: "Network de inversores", tag: "Lado oferta", body: "Red de patrimonios LATAM buscando rendimientos productivos reales." },
@@ -204,7 +203,6 @@ export const DICTIONARIES = {
       partners: [
         { name: "Indrox", tag: "Dev team", body: "In-house software house. Zero outsourcing, weekly release cycle." },
         { name: "ThePrimeWay", tag: "Demand loop", body: "Validated productive users that convert into qualified applicants." },
-        { name: "Capece", tag: "B2B community", body: "Direct access to LATAM micro-businesses and entrepreneurs for private pilots." },
         { name: "La Punta del Iceberg", tag: "B2B pilots", body: "LATAM operator network for applicant-side distribution." },
         { name: "HiddenLayer Podcast", tag: "Distribution", body: "Editorial access to LATAM fintech ecosystem and investor communities." },
         { name: "Investor network", tag: "Supply side", body: "LATAM private wealth network looking for real productive returns." },
