@@ -92,6 +92,48 @@ export const DICTIONARIES = {
       sub: "Reserva tu lugar en el piloto privado. Cupo limitado.",
       foot: "Q3 2026 · LATAM · No es asesoría financiera.",
     },
+    hero2: {
+      primary: "Quiero invertir",
+      secondary: "Conocer la propuesta",
+      tagline: "Construyendo el próximo estándar de inversión productiva en LATAM.",
+    },
+    trust: {
+      eyebrow: "Confiado por la red",
+      items: [
+        "Indrox · equipo dev",
+        "ThePrimeWay · loop de demanda",
+        "La Punta del Iceberg · pilotos B2B",
+        "HiddenLayer · distribución",
+        "Network privada · capital LATAM",
+        "Auditoría externa · Q3 2026",
+      ],
+    },
+    value: {
+      eyebrow: "Por qué existimos",
+      title: "Capital productivo, al alcance de quienes mueven la economía real.",
+      lead: "El sistema financiero LATAM dejó fuera a millones de emprendedores y a una generación de inversores que busca rendimiento real. Conectamos a ambos lados con transparencia, datos y reportes que sí podés leer.",
+      bullets: [
+        { k: "01", t: "Inversión desde montos bajos", b: "Empezás desde 200 USD y diversificás automáticamente entre 10–20 préstamos." },
+        { k: "02", t: "Originación con criterio", b: "Scoring propio + reputación verificada. Tasas justas, no usureras." },
+        { k: "03", t: "Reportes mensuales reales", b: "Sabés cuánto, dónde y cómo está rindiendo cada peso." },
+      ],
+    },
+    quote: {
+      text: "El crédito productivo no debería ser un privilegio. Estamos construyendo la infraestructura para que más gente acceda a capital, y para que más capital encuentre proyectos reales.",
+      author: "Equipo fundador",
+      role: "Finnoba · LATAM",
+    },
+    faq: {
+      eyebrow: "Preguntas frecuentes",
+      title: "Lo que la gente nos pregunta antes de entrar.",
+      items: [
+        { q: "¿Cuándo abre el piloto privado?", a: "El piloto privado abre en Q3 2026. La waitlist define el orden de acceso por país." },
+        { q: "¿Cuál es el monto mínimo de inversión?", a: "Empezás desde 200 USD. Tu inversión se diversifica automáticamente entre múltiples préstamos para mitigar riesgo." },
+        { q: "¿Cómo eligen a los solicitantes?", a: "Nuestro modelo de scoring evalúa flujo, historial y reputación. Solo se publican solicitudes que cumplen política de riesgo." },
+        { q: "¿Qué pasa si un préstamo entra en mora?", a: "Hay un proceso de cobranza estructurado, con un fondo de protección parcial durante el piloto. Toda inversión conlleva riesgos." },
+        { q: "¿Es asesoría financiera?", a: "No. Finnoba es una plataforma. Cada inversor decide su exposición. Recomendamos asesorarte antes de invertir." },
+      ],
+    },
     footer: {
       tagline: "Plataforma de inversión en micropréstamos. Capital al alcance de emprendedores. Rendimiento real para inversores LATAM.",
       product: "Producto",
@@ -212,6 +254,48 @@ export const DICTIONARIES = {
       title: "Credit in LATAM is being rewritten.",
       sub: "Reserve your spot in the private pilot. Limited seats.",
       foot: "Q3 2026 · LATAM · Not financial advice.",
+    },
+    hero2: {
+      primary: "I want to invest",
+      secondary: "Read the proposal",
+      tagline: "Building the next standard of productive investment in LATAM.",
+    },
+    trust: {
+      eyebrow: "Trusted by the network",
+      items: [
+        "Indrox · dev team",
+        "ThePrimeWay · demand loop",
+        "La Punta del Iceberg · B2B pilots",
+        "HiddenLayer · distribution",
+        "Private network · LATAM capital",
+        "External audit · Q3 2026",
+      ],
+    },
+    value: {
+      eyebrow: "Why we exist",
+      title: "Productive capital, within reach of those moving the real economy.",
+      lead: "LATAM's financial system left millions of entrepreneurs out, and a whole generation of investors looking for real returns. We connect both sides with transparency, data, and reports you can actually read.",
+      bullets: [
+        { k: "01", t: "Invest from low ticket sizes", b: "Start from $200 and diversify automatically across 10–20 loans." },
+        { k: "02", t: "Origination with criteria", b: "Proprietary scoring + verified reputation. Fair rates, not predatory." },
+        { k: "03", t: "Real monthly reporting", b: "You know how much, where, and how every dollar is performing." },
+      ],
+    },
+    quote: {
+      text: "Productive credit shouldn't be a privilege. We're building the infrastructure so more people access capital, and so more capital finds real projects.",
+      author: "Founding team",
+      role: "Finnoba · LATAM",
+    },
+    faq: {
+      eyebrow: "Frequently asked",
+      title: "What people ask us before joining.",
+      items: [
+        { q: "When does the private pilot open?", a: "The private pilot opens in Q3 2026. The waitlist sets access order per country." },
+        { q: "What's the minimum investment?", a: "You start from $200. Your investment is automatically diversified across multiple loans to mitigate risk." },
+        { q: "How are applicants selected?", a: "Our scoring model evaluates cash flow, history, and reputation. Only requests that meet our risk policy are published." },
+        { q: "What happens if a loan defaults?", a: "We run a structured collections process with a partial protection fund during the pilot. All investments carry risk." },
+        { q: "Is this financial advice?", a: "No. Finnoba is a platform. Each investor decides their exposure. Get independent advice before investing." },
+      ],
     },
     footer: {
       tagline: "Investment platform for micro-loans. Capital within reach for entrepreneurs. Real returns for LATAM investors.",

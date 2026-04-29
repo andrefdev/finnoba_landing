@@ -1,7 +1,6 @@
 "use client";
 
-import { SectionHeader } from "@/domains/common/SectionHeader";
-import { FONT_DISPLAY, FONT_MONO, FONT_UI, LIGHT } from "@/domains/common/tokens";
+import { FONT_DISPLAY, FONT_MONO, FONT_UI, GRADIENT, LIGHT } from "@/domains/common/tokens";
 import { useLanding } from "@/lib/i18n/LandingProvider";
 
 export function HowItWorks() {
@@ -16,76 +15,120 @@ export function HowItWorks() {
     <section
       id="how"
       style={{
-        background: "#fff",
+        background: LIGHT.bg,
         padding: "120px clamp(20px,4vw,80px)",
-        borderBottom: `1px solid ${LIGHT.line}`,
         position: "relative",
         scrollMarginTop: 96,
       }}
     >
-      <div
-        aria-hidden
-        style={{
-          position: "absolute",
-          top: 0,
-          bottom: 0,
-          left: "50%",
-          transform: "translateX(-50%)",
-          width: "min(1280px, 100% - 40px)",
-          pointerEvents: "none",
-          borderLeft: `1px solid ${LIGHT.line}`,
-          borderRight: `1px solid ${LIGHT.line}`,
-        }}
-      />
-      <div style={{ position: "relative", maxWidth: 1280, margin: "0 auto", padding: "0 40px" }}>
-        <SectionHeader eyebrow={t.how.eyebrow} title={t.how.title} lead={t.how.sub} />
+      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 20px" }}>
+        <div style={{ marginBottom: 56, maxWidth: 880 }}>
+          <div
+            style={{
+              fontFamily: FONT_MONO,
+              fontSize: 12,
+              letterSpacing: "0.10em",
+              textTransform: "uppercase",
+              color: LIGHT.ink3,
+              marginBottom: 24,
+            }}
+          >
+            — {t.how.eyebrow}
+          </div>
+          <h2
+            style={{
+              fontFamily: FONT_DISPLAY,
+              fontWeight: 500,
+              fontSize: "clamp(2.25rem, 4.6vw, 4rem)",
+              lineHeight: 0.98,
+              letterSpacing: "-0.04em",
+              margin: "0 0 20px",
+              color: LIGHT.ink,
+              textWrap: "balance",
+            }}
+          >
+            {t.how.title}
+          </h2>
+          <p
+            style={{
+              fontFamily: FONT_UI,
+              fontSize: 17.5,
+              lineHeight: 1.6,
+              color: LIGHT.ink2,
+              maxWidth: 640,
+              margin: 0,
+            }}
+          >
+            {t.how.sub}
+          </p>
+        </div>
+
         <div
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: 0,
-            borderTop: `1px solid ${LIGHT.line}`,
-            borderLeft: `1px solid ${LIGHT.line}`,
+            background: LIGHT.bgCard,
+            borderRadius: 28,
+            border: `1px solid ${LIGHT.line}`,
+            overflow: "hidden",
           }}
         >
-          {steps.map((s) => (
+          {steps.map((s, i) => (
             <div
               key={s.n}
+              className="step-row"
               style={{
-                padding: "40px 32px 44px",
-                borderRight: `1px solid ${LIGHT.line}`,
-                borderBottom: `1px solid ${LIGHT.line}`,
-                minHeight: 280,
-                fontFamily: FONT_UI,
-                background: "#fff",
+                display: "grid",
+                gridTemplateColumns: "minmax(120px, 180px) minmax(0, 1fr) minmax(0, 1.2fr)",
+                gap: 56,
+                alignItems: "center",
+                padding: "44px 56px",
+                borderBottom: i < steps.length - 1 ? `1px solid ${LIGHT.line}` : "none",
+                transition: "background 200ms ease",
               }}
+              onMouseEnter={(e) => (e.currentTarget.style.background = LIGHT.bgSoft)}
+              onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
             >
               <div
+                className="step-row-num"
                 style={{
-                  fontFamily: FONT_MONO,
-                  fontWeight: 500,
-                  fontSize: 12,
-                  color: LIGHT.ink3,
-                  marginBottom: 32,
-                  letterSpacing: "0.04em",
+                  fontFamily: FONT_DISPLAY,
+                  fontWeight: 400,
+                  fontSize: 84,
+                  lineHeight: 1,
+                  letterSpacing: "-0.05em",
+                  background: GRADIENT.brandText,
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  color: "transparent",
+                  fontVariantNumeric: "tabular-nums",
                 }}
               >
-                {s.n} / 03
+                {s.n}
               </div>
               <h3
                 style={{
                   fontFamily: FONT_DISPLAY,
-                  fontWeight: 400,
-                  fontSize: 28,
-                  letterSpacing: "-0.015em",
-                  lineHeight: 1.1,
+                  fontWeight: 500,
+                  fontSize: "clamp(1.5rem, 2.4vw, 2rem)",
+                  letterSpacing: "-0.025em",
+                  lineHeight: 1.05,
                   color: LIGHT.ink,
-                  margin: "0 0 14px",
+                  margin: 0,
+                  textWrap: "balance",
                 }}
               >
                 {s.title}
               </h3>
-              <p style={{ fontFamily: FONT_UI, fontSize: 15, lineHeight: 1.6, color: LIGHT.ink2, margin: 0 }}>
+              <p
+                style={{
+                  fontFamily: FONT_UI,
+                  fontSize: 16,
+                  lineHeight: 1.6,
+                  color: LIGHT.ink2,
+                  margin: 0,
+                  maxWidth: 520,
+                }}
+              >
                 {s.body}
               </p>
             </div>

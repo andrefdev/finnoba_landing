@@ -1,6 +1,5 @@
 "use client";
 
-import { SectionHeader } from "@/domains/common/SectionHeader";
 import { FONT_DISPLAY, FONT_MONO, FONT_UI, LIGHT } from "@/domains/common/tokens";
 import { useLanding } from "@/lib/i18n/LandingProvider";
 
@@ -12,82 +11,110 @@ export function BackedBy() {
     <section
       id="backed"
       style={{
-        background: "#fff",
+        background: LIGHT.bg,
         padding: "120px clamp(20px,4vw,80px)",
-        borderBottom: `1px solid ${LIGHT.line}`,
         position: "relative",
         scrollMarginTop: 96,
       }}
     >
-      <div
-        aria-hidden
-        style={{
-          position: "absolute",
-          top: 0,
-          bottom: 0,
-          left: "50%",
-          transform: "translateX(-50%)",
-          width: "min(1280px, 100% - 40px)",
-          pointerEvents: "none",
-          borderLeft: `1px solid ${LIGHT.line}`,
-          borderRight: `1px solid ${LIGHT.line}`,
-        }}
-      />
-      <div style={{ position: "relative", maxWidth: 1280, margin: "0 auto", padding: "0 40px" }}>
-        <SectionHeader eyebrow={b.eyebrow} title={b.title} lead={b.sub} />
+      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 20px" }}>
+        <div style={{ marginBottom: 48, maxWidth: 720 }}>
+          <div
+            style={{
+              fontFamily: FONT_MONO,
+              fontSize: 12,
+              letterSpacing: "0.10em",
+              textTransform: "uppercase",
+              color: LIGHT.ink3,
+              marginBottom: 24,
+            }}
+          >
+            — {b.eyebrow}
+          </div>
+          <h2
+            style={{
+              fontFamily: FONT_DISPLAY,
+              fontWeight: 500,
+              fontSize: "clamp(2rem, 3.6vw, 3.25rem)",
+              lineHeight: 1,
+              letterSpacing: "-0.035em",
+              margin: 0,
+              color: LIGHT.ink,
+              textWrap: "balance",
+            }}
+          >
+            {b.title}
+          </h2>
+        </div>
+
         <div
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: 0,
-            borderTop: `1px solid ${LIGHT.line}`,
-            borderLeft: `1px solid ${LIGHT.line}`,
+            background: LIGHT.bgCard,
+            borderRadius: 28,
+            border: `1px solid ${LIGHT.line}`,
+            padding: "12px",
           }}
         >
-          {b.partners.map((p) => (
-            <div
-              key={p.name}
-              style={{
-                padding: "32px 28px",
-                borderRight: `1px solid ${LIGHT.line}`,
-                borderBottom: `1px solid ${LIGHT.line}`,
-                fontFamily: FONT_UI,
-                background: "#fff",
-                transition: "background 160ms ease",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = LIGHT.bgSoft)}
-              onMouseLeave={(e) => (e.currentTarget.style.background = "#fff")}
-            >
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: 0,
+            }}
+          >
+            {b.partners.map((p, i) => (
               <div
+                key={p.name}
                 style={{
-                  fontFamily: FONT_MONO,
-                  fontWeight: 500,
-                  fontSize: 11,
-                  letterSpacing: "0.04em",
-                  color: LIGHT.ink3,
-                  marginBottom: 20,
+                  padding: "32px 28px",
+                  borderRight: (i + 1) % 3 !== 0 ? `1px solid ${LIGHT.line}` : "none",
+                  borderBottom: i < b.partners.length - (b.partners.length % 3 || 3) ? `1px solid ${LIGHT.line}` : "none",
+                  fontFamily: FONT_UI,
+                  background: "transparent",
+                  transition: "background 200ms ease",
+                  borderRadius: 16,
                 }}
+                onMouseEnter={(e) => (e.currentTarget.style.background = LIGHT.bgSoft)}
+                onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
               >
-                — {p.tag}
+                <div
+                  style={{
+                    fontFamily: FONT_MONO,
+                    fontWeight: 500,
+                    fontSize: 11,
+                    letterSpacing: "0.06em",
+                    color: LIGHT.ink3,
+                    marginBottom: 18,
+                  }}
+                >
+                  — {p.tag}
+                </div>
+                <h3
+                  style={{
+                    fontFamily: FONT_DISPLAY,
+                    fontWeight: 500,
+                    fontSize: 22,
+                    letterSpacing: "-0.02em",
+                    color: LIGHT.ink,
+                    margin: "0 0 10px",
+                  }}
+                >
+                  {p.name}
+                </h3>
+                <p
+                  style={{
+                    fontFamily: FONT_UI,
+                    fontSize: 14,
+                    lineHeight: 1.55,
+                    color: LIGHT.ink2,
+                    margin: 0,
+                  }}
+                >
+                  {p.body}
+                </p>
               </div>
-              <h3
-                style={{
-                  fontFamily: FONT_DISPLAY,
-                  fontWeight: 400,
-                  fontSize: 26,
-                  letterSpacing: "-0.015em",
-                  color: LIGHT.ink,
-                  margin: "0 0 12px",
-                  lineHeight: 1.1,
-                }}
-              >
-                {p.name}
-              </h3>
-              <p style={{ fontFamily: FONT_UI, fontSize: 14.5, lineHeight: 1.55, color: LIGHT.ink2, margin: 0 }}>
-                {p.body}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
