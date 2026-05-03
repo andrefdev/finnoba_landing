@@ -15,12 +15,12 @@ function Row({ label, value }: { label: string; value: string }) {
         fontFamily: FONT_UI,
       }}
     >
-      <span style={{ fontSize: 13, color: LIGHT.ink2, fontWeight: 400 }}>{label}</span>
+      <span style={{ fontSize: 13, color: LIGHT.ink2, fontWeight: 300 }}>{label}</span>
       <span
         style={{
           fontSize: 13.5,
           color: LIGHT.ink,
-          fontWeight: 500,
+          fontWeight: 300,
           fontVariantNumeric: "tabular-nums",
           fontFamily: FONT_MONO,
         }}
@@ -67,7 +67,7 @@ export function HeroCard() {
           <span style={{ width: 6, height: 6, borderRadius: "50%", background: LIGHT.success }} />
           <span
             style={{
-              fontWeight: 500,
+              fontWeight: 300,
               fontSize: 11,
               color: LIGHT.ink2,
               letterSpacing: "0.10em",
@@ -77,7 +77,7 @@ export function HeroCard() {
             {headerLabel}
           </span>
         </div>
-        <span style={{ fontFamily: FONT_MONO, fontWeight: 500, fontSize: 11, color: LIGHT.ink3 }}>
+        <span style={{ fontFamily: FONT_MONO, fontWeight: 300, fontSize: 11, color: LIGHT.ink3 }}>
           #FN-{isLender ? "0421" : "0422"}
         </span>
       </div>
@@ -88,7 +88,7 @@ export function HeroCard() {
             fontSize: 11,
             color: LIGHT.ink3,
             marginBottom: 10,
-            fontWeight: 500,
+            fontWeight: 300,
             letterSpacing: "0.08em",
             textTransform: "uppercase",
           }}
@@ -99,7 +99,7 @@ export function HeroCard() {
           <div
             style={{
               fontFamily: FONT_DISPLAY,
-              fontWeight: 400,
+              fontWeight: 300,
               fontSize: 64,
               letterSpacing: "-0.03em",
               fontVariantNumeric: "tabular-nums",
@@ -109,7 +109,7 @@ export function HeroCard() {
           >
             {bigNumber}
           </div>
-          <div style={{ fontWeight: 500, fontSize: 18, color: LIGHT.ink2, fontFamily: FONT_UI }}>
+          <div style={{ fontWeight: 300, fontSize: 18, color: LIGHT.ink2, fontFamily: FONT_UI }}>
             {bigUnit}
           </div>
         </div>
@@ -140,14 +140,14 @@ export function HeroCard() {
             marginBottom: 10,
             letterSpacing: "0.08em",
             textTransform: "uppercase",
-            fontWeight: 500,
+            fontWeight: 300,
           }}
         >
           <span>{isLender ? c.lenderProgress : c.borrowerProgress}</span>
           <span
             style={{
               color: LIGHT.ink,
-              fontWeight: 600,
+              fontWeight: 300,
               fontVariantNumeric: "tabular-nums",
               fontFamily: FONT_MONO,
               letterSpacing: 0,

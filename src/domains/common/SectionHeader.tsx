@@ -22,7 +22,7 @@ export function SectionHeader({ eyebrow, title, lead }: Props) {
         <h2
           style={{
             fontFamily: FONT_DISPLAY,
-            fontWeight: 500,
+            fontWeight: 300,
             fontSize: "clamp(2.25rem, 4.2vw, 3.5rem)",
             lineHeight: 1.04,
             letterSpacing: "-0.035em",

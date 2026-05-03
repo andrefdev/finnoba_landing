@@ -64,7 +64,7 @@ export function Hero() {
         <h1
           style={{
             fontFamily: FONT_DISPLAY,
-            fontWeight: 500,
+            fontWeight: 300,
             fontSize: "clamp(2.75rem, 7.4vw, 6.5rem)",
             lineHeight: 0.96,
             letterSpacing: "-0.045em",
@@ -129,7 +129,7 @@ function Stat({ value, label }: { value: React.ReactNode; label: string }) {
       <div
         style={{
           fontFamily: FONT_DISPLAY,
-          fontWeight: 400,
+          fontWeight: 300,
           fontSize: "clamp(2rem, 3.4vw, 2.75rem)",
           lineHeight: 1,
           letterSpacing: "-0.035em",

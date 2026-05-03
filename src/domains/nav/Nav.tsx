@@ -327,7 +327,7 @@ export function Nav() {
                       style={{
                         display: "block",
                         fontFamily: FONT_DISPLAY,
-                        fontWeight: 500,
+                        fontWeight: 300,
                         fontSize: 36,
                         letterSpacing: "-0.03em",
                         lineHeight: 1.1,
@@ -446,7 +446,7 @@ export function Nav() {
             style={{
               width: "100%",
               fontFamily: FONT_UI,
-              fontWeight: 500,
+              fontWeight: 300,
               fontSize: 14,
               padding: "16px 24px",
               background: GRADIENT.brand,
@@ -572,7 +572,7 @@ export function Nav() {
           onClick={scrollToWaitlist}
           style={{
             fontFamily: FONT_UI,
-            fontWeight: 500,
+            fontWeight: 300,
             fontSize: 13.5,
             padding: "11px 20px",
             background: LIGHT.ink,

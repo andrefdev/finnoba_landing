@@ -11,7 +11,7 @@ function FooterCol({ title, links }: { title: string; links: readonly string[] }
       <div
         style={{
           color: "#fff",
-          fontWeight: 500,
+          fontWeight: 300,
           fontSize: 12,
           marginBottom: 16,
           letterSpacing: "0.10em",
@@ -74,7 +74,7 @@ function LangToggle() {
               borderRadius: 999,
               cursor: "pointer",
               fontFamily: FONT_UI,
-              fontWeight: 500,
+              fontWeight: 300,
               fontSize: 11,
               letterSpacing: "0.06em",
               textTransform: "uppercase",

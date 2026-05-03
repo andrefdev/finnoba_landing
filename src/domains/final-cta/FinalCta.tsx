@@ -109,7 +109,7 @@ export function FinalCta() {
         <h2
           style={{
             fontFamily: FONT_DISPLAY,
-            fontWeight: 500,
+            fontWeight: 300,
             fontSize: "clamp(2.75rem, 6vw, 5.5rem)",
             letterSpacing: "-0.04em",
             lineHeight: 0.98,

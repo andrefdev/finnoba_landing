@@ -6,7 +6,7 @@ export function Eyebrow({ children, style }: { children: ReactNode; style?: CSSP
     <div
       style={{
         fontFamily: FONT_UI,
-        fontWeight: 500,
+        fontWeight: 300,
         fontSize: 12,
         letterSpacing: "0.06em",
         textTransform: "uppercase",

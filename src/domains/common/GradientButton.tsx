@@ -63,7 +63,7 @@ export function GradientButton({
 
   const style: React.CSSProperties = {
     fontFamily: FONT_UI,
-    fontWeight: 500,
+    fontWeight: 300,
     letterSpacing: "-0.005em",
     borderRadius: 999,
     cursor: "pointer",

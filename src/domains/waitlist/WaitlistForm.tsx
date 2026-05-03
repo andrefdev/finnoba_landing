@@ -30,7 +30,7 @@ export function WaitlistForm({ full = false }: { full?: boolean }) {
           border: `1px solid ${LIGHT.success}`,
           color: LIGHT.success,
           fontFamily: FONT_UI,
-          fontWeight: 500,
+          fontWeight: 300,
           fontSize: 14,
         }}
       >
@@ -78,7 +78,7 @@ export function WaitlistForm({ full = false }: { full?: boolean }) {
         type="submit"
         style={{
           fontFamily: FONT_UI,
-          fontWeight: 500,
+          fontWeight: 300,
           fontSize: 14,
           padding: "0 22px",
           border: 0,

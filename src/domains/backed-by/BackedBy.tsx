@@ -34,7 +34,7 @@ export function BackedBy() {
           <h2
             style={{
               fontFamily: FONT_DISPLAY,
-              fontWeight: 500,
+              fontWeight: 300,
               fontSize: "clamp(2rem, 3.6vw, 3.25rem)",
               lineHeight: 1,
               letterSpacing: "-0.035em",
@@ -80,7 +80,7 @@ export function BackedBy() {
                 <div
                   style={{
                     fontFamily: FONT_MONO,
-                    fontWeight: 500,
+                    fontWeight: 300,
                     fontSize: 11,
                     letterSpacing: "0.06em",
                     color: LIGHT.ink3,
@@ -92,7 +92,7 @@ export function BackedBy() {
                 <h3
                   style={{
                     fontFamily: FONT_DISPLAY,
-                    fontWeight: 500,
+                    fontWeight: 300,
                     fontSize: 22,
                     letterSpacing: "-0.02em",
                     color: LIGHT.ink,

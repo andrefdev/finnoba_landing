@@ -31,7 +31,7 @@ export function SideToggle() {
             onClick={() => setSide(opt.k)}
             style={{
               fontFamily: FONT_UI,
-              fontWeight: 500,
+              fontWeight: 300,
               fontSize: 13,
               padding: "10px 20px",
               borderRadius: 0,

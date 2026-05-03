@@ -68,7 +68,7 @@ export function ValueBlock() {
               <h2
                 style={{
                   fontFamily: FONT_DISPLAY,
-                  fontWeight: 500,
+                  fontWeight: 300,
                   fontSize: "clamp(2.25rem, 4.6vw, 4rem)",
                   lineHeight: 0.98,
                   letterSpacing: "-0.04em",
@@ -114,7 +114,7 @@ export function ValueBlock() {
                         backgroundClip: "text",
                         WebkitTextFillColor: "transparent",
                         color: "transparent",
-                        fontWeight: 500,
+                        fontWeight: 300,
                       }}
                     >
                       {b.k}
@@ -123,7 +123,7 @@ export function ValueBlock() {
                       <h3
                         style={{
                           fontFamily: FONT_DISPLAY,
-                          fontWeight: 500,
+                          fontWeight: 300,
                           fontSize: 20,
                           letterSpacing: "-0.02em",
                           color: LIGHT.ink,

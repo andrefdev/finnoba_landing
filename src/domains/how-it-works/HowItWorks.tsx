@@ -38,7 +38,7 @@ export function HowItWorks() {
           <h2
             style={{
               fontFamily: FONT_DISPLAY,
-              fontWeight: 500,
+              fontWeight: 300,
               fontSize: "clamp(2.25rem, 4.6vw, 4rem)",
               lineHeight: 0.98,
               letterSpacing: "-0.04em",
@@ -91,7 +91,7 @@ export function HowItWorks() {
                 className="step-row-num"
                 style={{
                   fontFamily: FONT_DISPLAY,
-                  fontWeight: 400,
+                  fontWeight: 300,
                   fontSize: 84,
                   lineHeight: 1,
                   letterSpacing: "-0.05em",
@@ -108,7 +108,7 @@ export function HowItWorks() {
               <h3
                 style={{
                   fontFamily: FONT_DISPLAY,
-                  fontWeight: 500,
+                  fontWeight: 300,
                   fontSize: "clamp(1.5rem, 2.4vw, 2rem)",
                   letterSpacing: "-0.025em",
                   lineHeight: 1.05,
