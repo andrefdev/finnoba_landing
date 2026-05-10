@@ -146,7 +146,7 @@ export default function ComoFuncionaPage() {
       <CtaBlock
         title={c.cta}
         primary={c.cta}
-        primaryHref="/inversores"
+        primaryHref="/investors"
       />
     </>
   );

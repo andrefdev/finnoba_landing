@@ -57,7 +57,7 @@ function HamburgerIcon({ open }: { open: boolean }) {
   );
 }
 
-const RESERVE_HREF = "/inversores#reservar";
+const RESERVE_HREF = "/investors#reserve";
 
 export function Nav() {
   const { t, lang, setLang } = useLanding();
@@ -92,9 +92,9 @@ export function Nav() {
   const close = useCallback(() => setOpen(false), []);
 
   const links: { l: string; h: string }[] = [
-    { l: t.nav.how, h: "/como-funciona" },
-    { l: t.nav.investors, h: "/inversores" },
-    { l: t.nav.thesis, h: "/tesis" },
+    { l: t.nav.how, h: "/how-it-works" },
+    { l: t.nav.investors, h: "/investors" },
+    { l: t.nav.thesis, h: "/thesis" },
     { l: t.nav.faq, h: "/faq" },
   ];
 

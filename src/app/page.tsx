@@ -8,7 +8,7 @@ import { InlineCta } from "@/domains/common/InlineCta";
 import { FONT_DISPLAY, FONT_MONO, FONT_UI, LIGHT } from "@/domains/common/tokens";
 import { useLanding } from "@/lib/i18n/LandingProvider";
 
-const RESERVE_HREF = "/inversores#reservar";
+const RESERVE_HREF = "/investors#reserve";
 
 const FRAME_PAD = "0";
 const FRAME_BORDERS: React.CSSProperties = {
@@ -129,7 +129,7 @@ export default function Page() {
                 {home.hero.primary}
                 <ArrowRight size={14} />
               </Link>
-              <InlineCta href="/tesis">{home.hero.secondary}</InlineCta>
+              <InlineCta href="/thesis">{home.hero.secondary}</InlineCta>
             </div>
           </div>
         </div>
@@ -192,7 +192,7 @@ export default function Page() {
           </>
         }
         ctaLabel={home.problem.cta}
-        ctaHref="/tesis"
+        ctaHref="/thesis"
       />
 
       {/* BLOQUE 2: TRES PILARES */}
@@ -273,7 +273,7 @@ export default function Page() {
           </div>
 
           <div style={{ padding: "32px 0 100px" }}>
-            <InlineCta href="/como-funciona">{home.pillars.cta}</InlineCta>
+            <InlineCta href="/how-it-works">{home.pillars.cta}</InlineCta>
           </div>
         </div>
       </section>
@@ -285,7 +285,7 @@ export default function Page() {
         title={home.risk.title}
         body={<p style={paraStyle}>{home.risk.body}</p>}
         ctaLabel={home.risk.cta}
-        ctaHref="/riesgo"
+        ctaHref="/risk"
       />
 
       <CtaBlock

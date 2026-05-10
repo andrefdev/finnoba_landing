@@ -21,7 +21,7 @@ export function CtaBlock({
 }) {
   return (
     <section
-      id="reservar"
+      id="reserve"
       data-final-cta
       style={{
         position: "relative",

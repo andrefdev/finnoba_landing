@@ -6,7 +6,7 @@ const m = DICTIONARIES.es.team.meta;
 export const metadata: Metadata = {
   title: m.title,
   description: m.description,
-  alternates: { canonical: "/equipo" },
+  alternates: { canonical: "/team" },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

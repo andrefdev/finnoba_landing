@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { DICTIONARIES } from "@/lib/i18n/dictionaries";
 
-const m = DICTIONARIES.es.how.meta;
-
 export const metadata: Metadata = {
-  title: m.title,
-  description: m.description,
-  alternates: { canonical: "/como-funciona" },
+  title: DICTIONARIES.es.legal.privacyTitle,
+  description: DICTIONARIES.es.legal.placeholderBody,
+  alternates: { canonical: "/privacy" },
+  robots: { index: false, follow: true },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

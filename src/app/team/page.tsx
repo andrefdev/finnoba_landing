@@ -167,7 +167,7 @@ export default function EquipoPage() {
         </div>
       </Section>
 
-      <CtaBlock title={e.cta} primary={e.cta} primaryHref="/tesis" />
+      <CtaBlock title={e.cta} primary={e.cta} primaryHref="/thesis" />
     </>
   );
 }

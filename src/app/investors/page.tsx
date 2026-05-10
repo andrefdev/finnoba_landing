@@ -94,7 +94,7 @@ export default function InversoresPage() {
         </ol>
       </Section>
 
-      <CtaBlock title={i.cta} primary={i.cta} primaryHref="#reservar" />
+      <CtaBlock title={i.cta} primary={i.cta} primaryHref="#reserve" />
     </>
   );
 }

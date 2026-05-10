@@ -15,7 +15,7 @@ export const DICTIONARIES = {
       readMore: "Leer más",
       seeDetail: "Ver detalle",
       next: "Siguiente",
-      reserveDestination: "/#reservar",
+      reserveDestination: "/#reserve",
     },
     home: {
       meta: {
@@ -452,17 +452,17 @@ export const DICTIONARIES = {
         "Construyendo el próximo estándar de inversión productiva en LATAM.",
       productTitle: "Producto",
       product: [
-        { l: "Cómo funciona", h: "/como-funciona" },
-        { l: "Para inversores", h: "/inversores" },
-        { l: "Tesis", h: "/tesis" },
-        { l: "Control de riesgo", h: "/riesgo" },
+        { l: "Cómo funciona", h: "/how-it-works" },
+        { l: "Para inversores", h: "/investors" },
+        { l: "Tesis", h: "/thesis" },
+        { l: "Control de riesgo", h: "/risk" },
       ],
       resourcesTitle: "Recursos",
       resources: [
         { l: "FAQ", h: "/faq" },
-        { l: "Transparencia", h: "/transparencia" },
+        { l: "Transparencia", h: "/transparency" },
         { l: "Documentación", h: "https://www.notion.so", e: true },
-        { l: "Equipo", h: "/equipo" },
+        { l: "Equipo", h: "/team" },
       ],
       communityTitle: "Comunidad",
       community: [
@@ -473,8 +473,8 @@ export const DICTIONARIES = {
       ],
       legalTitle: "Legal",
       legalLinks: [
-        { l: "Términos", h: "/terminos" },
-        { l: "Privacidad", h: "/privacidad" },
+        { l: "Términos", h: "/terms" },
+        { l: "Privacidad", h: "/privacy" },
       ],
       legalBase:
         "© 2026 Finnoba. Esto no constituye una oferta pública de valores ni asesoría financiera. Toda inversión conlleva riesgos, incluyendo la posible pérdida del capital invertido.",
@@ -495,7 +495,7 @@ export const DICTIONARIES = {
       readMore: "Read more",
       seeDetail: "See detail",
       next: "Next",
-      reserveDestination: "/#reservar",
+      reserveDestination: "/#reserve",
     },
     home: {
       meta: {
@@ -932,17 +932,17 @@ export const DICTIONARIES = {
         "Building the next standard of productive investment in LATAM.",
       productTitle: "Product",
       product: [
-        { l: "How it works", h: "/como-funciona" },
-        { l: "For investors", h: "/inversores" },
-        { l: "Thesis", h: "/tesis" },
-        { l: "Risk control", h: "/riesgo" },
+        { l: "How it works", h: "/how-it-works" },
+        { l: "For investors", h: "/investors" },
+        { l: "Thesis", h: "/thesis" },
+        { l: "Risk control", h: "/risk" },
       ],
       resourcesTitle: "Resources",
       resources: [
         { l: "FAQ", h: "/faq" },
-        { l: "Transparency", h: "/transparencia" },
+        { l: "Transparency", h: "/transparency" },
         { l: "Documentation", h: "https://www.notion.so", e: true },
-        { l: "Team", h: "/equipo" },
+        { l: "Team", h: "/team" },
       ],
       communityTitle: "Community",
       community: [
@@ -953,8 +953,8 @@ export const DICTIONARIES = {
       ],
       legalTitle: "Legal",
       legalLinks: [
-        { l: "Terms", h: "/terminos" },
-        { l: "Privacy", h: "/privacidad" },
+        { l: "Terms", h: "/terms" },
+        { l: "Privacy", h: "/privacy" },
       ],
       legalBase:
         "© 2026 Finnoba. This does not constitute a public securities offering or financial advice. Every investment carries risk, including the potential loss of invested capital.",

@@ -6,7 +6,7 @@ import { Section, SectionEyebrow, SectionLead, SectionTitle } from "@/domains/co
 import { FONT_DISPLAY, FONT_MONO, FONT_UI, LIGHT } from "@/domains/common/tokens";
 import { useLanding } from "@/lib/i18n/LandingProvider";
 
-const RESERVE_HREF = "/inversores#reservar";
+const RESERVE_HREF = "/investors#reserve";
 
 export default function TesisPage() {
   const { t } = useLanding();

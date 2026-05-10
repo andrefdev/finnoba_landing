@@ -7,7 +7,7 @@ import { Section, SectionEyebrow, SectionTitle } from "@/domains/common/Section"
 import { FONT_DISPLAY, FONT_MONO, FONT_UI, LIGHT } from "@/domains/common/tokens";
 import { useLanding } from "@/lib/i18n/LandingProvider";
 
-const RESERVE_HREF = "/inversores#reservar";
+const RESERVE_HREF = "/investors#reserve";
 
 export default function FaqPage() {
   const { t } = useLanding();
