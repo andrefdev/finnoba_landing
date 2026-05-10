@@ -251,83 +251,148 @@ export function Nav() {
           left: 0,
           right: 0,
           zIndex: 100,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: "16px clamp(20px,4vw,80px)",
-          background: scrolled ? "rgba(255,255,255,0.82)" : "transparent",
-          backdropFilter: scrolled ? "saturate(180%) blur(20px)" : "none",
-          WebkitBackdropFilter: scrolled ? "saturate(180%) blur(20px)" : "none",
-          borderBottom: scrolled ? `1px solid ${LIGHT.line}` : "1px solid transparent",
-          transition: "all 240ms cubic-bezier(.22,1,.36,1)",
+          background: scrolled ? "rgba(255,255,255,0.86)" : "rgba(255,255,255,0.72)",
+          backdropFilter: "saturate(180%) blur(20px)",
+          WebkitBackdropFilter: "saturate(180%) blur(20px)",
+          borderBottom: `1px solid ${LIGHT.line}`,
+          transition: "background 240ms cubic-bezier(.22,1,.36,1)",
         }}
       >
-        <Link href="/" aria-label="Finnoba — Inicio" style={{ display: "inline-flex", alignItems: "center" }}>
-          <Wordmark height={20} />
-        </Link>
+        <div
+          className="frame"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr auto 1fr",
+            alignItems: "center",
+            padding: "14px clamp(20px,3.5vw,40px)",
+            borderLeft: `1px solid ${LIGHT.line}`,
+            borderRight: `1px solid ${LIGHT.line}`,
+          }}
+        >
+          {/* Left — links */}
+          <div className="nav-links" style={{ display: "flex", alignItems: "center", gap: 28, justifySelf: "start" }}>
+            {links.map((item) => (
+              <Link
+                key={item.h}
+                href={item.h}
+                style={{
+                  fontFamily: FONT_UI,
+                  fontSize: 14,
+                  color: LIGHT.ink2,
+                  textDecoration: "none",
+                  letterSpacing: "-0.005em",
+                }}
+              >
+                {item.l}
+              </Link>
+            ))}
+          </div>
 
-        <div className="nav-links" style={{ display: "flex", alignItems: "center", gap: 28 }}>
-          {links.map((item) => (
+          {/* Center — logo (mx-auto, bigger) */}
+          <Link
+            href="/"
+            aria-label="Finnoba — Inicio"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifySelf: "center",
+              padding: "0 24px",
+            }}
+          >
+            <Wordmark height={28} />
+          </Link>
+
+          {/* Right — CTA + lang toggle */}
+          <div
+            className="nav-right"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 14,
+              justifySelf: "end",
+            }}
+          >
+            <div
+              className="nav-lang"
+              style={{
+                display: "inline-flex",
+                gap: 2,
+                padding: 3,
+                border: `1px solid ${LIGHT.line}`,
+                borderRadius: 999,
+                background: "rgba(255,255,255,0.6)",
+              }}
+            >
+              {(["es", "en"] as Lang[]).map((l) => (
+                <button
+                  type="button"
+                  key={l}
+                  onClick={() => setLang(l)}
+                  style={{
+                    border: 0,
+                    background: lang === l ? LIGHT.ink : "transparent",
+                    color: lang === l ? "#fff" : LIGHT.ink3,
+                    padding: "5px 10px",
+                    borderRadius: 999,
+                    cursor: "pointer",
+                    fontFamily: FONT_MONO,
+                    fontSize: 10.5,
+                    letterSpacing: "0.06em",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  {l}
+                </button>
+              ))}
+            </div>
             <Link
-              key={item.h}
-              href={item.h}
+              href={RESERVE_HREF}
+              className="nav-cta"
               style={{
                 fontFamily: FONT_UI,
-                fontSize: 14,
-                color: LIGHT.ink2,
+                fontWeight: 400,
+                fontSize: 13.5,
+                padding: "10px 18px",
+                background: LIGHT.ink,
+                color: "#fff",
+                borderRadius: 999,
                 textDecoration: "none",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
                 letterSpacing: "-0.005em",
               }}
             >
-              {item.l}
+              {t.nav.reserve}
+              <ArrowRight size={12} />
             </Link>
-          ))}
-          <Link
-            href={RESERVE_HREF}
-            style={{
-              fontFamily: FONT_UI,
-              fontWeight: 400,
-              fontSize: 13.5,
-              padding: "10px 18px",
-              background: LIGHT.ink,
-              color: "#fff",
-              borderRadius: 999,
-              textDecoration: "none",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              letterSpacing: "-0.005em",
-            }}
-          >
-            {t.nav.reserve}
-            <ArrowRight size={12} />
-          </Link>
-        </div>
 
-        <button
-          type="button"
-          aria-label="Open menu"
-          aria-expanded={open}
-          onClick={toggleOpen}
-          className="nav-burger"
-          style={{
-            width: 44,
-            height: 44,
-            borderRadius: 999,
-            border: `1px solid ${LIGHT.line}`,
-            background: "rgba(255,255,255,0.7)",
-            backdropFilter: "blur(10px)",
-            WebkitBackdropFilter: "blur(10px)",
-            color: LIGHT.ink,
-            cursor: "pointer",
-            display: "none",
-            alignItems: "center",
-            justifyContent: "center",
-            padding: 0,
-          }}
-        >
-          <HamburgerIcon open={open} />
-        </button>
+            <button
+              type="button"
+              aria-label="Open menu"
+              aria-expanded={open}
+              onClick={toggleOpen}
+              className="nav-burger"
+              style={{
+                width: 44,
+                height: 44,
+                borderRadius: 999,
+                border: `1px solid ${LIGHT.line}`,
+                background: "rgba(255,255,255,0.7)",
+                backdropFilter: "blur(10px)",
+                WebkitBackdropFilter: "blur(10px)",
+                color: LIGHT.ink,
+                cursor: "pointer",
+                display: "none",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: 0,
+              }}
+            >
+              <HamburgerIcon open={open} />
+            </button>
+          </div>
+        </div>
       </nav>
 
       {mounted && createPortal(drawer, document.body)}

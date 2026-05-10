@@ -77,9 +77,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="es" className={`${geist.variable} ${geistMono.variable}`}>
       <body>
         <LandingProvider>
-          <div style={{ background: LIGHT.bg, minHeight: "100vh", color: LIGHT.ink }}>
-            <Nav />
-            <main className="page-fade">{children}</main>
+          <div style={{ background: LIGHT.bg, color: LIGHT.ink }}>
+            <div className="shell">
+              <Nav />
+              <main className="page-fade">{children}</main>
+            </div>
             <Footer />
           </div>
         </LandingProvider>
