@@ -23,11 +23,36 @@ function HamburgerIcon({ open }: { open: boolean }) {
   return (
     <span
       aria-hidden
-      style={{ position: "relative", width: 40, height: 40, display: "inline-block", pointerEvents: "none" }}
+      style={{
+        position: "relative",
+        width: 40,
+        height: 40,
+        display: "inline-block",
+        pointerEvents: "none",
+      }}
     >
-      <span style={{ ...lineStyle, top: open ? 19.25 : 14, transform: open ? "rotate(45deg)" : "none" }} />
-      <span style={{ ...lineStyle, top: 19.25, opacity: open ? 0 : 1, transform: open ? "scaleX(0)" : "scaleX(1)" }} />
-      <span style={{ ...lineStyle, top: open ? 19.25 : 24.5, transform: open ? "rotate(-45deg)" : "none" }} />
+      <span
+        style={{
+          ...lineStyle,
+          top: open ? 19.25 : 14,
+          transform: open ? "rotate(45deg)" : "none",
+        }}
+      />
+      <span
+        style={{
+          ...lineStyle,
+          top: 19.25,
+          opacity: open ? 0 : 1,
+          transform: open ? "scaleX(0)" : "scaleX(1)",
+        }}
+      />
+      <span
+        style={{
+          ...lineStyle,
+          top: open ? 19.25 : 24.5,
+          transform: open ? "rotate(-45deg)" : "none",
+        }}
+      />
     </span>
   );
 }
@@ -146,7 +171,15 @@ export function Nav() {
           </button>
         </div>
 
-        <nav style={{ flex: 1, padding: "24px 28px", display: "flex", flexDirection: "column", gap: 4 }}>
+        <nav
+          style={{
+            flex: 1,
+            padding: "24px 28px",
+            display: "flex",
+            flexDirection: "column",
+            gap: 4,
+          }}
+        >
           {links.map((item) => (
             <Link
               key={item.h}
@@ -251,7 +284,9 @@ export function Nav() {
           left: 0,
           right: 0,
           zIndex: 100,
-          background: scrolled ? "rgba(255,255,255,0.86)" : "rgba(255,255,255,0.72)",
+          background: scrolled
+            ? "rgba(255,255,255,0.86)"
+            : "rgba(255,255,255,0.72)",
           backdropFilter: "saturate(180%) blur(20px)",
           WebkitBackdropFilter: "saturate(180%) blur(20px)",
           borderBottom: `1px solid ${LIGHT.line}`,
@@ -275,7 +310,7 @@ export function Nav() {
             aria-label="Finnoba — Inicio"
             style={{ display: "inline-flex", alignItems: "center" }}
           >
-            <Wordmark height={24} />
+            <Wordmark height={32} />
           </Link>
 
           {/* Right — CTA + burger */}
