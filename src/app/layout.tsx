@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { LandingProvider } from "@/lib/i18n/LandingProvider";
+import { Nav } from "@/domains/nav/Nav";
+import { Footer } from "@/domains/footer/Footer";
+import { LIGHT } from "@/domains/common/tokens";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -17,22 +21,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://finnoba.com"),
+  metadataBase: new URL("https://finnoba.xyz"),
   title: {
-    default: "Finnoba — Plataforma de inversión en micropréstamos · LATAM",
-    template: "%s | Finnoba",
+    default: "Finnoba — Rendimiento real, respaldado por crédito productivo en LATAM",
+    template: "%s · Finnoba",
   },
   description:
-    "Plataforma de inversión en micropréstamos. Capital al alcance de emprendedores. Rendimiento real para inversores LATAM.",
+    "Marketplace de inversión en micropréstamos a emprendedores y profesionales independientes en LATAM. Diversificación automática, reportes mensuales, 10–12% anual neto objetivo.",
   keywords: [
     "Finnoba",
-    "micropréstamos",
-    "inversión",
+    "inversión productiva",
+    "crédito productivo",
     "LATAM",
-    "fintech",
-    "crédito",
-    "rendimiento",
-    "P2P",
+    "private credit",
+    "rendimiento real",
+    "micropréstamos",
   ],
   authors: [{ name: "Finnoba" }],
   creator: "Finnoba",
@@ -45,17 +48,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_LA",
-    url: "https://finnoba.com",
+    url: "https://finnoba.xyz",
     siteName: "Finnoba",
-    title: "Finnoba — Plataforma de inversión en micropréstamos · LATAM",
+    title: "Finnoba — Rendimiento real, respaldado por crédito productivo en LATAM",
     description:
-      "Invierte en micropréstamos a emprendedores LATAM. Diversificación automática, reportes mensuales, retornos objetivo por encima del 10% anual.",
+      "Marketplace de inversión en micropréstamos a emprendedores y profesionales independientes en LATAM.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Finnoba — Plataforma de inversión en micropréstamos · LATAM",
+    title: "Finnoba — Rendimiento real, respaldado por crédito productivo en LATAM",
     description:
-      "Invierte en micropréstamos a emprendedores LATAM. Diversificación automática, reportes mensuales.",
+      "Marketplace de inversión en micropréstamos a emprendedores y profesionales independientes en LATAM.",
   },
   robots: {
     index: true,
@@ -72,7 +75,15 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={`${geist.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <LandingProvider>
+          <div style={{ background: LIGHT.bg, minHeight: "100vh", color: LIGHT.ink }}>
+            <Nav />
+            <main className="page-fade">{children}</main>
+            <Footer />
+          </div>
+        </LandingProvider>
+      </body>
     </html>
   );
 }

@@ -5,327 +5,960 @@ export const DICTIONARIES = {
   es: {
     nav: {
       how: "Cómo funciona",
-      compare: "Por qué Finnoba",
-      backed: "Respaldo",
-      docs: "Recursos",
-      waitlist: "Reservar mi lugar",
+      investors: "Inversores",
+      thesis: "Tesis",
+      faq: "FAQ",
+      reserve: "Reservar mi lugar",
     },
-    hero: {
-      eyebrow: "Plataforma de inversión · Pre-launch · LATAM",
-      lender: {
-        title: "Tu capital,",
-        title2: "financiando proyectos reales.",
-        sub: "Invierte en micropréstamos a emprendedores y profesionales independientes en LATAM. Diversificación automática, reportes mensuales, retornos objetivo por encima del 10% anual.",
-        cta: "Quiero invertir",
+    common: {
+      reserve: "Reservar mi lugar",
+      readMore: "Leer más",
+      seeDetail: "Ver detalle",
+      next: "Siguiente",
+      reserveDestination: "/#reservar",
+    },
+    home: {
+      meta: {
+        title: "Finnoba — Rendimiento real, respaldado por crédito productivo en LATAM",
+        description:
+          "Marketplace de inversión en micropréstamos a emprendedores y profesionales independientes en LATAM. Diversificación automática, reportes mensuales, 10–12% anual neto objetivo.",
       },
-      borrower: {
-        title: "Capital para crecer,",
-        title2: "sin esperar al banco.",
-        sub: "Solicita un micropréstamo desde 300 hasta 5,000 USD. Aprobación en minutos, plazos flexibles, sin papeleo interminable. Pensado para emprendedores y freelancers.",
-        cta: "Solicitar préstamo",
+      hero: {
+        h1Pre: "Rendimiento real,",
+        h1Highlight: "respaldado por crédito productivo en LATAM.",
+        sub: "Marketplace de inversión en micropréstamos a emprendedores y profesionales independientes. Diversificación automática, reportes mensuales, 10–12% anual neto objetivo.",
+        primary: "Reservar mi lugar",
+        secondary: "Ver tesis del piloto",
+        tag: "Operando desde 2026 · v0.1 activa · Cupos limitados",
       },
-      ghost: "Conocer la propuesta",
-      kicker: ["Operaciones auditadas", "Reportes mensuales", "Foco LATAM"],
-      tabLender: "Soy inversor",
-      tabBorrower: "Necesito financiamiento",
-      waitlistOpen: "Waitlist abierta",
+      stats: {
+        apr: "10–12%",
+        aprLabel: "APR neto",
+        time: "<24h",
+        timeLabel: "Tiempo de fondeo",
+        capital: "[CIFRA REAL]",
+        capitalLabel: "Capital colocado v0.1",
+        disclaimer:
+          "Datos de la versión v0.1 actualmente activa. Los rendimientos pasados no garantizan resultados futuros.",
+      },
+      problem: {
+        eyebrow: "Por qué existimos",
+        title: "El capital productivo en LATAM está mal distribuido.",
+        p1:
+          "Millones de emprendedores y profesionales independientes en la región tienen ingresos reales pero quedan fuera del crédito formal porque no encajan en los modelos de scoring tradicional.",
+        p2:
+          "Al mismo tiempo, una generación de inversores con capital busca rendimientos por encima del depósito a plazo y los fondos mutuos, sin asumir el riesgo de la bolsa o la volatilidad de los activos digitales.",
+        cta: "Lee la tesis completa",
+      },
+      pillars: {
+        eyebrow: "Cómo lo hacemos",
+        title: "Diseñado para inversores serios.",
+        items: [
+          {
+            k: "01",
+            t: "Inversión desde $5,000",
+            b: "Tickets diseñados para inversores serios. Diversificación automática entre 15–25 préstamos.",
+          },
+          {
+            k: "02",
+            t: "Originación con criterio",
+            b: "Scoring propio combinado con reputación verificada. Evaluamos flujo real, no historial bancario formal.",
+          },
+          {
+            k: "03",
+            t: "Reportes mensuales auditables",
+            b: "Cada préstamo individual con su estado y pagos. Transparencia completa, no resumen maquillado.",
+          },
+        ],
+        cta: "Ver cómo funciona en detalle",
+      },
+      risk: {
+        eyebrow: "Cómo controlamos el riesgo",
+        title: "Rendimiento alto no significa riesgo ciego.",
+        body:
+          "Toda inversión productiva implica riesgo. Nuestro trabajo no es esconderlo, sino estructurarlo, medirlo y reportarlo. Default rate objetivo <5%, capital first-loss del equipo en cada pool, diversificación mínima de 15 préstamos por inversor.",
+        cta: "Ver el detalle del control de riesgo",
+      },
+      finalCta: {
+        tag: "Q3 2026 · LATAM · Cupos limitados",
+        title: "El crédito en LATAM se está reescribiendo.",
+        sub: "Reserva tu lugar en el siguiente ciclo. Te contactamos cuando se abra la asignación.",
+        primary: "Reservar mi lugar",
+        foot: "Sin spam. Solo te avisamos cuando arranque la siguiente asignación.",
+      },
+    },
+    how: {
+      meta: {
+        title: "Cómo funciona",
+        description:
+          "Cómo funciona Finnoba en detalle: tres pasos, pool diversificado, originación, cobranza y pagos mensuales al inversor.",
+      },
+      h1: "Tres pasos. Una sola plataforma.",
+      sub: "Conectamos capital con emprendedores que generan flujo real. Tú decides cuánto inviertes; el sistema diversifica y administra los pagos.",
+      stepsTitle: "Los tres pasos en detalle",
+      steps: [
+        {
+          k: "01",
+          t: "Reservas tu cupo",
+          b: "Aplicas al ciclo de inversión activo. Validamos perfil del inversor, firmamos términos y abrimos tu posición con el monto que decidas asignar. Onboarding completo en 24-48 horas.",
+        },
+        {
+          k: "02",
+          t: "El capital se diversifica automáticamente",
+          b: "Tu inversión se reparte entre los préstamos activos del pool según el algoritmo de diversificación. Cada préstamo pasa previamente por nuestro proceso de originación y scoring antes de ser fondeado. Tiempo objetivo de fondeo de cada préstamo: <24h.",
+        },
+        {
+          k: "03",
+          t: "Cobras mensualmente",
+          b: "Los emprendedores pagan en cuotas. Recibes tu parte proporcional cada mes con reporte detallado del estado de cada préstamo en tu portafolio.",
+        },
+      ],
+      flowTitle: "El flujo, de extremo a extremo",
+      flow: [
+        { t: "Inversor", b: "Aporta capital al ciclo activo." },
+        { t: "Pool diversificado", b: "Asignación automática entre 15–25 préstamos." },
+        { t: "Originación", b: "Scoring y verificación previa al fondeo." },
+        { t: "Borrowers", b: "Emprendedores y profesionales con flujo real." },
+        { t: "Cobranza", b: "Pagos mensuales y escalamiento estructurado." },
+        { t: "Pagos al inversor", b: "Distribución mensual proporcional." },
+      ],
+      tableTitle: "Frecuencia y plazos",
+      table: [
+        ["Plazo promedio de préstamo", "3-6 meses"],
+        ["Frecuencia de pagos al inversor", "Mensual"],
+        ["Tiempo de onboarding", "24-48h"],
+        ["Tiempo de fondeo de un préstamo", "<24h"],
+        ["Reporte mensual", "Día 5 del mes siguiente"],
+      ],
+      cta: "Ver términos para inversores",
+    },
+    investors: {
+      meta: {
+        title: "Para inversores",
+        description:
+          "Términos, tickets y onboarding del ciclo activo de Finnoba para inversores LATAM.",
+      },
+      h1: "Para inversores que buscan rendimiento productivo.",
+      sub: "Términos, tickets y proceso de onboarding del ciclo activo.",
+      termsTitle: "Términos del ciclo activo",
+      terms: [
+        ["Ticket mínimo", "$5,000 USD"],
+        ["Ticket máximo recomendado", "$250,000 USD por ciclo"],
+        ["Plazo de inversión", "3-6 meses (alineado a préstamos del portafolio)"],
+        ["Frecuencia de pagos", "Mensual"],
+        ["Liquidez anticipada", "Caso por caso"],
+        ["Comisión de plataforma", "[POR DEFINIR]"],
+        ["Diversificación mínima", "15 préstamos por inversor"],
+      ],
+      profileTitle: "Perfil del inversor que buscamos",
+      profileBody:
+        "El piloto privado está dirigido a inversores con capacidad de evaluar riesgo crediticio, horizonte de inversión alineado al plazo del producto y capital disponible para comprometer durante el ciclo completo.",
+      profileFor: {
+        title: "Para quién es esto",
+        items: [
+          "Profesionales con capital líquido buscando rendimiento superior al depósito a plazo",
+          "Inversores con experiencia en productos de renta fija o crédito alternativo",
+          "Family offices y patrimonios LATAM con asignación a private credit",
+          "Operadores de fondos buscando diversificación regional",
+        ],
+      },
+      profileNotFor: {
+        title: "Para quién NO es esto",
+        items: [
+          "Personas que necesiten liquidez completa antes del plazo",
+          "Inversores que busquen rendimientos garantizados",
+          "Capital que no pueda asumir riesgo de pérdida parcial",
+        ],
+      },
+      onboardingTitle: "Proceso de onboarding",
+      onboarding: [
+        "Reservas tu cupo en el formulario de aplicación",
+        "Te contactamos para una llamada de 20 minutos donde validamos perfil y resolvemos preguntas",
+        "Firmamos términos y enviamos instrucciones de transferencia",
+        "Tu capital se asigna al pool del ciclo activo",
+        "Recibes confirmación con tu portafolio diversificado y fecha del primer pago",
+      ],
+      cta: "Reservar mi lugar",
+    },
+    thesis: {
+      meta: {
+        title: "Tesis",
+        description:
+          "La tesis detrás de Finnoba: por qué el crédito productivo en LATAM es la oportunidad de inversión que más capital deja sobre la mesa.",
+      },
+      h1: "La tesis detrás de Finnoba.",
+      sub: "Por qué el crédito productivo en LATAM es la oportunidad de inversión que más capital deja sobre la mesa.",
+      problemTitle: "El problema en números",
+      problemIntro:
+        "El sistema financiero LATAM excluye al productor informal por diseño y obliga a buena parte de la economía real a operar con tasas usureras. La oportunidad es estructural.",
+      stats: [
+        { v: "[X]%", l: "Adultos LATAM sin acceso a crédito formal" },
+        { v: "[X]%", l: "Pymes que reportan capital de trabajo como su mayor restricción" },
+        { v: "$[X]B", l: "Demanda de crédito no atendida estimada en la región" },
+        { v: "[X]%", l: "Spread entre depósito a plazo y tasa real del crédito informal" },
+      ],
+      statsFootnote:
+        "Estadísticas a publicar con fuente verificable (BID, Banco Mundial, BCRP, Findexable).",
+      whyFailTitle: "Por qué los modelos tradicionales fallan",
+      whyFail: [
+        "Los modelos de scoring bancario excluyen al productor informal por diseño. El historial de tarjeta no existe; el flujo real, sí.",
+        "El microcrédito tradicional cobra tasas usureras (5–10% mensual) que el emprendedor sí paga pero ahogan su crecimiento y aumentan el riesgo sistémico.",
+        "Las plataformas globales no entienden el contexto LATAM y exigen colateral que el target no tiene. Importan supuestos que no aplican.",
+      ],
+      whyFinnobaTitle: "Por qué Finnoba puede",
+      whyFinnoba: [
+        "Originación basada en flujo real y reputación de comunidades validadas. Vemos lo que un banco no mira.",
+        "Tickets pequeños ($300–800) que reducen riesgo individual y permiten alta diversificación por inversor.",
+        "Operación lean con tecnología propia que mantiene los costos bajos y permite tasas justas para ambos lados de la mesa.",
+      ],
+      stateTitle: "El estado actual",
+      stateBody:
+        "Finnoba opera desde 2026 con su versión v0.1 activa. Las primeras operaciones están colocadas, los flujos están en cobranza y los reportes mensuales se entregan al inversor inicial. El siguiente ciclo abre capacidad ampliada para inversores externos.",
+      cta: "Reservar mi lugar en el próximo ciclo",
+    },
+    risk: {
+      meta: {
+        title: "Control de riesgo",
+        description:
+          "Cómo controlamos el riesgo en Finnoba: originación, diversificación, capital first-loss y cobranza estructurada.",
+      },
+      h1: "Cómo controlamos el riesgo.",
+      sub: "Rendimiento alto no significa riesgo ciego. Estos son los mecanismos estructurales que protegen el capital invertido.",
+      frameworkTitle: "Marco general",
+      frameworkBody:
+        "Toda inversión productiva implica riesgo. Nuestro trabajo no es esconderlo, sino estructurarlo, medirlo y reportarlo. Trabajamos en cuatro capas: originación, diversificación, capital first-loss y cobranza.",
+      layersTitle: "Las cuatro capas",
+      layers: [
+        {
+          k: "01",
+          t: "Originación",
+          b: "Cada préstamo pasa por evaluación de flujo de caja, propósito del crédito y referencias activas en comunidades productivas validadas. Rechazamos más solicitudes de las que aprobamos. Tasa de aprobación actual: [POR DEFINIR]%.",
+        },
+        {
+          k: "02",
+          t: "Diversificación",
+          b: "Ningún inversor está expuesto a un solo préstamo. La asignación mínima es 15 préstamos por inversor; el promedio del v0.1 es [X] préstamos. Esto convierte un default individual en una pérdida marginal del portafolio.",
+        },
+        {
+          k: "03",
+          t: "Capital first-loss",
+          b: "El equipo mantiene capital propio en cada pool que absorbe las primeras pérdidas antes de que afecten a los inversores. Porcentaje actual: 10% del pool.",
+        },
+        {
+          k: "04",
+          t: "Cobranza estructurada",
+          b: "Escalamiento progresivo de cobranza con reportes transparentes de mora. La estructura está diseñada para recuperar capital sin destruir la relación con el borrower productivo, lo cual reduce defaults futuros.",
+        },
+      ],
+      metricsTitle: "Métricas objetivo y reales",
+      metricsHead: ["Métrica", "Objetivo", "v0.1 actual"],
+      metrics: [
+        ["Default rate", "<5%", "[X]%"],
+        ["Tasa de aprobación", "15-25%", "[X]%"],
+        ["Diversificación promedio", "15+ préstamos", "[X]"],
+        ["Recovery rate post-mora", "60%+", "[X]%"],
+        ["Plazo promedio", "3-6 meses", "[X] meses"],
+      ],
+      metricsNote:
+        "Las métricas de v0.1 corresponden a un ciclo de operación inicial con muestra reducida. La consolidación estadística se alcanza con [X] préstamos colocados.",
+      uncontrolledTitle: "Lo que NO controlamos",
+      uncontrolledIntro:
+        "Hay riesgos que están fuera de nuestro control y queremos ser explícitos sobre ellos:",
+      uncontrolled: [
+        "Crisis macroeconómicas regionales que afecten capacidad de pago generalizada",
+        "Cambios regulatorios que modifiquen la operación",
+        "Eventos de fraude individuales no detectados por los procesos de originación",
+      ],
+      uncontrolledFoot:
+        "Mitigamos exposición operativa, no riesgo sistémico. Por eso ningún inversor debería asignar a Finnoba capital que no pueda permitirse perder en su totalidad.",
+      cta: "Ver el FAQ completo",
+    },
+    team: {
+      meta: {
+        title: "Equipo",
+        description:
+          "Quiénes están detrás de Finnoba. Founders, partners operativos y filosofía de construcción.",
+      },
+      h1: "Quiénes están detrás.",
+      sub: "Finnoba nace de la convicción de que el crédito productivo en LATAM necesita ser reconstruido por gente que ha vivido los dos lados de la mesa.",
+      foundersTitle: "Founders",
+      founders: [
+        {
+          name: "[POR DEFINIR]",
+          role: "Co-founder · CEO",
+          body: "Track record en originación crediticia y operaciones financieras LATAM.",
+        },
+        {
+          name: "[POR DEFINIR]",
+          role: "Co-founder · CTO",
+          body: "Track record en construcción de plataformas financieras a escala.",
+        },
+        {
+          name: "[POR DEFINIR]",
+          role: "Co-founder · Head of Risk",
+          body: "Track record en gestión de portafolios de crédito alternativo.",
+        },
+      ],
+      ecosystemTitle: "Ecosistema operativo",
+      ecosystemSub: "Partners operativos del ciclo actual.",
+      ecosystem: [
+        {
+          name: "Indrox",
+          body: "Equipo de desarrollo dedicado. Toda la tecnología de Finnoba se construye in-house, con ciclo de release semanal y control completo del stack.",
+        },
+        {
+          name: "ThePrimeWay",
+          body: "Red de validación de borrowers. Los emprendedores que acceden a Finnoba pasan por procesos de evaluación de reputación dentro de comunidades productivas verificadas.",
+        },
+        {
+          name: "HiddenLayer Podcast",
+          body: "Canal de distribución y comunidad. Acceso editorial al ecosistema fintech y de inversión LATAM.",
+        },
+        {
+          name: "La Punta del Iceberg",
+          body: "Red de operadores B2B en LATAM para originación curada del lado solicitante.",
+        },
+      ],
+      philosophyTitle: "Filosofía operativa",
+      philosophy: [
+        "Operamos lean por diseño. Tecnología propia, equipo pequeño, foco en producto y originación. No quemamos capital de inversionistas en marketing ni en oficinas.",
+        "Creemos que el crédito productivo en LATAM se gana con paciencia, no con escala. Preferimos crecer 20% mensual con default rate bajo control que 200% con un portafolio que se quiebra al primer ciclo malo.",
+        "Nuestra ambición es construir el estándar de inversión productiva regional. La velocidad correcta es la que permite hacerlo bien.",
+      ],
+      cta: "Conocer la tesis completa",
+    },
+    faq: {
+      meta: {
+        title: "Preguntas frecuentes",
+        description:
+          "Lo que todo inversor pregunta antes de entrar a Finnoba: inversión, operación y regulación.",
+      },
+      h1: "Preguntas frecuentes.",
+      sub: "Lo que todo inversor pregunta antes de entrar.",
+      groups: [
+        {
+          title: "Sobre la inversión",
+          items: [
+            {
+              q: "¿Cuál es el ticket mínimo y cómo recibo los rendimientos?",
+              a: "El ticket mínimo del ciclo activo es $5,000 USD. Los rendimientos se acreditan mensualmente, proporcionales a los pagos recibidos de los préstamos en tu portafolio.",
+            },
+            {
+              q: "¿Qué pasa si un emprendedor no paga su préstamo?",
+              a: "La diversificación entre 15+ préstamos absorbe defaults individuales. Adicionalmente, mantenemos capital first-loss del equipo que cubre las primeras pérdidas del pool antes de que afecten a los inversores. La tasa de default objetivo es <5%.",
+            },
+            {
+              q: "¿Puedo retirar mi capital antes del plazo?",
+              a: "El capital invertido está comprometido con los plazos de los préstamos individuales (3-6 meses promedio). Los pagos mensuales sí son líquidos y pueden retirarse o reinvertirse. Para liquidez total anticipada, evaluamos caso por caso.",
+            },
+            {
+              q: "¿Cómo se gravan los rendimientos?",
+              a: "Los rendimientos son ingresos sujetos a las regulaciones tributarias del país de residencia del inversor. Entregamos reportes anuales con la información necesaria para declaración. Recomendamos consultar con un asesor fiscal local.",
+            },
+            {
+              q: "¿Hay rendimiento garantizado?",
+              a: "No. Los rendimientos son objetivo, no garantizados. La estructura de diversificación y capital first-loss reduce significativamente el riesgo, pero ninguna inversión productiva está libre de pérdida potencial.",
+            },
+          ],
+        },
+        {
+          title: "Sobre la operación",
+          items: [
+            {
+              q: "¿Cómo eligen a los emprendedores que reciben crédito?",
+              a: "Combinamos un scoring propio con verificación de reputación en comunidades productivas validadas. Cada solicitante pasa por evaluación de flujo de caja, propósito del crédito y referencias activas. No replicamos los criterios bancarios tradicionales porque excluyen al perfil que queremos servir.",
+            },
+            {
+              q: "¿Cómo está custodiado el capital?",
+              a: "El capital de los inversores se mantiene en cuentas segregadas con custodia institucional. Los flujos de pago son auditados y los reportes se entregan a cada inversor con detalle préstamo por préstamo.",
+            },
+            {
+              q: "¿En qué países operan?",
+              a: "El ciclo actual cubre [POR DEFINIR: lista de países]. Estamos expandiendo cobertura a medida que validamos capacidad de originación y cobranza local.",
+            },
+            {
+              q: "¿En qué tecnología está construida la plataforma?",
+              a: "La infraestructura combina rieles tradicionales con tecnología blockchain para liquidación y trazabilidad. Esto nos permite reducir costos operativos y entregar reportes con auditoría granular. La complejidad técnica es nuestra; la experiencia del inversor es la de un producto financiero tradicional.",
+            },
+          ],
+        },
+        {
+          title: "Sobre la regulación",
+          items: [
+            {
+              q: "¿Hay regulación?",
+              a: "Operamos como Proveedor de Servicios de Activos Virtuales registrado ante la UIF Perú, con políticas KYC/AML alineadas a estándares SBS. La estructura completa de compliance se detalla en la documentación del ciclo, disponible bajo NDA.",
+            },
+            {
+              q: "¿Esto es una oferta pública de valores?",
+              a: "No. Finnoba opera como plataforma privada de inversión alternativa. La participación está sujeta a evaluación de perfil del inversor y firma de términos individuales. Esto no constituye oferta pública conforme la regulación local.",
+            },
+            {
+              q: "¿Necesito ser inversionista acreditado?",
+              a: "El ciclo actual está dirigido a inversores con capacidad de evaluar riesgo crediticio y comprometer capital durante el plazo del producto. Validamos perfil en la entrevista de onboarding.",
+            },
+          ],
+        },
+      ],
+      cta: "Reservar mi lugar",
+    },
+    transparency: {
+      meta: {
+        title: "Transparencia",
+        description:
+          "Métricas reales del v0.1 de Finnoba actualizadas mensualmente: portafolio, distribución, reportes y auditoría.",
+      },
+      h1: "Transparencia operativa.",
+      sub: "Métricas reales del v0.1 actualizadas mensualmente.",
+      portfolioTitle: "Métricas del portafolio",
+      portfolio: [
+        ["Capital colocado total", "$[X]"],
+        ["Préstamos activos", "[X]"],
+        ["Préstamos pagados completamente", "[X]"],
+        ["Default rate actual", "[X]%"],
+        ["APR neto promedio", "[X]%"],
+        ["Geografías cubiertas", "[LISTA]"],
+      ],
+      distributionTitle: "Distribución del portafolio",
+      distribution: [
+        ["Por país", "[POR DEFINIR]"],
+        ["Por sector productivo del borrower", "[POR DEFINIR]"],
+        ["Por tamaño de préstamo", "[POR DEFINIR]"],
+        ["Por plazo", "[POR DEFINIR]"],
+      ],
+      reportsTitle: "Reporte mensual",
+      reportsBody:
+        "Próximamente. Los reportes mensuales en PDF se publicarán a partir del cierre del primer trimestre de operación ampliada.",
+      auditTitle: "Auditoría",
+      auditBody:
+        "La operación es auditada por [POR DEFINIR]. Los reportes trimestrales están disponibles para inversores activos.",
+      cta: "Reservar mi lugar",
+    },
+    legal: {
+      termsTitle: "Términos y condiciones",
+      privacyTitle: "Política de privacidad",
+      placeholderTitle: "Documento legal en preparación",
+      placeholderBody:
+        "Este documento está siendo preparado por nuestro equipo legal. Contacta a hola@finnoba.xyz para recibir la versión vigente del contrato del ciclo activo.",
     },
     waitlist: {
       placeholder: "tu@correo.com",
       cta: "Reservar mi lugar",
-      foot: "Sin spam. Te avisamos cuando abramos el cupo del piloto privado.",
+      foot: "Sin spam. Solo te avisamos cuando arranque la siguiente asignación.",
       success: "Estás dentro. Te avisamos pronto.",
     },
-    stats: {
-      title: "Lo que estamos construyendo",
-      sub: "Métricas objetivo del piloto privado — Q3 2026.",
-      tvl: "Capital objetivo",
-      tvlSub: "invertido en micropréstamos",
-      vol: "Volumen mensual",
-      volSub: "préstamos originados / mes",
-      def: "Tasa de mora",
-      defSub: "meta < 5% en piloto",
-      time: "Tiempo de fondeo",
-      timeSub: "préstamo cubierto en < 24h",
-    },
-    how: {
-      eyebrow: "Cómo funciona",
-      title: "Tres pasos. Una sola plataforma.",
-      sub: "Conectamos a quienes tienen capital con emprendedores que necesitan crecer. Tú decides cuánto inviertes; nosotros nos encargamos del resto.",
-      step1Title: "El emprendedor aplica",
-      step1: "Sube su solicitud, monto y plazo. Nuestro modelo de scoring evalúa su perfil financiero y de reputación, y propone una tasa justa.",
-      step2Title: "Múltiples inversores fondean",
-      step2: "Tu inversión se reparte entre varios préstamos para diversificar el riesgo. El préstamo se activa cuando alcanza el monto solicitado — objetivo < 24h.",
-      step3Title: "Pagos y rendimientos automáticos",
-      step3: "El emprendedor paga en cuotas. Recibes tu parte proporcional cada mes en tu cuenta, con reportes claros del estado de cada préstamo.",
-    },
-    compare: {
-      eyebrow: "Por qué Finnoba",
-      title: "La diferencia, en una tabla.",
-      sub: "Los bancos exigen historial. Los fondos pre-armados son opacos. Las plataformas P2P tradicionales son lentas. Nosotros resolvemos las tres.",
-      cols: ["Finnoba", "Bancos / Fintechs", "Fondos tradicionales", "P2P clásico"],
-      rows: [
-        ["Inversión desde montos bajos", "on", "mid", "off", "on"],
-        ["Diversificación automática", "on", "off", "on", "off"],
-        ["Acceso a deudores no bancarizados", "on", "off", "off", "mid"],
-        ["Reportes mensuales claros", "on", "mid", "mid", "off"],
-        ["Onboarding en minutos", "on", "off", "off", "off"],
-        ["Operaciones auditadas", "on", "on", "on", "off"],
-        ["Foco LATAM", "on", "mid", "off", "mid"],
-      ],
-      legend: { on: "Sí", off: "No", mid: "Parcial" },
-    },
-    backed: {
-      eyebrow: "Respaldado por",
-      title: "Construido con un ecosistema, no en un garaje.",
-      sub: "Equipo de desarrollo propio. Comunidad B2B activa. Loop de adquisición validado.",
-      partners: [
-        { name: "Indrox", tag: "Equipo dev", body: "Software house propia. Cero outsourcing, ciclo de release semanal." },
-        { name: "ThePrimeWay", tag: "Loop de demanda", body: "Usuarios productivos validados que se convierten en solicitantes calificados." },
-        { name: "La Punta del Iceberg", tag: "Pilotos B2B", body: "Red de operadores en LATAM para distribución del lado solicitante." },
-        { name: "HiddenLayer Podcast", tag: "Distribución", body: "Acceso editorial al ecosistema fintech LATAM y comunidades de inversión." },
-        { name: "Network de inversores", tag: "Lado oferta", body: "Red de patrimonios LATAM buscando rendimientos productivos reales." },
-      ],
-    },
-    cta: {
-      title: "El crédito en LATAM se está reescribiendo.",
-      sub: "Reserva tu lugar en el piloto privado. Cupo limitado.",
-      foot: "Q3 2026 · LATAM · No es asesoría financiera.",
-    },
-    hero2: {
-      primary: "Quiero invertir",
-      secondary: "Conocer la propuesta",
-      tagline: "Construyendo el próximo estándar de inversión productiva en LATAM.",
-    },
-    trust: {
-      eyebrow: "Confiado por la red",
-      items: [
-        "Indrox · equipo dev",
-        "ThePrimeWay · loop de demanda",
-        "La Punta del Iceberg · pilotos B2B",
-        "HiddenLayer · distribución",
-        "Network privada · capital LATAM",
-        "Auditoría externa · Q3 2026",
-      ],
-    },
-    value: {
-      eyebrow: "Por qué existimos",
-      title: "Capital productivo, al alcance de quienes mueven la economía real.",
-      lead: "El sistema financiero LATAM dejó fuera a millones de emprendedores y a una generación de inversores que busca rendimiento real. Conectamos a ambos lados con transparencia, datos y reportes que sí podés leer.",
-      bullets: [
-        { k: "01", t: "Inversión desde montos bajos", b: "Empezás desde 200 USD y diversificás automáticamente entre 10–20 préstamos." },
-        { k: "02", t: "Originación con criterio", b: "Scoring propio + reputación verificada. Tasas justas, no usureras." },
-        { k: "03", t: "Reportes mensuales reales", b: "Sabés cuánto, dónde y cómo está rindiendo cada peso." },
-      ],
-    },
-    quote: {
-      text: "El crédito productivo no debería ser un privilegio. Estamos construyendo la infraestructura para que más gente acceda a capital, y para que más capital encuentre proyectos reales.",
-      author: "Equipo fundador",
-      role: "Finnoba · LATAM",
-    },
-    faq: {
-      eyebrow: "Preguntas frecuentes",
-      title: "Lo que la gente nos pregunta antes de entrar.",
-      items: [
-        { q: "¿Cuándo abre el piloto privado?", a: "El piloto privado abre en Q3 2026. La waitlist define el orden de acceso por país." },
-        { q: "¿Cuál es el monto mínimo de inversión?", a: "Empezás desde 200 USD. Tu inversión se diversifica automáticamente entre múltiples préstamos para mitigar riesgo." },
-        { q: "¿Cómo eligen a los solicitantes?", a: "Nuestro modelo de scoring evalúa flujo, historial y reputación. Solo se publican solicitudes que cumplen política de riesgo." },
-        { q: "¿Qué pasa si un préstamo entra en mora?", a: "Hay un proceso de cobranza estructurado, con un fondo de protección parcial durante el piloto. Toda inversión conlleva riesgos." },
-        { q: "¿Es asesoría financiera?", a: "No. Finnoba es una plataforma. Cada inversor decide su exposición. Recomendamos asesorarte antes de invertir." },
-      ],
-    },
     footer: {
-      tagline: "Plataforma de inversión en micropréstamos. Capital al alcance de emprendedores. Rendimiento real para inversores LATAM.",
-      product: "Producto",
-      productLinks: ["Cómo funciona", "Para inversores", "Para solicitantes", "Preguntas frecuentes"],
-      resources: "Recursos",
-      resourceLinks: ["Propuesta", "Documentación", "Auditoría", "Brand kit"],
-      community: "Comunidad",
-      communityLinks: ["LinkedIn", "X / Twitter", "Newsletter", "Contacto"],
-      legal: "© 2026 Finnoba. No es asesoría financiera. Toda inversión conlleva riesgos.",
+      tagline:
+        "Construyendo el próximo estándar de inversión productiva en LATAM.",
+      productTitle: "Producto",
+      product: [
+        { l: "Cómo funciona", h: "/como-funciona" },
+        { l: "Para inversores", h: "/inversores" },
+        { l: "Tesis", h: "/tesis" },
+        { l: "Control de riesgo", h: "/riesgo" },
+      ],
+      resourcesTitle: "Recursos",
+      resources: [
+        { l: "FAQ", h: "/faq" },
+        { l: "Transparencia", h: "/transparencia" },
+        { l: "Documentación", h: "https://www.notion.so", e: true },
+        { l: "Equipo", h: "/equipo" },
+      ],
+      communityTitle: "Comunidad",
+      community: [
+        { l: "LinkedIn", h: "https://www.linkedin.com", e: true },
+        { l: "X / Twitter", h: "https://x.com", e: true },
+        { l: "Newsletter", h: "https://substack.com", e: true },
+        { l: "Contacto", h: "mailto:hola@finnoba.xyz", e: true },
+      ],
+      legalTitle: "Legal",
+      legalLinks: [
+        { l: "Términos", h: "/terminos" },
+        { l: "Privacidad", h: "/privacidad" },
+      ],
+      legalBase:
+        "© 2026 Finnoba. Esto no constituye una oferta pública de valores ni asesoría financiera. Toda inversión conlleva riesgos, incluyendo la posible pérdida del capital invertido.",
       lang: "Idioma",
     },
-    card: {
-      lenderHeader: "Préstamo activo",
-      borrowerHeader: "Solicitud abierta",
-      lenderBig: "Retorno objetivo",
-      borrowerBig: "Monto solicitado",
-      lenderUnit: "% anual",
-      lenderSub: "pago mensual · diversificado",
-      borrowerSub: "plazo 12 meses · cuotas mensuales",
-      yourInvestment: "Tu inversión",
-      diversification: "Diversificación",
-      diversificationValue: "12 préstamos",
-      nextPayout: "Próximo pago",
-      nextPayoutValue: "15 de cada mes",
-      applicantScore: "Perfil del solicitante",
-      estimatedRate: "Tasa estimada",
-      monthlyPayment: "Cuota mensual",
-      lenderProgress: "Préstamo fondeado",
-      borrowerProgress: "Solicitud cubierta",
-    },
   },
+
   en: {
     nav: {
       how: "How it works",
-      compare: "Why Finnoba",
-      backed: "Backing",
-      docs: "Resources",
-      waitlist: "Reserve my spot",
+      investors: "Investors",
+      thesis: "Thesis",
+      faq: "FAQ",
+      reserve: "Reserve my spot",
     },
-    hero: {
-      eyebrow: "Investment platform · Pre-launch · LATAM",
-      lender: {
-        title: "Your capital,",
-        title2: "funding real businesses.",
-        sub: "Invest in micro-loans to entrepreneurs and independent professionals across LATAM. Automatic diversification, monthly reporting, target returns above 10% per year.",
-        cta: "I want to invest",
+    common: {
+      reserve: "Reserve my spot",
+      readMore: "Read more",
+      seeDetail: "See detail",
+      next: "Next",
+      reserveDestination: "/#reservar",
+    },
+    home: {
+      meta: {
+        title: "Finnoba — Real returns, backed by productive credit in LATAM",
+        description:
+          "Investment marketplace for micro-loans to entrepreneurs and independent professionals across LATAM. Automatic diversification, monthly reporting, 10–12% net annual target.",
       },
-      borrower: {
-        title: "Capital to grow,",
-        title2: "without waiting on a bank.",
-        sub: "Request a micro-loan from $300 up to $5,000. Minutes to approval, flexible terms, no endless paperwork. Built for entrepreneurs and freelancers.",
-        cta: "Request a loan",
+      hero: {
+        h1Pre: "Real returns,",
+        h1Highlight: "backed by productive credit in LATAM.",
+        sub: "Investment marketplace for micro-loans to entrepreneurs and independent professionals. Automatic diversification, monthly reporting, 10–12% net annual target.",
+        primary: "Reserve my spot",
+        secondary: "Read the pilot thesis",
+        tag: "Operating since 2026 · v0.1 active · Limited seats",
       },
-      ghost: "Read the proposal",
-      kicker: ["Audited operations", "Monthly reporting", "LATAM-first"],
-      tabLender: "I'm an investor",
-      tabBorrower: "I need funding",
-      waitlistOpen: "Waitlist open",
+      stats: {
+        apr: "10–12%",
+        aprLabel: "Net APR",
+        time: "<24h",
+        timeLabel: "Time to fund",
+        capital: "[REAL FIGURE]",
+        capitalLabel: "Capital deployed v0.1",
+        disclaimer:
+          "Data from the v0.1 currently active. Past returns do not guarantee future results.",
+      },
+      problem: {
+        eyebrow: "Why we exist",
+        title: "Productive capital in LATAM is poorly distributed.",
+        p1:
+          "Millions of entrepreneurs and independent professionals in the region have real income but are excluded from formal credit because they don't fit traditional scoring models.",
+        p2:
+          "At the same time, a generation of investors with capital is looking for returns above term deposits and mutual funds, without taking on stock market risk or digital asset volatility.",
+        cta: "Read the full thesis",
+      },
+      pillars: {
+        eyebrow: "How we do it",
+        title: "Designed for serious investors.",
+        items: [
+          {
+            k: "01",
+            t: "Investment from $5,000",
+            b: "Tickets designed for serious investors. Automatic diversification across 15–25 loans.",
+          },
+          {
+            k: "02",
+            t: "Origination with criteria",
+            b: "Proprietary scoring combined with verified reputation. We evaluate real cash flow, not formal banking history.",
+          },
+          {
+            k: "03",
+            t: "Auditable monthly reporting",
+            b: "Every individual loan with its status and payments. Full transparency, not a polished summary.",
+          },
+        ],
+        cta: "See how it works in detail",
+      },
+      risk: {
+        eyebrow: "How we control risk",
+        title: "High return doesn't mean blind risk.",
+        body:
+          "Every productive investment carries risk. Our job is not to hide it but to structure, measure and report it. Target default rate <5%, team first-loss capital in every pool, minimum diversification of 15 loans per investor.",
+        cta: "See the full risk control",
+      },
+      finalCta: {
+        tag: "Q3 2026 · LATAM · Limited seats",
+        title: "Credit in LATAM is being rewritten.",
+        sub: "Reserve your spot in the next cycle. We'll contact you when allocation opens.",
+        primary: "Reserve my spot",
+        foot: "No spam. We only ping you when the next allocation opens.",
+      },
+    },
+    how: {
+      meta: {
+        title: "How it works",
+        description:
+          "How Finnoba works in detail: three steps, diversified pool, origination, collections and monthly investor payouts.",
+      },
+      h1: "Three steps. One platform.",
+      sub: "We connect capital with entrepreneurs that generate real cash flow. You decide how much to invest; the system diversifies and manages payments.",
+      stepsTitle: "The three steps in detail",
+      steps: [
+        {
+          k: "01",
+          t: "You reserve your seat",
+          b: "You apply to the active investment cycle. We validate investor profile, sign terms and open your position with the amount you decide. Full onboarding in 24-48 hours.",
+        },
+        {
+          k: "02",
+          t: "Capital diversifies automatically",
+          b: "Your investment is split across active pool loans according to the diversification algorithm. Every loan goes through our origination and scoring process before being funded. Target loan funding time: <24h.",
+        },
+        {
+          k: "03",
+          t: "You collect monthly",
+          b: "Entrepreneurs pay in installments. You receive your pro-rata share each month with a detailed report on every loan in your portfolio.",
+        },
+      ],
+      flowTitle: "The flow, end to end",
+      flow: [
+        { t: "Investor", b: "Allocates capital to the active cycle." },
+        { t: "Diversified pool", b: "Automatic allocation across 15–25 loans." },
+        { t: "Origination", b: "Scoring and verification before funding." },
+        { t: "Borrowers", b: "Entrepreneurs and professionals with real cash flow." },
+        { t: "Collections", b: "Monthly payments and structured escalation." },
+        { t: "Investor payouts", b: "Pro-rata monthly distribution." },
+      ],
+      tableTitle: "Frequency and terms",
+      table: [
+        ["Average loan term", "3-6 months"],
+        ["Investor payment frequency", "Monthly"],
+        ["Onboarding time", "24-48h"],
+        ["Loan funding time", "<24h"],
+        ["Monthly report", "5th of the following month"],
+      ],
+      cta: "See investor terms",
+    },
+    investors: {
+      meta: {
+        title: "For investors",
+        description:
+          "Active cycle terms, tickets and onboarding for Finnoba LATAM investors.",
+      },
+      h1: "For investors looking for productive returns.",
+      sub: "Terms, tickets and onboarding process for the active cycle.",
+      termsTitle: "Active cycle terms",
+      terms: [
+        ["Minimum ticket", "$5,000 USD"],
+        ["Recommended max ticket", "$250,000 USD per cycle"],
+        ["Investment term", "3-6 months (aligned to portfolio loans)"],
+        ["Payment frequency", "Monthly"],
+        ["Early liquidity", "Case by case"],
+        ["Platform fee", "[TBD]"],
+        ["Minimum diversification", "15 loans per investor"],
+      ],
+      profileTitle: "Investor profile we look for",
+      profileBody:
+        "The private pilot is for investors with the ability to evaluate credit risk, an investment horizon aligned to the product term, and capital available to commit during the full cycle.",
+      profileFor: {
+        title: "Who this is for",
+        items: [
+          "Professionals with liquid capital seeking returns above term deposits",
+          "Investors with experience in fixed income or alternative credit products",
+          "LATAM family offices and private wealth with private credit allocation",
+          "Fund operators looking for regional diversification",
+        ],
+      },
+      profileNotFor: {
+        title: "Who this is NOT for",
+        items: [
+          "People who need full liquidity before the term",
+          "Investors looking for guaranteed returns",
+          "Capital that cannot bear risk of partial loss",
+        ],
+      },
+      onboardingTitle: "Onboarding process",
+      onboarding: [
+        "Reserve your seat in the application form",
+        "We contact you for a 20-minute call to validate profile and answer questions",
+        "We sign terms and send transfer instructions",
+        "Your capital is allocated to the active cycle pool",
+        "You get confirmation with your diversified portfolio and first payment date",
+      ],
+      cta: "Reserve my spot",
+    },
+    thesis: {
+      meta: {
+        title: "Thesis",
+        description:
+          "The thesis behind Finnoba: why productive credit in LATAM is the investment opportunity that leaves the most capital on the table.",
+      },
+      h1: "The thesis behind Finnoba.",
+      sub: "Why productive credit in LATAM is the investment opportunity that leaves the most capital on the table.",
+      problemTitle: "The problem in numbers",
+      problemIntro:
+        "LATAM's financial system excludes the informal producer by design and forces a large share of the real economy to operate at usurious rates. The opportunity is structural.",
+      stats: [
+        { v: "[X]%", l: "LATAM adults with no formal credit access" },
+        { v: "[X]%", l: "SMEs that report working capital as their largest constraint" },
+        { v: "$[X]B", l: "Estimated unmet credit demand in the region" },
+        { v: "[X]%", l: "Spread between term deposits and real informal credit rates" },
+      ],
+      statsFootnote:
+        "Statistics to be published with verifiable source (IDB, World Bank, BCRP, Findexable).",
+      whyFailTitle: "Why traditional models fail",
+      whyFail: [
+        "Bank scoring models exclude informal producers by design. The card history doesn't exist; the cash flow does.",
+        "Traditional microcredit charges usurious rates (5–10% monthly) that the entrepreneur does pay but that strangle growth and increase systemic risk.",
+        "Global platforms don't understand LATAM context and require collateral the target doesn't have. They import assumptions that don't apply.",
+      ],
+      whyFinnobaTitle: "Why Finnoba can",
+      whyFinnoba: [
+        "Origination based on real cash flow and reputation in validated communities. We see what a bank doesn't look at.",
+        "Small tickets ($300–800) that reduce individual risk and allow high diversification per investor.",
+        "Lean operation with proprietary technology that keeps costs low and enables fair rates on both sides of the table.",
+      ],
+      stateTitle: "Current state",
+      stateBody:
+        "Finnoba operates since 2026 with v0.1 active. The first operations are deployed, cash flows are in collection and monthly reports are delivered to the initial investor. The next cycle opens expanded capacity to external investors.",
+      cta: "Reserve my spot in the next cycle",
+    },
+    risk: {
+      meta: {
+        title: "Risk control",
+        description:
+          "How we control risk at Finnoba: origination, diversification, first-loss capital and structured collections.",
+      },
+      h1: "How we control risk.",
+      sub: "High returns don't mean blind risk. These are the structural mechanisms that protect invested capital.",
+      frameworkTitle: "General framework",
+      frameworkBody:
+        "Every productive investment carries risk. Our job is not to hide it but to structure, measure and report it. We work in four layers: origination, diversification, first-loss capital and collections.",
+      layersTitle: "The four layers",
+      layers: [
+        {
+          k: "01",
+          t: "Origination",
+          b: "Every loan goes through evaluation of cash flow, credit purpose and active references in validated productive communities. We reject more requests than we approve. Current approval rate: [TBD]%.",
+        },
+        {
+          k: "02",
+          t: "Diversification",
+          b: "No investor is exposed to a single loan. Minimum allocation is 15 loans per investor; v0.1 average is [X] loans. This turns an individual default into a marginal portfolio loss.",
+        },
+        {
+          k: "03",
+          t: "First-loss capital",
+          b: "The team keeps proprietary capital in every pool that absorbs first losses before they affect investors. Current percentage: 10% of pool.",
+        },
+        {
+          k: "04",
+          t: "Structured collections",
+          b: "Progressive collections escalation with transparent delinquency reporting. The structure is designed to recover capital without destroying the relationship with the productive borrower, which reduces future defaults.",
+        },
+      ],
+      metricsTitle: "Target and actual metrics",
+      metricsHead: ["Metric", "Target", "v0.1 actual"],
+      metrics: [
+        ["Default rate", "<5%", "[X]%"],
+        ["Approval rate", "15-25%", "[X]%"],
+        ["Avg diversification", "15+ loans", "[X]"],
+        ["Post-delinquency recovery", "60%+", "[X]%"],
+        ["Average term", "3-6 months", "[X] months"],
+      ],
+      metricsNote:
+        "v0.1 metrics correspond to an initial operating cycle with reduced sample size. Statistical consolidation is reached at [X] loans deployed.",
+      uncontrolledTitle: "What we do NOT control",
+      uncontrolledIntro:
+        "There are risks outside our control and we want to be explicit about them:",
+      uncontrolled: [
+        "Regional macroeconomic crises affecting widespread payment capacity",
+        "Regulatory changes that modify operations",
+        "Individual fraud events undetected by origination processes",
+      ],
+      uncontrolledFoot:
+        "We mitigate operational exposure, not systemic risk. That's why no investor should allocate capital to Finnoba that they cannot afford to lose entirely.",
+      cta: "See the full FAQ",
+    },
+    team: {
+      meta: {
+        title: "Team",
+        description:
+          "Who's behind Finnoba. Founders, operating partners and building philosophy.",
+      },
+      h1: "Who's behind it.",
+      sub: "Finnoba is born from the conviction that productive credit in LATAM needs to be rebuilt by people who have lived both sides of the table.",
+      foundersTitle: "Founders",
+      founders: [
+        {
+          name: "[TBD]",
+          role: "Co-founder · CEO",
+          body: "Track record in credit origination and LATAM financial operations.",
+        },
+        {
+          name: "[TBD]",
+          role: "Co-founder · CTO",
+          body: "Track record building financial platforms at scale.",
+        },
+        {
+          name: "[TBD]",
+          role: "Co-founder · Head of Risk",
+          body: "Track record managing alternative credit portfolios.",
+        },
+      ],
+      ecosystemTitle: "Operating ecosystem",
+      ecosystemSub: "Operating partners of the current cycle.",
+      ecosystem: [
+        {
+          name: "Indrox",
+          body: "Dedicated dev team. All Finnoba technology is built in-house with weekly release cycles and full stack control.",
+        },
+        {
+          name: "ThePrimeWay",
+          body: "Borrower validation network. Entrepreneurs accessing Finnoba go through reputation evaluation in verified productive communities.",
+        },
+        {
+          name: "HiddenLayer Podcast",
+          body: "Distribution and community channel. Editorial access to the LATAM fintech and investment ecosystem.",
+        },
+        {
+          name: "La Punta del Iceberg",
+          body: "B2B operator network in LATAM for curated origination on the borrower side.",
+        },
+      ],
+      philosophyTitle: "Operating philosophy",
+      philosophy: [
+        "We operate lean by design. Proprietary technology, small team, focus on product and origination. We don't burn investor capital on marketing or offices.",
+        "We believe productive credit in LATAM is earned with patience, not scale. We'd rather grow 20% monthly with default rate under control than 200% with a portfolio that breaks at the first bad cycle.",
+        "Our ambition is to build the regional standard of productive investment. The right speed is the one that allows it to be done well.",
+      ],
+      cta: "Read the full thesis",
+    },
+    faq: {
+      meta: {
+        title: "FAQ",
+        description:
+          "What every investor asks before joining Finnoba: investment, operations and regulation.",
+      },
+      h1: "Frequently asked questions.",
+      sub: "What every investor asks before joining.",
+      groups: [
+        {
+          title: "About the investment",
+          items: [
+            {
+              q: "What is the minimum ticket and how do I receive returns?",
+              a: "The minimum ticket of the active cycle is $5,000 USD. Returns are credited monthly, pro-rata to payments received from loans in your portfolio.",
+            },
+            {
+              q: "What happens if an entrepreneur doesn't pay their loan?",
+              a: "Diversification across 15+ loans absorbs individual defaults. Additionally, we keep team first-loss capital that covers initial pool losses before they affect investors. Target default rate is <5%.",
+            },
+            {
+              q: "Can I withdraw my capital before the term?",
+              a: "Invested capital is committed to individual loan terms (3-6 months average). Monthly payments are liquid and can be withdrawn or reinvested. For full early liquidity, we evaluate case by case.",
+            },
+            {
+              q: "How are returns taxed?",
+              a: "Returns are income subject to tax regulations of the investor's country of residence. We deliver annual reports with the necessary information for filing. We recommend consulting a local tax advisor.",
+            },
+            {
+              q: "Are returns guaranteed?",
+              a: "No. Returns are target, not guaranteed. The diversification structure and first-loss capital significantly reduce risk, but no productive investment is free of potential loss.",
+            },
+          ],
+        },
+        {
+          title: "About operations",
+          items: [
+            {
+              q: "How are entrepreneurs selected for credit?",
+              a: "We combine proprietary scoring with reputation verification in validated productive communities. Each applicant goes through cash flow evaluation, credit purpose and active references. We don't replicate traditional banking criteria because they exclude the profile we want to serve.",
+            },
+            {
+              q: "How is capital custodied?",
+              a: "Investor capital is held in segregated accounts with institutional custody. Payment flows are audited and reports are delivered to each investor with loan-by-loan detail.",
+            },
+            {
+              q: "Which countries do you operate in?",
+              a: "The current cycle covers [TBD: country list]. We're expanding coverage as we validate origination and local collection capacity.",
+            },
+            {
+              q: "What technology is the platform built on?",
+              a: "The infrastructure combines traditional rails with blockchain technology for settlement and traceability. This lets us reduce operating costs and deliver granular audit reporting. Technical complexity is ours; the investor experience is that of a traditional financial product.",
+            },
+          ],
+        },
+        {
+          title: "About regulation",
+          items: [
+            {
+              q: "Is there regulation?",
+              a: "We operate as a Virtual Asset Service Provider registered with UIF Peru, with KYC/AML policies aligned to SBS standards. The full compliance structure is detailed in cycle documentation, available under NDA.",
+            },
+            {
+              q: "Is this a public securities offering?",
+              a: "No. Finnoba operates as a private alternative investment platform. Participation is subject to investor profile evaluation and signing individual terms. This does not constitute a public offering under local regulation.",
+            },
+            {
+              q: "Do I need to be an accredited investor?",
+              a: "The current cycle is for investors with capacity to evaluate credit risk and commit capital during the product term. We validate profile in the onboarding interview.",
+            },
+          ],
+        },
+      ],
+      cta: "Reserve my spot",
+    },
+    transparency: {
+      meta: {
+        title: "Transparency",
+        description:
+          "Real v0.1 metrics from Finnoba updated monthly: portfolio, distribution, reports and audit.",
+      },
+      h1: "Operating transparency.",
+      sub: "Real v0.1 metrics updated monthly.",
+      portfolioTitle: "Portfolio metrics",
+      portfolio: [
+        ["Total capital deployed", "$[X]"],
+        ["Active loans", "[X]"],
+        ["Loans fully repaid", "[X]"],
+        ["Current default rate", "[X]%"],
+        ["Average net APR", "[X]%"],
+        ["Geographies covered", "[LIST]"],
+      ],
+      distributionTitle: "Portfolio distribution",
+      distribution: [
+        ["By country", "[TBD]"],
+        ["By borrower productive sector", "[TBD]"],
+        ["By loan size", "[TBD]"],
+        ["By term", "[TBD]"],
+      ],
+      reportsTitle: "Monthly report",
+      reportsBody:
+        "Coming soon. PDF monthly reports will be published from the close of the first expanded operating quarter.",
+      auditTitle: "Audit",
+      auditBody:
+        "Operations are audited by [TBD]. Quarterly reports are available to active investors.",
+      cta: "Reserve my spot",
+    },
+    legal: {
+      termsTitle: "Terms and conditions",
+      privacyTitle: "Privacy policy",
+      placeholderTitle: "Legal document in preparation",
+      placeholderBody:
+        "This document is being prepared by our legal team. Contact hola@finnoba.xyz to receive the current version of the active cycle agreement.",
     },
     waitlist: {
       placeholder: "you@email.com",
       cta: "Reserve my spot",
-      foot: "No spam. We'll let you know when private pilot seats open.",
+      foot: "No spam. We only ping you when the next allocation opens.",
       success: "You're in. We'll be in touch soon.",
     },
-    stats: {
-      title: "What we are building",
-      sub: "Target metrics for the private pilot — Q3 2026.",
-      tvl: "Target capital",
-      tvlSub: "invested in micro-loans",
-      vol: "Monthly volume",
-      volSub: "loans originated / month",
-      def: "Default rate",
-      defSub: "target < 5% in pilot",
-      time: "Time to fund",
-      timeSub: "loan covered in < 24h",
-    },
-    how: {
-      eyebrow: "How it works",
-      title: "Three steps. One platform.",
-      sub: "We connect people with capital to entrepreneurs who need to grow. You decide how much to invest; we handle the rest.",
-      step1Title: "The entrepreneur applies",
-      step1: "They submit their request, amount and term. Our scoring model evaluates their financial and reputation profile and proposes a fair rate.",
-      step2Title: "Multiple investors fund the loan",
-      step2: "Your investment is split across several loans to diversify risk. The loan activates when it reaches the requested amount — under 24h target.",
-      step3Title: "Automatic payments and returns",
-      step3: "The entrepreneur repays in installments. You receive your pro-rata share each month in your account, with clear reporting on every loan.",
-    },
-    compare: {
-      eyebrow: "Why Finnoba",
-      title: "The difference, in one table.",
-      sub: "Banks demand history. Pre-built funds are opaque. Traditional P2P platforms are slow. We solve all three.",
-      cols: ["Finnoba", "Banks / Fintechs", "Traditional funds", "Classic P2P"],
-      rows: [
-        ["Invest from low ticket sizes", "on", "mid", "off", "on"],
-        ["Automatic diversification", "on", "off", "on", "off"],
-        ["Access to underbanked borrowers", "on", "off", "off", "mid"],
-        ["Clear monthly reporting", "on", "mid", "mid", "off"],
-        ["Onboarding in minutes", "on", "off", "off", "off"],
-        ["Audited operations", "on", "on", "on", "off"],
-        ["LATAM-first", "on", "mid", "off", "mid"],
-      ],
-      legend: { on: "Yes", off: "No", mid: "Partial" },
-    },
-    backed: {
-      eyebrow: "Backed by",
-      title: "Built with an ecosystem, not in a garage.",
-      sub: "In-house dev team. Active B2B community. Validated acquisition loop.",
-      partners: [
-        { name: "Indrox", tag: "Dev team", body: "In-house software house. Zero outsourcing, weekly release cycle." },
-        { name: "ThePrimeWay", tag: "Demand loop", body: "Validated productive users that convert into qualified applicants." },
-        { name: "La Punta del Iceberg", tag: "B2B pilots", body: "LATAM operator network for applicant-side distribution." },
-        { name: "HiddenLayer Podcast", tag: "Distribution", body: "Editorial access to LATAM fintech ecosystem and investor communities." },
-        { name: "Investor network", tag: "Supply side", body: "LATAM private wealth network looking for real productive returns." },
-      ],
-    },
-    cta: {
-      title: "Credit in LATAM is being rewritten.",
-      sub: "Reserve your spot in the private pilot. Limited seats.",
-      foot: "Q3 2026 · LATAM · Not financial advice.",
-    },
-    hero2: {
-      primary: "I want to invest",
-      secondary: "Read the proposal",
-      tagline: "Building the next standard of productive investment in LATAM.",
-    },
-    trust: {
-      eyebrow: "Trusted by the network",
-      items: [
-        "Indrox · dev team",
-        "ThePrimeWay · demand loop",
-        "La Punta del Iceberg · B2B pilots",
-        "HiddenLayer · distribution",
-        "Private network · LATAM capital",
-        "External audit · Q3 2026",
-      ],
-    },
-    value: {
-      eyebrow: "Why we exist",
-      title: "Productive capital, within reach of those moving the real economy.",
-      lead: "LATAM's financial system left millions of entrepreneurs out, and a whole generation of investors looking for real returns. We connect both sides with transparency, data, and reports you can actually read.",
-      bullets: [
-        { k: "01", t: "Invest from low ticket sizes", b: "Start from $200 and diversify automatically across 10–20 loans." },
-        { k: "02", t: "Origination with criteria", b: "Proprietary scoring + verified reputation. Fair rates, not predatory." },
-        { k: "03", t: "Real monthly reporting", b: "You know how much, where, and how every dollar is performing." },
-      ],
-    },
-    quote: {
-      text: "Productive credit shouldn't be a privilege. We're building the infrastructure so more people access capital, and so more capital finds real projects.",
-      author: "Founding team",
-      role: "Finnoba · LATAM",
-    },
-    faq: {
-      eyebrow: "Frequently asked",
-      title: "What people ask us before joining.",
-      items: [
-        { q: "When does the private pilot open?", a: "The private pilot opens in Q3 2026. The waitlist sets access order per country." },
-        { q: "What's the minimum investment?", a: "You start from $200. Your investment is automatically diversified across multiple loans to mitigate risk." },
-        { q: "How are applicants selected?", a: "Our scoring model evaluates cash flow, history, and reputation. Only requests that meet our risk policy are published." },
-        { q: "What happens if a loan defaults?", a: "We run a structured collections process with a partial protection fund during the pilot. All investments carry risk." },
-        { q: "Is this financial advice?", a: "No. Finnoba is a platform. Each investor decides their exposure. Get independent advice before investing." },
-      ],
-    },
     footer: {
-      tagline: "Investment platform for micro-loans. Capital within reach for entrepreneurs. Real returns for LATAM investors.",
-      product: "Product",
-      productLinks: ["How it works", "For investors", "For applicants", "FAQ"],
-      resources: "Resources",
-      resourceLinks: ["Proposal", "Documentation", "Audit", "Brand kit"],
-      community: "Community",
-      communityLinks: ["LinkedIn", "X / Twitter", "Newsletter", "Contact"],
-      legal: "© 2026 Finnoba. Not financial advice. All investments carry risk.",
+      tagline:
+        "Building the next standard of productive investment in LATAM.",
+      productTitle: "Product",
+      product: [
+        { l: "How it works", h: "/como-funciona" },
+        { l: "For investors", h: "/inversores" },
+        { l: "Thesis", h: "/tesis" },
+        { l: "Risk control", h: "/riesgo" },
+      ],
+      resourcesTitle: "Resources",
+      resources: [
+        { l: "FAQ", h: "/faq" },
+        { l: "Transparency", h: "/transparencia" },
+        { l: "Documentation", h: "https://www.notion.so", e: true },
+        { l: "Team", h: "/equipo" },
+      ],
+      communityTitle: "Community",
+      community: [
+        { l: "LinkedIn", h: "https://www.linkedin.com", e: true },
+        { l: "X / Twitter", h: "https://x.com", e: true },
+        { l: "Newsletter", h: "https://substack.com", e: true },
+        { l: "Contact", h: "mailto:hola@finnoba.xyz", e: true },
+      ],
+      legalTitle: "Legal",
+      legalLinks: [
+        { l: "Terms", h: "/terminos" },
+        { l: "Privacy", h: "/privacidad" },
+      ],
+      legalBase:
+        "© 2026 Finnoba. This does not constitute a public securities offering or financial advice. Every investment carries risk, including the potential loss of invested capital.",
       lang: "Language",
-    },
-    card: {
-      lenderHeader: "Active loan",
-      borrowerHeader: "Open request",
-      lenderBig: "Target return",
-      borrowerBig: "Requested amount",
-      lenderUnit: "% per year",
-      lenderSub: "monthly payouts · diversified",
-      borrowerSub: "12-month term · monthly installments",
-      yourInvestment: "Your investment",
-      diversification: "Diversification",
-      diversificationValue: "12 loans",
-      nextPayout: "Next payout",
-      nextPayoutValue: "15th of each month",
-      applicantScore: "Applicant score",
-      estimatedRate: "Estimated rate",
-      monthlyPayment: "Monthly payment",
-      lenderProgress: "Loan funded",
-      borrowerProgress: "Request covered",
     },
   },
 } as const;

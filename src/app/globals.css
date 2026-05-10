@@ -117,6 +117,14 @@ strong, b { font-weight: 400; }
   .hero-right { padding: 56px 0 56px !important; }
   .section-header { grid-template-columns: 1fr !important; gap: 24px !important; }
   .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+  .home-stats { grid-template-columns: 1fr !important; }
+  .home-pillars { grid-template-columns: 1fr !important; }
+  .how-flow { grid-template-columns: 1fr !important; }
+  .investors-grid { grid-template-columns: 1fr !important; }
+  .thesis-stats { grid-template-columns: 1fr 1fr !important; }
+  .risk-layers { grid-template-columns: 1fr !important; }
+  .team-founders { grid-template-columns: 1fr !important; }
+  .team-eco { grid-template-columns: 1fr !important; }
   .cross-grid { grid-template-columns: 1fr !important; }
   .compare-grid { grid-template-columns: minmax(180px, 1.2fr) repeat(4, minmax(72px, 1fr)) !important; }
   .step-row { grid-template-columns: 1fr !important; gap: 16px !important; padding: 32px 24px !important; }
@@ -127,8 +135,10 @@ strong, b { font-weight: 400; }
 @media (max-width: 640px) {
   .hero-stats-card { grid-template-columns: 1fr !important; }
 }
-@media (max-width: 640px) {
+@media (max-width: 860px) {
   .nav-links { display: none !important; }
-  .nav-cta-text { display: none !important; }
+  .nav-burger { display: inline-flex !important; }
+}
+@media (max-width: 640px) {
   .footer-grid { grid-template-columns: 1fr !important; }
 }
