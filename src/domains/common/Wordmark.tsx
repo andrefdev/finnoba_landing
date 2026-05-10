@@ -3,7 +3,7 @@ import Image from "next/image";
 export function Wordmark({ height = 22 }: { height?: number }) {
   return (
     <Image
-      src="/assets/logo-finnoba-navy.png"
+      src="/assets/logo-finnoba-white.png"
       alt="Finnoba"
       width={height * 4}
       height={height}
