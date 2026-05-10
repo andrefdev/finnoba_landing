@@ -27,6 +27,8 @@ html { scroll-behavior: smooth; }
   background: var(--shell-line);
   pointer-events: none;
   z-index: 50;
+  /* Adapts to whatever sits under: visible on white, fades into dark sections. */
+  mix-blend-mode: multiply;
 }
 .shell::before { left: calc(50% - (var(--shell-max) / 2)); }
 .shell::after  { left: calc(50% + (var(--shell-max) / 2)); }
@@ -208,10 +210,8 @@ strong, b { font-weight: 400; }
 @media (max-width: 640px) {
   .hero-stats-card { grid-template-columns: 1fr !important; }
 }
-@media (max-width: 860px) {
-  .nav-links { display: none !important; }
-  .nav-cta, .nav-lang { display: none !important; }
-  .nav-burger { display: inline-flex !important; }
+@media (max-width: 540px) {
+  .nav-cta { display: none !important; }
 }
 @media (max-width: 640px) {
   .footer-grid { grid-template-columns: 1fr !important; }

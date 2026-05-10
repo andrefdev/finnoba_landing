@@ -5,7 +5,7 @@ import { useCallback, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { ArrowRight } from "@/domains/common/ArrowRight";
 import { Wordmark } from "@/domains/common/Wordmark";
-import { FONT_MONO, FONT_UI, GRADIENT, LIGHT } from "@/domains/common/tokens";
+import { FONT_MONO, FONT_UI, LIGHT } from "@/domains/common/tokens";
 import type { Lang } from "@/lib/i18n/dictionaries";
 import { useLanding } from "@/lib/i18n/LandingProvider";
 
@@ -261,90 +261,25 @@ export function Nav() {
         <div
           className="frame"
           style={{
-            display: "grid",
-            gridTemplateColumns: "1fr auto 1fr",
+            display: "flex",
             alignItems: "center",
+            justifyContent: "space-between",
             padding: "14px clamp(20px,3.5vw,40px)",
             borderLeft: `1px solid ${LIGHT.line}`,
             borderRight: `1px solid ${LIGHT.line}`,
           }}
         >
-          {/* Left — links */}
-          <div className="nav-links" style={{ display: "flex", alignItems: "center", gap: 28, justifySelf: "start" }}>
-            {links.map((item) => (
-              <Link
-                key={item.h}
-                href={item.h}
-                style={{
-                  fontFamily: FONT_UI,
-                  fontSize: 14,
-                  color: LIGHT.ink2,
-                  textDecoration: "none",
-                  letterSpacing: "-0.005em",
-                }}
-              >
-                {item.l}
-              </Link>
-            ))}
-          </div>
-
-          {/* Center — logo (mx-auto, bigger) */}
+          {/* Left — logo */}
           <Link
             href="/"
             aria-label="Finnoba — Inicio"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              justifySelf: "center",
-              padding: "0 24px",
-            }}
+            style={{ display: "inline-flex", alignItems: "center" }}
           >
-            <Wordmark height={28} />
+            <Wordmark height={24} />
           </Link>
 
-          {/* Right — CTA + lang toggle */}
-          <div
-            className="nav-right"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 14,
-              justifySelf: "end",
-            }}
-          >
-            <div
-              className="nav-lang"
-              style={{
-                display: "inline-flex",
-                gap: 2,
-                padding: 3,
-                border: `1px solid ${LIGHT.line}`,
-                borderRadius: 999,
-                background: "rgba(255,255,255,0.6)",
-              }}
-            >
-              {(["es", "en"] as Lang[]).map((l) => (
-                <button
-                  type="button"
-                  key={l}
-                  onClick={() => setLang(l)}
-                  style={{
-                    border: 0,
-                    background: lang === l ? LIGHT.ink : "transparent",
-                    color: lang === l ? "#fff" : LIGHT.ink3,
-                    padding: "5px 10px",
-                    borderRadius: 999,
-                    cursor: "pointer",
-                    fontFamily: FONT_MONO,
-                    fontSize: 10.5,
-                    letterSpacing: "0.06em",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  {l}
-                </button>
-              ))}
-            </div>
+          {/* Right — CTA + burger */}
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
             <Link
               href={RESERVE_HREF}
               className="nav-cta"
@@ -372,7 +307,6 @@ export function Nav() {
               aria-label="Open menu"
               aria-expanded={open}
               onClick={toggleOpen}
-              className="nav-burger"
               style={{
                 width: 44,
                 height: 44,
@@ -383,7 +317,7 @@ export function Nav() {
                 WebkitBackdropFilter: "blur(10px)",
                 color: LIGHT.ink,
                 cursor: "pointer",
-                display: "none",
+                display: "inline-flex",
                 alignItems: "center",
                 justifyContent: "center",
                 padding: 0,
