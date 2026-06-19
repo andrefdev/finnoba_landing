@@ -38,7 +38,7 @@ export function Footer() {
         }}
       >
         <div>
-          <Wordmark size={22} />
+          <Wordmark size={30} />
           <p style={{ marginTop: 14, fontSize: 13, lineHeight: 1.6, maxWidth: 300, color: COLOR.muted }}>{f.tagline}</p>
         </div>
 

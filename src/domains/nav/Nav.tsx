@@ -58,7 +58,7 @@ export function Nav() {
       }}
     >
       <Link href="/" style={{ display: "inline-flex", alignItems: "center" }}>
-        <Wordmark size={22} />
+        <Wordmark size={32} priority />
       </Link>
 
       {/* Desktop links */}
