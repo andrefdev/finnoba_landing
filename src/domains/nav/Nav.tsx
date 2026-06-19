@@ -1,11 +1,13 @@
 "use client";
 
-import Link from "next/link";
+import NextLink from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/domains/common/Button";
 import { Wordmark } from "@/domains/common/Wordmark";
 import { COLOR, EASE, FONT, RADIUS } from "@/domains/common/tokens";
+import { Link } from "@/lib/i18n/Link";
 import { useLanding } from "@/lib/i18n/LandingProvider";
 
 const LINKS = [
@@ -16,7 +18,8 @@ const LINKS = [
 ] as const;
 
 export function Nav() {
-  const { t, lang, setLang } = useLanding();
+  const { t, lang } = useLanding();
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -26,6 +29,9 @@ export function Nav() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const other = lang === "es" ? "en" : "es";
+  const langSwitchHref = pathname.replace(/^\/(es|en)(?=\/|$)/, `/${other}`) || `/${other}`;
 
   return (
     <nav
@@ -73,13 +79,11 @@ export function Nav() {
             {t.nav[l.key]}
           </Link>
         ))}
-        <button
-          onClick={() => setLang(lang === "es" ? "en" : "es")}
-          aria-label="Toggle language"
+        <NextLink
+          href={langSwitchHref}
+          aria-label={`Switch to ${other.toUpperCase()}`}
+          hrefLang={other}
           style={{
-            border: 0,
-            background: "transparent",
-            cursor: "pointer",
             fontFamily: FONT,
             fontWeight: 700,
             fontSize: 12,
@@ -90,8 +94,8 @@ export function Nav() {
             textTransform: "uppercase",
           }}
         >
-          {lang === "es" ? "EN" : "ES"}
-        </button>
+          {other.toUpperCase()}
+        </NextLink>
         <Link href="/#reserve">
           <Button variant="ink" size="sm">{t.nav.reserve}</Button>
         </Link>
@@ -154,22 +158,23 @@ export function Nav() {
             </Link>
           ))}
           <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
-            <button
-              onClick={() => setLang(lang === "es" ? "en" : "es")}
+            <NextLink
+              href={langSwitchHref}
+              hrefLang={other}
+              onClick={() => setOpen(false)}
               style={{
                 flex: 1,
                 border: "1px solid rgba(20,21,26,.12)",
-                background: "transparent",
                 borderRadius: RADIUS.pill,
                 padding: "10px",
                 fontFamily: FONT,
                 fontWeight: 700,
-                cursor: "pointer",
                 color: COLOR.ink,
+                textAlign: "center",
               }}
             >
-              {lang === "es" ? "EN" : "ES"}
-            </button>
+              {other.toUpperCase()}
+            </NextLink>
             <Link href="/#reserve" onClick={() => setOpen(false)} style={{ flex: 2 }}>
               <Button variant="ink" size="md" full>{t.nav.reserve}</Button>
             </Link>

@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/lib/i18n/Link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/domains/common/Button";
 import { Eyebrow } from "@/domains/common/Eyebrow";

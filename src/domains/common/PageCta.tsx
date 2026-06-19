@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/lib/i18n/Link";
 import { Button } from "./Button";
 import { COLOR, CONTAINER_MAX, CONTAINER_PAD, FONT } from "./tokens";
 

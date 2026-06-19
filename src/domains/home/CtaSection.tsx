@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/lib/i18n/Link";
 import { Button } from "@/domains/common/Button";
 import { COLOR, CONTAINER_PAD, FONT } from "@/domains/common/tokens";
 import { useLanding } from "@/lib/i18n/LandingProvider";

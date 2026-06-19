@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/lib/i18n/Link";
 import { Wordmark } from "@/domains/common/Wordmark";
 import { COLOR, CONTAINER_MAX, CONTAINER_PAD, FONT } from "@/domains/common/tokens";
 import { useLanding } from "@/lib/i18n/LandingProvider";
