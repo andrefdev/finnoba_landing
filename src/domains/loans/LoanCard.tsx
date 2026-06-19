@@ -1,5 +1,3 @@
-"use client";
-
 import { Card } from "../common/Card";
 import { ProgressBar } from "../common/ProgressBar";
 import { Sparkline } from "../common/Sparkline";
@@ -23,7 +21,6 @@ export function LoanCard({
   const c = CATEGORY[category];
   return (
     <Card
-      hoverable
       variant="flat"
       onClick={onClick}
       style={{ cursor: onClick ? "pointer" : "default", display: "flex", flexDirection: "column", gap: 14, overflow: "hidden" }}

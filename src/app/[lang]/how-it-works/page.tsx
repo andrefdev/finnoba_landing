@@ -26,7 +26,7 @@ export default function HowItWorksPage() {
     <>
       <PageHero title={c.h1} subtitle={c.sub} />
 
-      <Section background="#fff" topRound paddingY="64px">
+      <Section topRound>
         <Eyebrow style={{ marginBottom: 12 }}>01</Eyebrow>
         <h2 style={h2Style}>{c.stepsTitle}</h2>
         <div style={{ display: "grid", gap: 16, gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))" }}>
@@ -56,7 +56,7 @@ export default function HowItWorksPage() {
         </div>
       </Section>
 
-      <Section background="#fff" paddingY="32px">
+      <Section paddingY="32px">
         <Eyebrow style={{ marginBottom: 12 }}>02</Eyebrow>
         <h2 style={h2Style}>{c.flowTitle}</h2>
         <div
@@ -76,7 +76,7 @@ export default function HowItWorksPage() {
         </div>
       </Section>
 
-      <Section background="#fff" paddingY="64px">
+      <Section>
         <Eyebrow style={{ marginBottom: 12 }}>03</Eyebrow>
         <h2 style={h2Style}>{c.tableTitle}</h2>
         <div style={{ maxWidth: 720 }}>

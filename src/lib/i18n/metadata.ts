@@ -10,7 +10,7 @@ export function pageMetadata(opts: {
 }) {
   return async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
     const { lang } = await params;
-    const dict = (DICTIONARIES[lang as Lang] ?? DICTIONARIES.es) as Dictionary;
+    const dict = DICTIONARIES[lang as Lang] as Dictionary;
     const m = opts.section(dict);
     return {
       title: m.title,

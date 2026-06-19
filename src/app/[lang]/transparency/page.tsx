@@ -25,25 +25,25 @@ export default function TransparencyPage() {
     <>
       <PageHero title={tr.h1} subtitle={tr.sub} />
 
-      <Section background="#fff" topRound paddingY="56px">
+      <Section topRound paddingY="56px">
         <Eyebrow style={{ marginBottom: 12 }}>01</Eyebrow>
         <h2 style={h2Style}>{tr.portfolioTitle}</h2>
         <DataTable rows={tr.portfolio} />
       </Section>
 
-      <Section background="#fff" paddingY="32px">
+      <Section paddingY="32px">
         <Eyebrow style={{ marginBottom: 12 }}>02</Eyebrow>
         <h2 style={h2Style}>{tr.distributionTitle}</h2>
         <DataTable rows={tr.distribution} />
       </Section>
 
-      <Section background="#fff" paddingY="32px">
+      <Section paddingY="32px">
         <Eyebrow style={{ marginBottom: 12 }}>03</Eyebrow>
         <h2 style={h2Style}>{tr.reportsTitle}</h2>
         <p style={{ fontFamily: FONT, fontSize: 17, lineHeight: 1.65, color: COLOR.ink2, maxWidth: 760 }}>{tr.reportsBody}</p>
       </Section>
 
-      <Section background="#fff" paddingY="64px">
+      <Section>
         <Eyebrow style={{ marginBottom: 12 }}>04</Eyebrow>
         <h2 style={h2Style}>{tr.auditTitle}</h2>
         <p style={{ fontFamily: FONT, fontSize: 17, lineHeight: 1.65, color: COLOR.ink2, maxWidth: 760 }}>{tr.auditBody}</p>

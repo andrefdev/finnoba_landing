@@ -27,13 +27,13 @@ export default function RiskPage() {
     <>
       <PageHero title={r.h1} subtitle={r.sub} />
 
-      <Section background="#fff" topRound paddingY="64px">
+      <Section topRound>
         <Eyebrow style={{ marginBottom: 12 }}>01</Eyebrow>
         <h2 style={h2Style}>{r.frameworkTitle}</h2>
         <p style={{ fontFamily: FONT, fontSize: 17, lineHeight: 1.65, color: COLOR.ink2, maxWidth: 760 }}>{r.frameworkBody}</p>
       </Section>
 
-      <Section background="#fff" paddingY="32px">
+      <Section paddingY="32px">
         <Eyebrow style={{ marginBottom: 12 }}>02</Eyebrow>
         <h2 style={h2Style}>{r.layersTitle}</h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))", gap: 16 }}>
@@ -63,14 +63,14 @@ export default function RiskPage() {
         </div>
       </Section>
 
-      <Section background="#fff" paddingY="32px">
+      <Section paddingY="32px">
         <Eyebrow style={{ marginBottom: 12 }}>03</Eyebrow>
         <h2 style={h2Style}>{r.metricsTitle}</h2>
         <DataTable rows={r.metrics} header={r.metricsHead} />
         <p style={{ marginTop: 14, fontFamily: FONT, fontSize: 12.5, color: COLOR.faint }}>{r.metricsNote}</p>
       </Section>
 
-      <Section background="#fff" paddingY="64px">
+      <Section>
         <Eyebrow style={{ marginBottom: 12 }}>04</Eyebrow>
         <h2 style={h2Style}>{r.uncontrolledTitle}</h2>
         <p style={{ fontSize: 17, color: COLOR.ink2, maxWidth: 760, margin: "0 0 24px" }}>{r.uncontrolledIntro}</p>

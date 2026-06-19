@@ -1,44 +1,25 @@
-import type { CSSProperties, ReactNode } from "react";
+import type { ReactNode } from "react";
 import { CONTAINER_MAX, CONTAINER_PAD } from "./tokens";
 
 type Props = {
   children: ReactNode;
-  background?: string;
   topRound?: boolean;
-  bottomRound?: boolean;
-  paddingY?: string | number;
-  marginTop?: string | number;
-  style?: CSSProperties;
-  innerStyle?: CSSProperties;
-  id?: string;
+  paddingY?: string;
 };
 
-// Page-level section wrapper. The kit alternates between the aurora background
-// and white "card" sections with rounded top corners — `topRound` enables that.
-export function Section({
-  children,
-  background = "transparent",
-  topRound,
-  bottomRound,
-  paddingY = "64px",
-  marginTop,
-  style,
-  innerStyle,
-  id,
-}: Props) {
-  const padY = typeof paddingY === "number" ? `${paddingY}px` : paddingY;
+// White-card section used on every inner page (the aurora wrapper is in
+// the layout). `topRound` rounds the top corners — used once per page on
+// the first section that sits directly under the PageHero.
+export function Section({ children, topRound, paddingY = "64px" }: Props) {
   return (
     <section
-      id={id}
       style={{
-        background,
-        borderRadius: `${topRound ? "40px 40px" : "0 0"} ${bottomRound ? "40px 40px" : "0 0"}`,
-        padding: `${padY} ${CONTAINER_PAD}`,
-        marginTop,
-        ...style,
+        background: "#fff",
+        borderRadius: topRound ? "40px 40px 0 0" : 0,
+        padding: `${paddingY} ${CONTAINER_PAD}`,
       }}
     >
-      <div style={{ maxWidth: CONTAINER_MAX, margin: "0 auto", ...innerStyle }}>{children}</div>
+      <div style={{ maxWidth: CONTAINER_MAX, margin: "0 auto" }}>{children}</div>
     </section>
   );
 }

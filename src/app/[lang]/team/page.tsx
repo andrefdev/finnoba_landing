@@ -25,7 +25,7 @@ export default function TeamPage() {
     <>
       <PageHero title={tm.h1} subtitle={tm.sub} />
 
-      <Section background="#fff" topRound paddingY="64px">
+      <Section topRound>
         <Eyebrow style={{ marginBottom: 12 }}>01</Eyebrow>
         <h2 style={h2Style}>{tm.foundersTitle}</h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))", gap: 16 }}>
@@ -48,7 +48,7 @@ export default function TeamPage() {
         </div>
       </Section>
 
-      <Section background="#fff" paddingY="32px">
+      <Section paddingY="32px">
         <Eyebrow style={{ marginBottom: 12 }}>02</Eyebrow>
         <h2 style={h2Style}>{tm.ecosystemTitle}</h2>
         <p style={{ fontSize: 18, color: COLOR.ink2, maxWidth: 760, margin: "0 0 32px" }}>{tm.ecosystemSub}</p>
@@ -62,7 +62,7 @@ export default function TeamPage() {
         </div>
       </Section>
 
-      <Section background="#fff" paddingY="64px">
+      <Section>
         <Eyebrow style={{ marginBottom: 12 }}>03</Eyebrow>
         <h2 style={h2Style}>{tm.philosophyTitle}</h2>
         <div style={{ display: "grid", gap: 14, maxWidth: 820 }}>

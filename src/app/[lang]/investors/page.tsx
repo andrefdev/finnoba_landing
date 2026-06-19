@@ -27,7 +27,7 @@ export default function InvestorsPage() {
     <>
       <PageHero title={i.h1} subtitle={i.sub} />
 
-      <Section background="#fff" topRound paddingY="64px">
+      <Section topRound>
         <Eyebrow style={{ marginBottom: 12 }}>01</Eyebrow>
         <h2 style={h2Style}>{i.termsTitle}</h2>
         <div style={{ maxWidth: 880 }}>
@@ -35,7 +35,7 @@ export default function InvestorsPage() {
         </div>
       </Section>
 
-      <Section background="#fff" paddingY="32px">
+      <Section paddingY="32px">
         <Eyebrow style={{ marginBottom: 12 }}>02</Eyebrow>
         <h2 style={h2Style}>{i.profileTitle}</h2>
         <p style={{ fontSize: 18, color: COLOR.ink2, maxWidth: 760, margin: "0 0 32px" }}>{i.profileBody}</p>
@@ -52,7 +52,7 @@ export default function InvestorsPage() {
         </div>
       </Section>
 
-      <Section background="#fff" paddingY="64px">
+      <Section>
         <Eyebrow style={{ marginBottom: 12 }}>03</Eyebrow>
         <h2 style={h2Style}>{i.onboardingTitle}</h2>
         <div style={{ display: "flex", flexDirection: "column", gap: 16, maxWidth: 760 }}>

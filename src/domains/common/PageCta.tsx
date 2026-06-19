@@ -1,19 +1,18 @@
 "use client";
 
-import { Link } from "@/lib/i18n/Link";
 import { Button } from "./Button";
+import { Link } from "@/lib/i18n/Link";
 import { COLOR, CONTAINER_MAX, CONTAINER_PAD, FONT } from "./tokens";
 
 type Props = {
   title: string;
   primary: string;
   primaryHref: string;
-  sub?: string;
 };
 
 // Dark callout used at the bottom of every inner page. Mirrors the home
 // CtaSection but takes its copy as props so we can reuse it across routes.
-export function PageCta({ title, primary, primaryHref, sub }: Props) {
+export function PageCta({ title, primary, primaryHref }: Props) {
   return (
     <section style={{ padding: `48px ${CONTAINER_PAD} 64px`, background: "#fff" }}>
       <div style={{ maxWidth: CONTAINER_MAX, margin: "0 auto" }}>
@@ -36,12 +35,11 @@ export function PageCta({ title, primary, primaryHref, sub }: Props) {
                 fontWeight: 800,
                 fontSize: "clamp(1.75rem,3.4vw,2.75rem)",
                 letterSpacing: "-.03em",
-                margin: "0 0 14px",
+                margin: "0 0 22px",
               }}
             >
               {title}
             </h2>
-            {sub && <p style={{ fontSize: 17, color: "rgba(255,255,255,.7)", margin: "0 0 28px", maxWidth: 600, marginLeft: "auto", marginRight: "auto" }}>{sub}</p>}
             <Link href={primaryHref}><Button variant="on-dark" size="lg">{primary}</Button></Link>
           </div>
         </div>

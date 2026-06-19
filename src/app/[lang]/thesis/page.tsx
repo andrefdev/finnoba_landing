@@ -18,6 +18,8 @@ const h2Style = {
   maxWidth: 760,
 } as const;
 
+const paraStyle = { fontFamily: FONT, fontSize: 15.5, lineHeight: 1.65, color: COLOR.ink2 } as const;
+
 export default function ThesisPage() {
   const { t } = useLanding();
   const th = t.thesis;
@@ -25,7 +27,7 @@ export default function ThesisPage() {
     <>
       <PageHero title={th.h1} subtitle={th.sub} />
 
-      <Section background="#fff" topRound paddingY="64px">
+      <Section topRound>
         <Eyebrow style={{ marginBottom: 12 }}>01</Eyebrow>
         <h2 style={h2Style}>{th.problemTitle}</h2>
         <p style={{ fontSize: 18, color: COLOR.ink2, maxWidth: 760, margin: "0 0 36px" }}>{th.problemIntro}</p>
@@ -44,19 +46,27 @@ export default function ThesisPage() {
         <p style={{ marginTop: 18, fontFamily: FONT, fontSize: 12.5, color: COLOR.faint }}>{th.statsFootnote}</p>
       </Section>
 
-      <Section background="#fff" paddingY="32px">
+      <Section paddingY="32px">
         <Eyebrow style={{ marginBottom: 12 }}>02</Eyebrow>
         <h2 style={h2Style}>{th.whyFailTitle}</h2>
-        <ParagraphList items={th.whyFail} tone="rose" />
+        <div style={{ display: "grid", gap: 12 }}>
+          {th.whyFail.map((p, i) => (
+            <Card key={i} variant="rose" style={{ padding: 24 }}><p style={paraStyle}>{p}</p></Card>
+          ))}
+        </div>
       </Section>
 
-      <Section background="#fff" paddingY="32px">
+      <Section paddingY="32px">
         <Eyebrow style={{ marginBottom: 12 }}>03</Eyebrow>
         <h2 style={h2Style}>{th.whyFinnobaTitle}</h2>
-        <ParagraphList items={th.whyFinnoba} tone="mint" />
+        <div style={{ display: "grid", gap: 12 }}>
+          {th.whyFinnoba.map((p, i) => (
+            <Card key={i} variant="mint" style={{ padding: 24 }}><p style={paraStyle}>{p}</p></Card>
+          ))}
+        </div>
       </Section>
 
-      <Section background="#fff" paddingY="64px">
+      <Section>
         <Eyebrow style={{ marginBottom: 12 }}>04</Eyebrow>
         <h2 style={h2Style}>{th.stateTitle}</h2>
         <p style={{ fontFamily: FONT, fontSize: 17, lineHeight: 1.65, color: COLOR.ink2, maxWidth: 760 }}>{th.stateBody}</p>
@@ -64,17 +74,5 @@ export default function ThesisPage() {
 
       <PageCta title={th.cta} primary={th.cta} primaryHref="/investors" />
     </>
-  );
-}
-
-function ParagraphList({ items, tone }: { items: readonly string[]; tone: "rose" | "mint" }) {
-  return (
-    <div style={{ display: "grid", gap: 12 }}>
-      {items.map((p, i) => (
-        <Card key={i} variant={tone} style={{ padding: 24 }}>
-          <p style={{ fontFamily: FONT, fontSize: 15.5, lineHeight: 1.65, color: COLOR.ink2 }}>{p}</p>
-        </Card>
-      ))}
-    </div>
   );
 }

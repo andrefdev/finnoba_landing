@@ -12,7 +12,7 @@ export default function PrivacyPage() {
   return (
     <>
       <PageHero title={l.privacyTitle} subtitle={l.placeholderTitle} />
-      <Section background="#fff" topRound paddingY="64px">
+      <Section topRound>
         <Card variant="flat" style={{ padding: 32, maxWidth: 760 }}>
           <p style={{ fontFamily: FONT, fontSize: 16, lineHeight: 1.7, color: COLOR.ink2 }}>{l.placeholderBody}</p>
         </Card>

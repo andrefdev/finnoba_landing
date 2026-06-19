@@ -1,5 +1,4 @@
 export type Lang = "es" | "en";
-export type Side = "lender" | "borrower";
 
 export const DICTIONARIES = {
   es: {
@@ -9,13 +8,6 @@ export const DICTIONARIES = {
       thesis: "Tesis",
       faq: "FAQ",
       reserve: "Reservar mi lugar",
-    },
-    common: {
-      reserve: "Reservar mi lugar",
-      readMore: "Leer más",
-      seeDetail: "Ver detalle",
-      next: "Siguiente",
-      reserveDestination: "/#reserve",
     },
     home: {
       meta: {
@@ -469,12 +461,6 @@ export const DICTIONARIES = {
       placeholderBody:
         "Este documento está siendo preparado por nuestro equipo legal. Contacta a hola@finnoba.xyz para recibir la versión vigente del contrato del ciclo activo.",
     },
-    waitlist: {
-      placeholder: "tu@correo.com",
-      cta: "Reservar mi lugar",
-      foot: "Sin spam. Solo te avisamos cuando arranque la siguiente asignación.",
-      success: "Estás dentro. Te avisamos pronto.",
-    },
     footer: {
       tagline:
         "Construyendo el próximo estándar de inversión productiva en LATAM.",
@@ -517,13 +503,6 @@ export const DICTIONARIES = {
       thesis: "Thesis",
       faq: "FAQ",
       reserve: "Reserve my spot",
-    },
-    common: {
-      reserve: "Reserve my spot",
-      readMore: "Read more",
-      seeDetail: "See detail",
-      next: "Next",
-      reserveDestination: "/#reserve",
     },
     home: {
       meta: {
@@ -976,12 +955,6 @@ export const DICTIONARIES = {
       placeholderTitle: "Legal document in preparation",
       placeholderBody:
         "This document is being prepared by our legal team. Contact hola@finnoba.xyz to receive the current version of the active cycle agreement.",
-    },
-    waitlist: {
-      placeholder: "you@email.com",
-      cta: "Reserve my spot",
-      foot: "No spam. We only ping you when the next allocation opens.",
-      success: "You're in. We'll be in touch soon.",
     },
     footer: {
       tagline:

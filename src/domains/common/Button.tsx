@@ -3,7 +3,7 @@
 import { useState, type ButtonHTMLAttributes, type CSSProperties, type ReactNode } from "react";
 import { COLOR, EASE, FONT, RADIUS } from "./tokens";
 
-type Variant = "ink" | "violet" | "soft" | "ghost" | "on-dark" | "on-dark-ghost";
+type Variant = "ink" | "soft" | "on-dark";
 type Size = "sm" | "md" | "lg";
 
 type Props = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "type"> & {
@@ -23,20 +23,14 @@ const SIZES: Record<Size, CSSProperties> = {
 
 const VARIANTS: Record<Variant, CSSProperties> = {
   ink: { background: COLOR.ink, color: COLOR.white },
-  violet: { background: COLOR.violet, color: COLOR.white },
   soft: { background: COLOR.white, color: COLOR.ink, boxShadow: "inset 0 0 0 1px rgba(20,21,26,.12)" },
-  ghost: { background: "transparent", color: COLOR.ink },
   "on-dark": { background: COLOR.white, color: COLOR.ink },
-  "on-dark-ghost": { background: "rgba(255,255,255,.12)", color: COLOR.white, boxShadow: "inset 0 0 0 1px rgba(255,255,255,.2)" },
 };
 
 const HOVERS: Record<Variant, CSSProperties> = {
   ink: { background: "#2A2B33" },
-  violet: { boxShadow: "0 0 0 4px rgba(109,84,232,.22)" },
   soft: { background: "#FAFAFC" },
-  ghost: { background: "rgba(20,21,26,.05)" },
   "on-dark": { background: "#F0F0F3" },
-  "on-dark-ghost": { background: "rgba(255,255,255,.2)" },
 };
 
 export function Button({
