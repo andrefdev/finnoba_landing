@@ -1,141 +1,79 @@
 "use client";
 
-import { CtaBlock } from "@/domains/common/CtaBlock";
 import { PageHero } from "@/domains/common/PageHero";
-import { Section, SectionEyebrow, SectionLead, SectionTitle } from "@/domains/common/Section";
-import { FONT_DISPLAY, FONT_MONO, FONT_UI, LIGHT } from "@/domains/common/tokens";
+import { Section } from "@/domains/common/Section";
+import { Card } from "@/domains/common/Card";
+import { Eyebrow } from "@/domains/common/Eyebrow";
+import { PageCta } from "@/domains/common/PageCta";
+import { COLOR, FONT } from "@/domains/common/tokens";
 import { useLanding } from "@/lib/i18n/LandingProvider";
 
-const RESERVE_HREF = "/investors#reserve";
+const h2Style = {
+  fontFamily: FONT,
+  fontWeight: 800,
+  fontSize: "clamp(1.75rem,3vw,2.5rem)",
+  letterSpacing: "-.03em",
+  color: COLOR.ink,
+  margin: "0 0 24px",
+  maxWidth: 760,
+} as const;
 
-export default function TesisPage() {
+export default function ThesisPage() {
   const { t } = useLanding();
   const th = t.thesis;
-
   return (
     <>
-      <PageHero h1={th.h1} sub={th.sub} />
+      <PageHero title={th.h1} subtitle={th.sub} />
 
-      <Section>
-        <SectionEyebrow>01</SectionEyebrow>
-        <SectionTitle>{th.problemTitle}</SectionTitle>
-        <SectionLead>{th.problemIntro}</SectionLead>
+      <Section background="#fff" topRound paddingY="64px">
+        <Eyebrow style={{ marginBottom: 12 }}>01</Eyebrow>
+        <h2 style={h2Style}>{th.problemTitle}</h2>
+        <p style={{ fontSize: 18, color: COLOR.ink2, maxWidth: 760, margin: "0 0 36px" }}>{th.problemIntro}</p>
 
-        <div
-          className="thesis-stats"
-          style={{
-            marginTop: 56,
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gap: 0,
-            borderTop: `1px solid ${LIGHT.line}`,
-            borderBottom: `1px solid ${LIGHT.line}`,
-          }}
-        >
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))", gap: 16 }}>
           {th.stats.map((s, i) => (
-            <div
-              key={i}
-              style={{
-                padding: "32px 24px",
-                borderLeft: i > 0 ? `1px solid ${LIGHT.line}` : "none",
-              }}
-            >
-              <div
-                style={{
-                  fontFamily: FONT_DISPLAY,
-                  fontWeight: 300,
-                  fontSize: "clamp(2rem, 3.6vw, 3rem)",
-                  letterSpacing: "-0.04em",
-                  lineHeight: 1,
-                  marginBottom: 16,
-                  color: LIGHT.ink,
-                  fontVariantNumeric: "tabular-nums",
-                }}
-              >
+            <Card key={i} variant="flat" style={{ padding: 24 }}>
+              <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: 36, letterSpacing: "-.03em", color: COLOR.ink, fontVariantNumeric: "tabular-nums", marginBottom: 10 }}>
                 {s.v}
               </div>
-              <div
-                style={{
-                  fontFamily: FONT_UI,
-                  fontSize: 13.5,
-                  lineHeight: 1.5,
-                  color: LIGHT.ink3,
-                }}
-              >
-                {s.l}
-              </div>
-            </div>
+              <div style={{ fontFamily: FONT, fontSize: 13.5, lineHeight: 1.5, color: COLOR.muted }}>{s.l}</div>
+            </Card>
           ))}
         </div>
 
-        <p
-          style={{
-            marginTop: 16,
-            fontFamily: FONT_MONO,
-            fontSize: 11.5,
-            letterSpacing: "0.06em",
-            color: LIGHT.ink3,
-          }}
-        >
-          {th.statsFootnote}
-        </p>
+        <p style={{ marginTop: 18, fontFamily: FONT, fontSize: 12.5, color: COLOR.faint }}>{th.statsFootnote}</p>
       </Section>
 
-      <Section>
-        <SectionEyebrow>02</SectionEyebrow>
-        <SectionTitle>{th.whyFailTitle}</SectionTitle>
-        <ParagraphList items={th.whyFail} />
+      <Section background="#fff" paddingY="32px">
+        <Eyebrow style={{ marginBottom: 12 }}>02</Eyebrow>
+        <h2 style={h2Style}>{th.whyFailTitle}</h2>
+        <ParagraphList items={th.whyFail} tone="rose" />
       </Section>
 
-      <Section>
-        <SectionEyebrow>03</SectionEyebrow>
-        <SectionTitle>{th.whyFinnobaTitle}</SectionTitle>
-        <ParagraphList items={th.whyFinnoba} />
+      <Section background="#fff" paddingY="32px">
+        <Eyebrow style={{ marginBottom: 12 }}>03</Eyebrow>
+        <h2 style={h2Style}>{th.whyFinnobaTitle}</h2>
+        <ParagraphList items={th.whyFinnoba} tone="mint" />
       </Section>
 
-      <Section>
-        <SectionEyebrow>04</SectionEyebrow>
-        <SectionTitle>{th.stateTitle}</SectionTitle>
-        <p
-          style={{
-            marginTop: 28,
-            fontFamily: FONT_UI,
-            fontSize: 16.5,
-            lineHeight: 1.65,
-            color: LIGHT.ink2,
-            margin: "28px 0 0",
-            maxWidth: 760,
-          }}
-        >
-          {th.stateBody}
-        </p>
+      <Section background="#fff" paddingY="64px">
+        <Eyebrow style={{ marginBottom: 12 }}>04</Eyebrow>
+        <h2 style={h2Style}>{th.stateTitle}</h2>
+        <p style={{ fontFamily: FONT, fontSize: 17, lineHeight: 1.65, color: COLOR.ink2, maxWidth: 760 }}>{th.stateBody}</p>
       </Section>
 
-      <CtaBlock title={th.cta} primary={th.cta} primaryHref={RESERVE_HREF} />
+      <PageCta title={th.cta} primary={th.cta} primaryHref="/investors" />
     </>
   );
 }
 
-function ParagraphList({ items }: { items: readonly string[] }) {
+function ParagraphList({ items, tone }: { items: readonly string[]; tone: "rose" | "mint" }) {
   return (
-    <div style={{ marginTop: 40, display: "grid", gap: 0 }}>
+    <div style={{ display: "grid", gap: 12 }}>
       {items.map((p, i) => (
-        <p
-          key={i}
-          style={{
-            fontFamily: FONT_UI,
-            fontSize: 16.5,
-            lineHeight: 1.65,
-            color: LIGHT.ink2,
-            margin: 0,
-            padding: "24px 0",
-            borderTop: `1px solid ${LIGHT.line}`,
-            borderBottom: i === items.length - 1 ? `1px solid ${LIGHT.line}` : "none",
-            maxWidth: 820,
-          }}
-        >
-          {p}
-        </p>
+        <Card key={i} variant={tone} style={{ padding: 24 }}>
+          <p style={{ fontFamily: FONT, fontSize: 15.5, lineHeight: 1.65, color: COLOR.ink2 }}>{p}</p>
+        </Card>
       ))}
     </div>
   );

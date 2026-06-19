@@ -1,172 +1,88 @@
 "use client";
 
-import { CtaBlock } from "@/domains/common/CtaBlock";
-import { DataTable } from "@/domains/common/DataTable";
 import { PageHero } from "@/domains/common/PageHero";
-import { Section, SectionEyebrow, SectionLead, SectionTitle } from "@/domains/common/Section";
-import { FONT_DISPLAY, FONT_MONO, FONT_UI, LIGHT } from "@/domains/common/tokens";
+import { Section } from "@/domains/common/Section";
+import { Card } from "@/domains/common/Card";
+import { Eyebrow } from "@/domains/common/Eyebrow";
+import { DataTable } from "@/domains/common/DataTable";
+import { BulletList } from "@/domains/common/BulletList";
+import { PageCta } from "@/domains/common/PageCta";
+import { COLOR, FONT } from "@/domains/common/tokens";
 import { useLanding } from "@/lib/i18n/LandingProvider";
 
-export default function RiesgoPage() {
+const h2Style = {
+  fontFamily: FONT,
+  fontWeight: 800,
+  fontSize: "clamp(1.75rem,3vw,2.5rem)",
+  letterSpacing: "-.03em",
+  color: COLOR.ink,
+  margin: "0 0 24px",
+  maxWidth: 760,
+} as const;
+
+export default function RiskPage() {
   const { t } = useLanding();
   const r = t.risk;
-
   return (
     <>
-      <PageHero h1={r.h1} sub={r.sub} />
+      <PageHero title={r.h1} subtitle={r.sub} />
 
-      <Section>
-        <SectionEyebrow>01</SectionEyebrow>
-        <SectionTitle>{r.frameworkTitle}</SectionTitle>
-        <SectionLead>{r.frameworkBody}</SectionLead>
+      <Section background="#fff" topRound paddingY="64px">
+        <Eyebrow style={{ marginBottom: 12 }}>01</Eyebrow>
+        <h2 style={h2Style}>{r.frameworkTitle}</h2>
+        <p style={{ fontFamily: FONT, fontSize: 17, lineHeight: 1.65, color: COLOR.ink2, maxWidth: 760 }}>{r.frameworkBody}</p>
       </Section>
 
-      <Section>
-        <SectionEyebrow>02</SectionEyebrow>
-        <SectionTitle>{r.layersTitle}</SectionTitle>
-
-        <div
-          className="risk-layers"
-          style={{
-            marginTop: 56,
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 0,
-            borderTop: `1px solid ${LIGHT.line}`,
-            borderLeft: `1px solid ${LIGHT.line}`,
-          }}
-        >
-          {r.layers.map((layer) => (
-            <div
-              key={layer.k}
-              style={{
-                padding: "36px 32px",
-                borderRight: `1px solid ${LIGHT.line}`,
-                borderBottom: `1px solid ${LIGHT.line}`,
-              }}
-            >
+      <Section background="#fff" paddingY="32px">
+        <Eyebrow style={{ marginBottom: 12 }}>02</Eyebrow>
+        <h2 style={h2Style}>{r.layersTitle}</h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))", gap: 16 }}>
+          {r.layers.map((l, i) => (
+            <Card key={l.k} variant="lilac">
               <div
                 style={{
-                  fontFamily: FONT_MONO,
-                  fontSize: 12,
-                  letterSpacing: "0.10em",
-                  color: LIGHT.ink3,
-                  marginBottom: 20,
+                  width: 36,
+                  height: 36,
+                  borderRadius: 12,
+                  background: COLOR.violet,
+                  color: "#fff",
+                  fontFamily: FONT,
+                  fontWeight: 700,
+                  fontSize: 14,
+                  display: "grid",
+                  placeItems: "center",
+                  marginBottom: 16,
                 }}
               >
-                Capa {layer.k}
+                {i + 1}
               </div>
-              <h3
-                style={{
-                  fontFamily: FONT_DISPLAY,
-                  fontWeight: 300,
-                  fontSize: "clamp(1.5rem, 2.2vw, 1.875rem)",
-                  letterSpacing: "-0.025em",
-                  lineHeight: 1.15,
-                  margin: "0 0 16px",
-                  color: LIGHT.ink,
-                }}
-              >
-                {layer.t}
-              </h3>
-              <p
-                style={{
-                  fontFamily: FONT_UI,
-                  fontSize: 15.5,
-                  lineHeight: 1.6,
-                  color: LIGHT.ink2,
-                  margin: 0,
-                }}
-              >
-                {layer.b}
-              </p>
-            </div>
+              <h3 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 18, color: COLOR.ink, margin: "0 0 10px" }}>{l.t}</h3>
+              <p style={{ fontFamily: FONT, fontSize: 14, lineHeight: 1.6, color: COLOR.ink2 }}>{l.b}</p>
+            </Card>
           ))}
         </div>
       </Section>
 
-      <Section>
-        <SectionEyebrow>03</SectionEyebrow>
-        <SectionTitle>{r.metricsTitle}</SectionTitle>
-        <div style={{ marginTop: 48, maxWidth: 880 }}>
-          <DataTable rows={r.metrics} head={r.metricsHead} />
-        </div>
-        <p
-          style={{
-            marginTop: 18,
-            fontFamily: FONT_UI,
-            fontSize: 13,
-            color: LIGHT.ink3,
-            lineHeight: 1.55,
-            maxWidth: 720,
-          }}
-        >
-          {r.metricsNote}
-        </p>
+      <Section background="#fff" paddingY="32px">
+        <Eyebrow style={{ marginBottom: 12 }}>03</Eyebrow>
+        <h2 style={h2Style}>{r.metricsTitle}</h2>
+        <DataTable rows={r.metrics} header={r.metricsHead} />
+        <p style={{ marginTop: 14, fontFamily: FONT, fontSize: 12.5, color: COLOR.faint }}>{r.metricsNote}</p>
       </Section>
 
-      <Section>
-        <SectionEyebrow>04</SectionEyebrow>
-        <SectionTitle>{r.uncontrolledTitle}</SectionTitle>
-        <p
-          style={{
-            marginTop: 28,
-            fontFamily: FONT_UI,
-            fontSize: 16.5,
-            lineHeight: 1.65,
-            color: LIGHT.ink2,
-            maxWidth: 760,
-          }}
-        >
-          {r.uncontrolledIntro}
-        </p>
-        <ul
-          style={{
-            marginTop: 24,
-            listStyle: "none",
-            padding: 0,
-            display: "grid",
-            gap: 0,
-            maxWidth: 760,
-          }}
-        >
-          {r.uncontrolled.map((item, idx) => (
-            <li
-              key={idx}
-              style={{
-                padding: "20px 0",
-                borderTop: `1px solid ${LIGHT.line}`,
-                borderBottom: idx === r.uncontrolled.length - 1 ? `1px solid ${LIGHT.line}` : "none",
-                fontFamily: FONT_UI,
-                fontSize: 15.5,
-                lineHeight: 1.55,
-                color: LIGHT.ink,
-                display: "grid",
-                gridTemplateColumns: "16px 1fr",
-                gap: 16,
-              }}
-            >
-              <span aria-hidden style={{ width: 6, height: 6, borderRadius: "50%", background: LIGHT.warning, marginTop: 9 }} />
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-        <p
-          style={{
-            marginTop: 28,
-            fontFamily: FONT_UI,
-            fontSize: 16,
-            lineHeight: 1.6,
-            color: LIGHT.ink2,
-            maxWidth: 760,
-            fontStyle: "italic",
-          }}
-        >
+      <Section background="#fff" paddingY="64px">
+        <Eyebrow style={{ marginBottom: 12 }}>04</Eyebrow>
+        <h2 style={h2Style}>{r.uncontrolledTitle}</h2>
+        <p style={{ fontSize: 17, color: COLOR.ink2, maxWidth: 760, margin: "0 0 24px" }}>{r.uncontrolledIntro}</p>
+        <Card variant="rose">
+          <BulletList items={r.uncontrolled} bulletColor={COLOR.red} />
+        </Card>
+        <p style={{ marginTop: 18, fontFamily: FONT, fontSize: 14.5, lineHeight: 1.65, color: COLOR.ink2, maxWidth: 760 }}>
           {r.uncontrolledFoot}
         </p>
       </Section>
 
-      <CtaBlock title={r.cta} primary={r.cta} primaryHref="/faq" />
+      <PageCta title={r.cta} primary={r.cta} primaryHref="/faq" />
     </>
   );
 }

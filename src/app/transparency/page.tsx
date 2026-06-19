@@ -1,73 +1,55 @@
 "use client";
 
-import { CtaBlock } from "@/domains/common/CtaBlock";
-import { DataTable } from "@/domains/common/DataTable";
 import { PageHero } from "@/domains/common/PageHero";
-import { Section, SectionEyebrow, SectionTitle } from "@/domains/common/Section";
-import { FONT_UI, LIGHT } from "@/domains/common/tokens";
+import { Section } from "@/domains/common/Section";
+import { Eyebrow } from "@/domains/common/Eyebrow";
+import { DataTable } from "@/domains/common/DataTable";
+import { PageCta } from "@/domains/common/PageCta";
+import { COLOR, FONT } from "@/domains/common/tokens";
 import { useLanding } from "@/lib/i18n/LandingProvider";
 
-const RESERVE_HREF = "/investors#reserve";
+const h2Style = {
+  fontFamily: FONT,
+  fontWeight: 800,
+  fontSize: "clamp(1.75rem,3vw,2.5rem)",
+  letterSpacing: "-.03em",
+  color: COLOR.ink,
+  margin: "0 0 24px",
+  maxWidth: 760,
+} as const;
 
-export default function TransparenciaPage() {
+export default function TransparencyPage() {
   const { t } = useLanding();
   const tr = t.transparency;
-
   return (
     <>
-      <PageHero h1={tr.h1} sub={tr.sub} />
+      <PageHero title={tr.h1} subtitle={tr.sub} />
 
-      <Section>
-        <SectionEyebrow>01</SectionEyebrow>
-        <SectionTitle>{tr.portfolioTitle}</SectionTitle>
-        <div style={{ marginTop: 48, maxWidth: 760 }}>
-          <DataTable rows={tr.portfolio} />
-        </div>
+      <Section background="#fff" topRound paddingY="56px">
+        <Eyebrow style={{ marginBottom: 12 }}>01</Eyebrow>
+        <h2 style={h2Style}>{tr.portfolioTitle}</h2>
+        <DataTable rows={tr.portfolio} />
       </Section>
 
-      <Section>
-        <SectionEyebrow>02</SectionEyebrow>
-        <SectionTitle>{tr.distributionTitle}</SectionTitle>
-        <div style={{ marginTop: 48, maxWidth: 760 }}>
-          <DataTable rows={tr.distribution} />
-        </div>
+      <Section background="#fff" paddingY="32px">
+        <Eyebrow style={{ marginBottom: 12 }}>02</Eyebrow>
+        <h2 style={h2Style}>{tr.distributionTitle}</h2>
+        <DataTable rows={tr.distribution} />
       </Section>
 
-      <Section>
-        <SectionEyebrow>03</SectionEyebrow>
-        <SectionTitle>{tr.reportsTitle}</SectionTitle>
-        <p
-          style={{
-            marginTop: 28,
-            fontFamily: FONT_UI,
-            fontSize: 16,
-            lineHeight: 1.65,
-            color: LIGHT.ink2,
-            maxWidth: 720,
-          }}
-        >
-          {tr.reportsBody}
-        </p>
+      <Section background="#fff" paddingY="32px">
+        <Eyebrow style={{ marginBottom: 12 }}>03</Eyebrow>
+        <h2 style={h2Style}>{tr.reportsTitle}</h2>
+        <p style={{ fontFamily: FONT, fontSize: 17, lineHeight: 1.65, color: COLOR.ink2, maxWidth: 760 }}>{tr.reportsBody}</p>
       </Section>
 
-      <Section>
-        <SectionEyebrow>04</SectionEyebrow>
-        <SectionTitle>{tr.auditTitle}</SectionTitle>
-        <p
-          style={{
-            marginTop: 28,
-            fontFamily: FONT_UI,
-            fontSize: 16,
-            lineHeight: 1.65,
-            color: LIGHT.ink2,
-            maxWidth: 720,
-          }}
-        >
-          {tr.auditBody}
-        </p>
+      <Section background="#fff" paddingY="64px">
+        <Eyebrow style={{ marginBottom: 12 }}>04</Eyebrow>
+        <h2 style={h2Style}>{tr.auditTitle}</h2>
+        <p style={{ fontFamily: FONT, fontSize: 17, lineHeight: 1.65, color: COLOR.ink2, maxWidth: 760 }}>{tr.auditBody}</p>
       </Section>
 
-      <CtaBlock title={tr.cta} primary={tr.cta} primaryHref={RESERVE_HREF} />
+      <PageCta title={tr.cta} primary={tr.cta} primaryHref="/#reserve" />
     </>
   );
 }

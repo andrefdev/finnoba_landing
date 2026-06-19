@@ -1,163 +1,87 @@
 "use client";
 
-import { CtaBlock } from "@/domains/common/CtaBlock";
-import { DataTable } from "@/domains/common/DataTable";
 import { PageHero } from "@/domains/common/PageHero";
-import { Section, SectionEyebrow, SectionLead, SectionTitle } from "@/domains/common/Section";
-import { FONT_DISPLAY, FONT_MONO, FONT_UI, LIGHT } from "@/domains/common/tokens";
+import { Section } from "@/domains/common/Section";
+import { Card } from "@/domains/common/Card";
+import { Eyebrow } from "@/domains/common/Eyebrow";
+import { DataTable } from "@/domains/common/DataTable";
+import { BulletList } from "@/domains/common/BulletList";
+import { PageCta } from "@/domains/common/PageCta";
+import { COLOR, FONT } from "@/domains/common/tokens";
 import { useLanding } from "@/lib/i18n/LandingProvider";
 
-export default function InversoresPage() {
+const h2Style = {
+  fontFamily: FONT,
+  fontWeight: 800,
+  fontSize: "clamp(1.75rem,3vw,2.5rem)",
+  letterSpacing: "-.03em",
+  color: COLOR.ink,
+  margin: "0 0 24px",
+  maxWidth: 760,
+} as const;
+
+export default function InvestorsPage() {
   const { t } = useLanding();
   const i = t.investors;
-
   return (
     <>
-      <PageHero h1={i.h1} sub={i.sub} />
+      <PageHero title={i.h1} subtitle={i.sub} />
 
-      <Section>
-        <SectionEyebrow>01</SectionEyebrow>
-        <SectionTitle>{i.termsTitle}</SectionTitle>
-        <div style={{ marginTop: 48, maxWidth: 880 }}>
+      <Section background="#fff" topRound paddingY="64px">
+        <Eyebrow style={{ marginBottom: 12 }}>01</Eyebrow>
+        <h2 style={h2Style}>{i.termsTitle}</h2>
+        <div style={{ maxWidth: 880 }}>
           <DataTable rows={i.terms} />
         </div>
       </Section>
 
-      <Section>
-        <SectionEyebrow>02</SectionEyebrow>
-        <SectionTitle>{i.profileTitle}</SectionTitle>
-        <SectionLead>{i.profileBody}</SectionLead>
+      <Section background="#fff" paddingY="32px">
+        <Eyebrow style={{ marginBottom: 12 }}>02</Eyebrow>
+        <h2 style={h2Style}>{i.profileTitle}</h2>
+        <p style={{ fontSize: 18, color: COLOR.ink2, maxWidth: 760, margin: "0 0 32px" }}>{i.profileBody}</p>
 
-        <div
-          className="investors-grid"
-          style={{
-            marginTop: 56,
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 32,
-          }}
-        >
-          <ProfileList title={i.profileFor.title} items={i.profileFor.items} />
-          <ProfileList title={i.profileNotFor.title} items={i.profileNotFor.items} muted />
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))", gap: 16 }}>
+          <Card variant="mint">
+            <h3 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 18, color: COLOR.ink, margin: "0 0 18px" }}>{i.profileFor.title}</h3>
+            <BulletList items={i.profileFor.items} bulletColor={COLOR.green} />
+          </Card>
+          <Card variant="rose">
+            <h3 style={{ fontFamily: FONT, fontWeight: 700, fontSize: 18, color: COLOR.ink, margin: "0 0 18px" }}>{i.profileNotFor.title}</h3>
+            <BulletList items={i.profileNotFor.items} bulletColor={COLOR.red} />
+          </Card>
         </div>
       </Section>
 
-      <Section>
-        <SectionEyebrow>03</SectionEyebrow>
-        <SectionTitle>{i.onboardingTitle}</SectionTitle>
-        <ol
-          style={{
-            marginTop: 48,
-            listStyle: "none",
-            padding: 0,
-            display: "grid",
-            gap: 0,
-            maxWidth: 760,
-          }}
-        >
+      <Section background="#fff" paddingY="64px">
+        <Eyebrow style={{ marginBottom: 12 }}>03</Eyebrow>
+        <h2 style={h2Style}>{i.onboardingTitle}</h2>
+        <div style={{ display: "flex", flexDirection: "column", gap: 16, maxWidth: 760 }}>
           {i.onboarding.map((step, idx) => (
-            <li
-              key={idx}
-              style={{
-                display: "grid",
-                gridTemplateColumns: "60px 1fr",
-                gap: 24,
-                padding: "24px 0",
-                borderTop: `1px solid ${LIGHT.line}`,
-                borderBottom: idx === i.onboarding.length - 1 ? `1px solid ${LIGHT.line}` : "none",
-                alignItems: "start",
-              }}
-            >
+            <Card key={idx} variant="flat" style={{ display: "flex", gap: 16, alignItems: "center", padding: 20 }}>
               <span
                 style={{
-                  fontFamily: FONT_MONO,
-                  fontSize: 13,
-                  letterSpacing: "0.10em",
-                  color: LIGHT.ink3,
-                  paddingTop: 4,
+                  width: 36,
+                  height: 36,
+                  borderRadius: 12,
+                  background: COLOR.ink,
+                  color: "#fff",
+                  fontFamily: FONT,
+                  fontWeight: 700,
+                  fontSize: 14,
+                  display: "grid",
+                  placeItems: "center",
+                  flexShrink: 0,
                 }}
               >
-                0{idx + 1}
+                {idx + 1}
               </span>
-              <span
-                style={{
-                  fontFamily: FONT_UI,
-                  fontSize: 16.5,
-                  lineHeight: 1.55,
-                  color: LIGHT.ink,
-                }}
-              >
-                {step}
-              </span>
-            </li>
+              <span style={{ fontFamily: FONT, fontSize: 15.5, lineHeight: 1.55, color: COLOR.ink }}>{step}</span>
+            </Card>
           ))}
-        </ol>
+        </div>
       </Section>
 
-      <CtaBlock title={i.cta} primary={i.cta} primaryHref="#reserve" />
+      <PageCta title={i.cta} primary={i.cta} primaryHref="/#reserve" />
     </>
-  );
-}
-
-function ProfileList({
-  title,
-  items,
-  muted,
-}: {
-  title: string;
-  items: readonly string[];
-  muted?: boolean;
-}) {
-  return (
-    <div
-      style={{
-        padding: "32px 28px",
-        background: muted ? "#fff" : LIGHT.bgCard,
-        border: `1px solid ${LIGHT.line}`,
-        borderRadius: 4,
-      }}
-    >
-      <h3
-        style={{
-          fontFamily: FONT_DISPLAY,
-          fontWeight: 400,
-          fontSize: 18,
-          letterSpacing: "-0.015em",
-          margin: "0 0 24px",
-          color: LIGHT.ink,
-        }}
-      >
-        {title}
-      </h3>
-      <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 16 }}>
-        {items.map((it, idx) => (
-          <li
-            key={idx}
-            style={{
-              fontFamily: FONT_UI,
-              fontSize: 14.5,
-              lineHeight: 1.55,
-              color: LIGHT.ink2,
-              display: "grid",
-              gridTemplateColumns: "16px 1fr",
-              gap: 12,
-            }}
-          >
-            <span
-              aria-hidden
-              style={{
-                width: 6,
-                height: 6,
-                borderRadius: muted ? 0 : "50%",
-                background: muted ? LIGHT.danger : LIGHT.ink2,
-                marginTop: 9,
-                opacity: muted ? 0.5 : 1,
-              }}
-            />
-            <span>{it}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
   );
 }

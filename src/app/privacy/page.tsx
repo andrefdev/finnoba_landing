@@ -2,28 +2,20 @@
 
 import { PageHero } from "@/domains/common/PageHero";
 import { Section } from "@/domains/common/Section";
-import { FONT_UI, LIGHT } from "@/domains/common/tokens";
+import { Card } from "@/domains/common/Card";
+import { COLOR, FONT } from "@/domains/common/tokens";
 import { useLanding } from "@/lib/i18n/LandingProvider";
 
-export default function PrivacidadPage() {
+export default function PrivacyPage() {
   const { t } = useLanding();
   const l = t.legal;
   return (
     <>
-      <PageHero h1={l.privacyTitle} sub={l.placeholderTitle} />
-      <Section>
-        <p
-          style={{
-            fontFamily: FONT_UI,
-            fontSize: 16,
-            lineHeight: 1.7,
-            color: LIGHT.ink2,
-            maxWidth: 720,
-            margin: 0,
-          }}
-        >
-          {l.placeholderBody}
-        </p>
+      <PageHero title={l.privacyTitle} subtitle={l.placeholderTitle} />
+      <Section background="#fff" topRound paddingY="64px">
+        <Card variant="flat" style={{ padding: 32, maxWidth: 760 }}>
+          <p style={{ fontFamily: FONT, fontSize: 16, lineHeight: 1.7, color: COLOR.ink2 }}>{l.placeholderBody}</p>
+        </Card>
       </Section>
     </>
   );

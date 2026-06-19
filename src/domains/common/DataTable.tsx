@@ -1,67 +1,70 @@
-import { FONT_MONO, FONT_UI, LIGHT } from "./tokens";
+import { COLOR, FONT } from "./tokens";
 
-export function DataTable({
-  rows,
-  head,
-}: {
-  rows: ReadonlyArray<readonly string[]>;
-  head?: ReadonlyArray<string>;
-}) {
-  const cols = head ? head.length : 2;
+type Props = {
+  rows: ReadonlyArray<ReadonlyArray<string>>;
+  header?: ReadonlyArray<string>;
+};
+
+// Key/value list rendered as a card-with-divider table. Used by the
+// inner pages (terms, metrics, portfolio, etc.).
+export function DataTable({ rows, header }: Props) {
+  const cols = (header && header.length) || (rows[0]?.length ?? 2);
   return (
     <div
       style={{
-        border: `1px solid ${LIGHT.line}`,
-        borderRadius: 4,
-        overflow: "hidden",
         background: "#fff",
+        border: `1px solid ${COLOR.line}`,
+        borderRadius: 20,
+        overflow: "hidden",
       }}
     >
-      {head ? (
+      {header && (
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: cols === 2 ? "1.4fr 1fr" : `1.4fr repeat(${cols - 1}, 1fr)`,
-            background: LIGHT.bgCard,
-            borderBottom: `1px solid ${LIGHT.line}`,
-            padding: "14px 24px",
-            gap: 16,
-            fontFamily: FONT_MONO,
-            fontSize: 11,
-            letterSpacing: "0.10em",
+            gridTemplateColumns: `repeat(${cols}, 1fr)`,
+            padding: "14px 22px",
+            background: COLOR.surface,
+            borderBottom: `1px solid ${COLOR.line}`,
+            fontFamily: FONT,
+            fontWeight: 700,
+            fontSize: 12,
+            letterSpacing: ".06em",
             textTransform: "uppercase",
-            color: LIGHT.ink3,
+            color: COLOR.muted,
+            gap: 16,
           }}
         >
-          {head.map((h, i) => (
-            <div key={i}>{h}</div>
+          {header.map((h) => (
+            <span key={h}>{h}</span>
           ))}
         </div>
-      ) : null}
-      {rows.map((r, i) => (
+      )}
+      {rows.map((row, i) => (
         <div
           key={i}
           style={{
             display: "grid",
-            gridTemplateColumns: cols === 2 ? "1.4fr 1fr" : `1.4fr repeat(${cols - 1}, 1fr)`,
-            padding: "16px 24px",
+            gridTemplateColumns: `repeat(${cols}, 1fr)`,
             gap: 16,
-            borderBottom: i < rows.length - 1 ? `1px solid ${LIGHT.line}` : "none",
+            padding: "16px 22px",
+            borderTop: i === 0 ? "none" : `1px solid ${COLOR.line}`,
+            fontFamily: FONT,
+            fontSize: 14.5,
             alignItems: "center",
           }}
         >
-          {r.map((cell, j) => (
-            <div
+          {row.map((cell, j) => (
+            <span
               key={j}
               style={{
-                fontFamily: j === 0 ? FONT_UI : FONT_MONO,
-                fontSize: j === 0 ? 14.5 : 14,
-                color: j === 0 ? LIGHT.ink2 : LIGHT.ink,
-                fontVariantNumeric: "tabular-nums",
+                color: j === 0 ? COLOR.ink2 : COLOR.ink,
+                fontWeight: j === 0 ? 500 : 700,
+                fontVariantNumeric: j === 0 ? undefined : "tabular-nums",
               }}
             >
               {cell}
-            </div>
+            </span>
           ))}
         </div>
       ))}

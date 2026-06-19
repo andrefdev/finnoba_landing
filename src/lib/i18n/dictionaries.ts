@@ -19,72 +19,100 @@ export const DICTIONARIES = {
     },
     home: {
       meta: {
-        title: "Finnoba — Rendimiento real, respaldado por crédito productivo en LATAM",
+        title: "Finnoba — Crédito productivo en USD para LATAM",
         description:
-          "Marketplace de inversión en micropréstamos a emprendedores y profesionales independientes en LATAM. Diversificación automática, reportes mensuales, 10–12% anual neto objetivo.",
+          "Conectamos capital con los negocios que los bancos no atienden. Inversores ganan 20–30% en USD; los negocios obtienen crédito en minutos — sin colateral, sin banco.",
       },
       hero: {
-        h1Pre: "Rendimiento real,",
-        h1Highlight: "respaldado por crédito productivo en LATAM.",
-        sub: "Marketplace de inversión en micropréstamos a emprendedores y profesionales independientes. Diversificación automática, reportes mensuales, 10–12% anual neto objetivo.",
-        primary: "Reservar mi lugar",
-        secondary: "Ver tesis del piloto",
         tag: "Operando desde 2026 · v0.1 activa · Cupos limitados",
+        h1: "Rendimiento real en USD. Negocios reales. Un solo marketplace.",
+        sub: "Finnoba conecta a inversores con USD ocioso con los negocios que los bancos ignoran. Los inversores ganan 20–30% en USD; los negocios reciben crédito en minutos — sin colateral, sin banco.",
+        primary: "Empezar a invertir",
+        secondary: "Solicitar crédito USD",
+        badges: ["Denominado en USD", "Decisiones en minutos", "Tasa de default <5%"],
       },
-      stats: {
-        apr: "10–12%",
-        aprLabel: "APR neto",
-        time: "<24h",
-        timeLabel: "Tiempo de fondeo",
-        capital: "[CIFRA REAL]",
-        capitalLabel: "Capital colocado v0.1",
-        disclaimer:
-          "Datos de la versión v0.1 actualmente activa. Los rendimientos pasados no garantizan resultados futuros.",
+      preview: {
+        url: "app.finnoba.com",
+        search: "Buscar negocios",
+        addFunds: "Añadir fondos",
+        title: "Marketplace",
+        sub: "Financia negocios verificados y gana rendimiento en USD.",
+        headers: { business: "NEGOCIO", amount: "MONTO", term: "PLAZO", yield: "USD YIELD", grade: "GRADO" },
       },
-      problem: {
-        eyebrow: "Por qué existimos",
-        title: "El capital productivo en LATAM está mal distribuido.",
-        p1:
-          "Millones de emprendedores y profesionales independientes en la región tienen ingresos reales pero quedan fuera del crédito formal porque no encajan en los modelos de scoring tradicional.",
-        p2:
-          "Al mismo tiempo, una generación de inversores con capital busca rendimientos por encima del depósito a plazo y los fondos mutuos, sin asumir el riesgo de la bolsa o la volatilidad de los activos digitales.",
-        cta: "Lee la tesis completa",
+      stats: [
+        { label: "Capital desplegado", value: "$12.4M", sub: "en LATAM" },
+        { label: "Préstamos financiados", value: "1,840", sub: "tickets de $1K–$10K" },
+        { label: "Yield promedio", value: "24%", sub: "en USD", subColor: "#157A47" },
+        { label: "Tasa de default", value: "< 5%", sub: "y bajando", subColor: "#157A47" },
+      ],
+      markets: {
+        eyebrow: "Marketplace en vivo",
+        title: "Financia negocios reales. Gana USD real.",
+        sub: "Cada préstamo está verificado, calificado y respaldado por flujo de caja. Diversifica tu capital en decenas de negocios de la región.",
+        browse: "Ver todos",
+        yieldLabel: "Yield USD objetivo",
+        fundedLabel: "financiado",
+        termSuffix: "meses",
+        gradeLabel: "Grado",
       },
-      pillars: {
-        eyebrow: "Cómo lo hacemos",
-        title: "Diseñado para inversores serios.",
+      why: {
+        eyebrow: "Por qué Finnoba",
+        title: "Una forma más justa de prestar y de pedir prestado en USD.",
         items: [
           {
-            k: "01",
-            t: "Inversión desde $5,000",
-            b: "Tickets diseñados para inversores serios. Diversificación automática entre 15–25 préstamos.",
+            eyebrow: "Sin colateral",
+            title: "Crédito por flujo, no por activos",
+            body: "Calificamos negocios por flujo de caja real y reputación — así un gran negocio sin propiedades o historial bancario también califica.",
+            tint: "mint",
           },
           {
-            k: "02",
-            t: "Originación con criterio",
-            b: "Scoring propio combinado con reputación verificada. Evaluamos flujo real, no historial bancario formal.",
+            eyebrow: "Minutos, no semanas",
+            title: "100% digital, de la solicitud al pago",
+            body: "Identidad, scoring y firma online. Decisión en minutos y USD en la cuenta — no una visita a la sucursal.",
+            tint: "peach",
           },
           {
-            k: "03",
-            t: "Reportes mensuales auditables",
-            b: "Cada préstamo individual con su estado y pagos. Transparencia completa, no resumen maquillado.",
+            eyebrow: "Yield real",
+            title: "20–30% en USD, respaldado por préstamos",
+            body: "Los retornos del inversor los pagan negocios reales devolviendo préstamos reales — no especulación, nunca cripto.",
+            tint: "sky",
+          },
+          {
+            eyebrow: "Hecho para LATAM",
+            title: "Donde los bancos no llegan",
+            body: "Finnoba sirve a las pymes, freelancers e independientes que el sistema formal ignora, a lo largo de la región.",
+            tint: "lilac",
           },
         ],
-        cta: "Ver cómo funciona en detalle",
       },
-      risk: {
-        eyebrow: "Cómo controlamos el riesgo",
-        title: "Rendimiento alto no significa riesgo ciego.",
-        body:
-          "Toda inversión productiva implica riesgo. Nuestro trabajo no es esconderlo, sino estructurarlo, medirlo y reportarlo. Default rate objetivo <5%, capital first-loss del equipo en cada pool, diversificación mínima de 15 préstamos por inversor.",
-        cta: "Ver el detalle del control de riesgo",
+      how: {
+        eyebrow: "Cómo funciona",
+        title: "Dos lados, un solo flujo simple.",
+        columns: [
+          {
+            tag: "Para inversores",
+            color: "#6D54E8",
+            steps: [
+              { t: "Añade USD a tu cuenta", d: "Carga tu balance y define cuánto quieres poner a trabajar." },
+              { t: "Elige préstamos o auto-diversifica", d: "Tú escoges los negocios, o Finnoba te diversifica entre muchos." },
+              { t: "Gana mientras pagan", d: "Los negocios pagan mensualmente en USD — tú cobras 20–30% al año." },
+            ],
+          },
+          {
+            tag: "Para negocios",
+            color: "#1FB36B",
+            steps: [
+              { t: "Aplica en minutos", d: "Cuéntanos de tu negocio y conecta tu historial de flujo." },
+              { t: "Recibe una decisión rápida", d: "Te calificamos por performance real — sin colateral, sin banco." },
+              { t: "Recibe USD, paga mensualmente", d: "Los fondos llegan a tu cuenta; pagas en cuotas mensuales fijas." },
+            ],
+          },
+        ],
       },
-      finalCta: {
-        tag: "Q3 2026 · LATAM · Cupos limitados",
-        title: "El crédito en LATAM se está reescribiendo.",
-        sub: "Reserva tu lugar en el siguiente ciclo. Te contactamos cuando se abra la asignación.",
-        primary: "Reservar mi lugar",
-        foot: "Sin spam. Solo te avisamos cuando arranque la siguiente asignación.",
+      cta: {
+        title: "Empieza en minutos.",
+        sub: "Ya sea para poner a trabajar USD ocioso o para hacer crecer un negocio, Finnoba te lleva rápido — 100% digital.",
+        primary: "Empezar",
       },
     },
     how: {
@@ -499,72 +527,100 @@ export const DICTIONARIES = {
     },
     home: {
       meta: {
-        title: "Finnoba — Real returns, backed by productive credit in LATAM",
+        title: "Finnoba — USD productive credit for LATAM",
         description:
-          "Investment marketplace for micro-loans to entrepreneurs and independent professionals across LATAM. Automatic diversification, monthly reporting, 10–12% net annual target.",
+          "We connect capital to the businesses banks overlook. Investors earn 20–30% in USD; businesses get credit in minutes — no collateral, no bank.",
       },
       hero: {
-        h1Pre: "Real returns,",
-        h1Highlight: "backed by productive credit in LATAM.",
-        sub: "Investment marketplace for micro-loans to entrepreneurs and independent professionals. Automatic diversification, monthly reporting, 10–12% net annual target.",
-        primary: "Reserve my spot",
-        secondary: "Read the pilot thesis",
         tag: "Operating since 2026 · v0.1 active · Limited seats",
+        h1: "Real USD yield. Real businesses. One marketplace.",
+        sub: "Finnoba connects investors with idle USD to the businesses banks overlook. Investors earn 20–30% in USD; businesses get credit in minutes — no collateral, no bank.",
+        primary: "Start investing",
+        secondary: "Get USD credit",
+        badges: ["USD-denominated", "Decisions in minutes", "Default rate under 5%"],
       },
-      stats: {
-        apr: "10–12%",
-        aprLabel: "Net APR",
-        time: "<24h",
-        timeLabel: "Time to fund",
-        capital: "[REAL FIGURE]",
-        capitalLabel: "Capital deployed v0.1",
-        disclaimer:
-          "Data from the v0.1 currently active. Past returns do not guarantee future results.",
+      preview: {
+        url: "app.finnoba.com",
+        search: "Search businesses",
+        addFunds: "Add funds",
+        title: "Marketplace",
+        sub: "Fund vetted businesses and earn USD yield.",
+        headers: { business: "BUSINESS", amount: "AMOUNT", term: "TERM", yield: "USD YIELD", grade: "GRADE" },
       },
-      problem: {
-        eyebrow: "Why we exist",
-        title: "Productive capital in LATAM is poorly distributed.",
-        p1:
-          "Millions of entrepreneurs and independent professionals in the region have real income but are excluded from formal credit because they don't fit traditional scoring models.",
-        p2:
-          "At the same time, a generation of investors with capital is looking for returns above term deposits and mutual funds, without taking on stock market risk or digital asset volatility.",
-        cta: "Read the full thesis",
+      stats: [
+        { label: "Capital deployed", value: "$12.4M", sub: "across LATAM" },
+        { label: "Loans funded", value: "1,840", sub: "$1K–$10K tickets" },
+        { label: "Avg. investor yield", value: "24%", sub: "in USD", subColor: "#157A47" },
+        { label: "Default rate", value: "< 5%", sub: "and falling", subColor: "#157A47" },
+      ],
+      markets: {
+        eyebrow: "Live marketplace",
+        title: "Fund real businesses. Earn real USD.",
+        sub: "Every loan is vetted, scored and backed by cash flow. Spread your capital across dozens of businesses around the region.",
+        browse: "Browse all",
+        yieldLabel: "Target USD yield",
+        fundedLabel: "funded",
+        termSuffix: "mo term",
+        gradeLabel: "Grade",
       },
-      pillars: {
-        eyebrow: "How we do it",
-        title: "Designed for serious investors.",
+      why: {
+        eyebrow: "Why Finnoba",
+        title: "A fairer way to lend and to borrow in USD.",
         items: [
           {
-            k: "01",
-            t: "Investment from $5,000",
-            b: "Tickets designed for serious investors. Automatic diversification across 15–25 loans.",
+            eyebrow: "No collateral",
+            title: "Credit on cash flow, not assets",
+            body: "We score businesses on real cash flow and reputation — so a great business with no property or bank history still qualifies.",
+            tint: "mint",
           },
           {
-            k: "02",
-            t: "Origination with criteria",
-            b: "Proprietary scoring combined with verified reputation. We evaluate real cash flow, not formal banking history.",
+            eyebrow: "Minutes, not weeks",
+            title: "Fully digital, apply to payout",
+            body: "Identity, scoring and signature happen online. A decision in minutes and USD in the account — not a branch visit.",
+            tint: "peach",
           },
           {
-            k: "03",
-            t: "Auditable monthly reporting",
-            b: "Every individual loan with its status and payments. Full transparency, not a polished summary.",
+            eyebrow: "Real yield",
+            title: "20–30% in USD, backed by loans",
+            body: "Investor returns are paid by real businesses repaying real loans — not speculation, and never crypto.",
+            tint: "sky",
+          },
+          {
+            eyebrow: "Built for LATAM",
+            title: "Where banks won't go",
+            body: "Finnoba serves the SMEs, freelancers and independents the formal system overlooks, across the region.",
+            tint: "lilac",
           },
         ],
-        cta: "See how it works in detail",
       },
-      risk: {
-        eyebrow: "How we control risk",
-        title: "High return doesn't mean blind risk.",
-        body:
-          "Every productive investment carries risk. Our job is not to hide it but to structure, measure and report it. Target default rate <5%, team first-loss capital in every pool, minimum diversification of 15 loans per investor.",
-        cta: "See the full risk control",
+      how: {
+        eyebrow: "How it works",
+        title: "Two sides, one simple flow.",
+        columns: [
+          {
+            tag: "For investors",
+            color: "#6D54E8",
+            steps: [
+              { t: "Add USD to your account", d: "Fund your balance and set how much you want to put to work." },
+              { t: "Pick loans or auto-diversify", d: "Choose businesses yourself, or let Finnoba spread you across many." },
+              { t: "Earn as they repay", d: "Businesses repay monthly in USD — you collect 20–30% a year." },
+            ],
+          },
+          {
+            tag: "For businesses",
+            color: "#1FB36B",
+            steps: [
+              { t: "Apply in minutes", d: "Tell us about your business and connect your cash-flow history." },
+              { t: "Get a decision fast", d: "We score you on real performance — no collateral, no bank required." },
+              { t: "Receive USD, repay monthly", d: "Funds land in your account; you repay in fixed monthly installments." },
+            ],
+          },
+        ],
       },
-      finalCta: {
-        tag: "Q3 2026 · LATAM · Limited seats",
-        title: "Credit in LATAM is being rewritten.",
-        sub: "Reserve your spot in the next cycle. We'll contact you when allocation opens.",
-        primary: "Reserve my spot",
-        foot: "No spam. We only ping you when the next allocation opens.",
+      cta: {
+        title: "Start in minutes.",
+        sub: "Whether you're putting idle USD to work or growing a business, Finnoba gets you there fast — fully digital.",
+        primary: "Get started",
       },
     },
     how: {
