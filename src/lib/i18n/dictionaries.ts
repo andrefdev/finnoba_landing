@@ -7,7 +7,7 @@ export const DICTIONARIES = {
       investors: "Inversores",
       thesis: "Tesis",
       faq: "FAQ",
-      reserve: "Reservar mi lugar",
+      app: "Llévame a la app",
     },
     home: {
       meta: {
@@ -502,7 +502,7 @@ export const DICTIONARIES = {
       investors: "Investors",
       thesis: "Thesis",
       faq: "FAQ",
-      reserve: "Reserve my spot",
+      app: "Take me to the app",
     },
     home: {
       meta: {

@@ -96,9 +96,9 @@ export function Nav() {
         >
           {other.toUpperCase()}
         </NextLink>
-        <Link href="/#reserve">
-          <Button variant="ink" size="sm">{t.nav.reserve}</Button>
-        </Link>
+        <a href="https://app.finnoba.xyz">
+          <Button variant="ink" size="sm">{t.nav.app}</Button>
+        </a>
       </div>
 
       {/* Mobile toggle */}
@@ -175,9 +175,9 @@ export function Nav() {
             >
               {other.toUpperCase()}
             </NextLink>
-            <Link href="/#reserve" onClick={() => setOpen(false)} style={{ flex: 2 }}>
-              <Button variant="ink" size="md" full>{t.nav.reserve}</Button>
-            </Link>
+            <a href="https://app.finnoba.xyz" onClick={() => setOpen(false)} style={{ flex: 2 }}>
+              <Button variant="ink" size="md" full>{t.nav.app}</Button>
+            </a>
           </div>
         </div>
       )}
