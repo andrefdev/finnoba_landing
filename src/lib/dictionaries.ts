@@ -13,15 +13,15 @@ export const DICTIONARIES = {
       meta: {
         title: "Finnoba — Préstamos en dólares a exportadores peruanos",
         description:
-          "Prestamos dólares a exportadores peruanos que ya cobran en dólares. Entras desde $50 por préstamo y cobras capital y rendimiento al vencimiento.",
+          "Prestamos dólares a exportadores peruanos que ya cobran en dólares. Entras desde $100 por préstamo y cobras capital y rendimiento al vencimiento.",
       },
       hero: {
         tag: "Piloto 2026 · Perú · Cupos limitados",
         h1: "Tus dólares, prestados a quien ya gana dólares.",
-        sub: "Finnoba conecta a quien tiene dólares parados con exportadores peruanos que los bancos no atienden. Entras desde $50 por préstamo y recuperas capital y rendimiento cuando el préstamo vence.",
+        sub: "Finnoba conecta a quien tiene dólares parados con exportadores peruanos que los bancos no atienden. Entras desde $100 por préstamo y recuperas capital y rendimiento cuando el préstamo vence.",
         primary: "Quiero prestar",
         secondary: "Necesito financiamiento",
-        badges: ["Todo en dólares", "Prestas desde $50", "Perú, primer mercado"],
+        badges: ["Todo en dólares", "Prestas desde $100", "Perú, primer mercado"],
       },
       preview: {
         url: "app.finnoba.xyz",
@@ -33,7 +33,7 @@ export const DICTIONARIES = {
       },
       stats: [
         { label: "Etapa", value: "Piloto 2026", sub: "aún no hemos prestado" },
-        { label: "Entras desde", value: "$50", sub: "por préstamo", subColor: "#157A47" },
+        { label: "Entras desde", value: "$100", sub: "por préstamo", subColor: "#157A47" },
         { label: "Primer mercado", value: "Perú", sub: "exportadores que cobran en dólares" },
       ],
       markets: {
@@ -87,7 +87,7 @@ export const DICTIONARIES = {
             color: "#6D54E8",
             steps: [
               { t: "Pones tu dinero", d: "Defines cuánto quieres prestar y firmamos las condiciones." },
-              { t: "Eliges en qué negocios entrar", d: "Desde $50 por préstamo, así que con poco puedes estar en varios y no depender de uno solo." },
+              { t: "Eliges en qué negocios entrar", d: "Desde $100 por préstamo, así que con poco puedes estar en varios y no depender de uno solo." },
               { t: "Cobras al vencimiento", d: "Cuando el préstamo termina recuperas tu capital más lo que rindió, en dólares." },
             ],
           },
@@ -126,7 +126,7 @@ export const DICTIONARIES = {
         {
           k: "02",
           t: "Entras a los préstamos que elijas",
-          b: "Desde $50 por préstamo. Un préstamo de $500 se arma entre varias personas, así que con poco dinero puedes estar en varios negocios a la vez en lugar de depender de uno. Cada negocio pasa antes por nuestra revisión.",
+          b: "Desde $100 por préstamo. Un préstamo de $500 se arma entre varias personas, así que con poco dinero puedes estar en varios negocios a la vez en lugar de depender de uno. Cada negocio pasa antes por nuestra revisión.",
         },
         {
           k: "03",
@@ -160,7 +160,7 @@ export const DICTIONARIES = {
       table: [
         ["Plazo de los préstamos", "2 a 6 meses"],
         ["Cuándo cobras", "Al vencimiento de cada préstamo"],
-        ["Monto mínimo por préstamo", "$50"],
+        ["Monto mínimo por préstamo", "$100"],
         ["Reporte", "Mensual, día 5"],
       ],
       cta: "Ver condiciones para inversores",
@@ -175,13 +175,13 @@ export const DICTIONARIES = {
       sub: "Estas son las condiciones del primer ciclo y cómo se entra.",
       termsTitle: "Condiciones del primer ciclo",
       terms: [
-        ["Monto mínimo por préstamo", "$50"],
+        ["Monto mínimo por préstamo", "$100"],
         ["Monto máximo sugerido", "$10,000 por ciclo"],
         ["A quién se le presta", "Exportadores peruanos que cobran en dólares"],
         ["Cuánto dura", "2 a 6 meses, según los préstamos que elijas"],
         ["Cuándo cobras", "Capital y rendimiento al vencimiento de cada préstamo"],
         ["Salir antes", "Se evalúa caso por caso"],
-        ["En cuántos préstamos entras", "Los que quieras. Desde $50 cada uno"],
+        ["En cuántos préstamos entras", "Los que quieras. Desde $100 cada uno"],
       ],
       ladderTitle: "Qué financia tu dinero",
       ladderBody:
@@ -283,8 +283,8 @@ export const DICTIONARIES = {
         },
         {
           k: "04",
-          t: "Puedes repartir desde $50",
-          b: "Un préstamo de $500 se arma entre varias personas, así que entrar cuesta $50. Con $1.000 puedes estar en veinte negocios distintos en vez de uno. No te obligamos a repartir, pero decimos lo obvio: si pones todo en un solo préstamo, ese riesgo es entero tuyo.",
+          t: "Puedes repartir desde $100",
+          b: "Un préstamo de $500 se arma entre varias personas, así que entrar cuesta $100. Con $1.000 puedes estar en diez negocios distintos en vez de uno. No te obligamos a repartir, pero decimos lo obvio: si pones todo en un solo préstamo, ese riesgo es entero tuyo.",
         },
         {
           k: "05",
@@ -384,11 +384,11 @@ export const DICTIONARIES = {
           items: [
             {
               q: "¿Cuánto es lo mínimo y cuándo cobro?",
-              a: "Entras desde $50 por préstamo. Un préstamo de $500 se arma entre varias personas, por eso el mínimo es bajo. Cobras al vencimiento: cuando el negocio termina de pagar recuperas tu capital junto con lo que rindió.",
+              a: "Entras desde $100 por préstamo. Un préstamo de $500 se arma entre varias personas, por eso el mínimo es bajo. Cobras al vencimiento: cuando el negocio termina de pagar recuperas tu capital junto con lo que rindió.",
             },
             {
               q: "¿Qué pasa si un negocio no paga?",
-              a: "Ponemos capital nuestro que absorbe las primeras pérdidas antes de que te toquen a ti. Y como puedes entrar desde $50, con poco dinero estás en varios préstamos en vez de depender de uno. Apuntamos a que falle menos del 5%, pero es un objetivo sin historial detrás.",
+              a: "Ponemos capital nuestro que absorbe las primeras pérdidas antes de que te toquen a ti. Y como puedes entrar desde $100, con poco dinero estás en varios préstamos en vez de depender de uno. Apuntamos a que falle menos del 5%, pero es un objetivo sin historial detrás.",
             },
             {
               q: "¿Puedo sacar mi dinero antes?",
@@ -400,7 +400,7 @@ export const DICTIONARIES = {
             },
             {
               q: "¿Cuánto voy a ganar y está garantizado?",
-              a: "La tasa depende del nivel del negocio al que entres y te la confirmamos por escrito antes de que comprometas nada. Garantizado no está: prestar dinero nunca lo está. Poner capital nuestro primero y que puedas repartir desde $50 reduce el riesgo, no lo elimina.",
+              a: "La tasa depende del nivel del negocio al que entres y te la confirmamos por escrito antes de que comprometas nada. Garantizado no está: prestar dinero nunca lo está. Poner capital nuestro primero y que puedas repartir desde $100 reduce el riesgo, no lo elimina.",
             },
           ],
         },
@@ -547,15 +547,15 @@ export const DICTIONARIES = {
       meta: {
         title: "Finnoba — Dollar loans to Peruvian exporters",
         description:
-          "We lend dollars to Peruvian exporters who already get paid in dollars. You join from $50 a loan and collect capital and return at maturity.",
+          "We lend dollars to Peruvian exporters who already get paid in dollars. You join from $100 a loan and collect capital and return at maturity.",
       },
       hero: {
         tag: "2026 pilot · Peru · Limited seats",
         h1: "Your dollars, lent to people who already earn dollars.",
-        sub: "Finnoba connects idle dollars with Peruvian exporters that banks won't serve. You join from $50 a loan and get your capital and return back when the loan matures.",
+        sub: "Finnoba connects idle dollars with Peruvian exporters that banks won't serve. You join from $100 a loan and get your capital and return back when the loan matures.",
         primary: "I want to lend",
         secondary: "I need financing",
-        badges: ["Everything in dollars", "Lend from $50", "Peru, first market"],
+        badges: ["Everything in dollars", "Lend from $100", "Peru, first market"],
       },
       preview: {
         url: "app.finnoba.xyz",
@@ -567,7 +567,7 @@ export const DICTIONARIES = {
       },
       stats: [
         { label: "Stage", value: "2026 pilot", sub: "we haven't lent yet" },
-        { label: "Join from", value: "$50", sub: "per loan", subColor: "#157A47" },
+        { label: "Join from", value: "$100", sub: "per loan", subColor: "#157A47" },
         { label: "First market", value: "Peru", sub: "exporters paid in dollars" },
       ],
       markets: {
@@ -621,7 +621,7 @@ export const DICTIONARIES = {
             color: "#6D54E8",
             steps: [
               { t: "You put your money in", d: "You decide how much to lend and we sign the terms." },
-              { t: "You pick which businesses to back", d: "From $50 a loan, so even a small amount can sit across several instead of depending on one." },
+              { t: "You pick which businesses to back", d: "From $100 a loan, so even a small amount can sit across several instead of depending on one." },
               { t: "You collect at maturity", d: "When the loan ends you get your capital back plus what it earned, in dollars." },
             ],
           },
@@ -660,7 +660,7 @@ export const DICTIONARIES = {
         {
           k: "02",
           t: "You join the loans you choose",
-          b: "From $50 a loan. A $500 loan is put together by several people, so a small amount can sit across several businesses instead of depending on one. Every business is checked first.",
+          b: "From $100 a loan. A $500 loan is put together by several people, so a small amount can sit across several businesses instead of depending on one. Every business is checked first.",
         },
         {
           k: "03",
@@ -694,7 +694,7 @@ export const DICTIONARIES = {
       table: [
         ["Loan terms", "2 to 6 months"],
         ["When you collect", "At each loan's maturity"],
-        ["Minimum per loan", "$50"],
+        ["Minimum per loan", "$100"],
         ["Report", "Monthly, on the 5th"],
       ],
       cta: "See the terms for lenders",
@@ -709,13 +709,13 @@ export const DICTIONARIES = {
       sub: "These are the terms of the first cycle and how you get in.",
       termsTitle: "First cycle terms",
       terms: [
-        ["Minimum per loan", "$50"],
+        ["Minimum per loan", "$100"],
         ["Suggested maximum", "$10,000 per cycle"],
         ["Who we lend to", "Peruvian exporters paid in dollars"],
         ["How long it lasts", "2 to 6 months, depending on the loans you pick"],
         ["When you collect", "Capital and return at each loan's maturity"],
         ["Leaving early", "Assessed case by case"],
-        ["How many loans you join", "As many as you like. From $50 each"],
+        ["How many loans you join", "As many as you like. From $100 each"],
       ],
       ladderTitle: "What your money funds",
       ladderBody:
@@ -817,8 +817,8 @@ export const DICTIONARIES = {
         },
         {
           k: "04",
-          t: "You can spread from $50",
-          b: "A $500 loan is assembled by several people, so joining costs $50. With $1,000 you can sit across twenty different businesses instead of one. We don't force you to spread, but we'll say the obvious: put it all in one loan and that risk is entirely yours.",
+          t: "You can spread from $100",
+          b: "A $500 loan is assembled by several people, so joining costs $100. With $1,000 you can sit across ten different businesses instead of one. We don't force you to spread, but we'll say the obvious: put it all in one loan and that risk is entirely yours.",
         },
         {
           k: "05",
@@ -918,11 +918,11 @@ export const DICTIONARIES = {
           items: [
             {
               q: "What's the minimum and when do I get paid?",
-              a: "You join from $50 a loan. A $500 loan is assembled by several people, which is why the minimum is low. You collect at maturity: once the business finishes repaying you get your capital back along with what it earned.",
+              a: "You join from $100 a loan. A $500 loan is assembled by several people, which is why the minimum is low. You collect at maturity: once the business finishes repaying you get your capital back along with what it earned.",
             },
             {
               q: "What if a business doesn't pay?",
-              a: "We put in our own capital, which absorbs the first losses before they reach you. And since you can join from $50, a small amount sits across several loans instead of depending on one. We're aiming for under 5% to fail, but that's a target with no track record behind it.",
+              a: "We put in our own capital, which absorbs the first losses before they reach you. And since you can join from $100, a small amount sits across several loans instead of depending on one. We're aiming for under 5% to fail, but that's a target with no track record behind it.",
             },
             {
               q: "Can I take my money out early?",
@@ -934,7 +934,7 @@ export const DICTIONARIES = {
             },
             {
               q: "How much will I earn, and is it guaranteed?",
-              a: "The rate depends on the level of the business you back, and we confirm it in writing before you commit anything. Guaranteed it is not — lending never is. Putting our capital in first and letting you spread from $50 cuts the risk; it doesn't remove it.",
+              a: "The rate depends on the level of the business you back, and we confirm it in writing before you commit anything. Guaranteed it is not — lending never is. Putting our capital in first and letting you spread from $100 cuts the risk; it doesn't remove it.",
             },
           ],
         },
