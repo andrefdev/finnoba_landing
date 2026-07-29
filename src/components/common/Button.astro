@@ -12,12 +12,16 @@ interface Props {
   class?: string;
 }
 
-const { variant = "ink", size = "md", href, full, type = "button", class: className } = Astro.props;
+const { variant = "ink", size = "md", href, full, type = "button", class: className, ...rest } = Astro.props;
 const Tag = href ? "a" : "button";
-const rest = href ? { href } : { type };
+const tagAttrs = href ? { href } : { type };
 ---
 
-<Tag class:list={["btn", `is-${variant}`, `is-${size}`, { "is-full": full }, className]} {...rest}>
+<Tag
+  class:list={["btn", `is-${variant}`, `is-${size}`, { "is-full": full }, className]}
+  {...tagAttrs}
+  {...rest}
+>
   <slot />
 </Tag>
 

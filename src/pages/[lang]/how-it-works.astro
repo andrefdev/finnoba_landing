@@ -7,13 +7,20 @@ import Card from "../../components/common/Card.astro";
 import Eyebrow from "../../components/common/Eyebrow.astro";
 import NumberBadge from "../../components/common/NumberBadge.astro";
 import DataTable from "../../components/common/DataTable.astro";
+import BulletList from "../../components/common/BulletList.astro";
 import PageCta from "../../components/common/PageCta.astro";
 import { dict, localeParams, type Lang } from "../../lib/i18n";
+import { LEVELS } from "../../lib/loans";
 
 export const getStaticPaths = localeParams;
 
 const { lang } = Astro.props as { lang: Lang };
 const c = dict(lang).how;
+
+// Rates are deliberately absent — they are agreed in writing with each
+// business, not advertised.
+const monthWord = lang === "es" ? "meses" : "months";
+const levelRows = LEVELS.map((l) => [`${l.level}`, `$${l.amount.toLocaleString("en-US")}`, `${l.term} ${monthWord}`]);
 ---
 
 <Base lang={lang} path="/how-it-works" title={c.meta.title} description={c.meta.description}>
@@ -33,7 +40,18 @@ const c = dict(lang).how;
   </Section>
 
   <Section paddingY="32px">
-    <SectionHeading eyebrow="02" title={c.flowTitle} />
+    <SectionHeading eyebrow="02" title={c.levelsTitle} lead={c.levelsIntro} />
+    <div class="ladder">
+      <DataTable rows={levelRows} header={c.levelsHead} />
+      <p class="footnote">{c.levelsFoot}</p>
+    </div>
+
+    <h3 class="sub-title">{c.requirementsTitle}</h3>
+    <BulletList items={c.requirements} />
+  </Section>
+
+  <Section paddingY="32px">
+    <SectionHeading eyebrow="03" title={c.flowTitle} />
     <ol class="grid flow">
       {c.flow.map((node, i) => (
         <li>
@@ -48,7 +66,7 @@ const c = dict(lang).how;
   </Section>
 
   <Section>
-    <SectionHeading eyebrow="03" title={c.tableTitle} />
+    <SectionHeading eyebrow="04" title={c.tableTitle} />
     <DataTable rows={c.table} class="narrow" />
   </Section>
 
@@ -103,4 +121,23 @@ const c = dict(lang).how;
   }
 
   .narrow { max-width: 720px; }
+
+  .ladder { max-width: 560px; }
+
+  .footnote {
+    margin-top: 14px;
+    font-family: var(--font);
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+
+  .sub-title {
+    margin: 40px 0 18px;
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+  }
 </style>

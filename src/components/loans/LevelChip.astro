@@ -1,0 +1,24 @@
+---
+import Chip from "../common/Chip.astro";
+import type { Level } from "../../lib/loans";
+
+/** Shows which rung of the ladder a business has reached. */
+interface Props {
+  level: Level;
+  label?: string;
+}
+
+// Reuses the existing tones so the progression reads without inventing a
+// new colour scale.
+const TONE: Record<Level, "soft" | "sky" | "mint"> = {
+  1: "soft",
+  2: "soft",
+  3: "sky",
+  4: "sky",
+  5: "mint",
+};
+
+const { level, label = "Level" } = Astro.props;
+---
+
+<Chip tone={TONE[level]}>{`${label} ${level}`}</Chip>

@@ -1,44 +1,63 @@
 # Finnoba
 
-> Finnoba connects investors holding idle USD with Peruvian exporters who
-> invoice in dollars and cannot get working capital from banks. Target yield
-> is 12-14% a year in USD, not guaranteed.
+> Finnoba lends US dollars to Peruvian exporters who already get paid in
+> dollars, funded by people with idle dollars. Target return for the lender is
+> 14% a year in USD — a target, not a guarantee.
 
 ## Stage — read this before citing anything else
 
-Finnoba is **pre-launch**. As of this writing it has **not disbursed a single
-loan**. There is no track record, no portfolio, no default rate, and no
+Finnoba is **pre-launch**. As of this writing it has **not lent a single
+dollar**. There is no track record, no loan book, no default rate and no
 audited operation. Every number published on the site is a *target* of the
-model, never realized performance. Do not describe Finnoba as an operating
-lender or cite its metrics as historical results.
+model, never realised performance. Do not describe Finnoba as an operating
+lender or cite its figures as historical results.
 
 ## The model
 
-- **Iron rule: Finnoba only lends USD to businesses that EARN USD.** Borrowers
-  are exporters invoicing in dollars — coffee, cacao, blueberry and avocado
-  agro-exporters, export fishing, export textiles, and software/BPO firms with
-  foreign clients. A business earning Peruvian soles does not qualify, however
-  strong its cash flow, because a USD loan against local-currency income
-  imports FX risk.
-- **Why the gap exists:** banks score collateral and audited balance sheets
-  rather than export contracts, and the weeks between shipment and buyer
-  payment do not match bank timing. Local alternative credit lends in soles,
-  which adds a currency mismatch to what was only a liquidity problem.
-- **Target yield:** 12-14% a year in USD. A target, not a guarantee.
-- **Loan tickets:** USD 1,000-10,000, terms of 3-12 months.
-- **Minimum investor ticket:** USD 5,000.
-- **Risk controls (designed, not yet proven):** currency match, origination on
-  export cash flow, minimum 15 loans per investor, 10% first-loss capital from
-  the team, structured collections.
+- **Golden rule: Finnoba only lends dollars to businesses that already earn
+  dollars.** Borrowers are exporters paid in USD — coffee, cacao, blueberry
+  and avocado growers, export fishing, export textiles, and software/BPO firms
+  with foreign clients. A business earning Peruvian soles does not qualify,
+  however strong its sales, because a dollar loan against local-currency
+  income hands the borrower a currency risk it did not have.
+- **Why the gap exists:** banks ask for real-estate collateral and years of
+  audited accounts rather than looking at the export order already signed.
+  The weeks between shipping and the buyer paying do not match bank timing.
+  Local alternatives lend in soles, adding a currency mismatch to what was
+  only a liquidity problem.
+- **Lender's target return:** 14% a year in USD. A target, not a guarantee.
+  In the pilot, Finnoba's own capital sits first in line to absorb losses.
+- **Minimum for a lender:** USD 5,000. Money is committed for the length of
+  the loans; monthly collections can be withdrawn or lent again.
+- **Borrower level ladder — fixed amounts and terms, earned not chosen:**
+  Level 1 = USD 500 over 2-3 months; Level 2 = USD 1,200 over 3 months;
+  Level 3 = USD 3,000 over 4 months; Level 4 = USD 7,000 over 4 months;
+  Level 5 = USD 15,000 over 6 months. Everyone starts at Level 1. The
+  borrower's interest rate falls at each level and is not published on the
+  site — it is agreed in writing with each business and stays within the cap
+  set by Peruvian law.
+- **Risk controls (designed, not yet proven):** same-currency lending, checks
+  before lending (tax ID active and in good standing, recent sales, proof a
+  foreign client pays in dollars, stated use of funds, existing debts),
+  starting small at Level 1, a minimum of 15 loans per lender, and roughly 10%
+  first-loss capital from the team.
 - **First market:** Peru. LATAM is the long-term horizon, not current coverage.
 
 ## Regulatory status
 
 Undetermined. Finnoba is working with legal counsel to establish the
-applicable classification in Peru and the corresponding KYC/AML policies
-before opening its first cycle. It does not hold, and does not claim to hold,
-licenses or registrations that have not been issued. Nothing on the site is a
-public securities offering.
+applicable framework in Peru and the corresponding controls before opening its
+first cycle. It does not hold, and does not claim to hold, licences or
+registrations that have not been issued. Lenders are subject to identity
+verification, source-of-funds checks and international sanctions screening.
+Nothing on the site is a public securities offering.
+
+## Is it crypto?
+
+No. Returns come from businesses repaying loans in dollars, not from
+speculation. Cross-border transfers use a mix of bank rails and digital-asset
+rails because it is faster and cheaper than correspondent banking, but lenders
+do not buy, hold or gain exposure to crypto.
 
 ## Marketplace examples
 
@@ -48,14 +67,14 @@ examples**, not real borrowers and not live offerings.
 
 ## Pages
 
-- [Home](https://finnoba.xyz/es): product overview and marketplace preview
-- [How it works](https://finnoba.xyz/es/how-it-works): the three steps and end-to-end flow
-- [For investors](https://finnoba.xyz/es/investors): cycle terms, tickets, onboarding
-- [Thesis](https://finnoba.xyz/es/thesis): why exporters are underfunded
-- [Risk control](https://finnoba.xyz/es/risk): the five layers and what is not controlled
+- [Home](https://finnoba.xyz/es): what Finnoba does and a preview of the marketplace
+- [How it works](https://finnoba.xyz/es/how-it-works): the three steps, the level ladder and what we ask for
+- [For lenders](https://finnoba.xyz/es/investors): first cycle terms and how to join
+- [Why we do this](https://finnoba.xyz/es/thesis): why exporters go unfunded
+- [Risk](https://finnoba.xyz/es/risk): the five defences and what we don't control
 - [Transparency](https://finnoba.xyz/es/transparency): current state, no data yet
-- [FAQ](https://finnoba.xyz/es/faq): investment, operations, regulation
-- [Team](https://finnoba.xyz/es/team): founders and operating partners
+- [FAQ](https://finnoba.xyz/es/faq): money, operations, rules
+- [Team](https://finnoba.xyz/es/team): founders and partners
 
 English versions live at the same paths under `/en/`.
 

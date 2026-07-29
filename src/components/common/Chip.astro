@@ -4,10 +4,12 @@ interface Props {
   class?: string;
 }
 
-const { tone = "soft", class: className } = Astro.props;
+// `rest` forwards the caller's scope attribute so a class passed from a parent
+// still matches that parent's scoped rule.
+const { tone = "soft", class: className, ...rest } = Astro.props;
 ---
 
-<span class:list={["chip", `is-${tone}`, className]}><slot /></span>
+<span class:list={["chip", `is-${tone}`, className]} {...rest}><slot /></span>
 
 <style>
   .chip {

@@ -3,8 +3,8 @@ import Card from "../common/Card.astro";
 import Chip from "../common/Chip.astro";
 import Sparkline from "../common/Sparkline.astro";
 import CategoryBadge from "./CategoryBadge.astro";
-import GradeChip from "./GradeChip.astro";
-import { CATEGORY, type Loan } from "../../lib/loans";
+import LevelChip from "./LevelChip.astro";
+import { CATEGORY, INVESTOR_YIELD, type Loan } from "../../lib/loans";
 import type { Lang } from "../../lib/i18n";
 
 interface Props extends Loan {
@@ -13,11 +13,11 @@ interface Props extends Loan {
     yieldLabel: string;
     exampleLabel: string;
     termSuffix: string;
-    gradeLabel: string;
+    levelLabel: string;
   };
 }
 
-const { business, category, city, amount, term, yld, grade, trend, lang, labels } = Astro.props;
+const { business, category, city, level, amount, term, trend, lang, labels } = Astro.props;
 const c = CATEGORY[category];
 ---
 
@@ -28,7 +28,7 @@ const c = CATEGORY[category];
       <h3 class="name">{business}</h3>
       <p class="meta">{c.label[lang]} · {city}</p>
     </div>
-    <GradeChip grade={grade} label={labels.gradeLabel} />
+    <LevelChip level={level} label={labels.levelLabel} />
   </header>
 
   <div class="spark"><Sparkline data={trend} up /></div>
@@ -36,7 +36,7 @@ const c = CATEGORY[category];
   <div class="figures">
     <div>
       <p class="cap">{labels.yieldLabel}</p>
-      <p class="yield">{yld}</p>
+      <p class="yield">{INVESTOR_YIELD}</p>
     </div>
     <div class="right">
       <p class="amount">${amount.toLocaleString("en-US")}</p>

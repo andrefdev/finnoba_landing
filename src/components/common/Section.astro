@@ -6,12 +6,13 @@ interface Props {
   class?: string;
 }
 
-const { topRound, paddingY, class: className } = Astro.props;
+const { topRound, paddingY, class: className, ...rest } = Astro.props;
 ---
 
 <section
   class:list={["section", { "is-round": topRound }, className]}
   style={paddingY ? { "--pad-y": paddingY } : undefined}
+  {...rest}
 >
   <div class="inner"><slot /></div>
 </section>

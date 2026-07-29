@@ -6,12 +6,16 @@ interface Props {
   class?: string;
 }
 
-const { variant = "flat", bg, class: className } = Astro.props;
+// `rest` carries the caller's scope attribute (data-astro-cid-*). Without
+// forwarding it, a class passed in from a parent never matches the parent's
+// scoped rule and the styles silently do nothing.
+const { variant = "flat", bg, class: className, ...rest } = Astro.props;
 ---
 
 <div
   class:list={["card", `is-${variant}`, className]}
   style={bg ? { "--card-bg": bg } : undefined}
+  {...rest}
 >
   <slot />
 </div>

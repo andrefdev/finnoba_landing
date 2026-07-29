@@ -7,11 +7,11 @@ interface Props {
   class?: string;
 }
 
-const { rows, header, class: className } = Astro.props;
+const { rows, header, class: className, ...rest } = Astro.props;
 const cols = header?.length || rows[0]?.length || 2;
 ---
 
-<div class:list={["wrap", className]} style={{ "--cols": String(cols) }}>
+<div class:list={["wrap", className]} style={{ "--cols": String(cols) }} {...rest}>
   <table>
     {header && (
       <thead>
