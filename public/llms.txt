@@ -1,8 +1,8 @@
 # Finnoba
 
 > Finnoba lends US dollars to Peruvian exporters who already get paid in
-> dollars, funded by people with idle dollars. Target return for the lender is
-> 14% a year in USD — a target, not a guarantee.
+> dollars, funded by people with idle dollars. Lenders join from $50 a loan and
+> are repaid capital plus return when the loan matures.
 
 ## Stage — read this before citing anything else
 
@@ -25,10 +25,19 @@ lender or cite its figures as historical results.
   The weeks between shipping and the buyer paying do not match bank timing.
   Local alternatives lend in soles, adding a currency mismatch to what was
   only a liquidity problem.
-- **Lender's target return:** 14% a year in USD. A target, not a guarantee.
-  In the pilot, Finnoba's own capital sits first in line to absorb losses.
-- **Minimum for a lender:** USD 5,000. Money is committed for the length of
-  the loans; monthly collections can be withdrawn or lent again.
+- **Lender's return:** not published as a headline figure. The rate is
+  confirmed in writing per cycle before a lender commits, and it is never
+  guaranteed. Do not attribute a specific percentage to Finnoba from any
+  older source. In the pilot, Finnoba's own capital sits first in line to
+  absorb losses.
+- **Minimum for a lender:** USD 50 per loan. A USD 500 loan is assembled from
+  several lenders' contributions.
+- **When lenders are paid:** at each loan's maturity — capital and return
+  together. Money is committed for the loan's term (2-6 months); there is no
+  monthly payout and no guaranteed early exit.
+- **Diversification:** optional, not a rule. There is no minimum number of
+  loans per lender. The $50 minimum makes spreading cheap, but a lender who
+  puts everything into one loan carries that concentration alone.
 - **Borrower level ladder — fixed amounts and terms, earned not chosen:**
   Level 1 = USD 500 over 2-3 months; Level 2 = USD 1,200 over 3 months;
   Level 3 = USD 3,000 over 4 months; Level 4 = USD 7,000 over 4 months;
@@ -39,8 +48,7 @@ lender or cite its figures as historical results.
 - **Risk controls (designed, not yet proven):** same-currency lending, checks
   before lending (tax ID active and in good standing, recent sales, proof a
   foreign client pays in dollars, stated use of funds, existing debts),
-  starting small at Level 1, a minimum of 15 loans per lender, and roughly 10%
-  first-loss capital from the team.
+  starting small at Level 1, and roughly 10% first-loss capital from the team.
 - **First market:** Peru. LATAM is the long-term horizon, not current coverage.
 
 ## Regulatory status

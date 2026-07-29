@@ -5,23 +5,23 @@ export const DICTIONARIES = {
     nav: {
       how: "Cómo funciona",
       investors: "Inversores",
-      thesis: "Tesis",
-      faq: "FAQ",
+      thesis: "Por qué Finnoba",
+      faq: "Preguntas",
       app: "Llévame a la app",
     },
     home: {
       meta: {
-        title: "Finnoba — Crédito productivo en USD para LATAM",
+        title: "Finnoba — Préstamos en dólares a exportadores peruanos",
         description:
-          "Prestamos dólares a exportadores peruanos que ya cobran en dólares. Rendimiento objetivo de 14% al año en USD, pagado por negocios que devuelven préstamos reales.",
+          "Prestamos dólares a exportadores peruanos que ya cobran en dólares. Entras desde $50 por préstamo y cobras capital y rendimiento al vencimiento.",
       },
       hero: {
         tag: "Piloto 2026 · Perú · Cupos limitados",
         h1: "Tus dólares, prestados a quien ya gana dólares.",
-        sub: "Finnoba conecta a quien tiene dólares parados con exportadores peruanos que los bancos no atienden. Rendimiento objetivo de 14% al año en USD, respaldado por préstamos a negocios reales.",
-        primary: "Quiero invertir",
+        sub: "Finnoba conecta a quien tiene dólares parados con exportadores peruanos que los bancos no atienden. Entras desde $50 por préstamo y recuperas capital y rendimiento cuando el préstamo vence.",
+        primary: "Quiero prestar",
         secondary: "Necesito financiamiento",
-        badges: ["Todo en dólares", "Empiezas desde $500", "Perú, primer mercado"],
+        badges: ["Todo en dólares", "Prestas desde $50", "Perú, primer mercado"],
       },
       preview: {
         url: "app.finnoba.xyz",
@@ -29,11 +29,11 @@ export const DICTIONARIES = {
         addFunds: "Añadir fondos",
         title: "Negocios disponibles",
         sub: "Presta a exportadores verificados y cobra en dólares.",
-        headers: { business: "NEGOCIO", amount: "MONTO", term: "PLAZO", yield: "RENDIMIENTO", grade: "NIVEL" },
+        headers: { business: "NEGOCIO", amount: "MONTO", term: "PLAZO", grade: "NIVEL" },
       },
       stats: [
         { label: "Etapa", value: "Piloto 2026", sub: "aún no hemos prestado" },
-        { label: "Rendimiento objetivo", value: "14%", sub: "al año en USD · no garantizado", subColor: "#157A47" },
+        { label: "Entras desde", value: "$50", sub: "por préstamo", subColor: "#157A47" },
         { label: "Primer mercado", value: "Perú", sub: "exportadores que cobran en dólares" },
       ],
       markets: {
@@ -41,7 +41,7 @@ export const DICTIONARIES = {
         title: "Presta a exportadores reales. Cobra en dólares.",
         sub: "Cada negocio se verifica antes de publicarse: que exista, que exporte y que le paguen en dólares.",
         browse: "Ver condiciones",
-        yieldLabel: "Rendimiento al año",
+        amountLabel: "Monto del préstamo",
         exampleLabel: "Ejemplo ilustrativo",
         disclaimer:
           "Ejemplos ilustrativos: negocios ficticios, no son ofertas vigentes. Finnoba aún no ha prestado dinero.",
@@ -65,9 +65,9 @@ export const DICTIONARIES = {
             tint: "peach",
           },
           {
-            eyebrow: "Rendimiento objetivo",
-            title: "14% al año en dólares, respaldado por préstamos",
-            body: "Lo que gana el inversor lo pagan negocios reales devolviendo préstamos reales. No hay especulación de por medio. Es un objetivo, no una garantía.",
+            eyebrow: "De dónde sale el rendimiento",
+            title: "Lo paga un negocio que vendió, no un mercado que subió",
+            body: "Lo que ganas viene de exportadores devolviendo préstamos en dólares. No hay especulación de por medio. La tasa de cada ciclo te la confirmamos por escrito antes de que pongas nada, y no es una garantía: un préstamo puede no devolverse.",
             tint: "sky",
           },
           {
@@ -87,8 +87,8 @@ export const DICTIONARIES = {
             color: "#6D54E8",
             steps: [
               { t: "Pones tu dinero", d: "Defines cuánto quieres prestar y firmamos las condiciones." },
-              { t: "Se reparte entre varios negocios", d: "Tu dinero no va a un solo préstamo, se reparte para que un impago no te golpee entero." },
-              { t: "Cobras cada mes", d: "Los negocios pagan mensualmente en dólares. El objetivo es 14% al año." },
+              { t: "Eliges en qué negocios entrar", d: "Desde $50 por préstamo, así que con poco puedes estar en varios y no depender de uno solo." },
+              { t: "Cobras al vencimiento", d: "Cuando el préstamo termina recuperas tu capital más lo que rindió, en dólares." },
             ],
           },
           {
@@ -104,7 +104,7 @@ export const DICTIONARIES = {
       },
       cta: {
         title: "Empieza hoy.",
-        sub: "Ya sea para poner a trabajar USD ocioso o para financiar tu próximo embarque de exportación, el proceso es 100% digital.",
+        sub: "Tanto si tienes dólares parados como si necesitas financiar tu próximo embarque, esto empieza con una conversación.",
         primary: "Empezar",
       },
     },
@@ -125,21 +125,20 @@ export const DICTIONARIES = {
         },
         {
           k: "02",
-          t: "Tu dinero se reparte entre varios negocios",
-          b: "No va a un solo préstamo. Se reparte entre varios exportadores para que un impago no te golpee entero. Cada negocio pasa antes por nuestra revisión.",
+          t: "Entras a los préstamos que elijas",
+          b: "Desde $50 por préstamo. Un préstamo de $500 se arma entre varias personas, así que con poco dinero puedes estar en varios negocios a la vez en lugar de depender de uno. Cada negocio pasa antes por nuestra revisión.",
         },
         {
           k: "03",
-          t: "Cobras cada mes",
-          b: "Los negocios pagan en cuotas mensuales. Recibes tu parte cada mes junto con un reporte de cómo va cada préstamo.",
+          t: "Cobras cuando el préstamo termina",
+          b: "Al vencimiento recuperas tu capital junto con lo que rindió. Mientras tanto te mandamos un reporte de cómo va cada préstamo.",
         },
       ],
       levelsTitle: "Si vas a pedir: la escalera",
       levelsIntro:
         "Nadie empieza pidiendo mucho. Tu primer préstamo son $500 a pocos meses. Cuando lo pagas completo, subes de nivel: te prestamos más, por más tiempo y a una tasa más baja. La tasa no la eliges, te la ganas pagando.",
-      levelsHead: ["Nivel", "Monto", "Plazo"],
       levelsFoot:
-        "La tasa baja en cada nivel. Te la decimos por escrito antes de que aceptes nada, y siempre dentro del tope que fija la ley peruana.",
+        "La tasa baja en cada nivel. Te la decimos por escrito antes de que aceptes nada, y siempre por debajo del tope legal: el Banco Central fija un máximo de 99,84% anual en moneda extranjera para el periodo mayo-octubre 2026.",
       requirementsTitle: "Qué te pedimos",
       requirements: [
         "RUC activo y habido en SUNAT",
@@ -151,17 +150,18 @@ export const DICTIONARIES = {
       flowTitle: "El recorrido completo",
       flow: [
         { t: "Tú prestas", b: "Pones dólares en el primer ciclo." },
-        { t: "Se reparte", b: "Tu dinero se divide entre varios préstamos." },
+        { t: "Se arma el préstamo", b: "Varias personas juntan el monto de cada préstamo." },
         { t: "Revisamos", b: "Verificamos cada negocio antes de darle el dinero." },
         { t: "Exportadores", b: "Negocios peruanos que cobran en dólares." },
         { t: "Cobramos", b: "Seguimiento mensual de cada cuota." },
-        { t: "Te pagamos", b: "Tu parte, cada mes." },
+        { t: "Te pagamos", b: "Capital y rendimiento al vencer el préstamo." },
       ],
       tableTitle: "Plazos y frecuencias",
       table: [
         ["Plazo de los préstamos", "2 a 6 meses"],
-        ["Cada cuánto cobras", "Cada mes"],
-        ["Reporte", "Día 5 del mes siguiente"],
+        ["Cuándo cobras", "Al vencimiento de cada préstamo"],
+        ["Monto mínimo por préstamo", "$50"],
+        ["Reporte", "Mensual, día 5"],
       ],
       cta: "Ver condiciones para inversores",
     },
@@ -175,16 +175,17 @@ export const DICTIONARIES = {
       sub: "Estas son las condiciones del primer ciclo y cómo se entra.",
       termsTitle: "Condiciones del primer ciclo",
       terms: [
-        ["Monto mínimo", "$5,000"],
-        ["Monto máximo sugerido", "$250,000 por ciclo"],
-        ["Rendimiento objetivo", "14% al año en dólares (no garantizado)"],
+        ["Monto mínimo por préstamo", "$50"],
+        ["Monto máximo sugerido", "$10,000 por ciclo"],
         ["A quién se le presta", "Exportadores peruanos que cobran en dólares"],
-        ["Cuánto dura", "2 a 6 meses, según los préstamos de tu cartera"],
-        ["Cada cuánto cobras", "Cada mes"],
+        ["Cuánto dura", "2 a 6 meses, según los préstamos que elijas"],
+        ["Cuándo cobras", "Capital y rendimiento al vencimiento de cada préstamo"],
         ["Salir antes", "Se evalúa caso por caso"],
-        ["Comisión de Finnoba", "[POR DEFINIR]"],
-        ["Mínimo de préstamos por persona", "15, para que no dependas de uno solo"],
+        ["En cuántos préstamos entras", "Los que quieras. Desde $50 cada uno"],
       ],
+      ladderTitle: "Qué financia tu dinero",
+      ladderBody:
+        "Préstamos pequeños y cortos a exportadores peruanos. Nadie entra pidiendo el máximo: todos empiezan en $500 y solo suben de monto cuando devolvieron lo anterior completo. Eso mantiene acotado lo que puede costarte cada negocio, y hace que para cuando alguien llega a $15.000 ya tenga cuatro préstamos pagados detrás.",
       profileTitle: "Para quién es y para quién no",
       profileBody:
         "El piloto es privado y está pensado para gente que entiende que prestar dinero implica riesgo, que puede dejarlo trabajando el ciclo completo y que no necesita ese dinero antes.",
@@ -225,18 +226,18 @@ export const DICTIONARIES = {
       sub: "El exportador que ya cobra en dólares es el mejor pagador que nadie está financiando.",
       problemTitle: "El problema, en números",
       problemIntro:
-        "Un exportador peruano vende afuera y le pagan en dólares. Aun así, cuando necesita dinero para producir el siguiente pedido, el banco le pide un inmueble en garantía y años de balances auditados. La campaña no espera, así que termina financiándose caro o con lo suyo. Ese hueco es el negocio.",
+        "En Perú el precio del crédito depende del tamaño de quien lo pide, no de si puede pagarlo. Estas son las tasas que cobran los bancos, según el propio Banco Central. Un exportador pequeño que vende afuera y cobra en dólares paga varias veces lo que paga una corporación por el mismo dinero.",
       stats: [
-        { v: "[X]%", l: "Exportadores pequeños que dicen que su mayor freno es la falta de capital de trabajo" },
-        { v: "[X]", l: "Días que pasan, en promedio, entre que embarcan y que el comprador les paga" },
-        { v: "$[X]B", l: "Financiamiento que le falta a las pymes exportadoras de la región" },
-        { v: "[X]%", l: "Cuánto más caro les sale el crédito fuera del banco" },
+        { v: "5,34%", l: "Paga al año una gran corporación peruana por un crédito bancario" },
+        { v: "20,01%", l: "Paga una pequeña empresa por ese mismo crédito" },
+        { v: "69,59%", l: "Paga una microempresa. Trece veces la tasa corporativa" },
+        { v: "+514", l: "Puntos básicos que subió la tasa de microempresa en 12 meses. A todos los demás segmentos les bajó" },
       ],
       statsFootnote:
-        "Cifras pendientes de publicar con fuente verificable (BID, Banco Mundial, BCRP, PROMPERÚ).",
+        "Tasas activas anuales en moneda nacional de las empresas bancarias al 27 de febrero de 2026. Fuente: Banco Central de Reserva del Perú, nota informativa de marzo de 2026.",
       whyFailTitle: "Por qué nadie los atiende",
       whyFail: [
-        "El banco mira las garantías y el pasado contable, no el pedido que el exportador tiene firmado ni los dólares que va a cobrar por él. Un negocio con pedidos en firme pero sin propiedades no pasa el filtro.",
+        "El banco mira las garantías y el pasado contable, no el pedido que el exportador tiene firmado ni los dólares que va a cobrar por él. Un negocio con pedidos en firme pero sin propiedades no pasa el filtro. Por eso la tasa depende del tamaño: 5,34% si eres corporación, 69,59% si eres microempresa.",
         "Los tiempos no cuadran. Entre que se embarca y que el comprador paga pasan semanas, pero el dinero se necesita antes de producir. Cuando el crédito llega, la campaña ya pasó.",
         "Las alternativas locales prestan en soles. El exportador acaba debiendo en una moneda y cobrando en otra, y a un problema de liquidez se le suma el riesgo de que el dólar se mueva.",
       ],
@@ -282,8 +283,8 @@ export const DICTIONARIES = {
         },
         {
           k: "04",
-          t: "Tu dinero se reparte",
-          b: "Nunca vas a tener todo tu dinero en un solo préstamo. El mínimo es repartirlo entre 15. Así un negocio que no paga te hace un rasguño, no un hueco.",
+          t: "Puedes repartir desde $50",
+          b: "Un préstamo de $500 se arma entre varias personas, así que entrar cuesta $50. Con $1.000 puedes estar en veinte negocios distintos en vez de uno. No te obligamos a repartir, pero decimos lo obvio: si pones todo en un solo préstamo, ese riesgo es entero tuyo.",
         },
         {
           k: "05",
@@ -296,8 +297,7 @@ export const DICTIONARIES = {
       metrics: [
         ["Préstamos que no se pagan", "Menos del 5%", "Sin datos"],
         ["Solicitudes que aprobamos", "15-25%", "Sin datos"],
-        ["Préstamos por persona", "15 o más", "Sin datos"],
-        ["Dinero recuperado tras un atraso", "60% o más", "Sin datos"],
+        ["Dinero recuperado tras un atraso", "25% o más", "Sin datos"],
         ["Plazo de los préstamos", "2 a 6 meses", "Sin datos"],
       ],
       metricsNote:
@@ -383,24 +383,24 @@ export const DICTIONARIES = {
           title: "Sobre tu dinero",
           items: [
             {
-              q: "¿Cuánto es lo mínimo y cómo cobro?",
-              a: "Lo mínimo para entrar al primer ciclo son $5,000. Cobras cada mes, en proporción a lo que hayan pagado los negocios de tu cartera. Apuntamos a un 14% al año en dólares, pero es un objetivo, no una garantía.",
+              q: "¿Cuánto es lo mínimo y cuándo cobro?",
+              a: "Entras desde $50 por préstamo. Un préstamo de $500 se arma entre varias personas, por eso el mínimo es bajo. Cobras al vencimiento: cuando el negocio termina de pagar recuperas tu capital junto con lo que rindió.",
             },
             {
               q: "¿Qué pasa si un negocio no paga?",
-              a: "Por eso tu dinero se reparte entre 15 préstamos o más: uno que falle no te tumba. Además ponemos capital nuestro que absorbe las primeras pérdidas antes de que te toquen a ti. Apuntamos a que falle menos del 5%.",
+              a: "Ponemos capital nuestro que absorbe las primeras pérdidas antes de que te toquen a ti. Y como puedes entrar desde $50, con poco dinero estás en varios préstamos en vez de depender de uno. Apuntamos a que falle menos del 5%, pero es un objetivo sin historial detrás.",
             },
             {
               q: "¿Puedo sacar mi dinero antes?",
-              a: "Tu dinero queda comprometido con los plazos de los préstamos, que van de 2 a 6 meses. Lo que cobras cada mes sí puedes retirarlo o volver a prestarlo. Si necesitas salir del todo antes de tiempo, lo vemos caso por caso.",
+              a: "No mientras el préstamo corre. Tu dinero queda comprometido hasta que el negocio termine de pagar, entre 2 y 6 meses según el préstamo. Si necesitas salir antes, lo vemos caso por caso, pero no lo prometemos.",
             },
             {
               q: "¿Y los impuestos?",
               a: "Lo que ganas es un ingreso y tributa según las reglas del país donde vives. Te damos un reporte anual con la información para declararlo. Consulta con tu contador, nosotros no damos asesoría fiscal.",
             },
             {
-              q: "¿El 14% está garantizado?",
-              a: "No. Es un objetivo, no una promesa. Repartir el dinero entre varios préstamos y poner capital propio primero reduce bastante el riesgo, pero prestar dinero nunca está libre de perderlo.",
+              q: "¿Cuánto voy a ganar y está garantizado?",
+              a: "La tasa depende del nivel del negocio al que entres y te la confirmamos por escrito antes de que comprometas nada. Garantizado no está: prestar dinero nunca lo está. Poner capital nuestro primero y que puedas repartir desde $50 reduce el riesgo, no lo elimina.",
             },
           ],
         },
@@ -502,17 +502,17 @@ export const DICTIONARIES = {
     },
     footer: {
       tagline:
-        "Construyendo el próximo estándar de inversión productiva en LATAM.",
+        "Conectamos dólares parados con exportadores peruanos que ya cobran en dólares.",
       productTitle: "Producto",
       product: [
         { l: "Cómo funciona", h: "/how-it-works" },
         { l: "Para inversores", h: "/investors" },
-        { l: "Tesis", h: "/thesis" },
-        { l: "Control de riesgo", h: "/risk" },
+        { l: "Por qué Finnoba", h: "/thesis" },
+        { l: "Riesgo", h: "/risk" },
       ],
       resourcesTitle: "Recursos",
       resources: [
-        { l: "FAQ", h: "/faq" },
+        { l: "Preguntas", h: "/faq" },
         { l: "Transparencia", h: "/transparency" },
         { l: "Documentación", h: "https://www.notion.so", e: true },
         { l: "Equipo", h: "/team" },
@@ -538,24 +538,24 @@ export const DICTIONARIES = {
   en: {
     nav: {
       how: "How it works",
-      investors: "Investors",
-      thesis: "Thesis",
-      faq: "FAQ",
+      investors: "Lenders",
+      thesis: "Why Finnoba",
+      faq: "Questions",
       app: "Take me to the app",
     },
     home: {
       meta: {
-        title: "Finnoba — USD productive credit for LATAM",
+        title: "Finnoba — Dollar loans to Peruvian exporters",
         description:
-          "We lend dollars to Peruvian exporters who already get paid in dollars. Target return of 14% a year in USD, paid by businesses repaying real loans.",
+          "We lend dollars to Peruvian exporters who already get paid in dollars. You join from $50 a loan and collect capital and return at maturity.",
       },
       hero: {
         tag: "2026 pilot · Peru · Limited seats",
         h1: "Your dollars, lent to people who already earn dollars.",
-        sub: "Finnoba connects idle dollars with Peruvian exporters that banks won't serve. Target return of 14% a year in USD, backed by loans to real businesses.",
+        sub: "Finnoba connects idle dollars with Peruvian exporters that banks won't serve. You join from $50 a loan and get your capital and return back when the loan matures.",
         primary: "I want to lend",
         secondary: "I need financing",
-        badges: ["Everything in dollars", "You start at $500", "Peru, first market"],
+        badges: ["Everything in dollars", "Lend from $50", "Peru, first market"],
       },
       preview: {
         url: "app.finnoba.xyz",
@@ -563,11 +563,11 @@ export const DICTIONARIES = {
         addFunds: "Add funds",
         title: "Available businesses",
         sub: "Lend to vetted exporters and get paid in dollars.",
-        headers: { business: "BUSINESS", amount: "AMOUNT", term: "TERM", yield: "RETURN", grade: "LEVEL" },
+        headers: { business: "BUSINESS", amount: "AMOUNT", term: "TERM", grade: "LEVEL" },
       },
       stats: [
         { label: "Stage", value: "2026 pilot", sub: "we haven't lent yet" },
-        { label: "Target return", value: "14%", sub: "a year in USD · not guaranteed", subColor: "#157A47" },
+        { label: "Join from", value: "$50", sub: "per loan", subColor: "#157A47" },
         { label: "First market", value: "Peru", sub: "exporters paid in dollars" },
       ],
       markets: {
@@ -575,7 +575,7 @@ export const DICTIONARIES = {
         title: "Lend to real exporters. Get paid in dollars.",
         sub: "Every business is checked before it's listed: that it exists, that it exports and that it gets paid in dollars.",
         browse: "See the terms",
-        yieldLabel: "Return per year",
+        amountLabel: "Loan amount",
         exampleLabel: "Illustrative example",
         disclaimer:
           "Illustrative examples: fictional businesses, not live offerings. Finnoba has not lent any money yet.",
@@ -599,9 +599,9 @@ export const DICTIONARIES = {
             tint: "peach",
           },
           {
-            eyebrow: "Target return",
-            title: "14% a year in dollars, backed by loans",
-            body: "What the lender earns is paid by real businesses repaying real loans. No speculation involved. It's a target, not a guarantee.",
+            eyebrow: "Where the return comes from",
+            title: "It's paid by a business that sold, not a market that rose",
+            body: "What you earn comes from exporters repaying loans in dollars. No speculation involved. We confirm each cycle's rate in writing before you commit anything, and it isn't a guarantee: a loan may not come back.",
             tint: "sky",
           },
           {
@@ -621,8 +621,8 @@ export const DICTIONARIES = {
             color: "#6D54E8",
             steps: [
               { t: "You put your money in", d: "You decide how much to lend and we sign the terms." },
-              { t: "It spreads across several businesses", d: "Your money doesn't go to one loan — it spreads out so a single default doesn't hit you whole." },
-              { t: "You collect every month", d: "Businesses repay monthly in dollars. The target is 14% a year." },
+              { t: "You pick which businesses to back", d: "From $50 a loan, so even a small amount can sit across several instead of depending on one." },
+              { t: "You collect at maturity", d: "When the loan ends you get your capital back plus what it earned, in dollars." },
             ],
           },
           {
@@ -659,21 +659,20 @@ export const DICTIONARIES = {
         },
         {
           k: "02",
-          t: "Your money spreads across several businesses",
-          b: "It doesn't go to a single loan. It spreads across several exporters so one default doesn't hit you whole. Every business is checked first.",
+          t: "You join the loans you choose",
+          b: "From $50 a loan. A $500 loan is put together by several people, so a small amount can sit across several businesses instead of depending on one. Every business is checked first.",
         },
         {
           k: "03",
-          t: "You collect every month",
-          b: "Businesses repay in monthly instalments. You get your share each month along with a report on how every loan is doing.",
+          t: "You collect when the loan ends",
+          b: "At maturity you get your capital back along with what it earned. In the meantime we send you a report on how each loan is doing.",
         },
       ],
       levelsTitle: "If you're going to borrow: the ladder",
       levelsIntro:
         "Nobody starts big. Your first loan is $500 over a few months. Repay it in full and you move up a level: we lend you more, for longer, at a lower rate. You don't choose the rate — you earn it by paying.",
-      levelsHead: ["Level", "Amount", "Term"],
       levelsFoot:
-        "The rate drops at every level. We put it in writing before you accept anything, and always within the cap set by Peruvian law.",
+        "The rate drops at every level. We put it in writing before you accept anything, and always below the legal cap: the central bank sets a maximum of 99.84% a year in foreign currency for May-October 2026.",
       requirementsTitle: "What we ask for",
       requirements: [
         "An active, in-good-standing tax ID (RUC) with SUNAT",
@@ -685,17 +684,18 @@ export const DICTIONARIES = {
       flowTitle: "The whole journey",
       flow: [
         { t: "You lend", b: "You put dollars into the first cycle." },
-        { t: "It spreads", b: "Your money is divided across several loans." },
+        { t: "The loan is assembled", b: "Several people together make up each loan." },
         { t: "We check", b: "We verify each business before releasing money." },
         { t: "Exporters", b: "Peruvian businesses paid in dollars." },
         { t: "We collect", b: "Monthly follow-up on every instalment." },
-        { t: "We pay you", b: "Your share, every month." },
+        { t: "We pay you", b: "Capital and return when the loan matures." },
       ],
       tableTitle: "Terms and timing",
       table: [
         ["Loan terms", "2 to 6 months"],
-        ["How often you collect", "Every month"],
-        ["Report", "5th of the following month"],
+        ["When you collect", "At each loan's maturity"],
+        ["Minimum per loan", "$50"],
+        ["Report", "Monthly, on the 5th"],
       ],
       cta: "See the terms for lenders",
     },
@@ -709,16 +709,17 @@ export const DICTIONARIES = {
       sub: "These are the terms of the first cycle and how you get in.",
       termsTitle: "First cycle terms",
       terms: [
-        ["Minimum amount", "$5,000"],
-        ["Suggested maximum", "$250,000 per cycle"],
-        ["Target return", "14% a year in dollars (not guaranteed)"],
+        ["Minimum per loan", "$50"],
+        ["Suggested maximum", "$10,000 per cycle"],
         ["Who we lend to", "Peruvian exporters paid in dollars"],
-        ["How long it lasts", "2 to 6 months, depending on the loans in your book"],
-        ["How often you collect", "Every month"],
+        ["How long it lasts", "2 to 6 months, depending on the loans you pick"],
+        ["When you collect", "Capital and return at each loan's maturity"],
         ["Leaving early", "Assessed case by case"],
-        ["Finnoba's fee", "[TBD]"],
-        ["Minimum loans per person", "15, so you don't depend on one"],
+        ["How many loans you join", "As many as you like. From $50 each"],
       ],
+      ladderTitle: "What your money funds",
+      ladderBody:
+        "Small, short loans to Peruvian exporters. Nobody walks in asking for the maximum: everyone starts at $500 and only moves up once they've repaid in full. That keeps what any one business can cost you contained, and means that by the time someone reaches $15,000 they have four repaid loans behind them.",
       profileTitle: "Who this is for and who it isn't",
       profileBody:
         "The pilot is private and meant for people who understand that lending money carries risk, who can leave it working for the full cycle and who won't need it before then.",
@@ -759,18 +760,18 @@ export const DICTIONARIES = {
       sub: "The exporter who already gets paid in dollars is the best payer nobody is financing.",
       problemTitle: "The problem, in numbers",
       problemIntro:
-        "A Peruvian exporter sells abroad and gets paid in dollars. Even so, when they need money to produce the next order, the bank asks for real estate as collateral and years of audited accounts. The season doesn't wait, so they end up financing it expensively or out of their own pocket. That gap is the business.",
+        "In Peru the price of credit depends on the size of whoever asks for it, not on whether they can repay. These are the rates banks charge, according to the central bank itself. A small exporter who sells abroad and gets paid in dollars pays several times what a corporation pays for the same money.",
       stats: [
-        { v: "[X]%", l: "Small exporters who say lack of working capital is their biggest constraint" },
-        { v: "[X]", l: "Days, on average, between shipping and getting paid by the buyer" },
-        { v: "$[X]B", l: "Financing the region's exporting SMEs are missing" },
-        { v: "[X]%", l: "How much more credit costs them outside a bank" },
+        { v: "5.34%", l: "What a large Peruvian corporation pays a year for a bank loan" },
+        { v: "20.01%", l: "What a small business pays for that same loan" },
+        { v: "69.59%", l: "What a micro business pays. Thirteen times the corporate rate" },
+        { v: "+514", l: "Basis points the micro-business rate rose in 12 months. Every other segment's fell" },
       ],
       statsFootnote:
-        "Figures pending publication with a verifiable source (IDB, World Bank, BCRP, PROMPERÚ).",
+        "Annual lending rates in local currency at commercial banks, as of 27 February 2026. Source: Banco Central de Reserva del Perú, March 2026 briefing.",
       whyFailTitle: "Why nobody serves them",
       whyFail: [
-        "A bank looks at collateral and past accounts, not at the order the exporter already has signed or the dollars they'll be paid for it. A business with firm orders but no property doesn't clear the filter.",
+        "A bank looks at collateral and past accounts, not at the order the exporter already has signed or the dollars they'll be paid for it. A business with firm orders but no property doesn't clear the filter. That's why the rate tracks size: 5.34% if you're a corporation, 69.59% if you're a micro business.",
         "The timing doesn't line up. Weeks pass between shipping and the buyer paying, but the money is needed before production starts. By the time credit arrives, the season is over.",
         "Local alternatives lend in soles. The exporter ends up owing in one currency and earning in another, and a liquidity problem picks up currency risk on top.",
       ],
@@ -816,8 +817,8 @@ export const DICTIONARIES = {
         },
         {
           k: "04",
-          t: "Your money spreads out",
-          b: "You'll never have all your money in a single loan. The minimum is spreading it across 15. That way a business that doesn't pay leaves a scratch, not a hole.",
+          t: "You can spread from $50",
+          b: "A $500 loan is assembled by several people, so joining costs $50. With $1,000 you can sit across twenty different businesses instead of one. We don't force you to spread, but we'll say the obvious: put it all in one loan and that risk is entirely yours.",
         },
         {
           k: "05",
@@ -830,8 +831,7 @@ export const DICTIONARIES = {
       metrics: [
         ["Loans that don't get repaid", "Under 5%", "No data"],
         ["Applications we approve", "15-25%", "No data"],
-        ["Loans per person", "15 or more", "No data"],
-        ["Money recovered after a late payment", "60% or more", "No data"],
+        ["Money recovered after a late payment", "25% or more", "No data"],
         ["Loan terms", "2 to 6 months", "No data"],
       ],
       metricsNote:
@@ -917,24 +917,24 @@ export const DICTIONARIES = {
           title: "About your money",
           items: [
             {
-              q: "What's the minimum and how do I get paid?",
-              a: "The minimum to join the first cycle is $5,000. You collect every month, in proportion to what the businesses in your book have repaid. We're aiming for 14% a year in dollars, but it's a target, not a guarantee.",
+              q: "What's the minimum and when do I get paid?",
+              a: "You join from $50 a loan. A $500 loan is assembled by several people, which is why the minimum is low. You collect at maturity: once the business finishes repaying you get your capital back along with what it earned.",
             },
             {
               q: "What if a business doesn't pay?",
-              a: "That's why your money spreads across 15 loans or more: one failing doesn't sink you. On top of that we put in our own capital, which absorbs the first losses before they reach you. We're aiming for under 5% to fail.",
+              a: "We put in our own capital, which absorbs the first losses before they reach you. And since you can join from $50, a small amount sits across several loans instead of depending on one. We're aiming for under 5% to fail, but that's a target with no track record behind it.",
             },
             {
               q: "Can I take my money out early?",
-              a: "Your money is committed for the length of the loans, which run 2 to 6 months. What you collect each month you can withdraw or lend again. If you need to exit entirely ahead of time, we look at it case by case.",
+              a: "Not while the loan is running. Your money is committed until the business finishes repaying, 2 to 6 months depending on the loan. If you need to exit sooner we'll look at it case by case, but we don't promise it.",
             },
             {
               q: "What about taxes?",
               a: "What you earn is income and is taxed under the rules of the country where you live. We give you an annual report with the information to declare it. Check with your accountant — we don't give tax advice.",
             },
             {
-              q: "Is the 14% guaranteed?",
-              a: "No. It's a target, not a promise. Spreading money across several loans and putting our own capital in first cuts the risk considerably, but lending money is never free of losing it.",
+              q: "How much will I earn, and is it guaranteed?",
+              a: "The rate depends on the level of the business you back, and we confirm it in writing before you commit anything. Guaranteed it is not — lending never is. Putting our capital in first and letting you spread from $50 cuts the risk; it doesn't remove it.",
             },
           ],
         },
@@ -1036,17 +1036,17 @@ export const DICTIONARIES = {
     },
     footer: {
       tagline:
-        "Building the next standard of productive investment in LATAM.",
+        "We connect idle dollars with Peruvian exporters who already get paid in dollars.",
       productTitle: "Product",
       product: [
         { l: "How it works", h: "/how-it-works" },
-        { l: "For investors", h: "/investors" },
-        { l: "Thesis", h: "/thesis" },
-        { l: "Risk control", h: "/risk" },
+        { l: "For lenders", h: "/investors" },
+        { l: "Why Finnoba", h: "/thesis" },
+        { l: "Risk", h: "/risk" },
       ],
       resourcesTitle: "Resources",
       resources: [
-        { l: "FAQ", h: "/faq" },
+        { l: "Questions", h: "/faq" },
         { l: "Transparency", h: "/transparency" },
         { l: "Documentation", h: "https://www.notion.so", e: true },
         { l: "Team", h: "/team" },

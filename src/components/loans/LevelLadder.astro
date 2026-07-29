@@ -1,0 +1,95 @@
+---
+import LevelShield from "./LevelShield.astro";
+import { LEVELS } from "../../lib/loans";
+
+/**
+ * The level ladder. The row itself climbs left to right, so the layout says
+ * the same thing the copy does before anyone reads a word.
+ */
+interface Props {
+  levelWord: string;
+  monthWord: string;
+}
+
+const { levelWord, monthWord } = Astro.props;
+---
+
+<ol class="ladder">
+  {
+    LEVELS.map((l, i) => (
+      <li class="rung" style={{ "--rise": `${i * 14}px` }}>
+        <LevelShield level={l.level} size={58} />
+        <p class="tier">{`${levelWord} ${l.level}`}</p>
+        <p class="amount">${l.amount.toLocaleString("en-US")}</p>
+        <p class="term">{`${l.term} ${monthWord}`}</p>
+      </li>
+    ))
+  }
+</ol>
+
+<style>
+  .ladder {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    align-items: end;
+  }
+
+  .rung {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    text-align: center;
+    padding-bottom: var(--rise);
+  }
+
+  .tier {
+    margin-top: 12px;
+    font-family: var(--font);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .amount {
+    font-family: var(--font);
+    font-weight: 800;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+  }
+
+  .term {
+    font-family: var(--font);
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  /* Below the fold of a phone the climb reads as misalignment, so it flattens
+     into a plain list and the shields do the escalating on their own. */
+  @media (max-width: 720px) {
+    .ladder {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .rung {
+      flex-direction: row;
+      align-items: center;
+      gap: 16px;
+      text-align: left;
+      padding-bottom: 0;
+    }
+
+    .tier { margin-top: 0; min-width: 84px; }
+    .amount { margin-left: auto; }
+  }
+</style>

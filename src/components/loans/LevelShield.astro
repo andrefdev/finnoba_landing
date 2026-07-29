@@ -1,0 +1,106 @@
+---
+import type { Level } from "../../lib/loans";
+
+/**
+ * Level badge. The shield holds an Andean terrace — an `andén`, the stepped
+ * hillside the coffee, cacao and avocado we finance actually grow on.
+ *
+ * The terraces are the data, not decoration: a level-3 business has three
+ * terraces and you can count them. The colour ramp climbs the site's aurora
+ * gradient (cool grey → violet → pink) rather than the usual bronze/silver/
+ * gold, so the badge belongs to this brand instead of to fantasy heraldry.
+ *
+ * No SVG gradients or filters here on purpose — those need document-unique
+ * ids, and a badge that may render more than once per page shouldn't depend
+ * on that. Every colour is a flat fill computed below.
+ */
+interface Props {
+  level: Level;
+  size?: number;
+  /** Accessible name; omit inside a labelled context to keep it decorative. */
+  title?: string;
+}
+
+// Bottom terrace first. The ramp's length is the level — the array is the data.
+const RAMP: Record<Level, readonly string[]> = {
+  1: ["#A7AAB3"],
+  2: ["#7E90CE", "#A3B0E0"],
+  3: ["#5B43D6", "#7A63EC", "#9D8BF3"],
+  4: ["#6D54E8", "#8B3DF0", "#A836DC", "#C42FD8"],
+  5: ["#6D54E8", "#8B3DF0", "#B23AD4", "#DF8CE8", "#F6CDF7"],
+};
+
+const { level, size = 64, title } = Astro.props;
+
+const ramp = RAMP[level];
+const crest = ramp[ramp.length - 1];
+
+// Terrace geometry, stacked upward from the shield's base.
+const H = 4.5;
+const GAP = 1.8;
+const Y_BASE = 43;
+const W_BASE = 22;
+const D_W = 3;
+
+const terraces = ramp.map((fill, i) => {
+  const w = W_BASE - i * D_W;
+  return { fill, w, x: 24 - w / 2, y: Y_BASE - H - i * (H + GAP) };
+});
+
+const SHIELD = "M6 6 H42 V30 C42 42 33 50 24 55 C15 50 6 42 6 30 Z";
+---
+
+<svg
+  class:list={["shield", `lvl-${level}`]}
+  width={size}
+  height={Math.round(size * (58 / 48))}
+  viewBox="0 0 48 58"
+  role={title ? "img" : "presentation"}
+  aria-label={title}
+  aria-hidden={title ? undefined : "true"}
+  style={{ "--crest": crest }}
+>
+  <path class="plate" d={SHIELD} />
+  {level >= 4 && <path class="inner-rule" d="M9.5 9.5 H38.5 V30 C38.5 40.2 30.8 47.4 24 51.6 C17.2 47.4 9.5 40.2 9.5 30 Z" />}
+
+  {terraces.map((t) => <rect x={t.x} y={t.y} width={t.w} height={H} rx="1.2" fill={t.fill} />)}
+
+  <path class="edge" d={SHIELD} />
+
+  {
+    level === 5 && (
+      <g class="sparks">
+        <path d="M24 0.8 L25.4 3.2 L24 5.6 L22.6 3.2 Z" />
+        <path d="M2.6 26 L4 28.4 L2.6 30.8 L1.2 28.4 Z" />
+        <path d="M45.4 26 L46.8 28.4 L45.4 30.8 L44 28.4 Z" />
+      </g>
+    )
+  }
+</svg>
+
+<style>
+  .shield { display: block; overflow: visible; }
+
+  /* The vessel: a near-neutral plate that lets the terraces carry the colour. */
+  .plate { fill: #f7f7fa; }
+  .edge {
+    fill: none;
+    stroke: var(--crest);
+    stroke-width: 1.4;
+    opacity: 0.55;
+  }
+
+  .inner-rule {
+    fill: none;
+    stroke: var(--crest);
+    stroke-width: 0.8;
+    opacity: 0.3;
+  }
+
+  .sparks path { fill: var(--crest); }
+
+  /* Only the top rung earns a glow. Spend the boldness once. */
+  .lvl-5 { filter: drop-shadow(0 4px 14px color-mix(in srgb, var(--crest) 55%, transparent)); }
+  .lvl-4 .plate { fill: #fbf8fe; }
+  .lvl-5 .plate { fill: #fdf6fe; }
+</style>

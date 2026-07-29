@@ -7,6 +7,7 @@ import Card from "../../components/common/Card.astro";
 import NumberBadge from "../../components/common/NumberBadge.astro";
 import DataTable from "../../components/common/DataTable.astro";
 import BulletList from "../../components/common/BulletList.astro";
+import LevelLadder from "../../components/loans/LevelLadder.astro";
 import PageCta from "../../components/common/PageCta.astro";
 import { COLOR } from "../../lib/tokens";
 import { dict, localeParams, type Lang } from "../../lib/i18n";
@@ -15,7 +16,9 @@ import { CONTACT_HREF } from "../../consts";
 export const getStaticPaths = localeParams;
 
 const { lang } = Astro.props as { lang: Lang };
-const i = dict(lang).investors;
+const t = dict(lang);
+const i = t.investors;
+const monthWord = lang === "es" ? "meses" : "months";
 ---
 
 <Base lang={lang} path="/investors" title={i.meta.title} description={i.meta.description}>
@@ -27,7 +30,12 @@ const i = dict(lang).investors;
   </Section>
 
   <Section paddingY="32px">
-    <SectionHeading eyebrow="02" title={i.profileTitle} lead={i.profileBody} />
+    <SectionHeading eyebrow="02" title={i.ladderTitle} lead={i.ladderBody} />
+    <LevelLadder levelWord={t.home.markets.levelLabel} monthWord={monthWord} />
+  </Section>
+
+  <Section paddingY="32px">
+    <SectionHeading eyebrow="03" title={i.profileTitle} lead={i.profileBody} />
     <div class="split">
       <Card variant="mint">
         <h3 class="card-title">{i.profileFor.title}</h3>
@@ -41,7 +49,7 @@ const i = dict(lang).investors;
   </Section>
 
   <Section>
-    <SectionHeading eyebrow="03" title={i.onboardingTitle} />
+    <SectionHeading eyebrow="04" title={i.onboardingTitle} />
     <ol class="steps">
       {i.onboarding.map((step, idx) => (
         <li>

@@ -4,13 +4,13 @@ import Chip from "../common/Chip.astro";
 import Sparkline from "../common/Sparkline.astro";
 import CategoryBadge from "./CategoryBadge.astro";
 import LevelChip from "./LevelChip.astro";
-import { CATEGORY, INVESTOR_YIELD, type Loan } from "../../lib/loans";
+import { CATEGORY, type Loan } from "../../lib/loans";
 import type { Lang } from "../../lib/i18n";
 
 interface Props extends Loan {
   lang: Lang;
   labels: {
-    yieldLabel: string;
+    amountLabel: string;
     exampleLabel: string;
     termSuffix: string;
     levelLabel: string;
@@ -35,11 +35,10 @@ const c = CATEGORY[category];
 
   <div class="figures">
     <div>
-      <p class="cap">{labels.yieldLabel}</p>
-      <p class="yield">{INVESTOR_YIELD}</p>
+      <p class="cap">{labels.amountLabel}</p>
+      <p class="yield">${amount.toLocaleString("en-US")}</p>
     </div>
     <div class="right">
-      <p class="amount">${amount.toLocaleString("en-US")}</p>
       <p class="term">{term} {labels.termSuffix}</p>
     </div>
   </div>

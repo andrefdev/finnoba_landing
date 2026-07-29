@@ -8,10 +8,8 @@
 //   L1 $500 · 2-3mo   L2 $1,200 · 3mo   L3 $3,000 · 4mo
 //   L4 $7,000 · 4mo   L5 $15,000 · 6mo
 // The borrower's rate falls as they climb; those rates are deliberately not
-// published. The investor's return is the same on every loan — it does not
-// vary per borrower, so it lives here as one constant.
-
-export const INVESTOR_YIELD = "14%";
+// published. The lender's return is confirmed in writing per cycle rather
+// than advertised on a card, so no yield figure lives in this data.
 
 export const CATEGORY = {
   coffee:   { color: "#946100", icon: "coffee", label: { es: "Café de exportación",     en: "Coffee export" } },

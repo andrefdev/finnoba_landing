@@ -2,7 +2,7 @@
 import Wordmark from "../common/Wordmark.astro";
 import CategoryBadge from "../loans/CategoryBadge.astro";
 import LevelChip from "../loans/LevelChip.astro";
-import { LOANS, INVESTOR_YIELD } from "../../lib/loans";
+import { LOANS } from "../../lib/loans";
 import { dict, type Lang } from "../../lib/i18n";
 
 /**
@@ -60,7 +60,7 @@ const NAV_SECTIONS: Array<{ group: string | null; items: Array<[string, boolean]
         <p class="sub">{p.sub}</p>
 
         <div class="row is-head">
-          {[p.headers.business, p.headers.amount, p.headers.term, p.headers.yield, p.headers.grade].map((h) => (
+          {[p.headers.business, p.headers.amount, p.headers.term, p.headers.grade].map((h) => (
             <span class="col-head">{h}</span>
           ))}
         </div>
@@ -76,7 +76,6 @@ const NAV_SECTIONS: Array<{ group: string | null; items: Array<[string, boolean]
             </div>
             <span class="amount">${r.amount.toLocaleString("en-US")}</span>
             <span class="term">{r.term} {t.home.markets.termSuffix}</span>
-            <span class="yield">{INVESTOR_YIELD}</span>
             <span><LevelChip level={r.level} label={t.home.markets.levelLabel} /></span>
           </div>
         ))}
@@ -244,7 +243,7 @@ const NAV_SECTIONS: Array<{ group: string | null; items: Array<[string, boolean]
 
   .row {
     display: grid;
-    grid-template-columns: 1.9fr 1fr 0.9fr 1fr 0.9fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 12px;
     align-items: center;
     padding: 13px 14px;

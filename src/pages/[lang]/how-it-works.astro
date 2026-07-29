@@ -8,19 +8,19 @@ import Eyebrow from "../../components/common/Eyebrow.astro";
 import NumberBadge from "../../components/common/NumberBadge.astro";
 import DataTable from "../../components/common/DataTable.astro";
 import BulletList from "../../components/common/BulletList.astro";
+import LevelLadder from "../../components/loans/LevelLadder.astro";
 import PageCta from "../../components/common/PageCta.astro";
 import { dict, localeParams, type Lang } from "../../lib/i18n";
-import { LEVELS } from "../../lib/loans";
 
 export const getStaticPaths = localeParams;
 
 const { lang } = Astro.props as { lang: Lang };
-const c = dict(lang).how;
+const t = dict(lang);
+const c = t.how;
 
-// Rates are deliberately absent — they are agreed in writing with each
-// business, not advertised.
+// Rates are deliberately absent from the ladder — they are agreed in writing
+// with each business, not advertised.
 const monthWord = lang === "es" ? "meses" : "months";
-const levelRows = LEVELS.map((l) => [`${l.level}`, `$${l.amount.toLocaleString("en-US")}`, `${l.term} ${monthWord}`]);
 ---
 
 <Base lang={lang} path="/how-it-works" title={c.meta.title} description={c.meta.description}>
@@ -41,10 +41,8 @@ const levelRows = LEVELS.map((l) => [`${l.level}`, `$${l.amount.toLocaleString("
 
   <Section paddingY="32px">
     <SectionHeading eyebrow="02" title={c.levelsTitle} lead={c.levelsIntro} />
-    <div class="ladder">
-      <DataTable rows={levelRows} header={c.levelsHead} />
-      <p class="footnote">{c.levelsFoot}</p>
-    </div>
+    <LevelLadder levelWord={t.home.markets.levelLabel} monthWord={monthWord} />
+    <p class="footnote">{c.levelsFoot}</p>
 
     <h3 class="sub-title">{c.requirementsTitle}</h3>
     <BulletList items={c.requirements} />
@@ -122,10 +120,9 @@ const levelRows = LEVELS.map((l) => [`${l.level}`, `$${l.amount.toLocaleString("
 
   .narrow { max-width: 720px; }
 
-  .ladder { max-width: 560px; }
-
   .footnote {
-    margin-top: 14px;
+    margin-top: 28px;
+    max-width: 620px;
     font-family: var(--font);
     font-size: 13px;
     line-height: 1.6;
