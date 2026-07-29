@@ -1,0 +1,62 @@
+---
+import { COLOR } from "../../lib/tokens";
+
+interface Props {
+  data: readonly number[];
+  up?: boolean;
+  width?: number;
+  height?: number;
+}
+
+const { data, up = true, width = 320, height = 56 } = Astro.props;
+
+const stroke = up ? COLOR.green : COLOR.red;
+const min = Math.min(...data);
+const max = Math.max(...data);
+const range = max - min || 1;
+const stepX = width / (data.length - 1);
+const points = data.map((v, i) => `${i * stepX},${height - ((v - min) / range) * (height - 4) - 2}`);
+const linePath = `M${points.join("L")}`;
+const areaPath = `${linePath} L${width},${height} L0,${height} Z`;
+
+// Gradient ids must be unique per document — a shared id made every card
+// reuse the first card's gradient and produced invalid HTML. Derived from the
+// series so it stays deterministic across builds.
+const seed = data.join(",") + stroke;
+let h = 0;
+for (let i = 0; i < seed.length; i++) h = (Math.imul(31, h) + seed.charCodeAt(i)) | 0;
+const gradId = `spark-${(h >>> 0).toString(36)}`;
+---
+
+{
+  data.length >= 2 && (
+    <svg
+      class="spark"
+      width={width}
+      height={height}
+      viewBox={`0 0 ${width} ${height}`}
+      preserveAspectRatio="none"
+      aria-hidden="true"
+    >
+      <defs>
+        <linearGradient id={gradId} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color={stroke} stop-opacity="0.18" />
+          <stop offset="100%" stop-color={stroke} stop-opacity="0" />
+        </linearGradient>
+      </defs>
+      <path d={areaPath} fill={`url(#${gradId})`} />
+      <path
+        d={linePath}
+        fill="none"
+        stroke={stroke}
+        stroke-width="1.8"
+        stroke-linejoin="round"
+        stroke-linecap="round"
+      />
+    </svg>
+  )
+}
+
+<style>
+  .spark { display: block; width: 100%; }
+</style>

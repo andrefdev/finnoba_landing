@@ -1,0 +1,37 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/common/PageHero.astro";
+import Section from "../components/common/Section.astro";
+import Button from "../components/common/Button.astro";
+import { DEFAULT_LOCALE, dict } from "../lib/i18n";
+
+// A single 404 for the whole site — it has no locale of its own, so it offers
+// both languages and is kept out of the index.
+const es = dict("es");
+---
+
+<Base
+  lang={DEFAULT_LOCALE}
+  path="/404"
+  title="404"
+  description={es.home.meta.description}
+  noindex
+>
+  <PageHero title="404" subtitle="Esta página no existe · This page doesn't exist" />
+  <Section topRound>
+    <div class="actions">
+      <Button variant="ink" size="lg" href="/es">Ir al inicio</Button>
+      <Button variant="soft" size="lg" href="/en">Go to homepage</Button>
+    </div>
+  </Section>
+</Base>
+
+<style>
+  .actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+</style>

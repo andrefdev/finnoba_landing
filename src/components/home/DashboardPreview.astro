@@ -1,0 +1,305 @@
+---
+import Wordmark from "../common/Wordmark.astro";
+import CategoryBadge from "../loans/CategoryBadge.astro";
+import GradeChip from "../loans/GradeChip.astro";
+import { LOANS } from "../../lib/loans";
+import { dict, type Lang } from "../../lib/i18n";
+
+/**
+ * Browser-chrome mockup of the investor dashboard. Product chrome (sidebar
+ * items, the demo user) stays in English on purpose — it depicts an app UI,
+ * not site copy. Everything a visitor reads as a claim comes from the
+ * dictionary and is translated.
+ */
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = dict(lang);
+const p = t.home.preview;
+const rows = LOANS.slice(0, 4);
+
+const NAV_SECTIONS: Array<{ group: string | null; items: Array<[string, boolean]> }> = [
+  { group: null, items: [["Overview", false], ["Portfolio", false]] },
+  { group: "INVEST", items: [["Marketplace", true], ["Repayments", false]] },
+  { group: "ACCOUNT", items: [["Statements", false], ["Settings", false]] },
+];
+---
+
+<div class="frame" aria-hidden="true">
+  <div class="window">
+    <div class="chrome">
+      <span class="dot red"></span><span class="dot amber"></span><span class="dot green"></span>
+      <div class="url-wrap"><span class="url">{p.url}</span></div>
+    </div>
+
+    <div class="body">
+      <aside class="sidebar">
+        <div class="side-brand"><Wordmark size={18} /></div>
+        {NAV_SECTIONS.map((sec) => (
+          <div class="side-group">
+            {sec.group && <p class="side-label">{sec.group}</p>}
+            {sec.items.map(([label, active]) => (
+              <div class:list={["side-item", { "is-active": active }]}>
+                <span class="side-icon"></span>{label}
+              </div>
+            ))}
+          </div>
+        ))}
+      </aside>
+
+      <div class="main">
+        <div class="toolbar">
+          <div class="search">{p.search}</div>
+          <div class="action">{p.addFunds}</div>
+          <div class="avatar"><span class="initials">CR</span>Carla R.</div>
+        </div>
+
+        <h3 class="title">{p.title}</h3>
+        <p class="sub">{p.sub}</p>
+
+        <div class="row is-head">
+          {[p.headers.business, p.headers.amount, p.headers.term, p.headers.yield, p.headers.grade].map((h) => (
+            <span class="col-head">{h}</span>
+          ))}
+        </div>
+
+        {rows.map((r, i) => (
+          <div class:list={["row", { "is-first": i === 0 }]}>
+            <div class="biz">
+              <CategoryBadge category={r.category} size={30} flat />
+              <div class="biz-text">
+                <p class="biz-name">{r.business}</p>
+                <p class="biz-city">{r.city}</p>
+              </div>
+            </div>
+            <span class="amount">${r.amount.toLocaleString("en-US")}</span>
+            <span class="term">{r.term} {t.home.markets.termSuffix}</span>
+            <span class="yield">{r.yld}</span>
+            <span><GradeChip grade={r.grade} label={t.home.markets.gradeLabel} /></span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .frame {
+    position: relative;
+    max-width: 1120px;
+    margin: 52px auto 0;
+    -webkit-mask-image: linear-gradient(180deg, #000 82%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 82%, transparent 100%);
+  }
+
+  .window {
+    background: var(--white);
+    border-radius: 18px 18px 0 0;
+    border: 1px solid var(--line);
+    box-shadow: 0 40px 90px rgba(16, 24, 40, 0.2);
+    overflow: hidden;
+    text-align: left;
+  }
+
+  .chrome {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(20, 21, 26, 0.06);
+  }
+
+  .dot { width: 11px; height: 11px; border-radius: 50%; }
+  .red { background: #ff5f57; }
+  .amber { background: #febc2e; }
+  .green { background: #28c840; }
+
+  .url-wrap { flex: 1; display: flex; justify-content: center; }
+
+  .url {
+    font-family: var(--font);
+    font-size: 12px;
+    color: var(--faint);
+    background: #f2f2f5;
+    padding: 5px 16px;
+    border-radius: 8px;
+  }
+
+  .body { display: flex; min-height: 440px; }
+
+  .sidebar {
+    width: 212px;
+    flex-shrink: 0;
+    border-right: 1px solid rgba(20, 21, 26, 0.06);
+    padding: 18px 14px;
+    background: rgba(247, 247, 250, 0.5);
+  }
+
+  .side-brand { padding: 0 6px 16px; }
+  .side-group { margin-bottom: 14px; }
+
+  .side-label {
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--faint);
+    padding: 0 10px 8px;
+  }
+
+  .side-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    margin-bottom: 2px;
+    font-family: var(--font);
+    font-weight: 600;
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+
+  .side-item.is-active {
+    background: var(--white);
+    box-shadow: 0 1px 3px rgba(16, 24, 40, 0.08);
+    color: var(--ink);
+  }
+
+  .side-icon {
+    width: 15px;
+    height: 15px;
+    border-radius: 5px;
+    background: rgba(20, 21, 26, 0.12);
+  }
+  .is-active .side-icon { background: linear-gradient(135deg, #8b3df0, #c42fd8); }
+
+  .main { flex: 1; min-width: 0; padding: 20px 26px; }
+
+  .toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 26px;
+    font-family: var(--font);
+    font-size: 13px;
+  }
+
+  .search {
+    flex: 1;
+    padding: 9px 14px;
+    border-radius: 10px;
+    background: #f2f2f5;
+    color: var(--faint);
+  }
+
+  .action {
+    padding: 9px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(20, 21, 26, 0.1);
+    font-weight: 600;
+    color: var(--ink-2);
+  }
+
+  .avatar {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 12px 6px 6px;
+    border-radius: var(--radius-pill);
+    background: var(--ink);
+    font-weight: 600;
+    color: var(--white);
+  }
+
+  .initials {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6d54e8, #2d7ff9);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .title {
+    font-family: var(--font);
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .sub {
+    font-family: var(--font);
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 22px;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 1.9fr 1fr 0.9fr 1fr 0.9fr;
+    gap: 12px;
+    align-items: center;
+    padding: 13px 14px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font);
+  }
+
+  .row.is-head {
+    padding: 0 14px 12px;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+  }
+
+  .row.is-first { background: rgba(139, 61, 240, 0.05); }
+
+  .col-head {
+    font-weight: 700;
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    color: var(--faint);
+  }
+
+  .biz { display: flex; align-items: center; gap: 10px; min-width: 0; }
+  .biz-text { min-width: 0; }
+
+  .biz-name {
+    font-weight: 700;
+    font-size: 13.5px;
+    color: var(--ink);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .biz-city { font-size: 11.5px; color: var(--faint); }
+
+  .amount {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .term { font-weight: 500; font-size: 13px; color: var(--muted); }
+
+  .yield {
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--green-ink);
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media (max-width: 760px) {
+    .sidebar,
+    .action,
+    .avatar { display: none; }
+  }
+</style>

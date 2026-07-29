@@ -1,0 +1,100 @@
+---
+import Base from "../../layouts/Base.astro";
+import PageHero from "../../components/common/PageHero.astro";
+import Section from "../../components/common/Section.astro";
+import SectionHeading from "../../components/common/SectionHeading.astro";
+import Card from "../../components/common/Card.astro";
+import NumberBadge from "../../components/common/NumberBadge.astro";
+import DataTable from "../../components/common/DataTable.astro";
+import BulletList from "../../components/common/BulletList.astro";
+import PageCta from "../../components/common/PageCta.astro";
+import { COLOR } from "../../lib/tokens";
+import { dict, localeParams, type Lang } from "../../lib/i18n";
+import { CONTACT_HREF } from "../../consts";
+
+export const getStaticPaths = localeParams;
+
+const { lang } = Astro.props as { lang: Lang };
+const i = dict(lang).investors;
+---
+
+<Base lang={lang} path="/investors" title={i.meta.title} description={i.meta.description}>
+  <PageHero title={i.h1} subtitle={i.sub} />
+
+  <Section topRound>
+    <SectionHeading eyebrow="01" title={i.termsTitle} />
+    <DataTable rows={i.terms} class="terms" />
+  </Section>
+
+  <Section paddingY="32px">
+    <SectionHeading eyebrow="02" title={i.profileTitle} lead={i.profileBody} />
+    <div class="split">
+      <Card variant="mint">
+        <h3 class="card-title">{i.profileFor.title}</h3>
+        <BulletList items={i.profileFor.items} bulletColor={COLOR.green} />
+      </Card>
+      <Card variant="rose">
+        <h3 class="card-title">{i.profileNotFor.title}</h3>
+        <BulletList items={i.profileNotFor.items} bulletColor={COLOR.red} />
+      </Card>
+    </div>
+  </Section>
+
+  <Section>
+    <SectionHeading eyebrow="03" title={i.onboardingTitle} />
+    <ol class="steps">
+      {i.onboarding.map((step, idx) => (
+        <li>
+          <Card class="step">
+            <NumberBadge n={idx + 1} />
+            <span class="step-text">{step}</span>
+          </Card>
+        </li>
+      ))}
+    </ol>
+  </Section>
+
+  <PageCta lang={lang} title={i.cta} primary={i.cta} href={CONTACT_HREF} />
+</Base>
+
+<style>
+  .terms { max-width: 880px; }
+
+  .split {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+
+  .card-title {
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+
+  .steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 760px;
+  }
+
+  .step {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .step-text {
+    font-family: var(--font);
+    font-size: 15.5px;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+</style>

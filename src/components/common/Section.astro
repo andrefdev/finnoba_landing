@@ -1,0 +1,32 @@
+---
+interface Props {
+  /** Rounds the top corners — used once per page, on the section under the hero. */
+  topRound?: boolean;
+  paddingY?: string;
+  class?: string;
+}
+
+const { topRound, paddingY, class: className } = Astro.props;
+---
+
+<section
+  class:list={["section", { "is-round": topRound }, className]}
+  style={paddingY ? { "--pad-y": paddingY } : undefined}
+>
+  <div class="inner"><slot /></div>
+</section>
+
+<style>
+  .section {
+    background: var(--white);
+    padding: var(--pad-y, 64px) var(--container-pad);
+  }
+  /* The rounded sheet is the one structural element every page shares, so it
+     morphs between routes instead of fading. `topRound` is used once per
+     page, which keeps the name unique. */
+  .is-round {
+    border-radius: 40px 40px 0 0;
+    view-transition-name: page-sheet;
+  }
+  .inner { max-width: var(--container-max); margin: 0 auto; }
+</style>

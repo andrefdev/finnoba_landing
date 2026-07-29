@@ -1,0 +1,51 @@
+---
+import Base from "../../layouts/Base.astro";
+import PageHero from "../../components/common/PageHero.astro";
+import Section from "../../components/common/Section.astro";
+import SectionHeading from "../../components/common/SectionHeading.astro";
+import DataTable from "../../components/common/DataTable.astro";
+import PageCta from "../../components/common/PageCta.astro";
+import { dict, localeParams, type Lang } from "../../lib/i18n";
+import { CONTACT_HREF } from "../../consts";
+
+export const getStaticPaths = localeParams;
+
+const { lang } = Astro.props as { lang: Lang };
+const tr = dict(lang).transparency;
+---
+
+<Base lang={lang} path="/transparency" title={tr.meta.title} description={tr.meta.description}>
+  <PageHero title={tr.h1} subtitle={tr.sub} />
+
+  <Section topRound paddingY="56px">
+    <SectionHeading eyebrow="01" title={tr.portfolioTitle} />
+    <DataTable rows={tr.portfolio} />
+  </Section>
+
+  <Section paddingY="32px">
+    <SectionHeading eyebrow="02" title={tr.distributionTitle} />
+    <DataTable rows={tr.distribution} />
+  </Section>
+
+  <Section paddingY="32px">
+    <SectionHeading eyebrow="03" title={tr.reportsTitle} />
+    <p class="prose">{tr.reportsBody}</p>
+  </Section>
+
+  <Section>
+    <SectionHeading eyebrow="04" title={tr.auditTitle} />
+    <p class="prose">{tr.auditBody}</p>
+  </Section>
+
+  <PageCta lang={lang} title={tr.cta} primary={tr.cta} href={CONTACT_HREF} />
+</Base>
+
+<style>
+  .prose {
+    font-family: var(--font);
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink-2);
+    max-width: 760px;
+  }
+</style>

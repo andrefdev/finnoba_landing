@@ -1,0 +1,108 @@
+---
+import Card from "../common/Card.astro";
+import Chip from "../common/Chip.astro";
+import Sparkline from "../common/Sparkline.astro";
+import CategoryBadge from "./CategoryBadge.astro";
+import GradeChip from "./GradeChip.astro";
+import { CATEGORY, type Loan } from "../../lib/loans";
+import type { Lang } from "../../lib/i18n";
+
+interface Props extends Loan {
+  lang: Lang;
+  labels: {
+    yieldLabel: string;
+    exampleLabel: string;
+    termSuffix: string;
+    gradeLabel: string;
+  };
+}
+
+const { business, category, city, amount, term, yld, grade, trend, lang, labels } = Astro.props;
+const c = CATEGORY[category];
+---
+
+<Card class="loan">
+  <header class="head">
+    <CategoryBadge category={category} size={52} />
+    <div class="who">
+      <h3 class="name">{business}</h3>
+      <p class="meta">{c.label[lang]} · {city}</p>
+    </div>
+    <GradeChip grade={grade} label={labels.gradeLabel} />
+  </header>
+
+  <div class="spark"><Sparkline data={trend} up /></div>
+
+  <div class="figures">
+    <div>
+      <p class="cap">{labels.yieldLabel}</p>
+      <p class="yield">{yld}</p>
+    </div>
+    <div class="right">
+      <p class="amount">${amount.toLocaleString("en-US")}</p>
+      <p class="term">{term} {labels.termSuffix}</p>
+    </div>
+  </div>
+
+  <Chip tone="quiet" class="tag">{labels.exampleLabel}</Chip>
+</Card>
+
+<style>
+  .loan {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    overflow: hidden;
+  }
+
+  .head { display: flex; align-items: center; gap: 14px; }
+
+  .who { flex: 1; min-width: 0; }
+
+  .name {
+    font-family: var(--font);
+    font-weight: 800;
+    font-size: 17px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .meta { font-size: 13px; color: var(--muted); font-weight: 500; }
+
+  /* Bleeds past the card padding so the chart spans the full width. */
+  .spark { margin: 0 -22px; }
+
+  .figures {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .cap { font-size: 12px; font-weight: 600; color: var(--muted); }
+
+  .yield {
+    font-family: var(--font);
+    font-weight: 800;
+    font-size: 26px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .right { text-align: right; }
+
+  .amount {
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .term { font-size: 12px; color: var(--muted); font-weight: 500; }
+
+  .tag { align-self: flex-start; }
+</style>

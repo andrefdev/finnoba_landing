@@ -1,0 +1,65 @@
+---
+import Button from "./Button.astro";
+import { localePath, type Lang } from "../../lib/i18n";
+
+interface Props {
+  lang: Lang;
+  title: string;
+  primary: string;
+  /** App path (locale-prefixed automatically) or an absolute/mailto href. */
+  href: string;
+  /** Tighter top padding for the home page, where a section sits directly above. */
+  flush?: boolean;
+}
+
+const { lang, title, primary, href, flush } = Astro.props;
+---
+
+<section class:list={["cta", { "is-flush": flush }]}>
+  <div class="inner">
+    <div class="panel">
+      <div class="glow" aria-hidden="true"></div>
+      <div class="content">
+        <h2 class="title">{title}</h2>
+        <slot />
+        <Button variant="on-dark" size="lg" href={localePath(lang, href)}>{primary}</Button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta {
+    padding: 48px var(--container-pad) 64px;
+    background: var(--white);
+  }
+  .is-flush { padding-top: 0; }
+
+  .inner { max-width: var(--container-max); margin: 0 auto; }
+
+  .panel {
+    border-radius: var(--radius-xxl);
+    padding: clamp(40px, 6vw, 72px);
+    background: var(--ink);
+    color: var(--white);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 120%, rgba(109, 84, 232, 0.45), transparent 60%);
+  }
+
+  .content { position: relative; }
+
+  .title {
+    font-family: var(--font);
+    font-weight: 800;
+    font-size: clamp(1.75rem, 3.4vw, 2.75rem);
+    letter-spacing: -0.03em;
+    margin-bottom: 22px;
+  }
+</style>

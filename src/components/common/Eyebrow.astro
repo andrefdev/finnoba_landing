@@ -1,0 +1,23 @@
+---
+interface Props {
+  tone?: "violet" | "muted";
+  class?: string;
+}
+
+const { tone = "violet", class: className } = Astro.props;
+---
+
+<div class:list={["eyebrow", `is-${tone}`, className]}><slot /></div>
+
+<style>
+  .eyebrow {
+    font-family: var(--font);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .is-violet { color: var(--violet); }
+  .is-muted { color: var(--muted); }
+</style>

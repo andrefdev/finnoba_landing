@@ -1,0 +1,35 @@
+---
+import Base from "../../layouts/Base.astro";
+import Hero from "../../components/home/Hero.astro";
+import StatStrip from "../../components/home/StatStrip.astro";
+import MarketsSection from "../../components/home/MarketsSection.astro";
+import WhySection from "../../components/home/WhySection.astro";
+import HowSection from "../../components/home/HowSection.astro";
+import PageCta from "../../components/common/PageCta.astro";
+import { dict, localeParams, type Lang } from "../../lib/i18n";
+
+export const getStaticPaths = localeParams;
+
+const { lang } = Astro.props as { lang: Lang };
+const t = dict(lang);
+---
+
+<Base lang={lang} path="/" title={t.home.meta.title} description={t.home.meta.description}>
+  <Hero lang={lang} />
+  <StatStrip lang={lang} />
+  <MarketsSection lang={lang} />
+  <WhySection lang={lang} />
+  <HowSection lang={lang} />
+  <PageCta lang={lang} title={t.home.cta.title} primary={t.home.cta.primary} href="/investors" flush>
+    <p class="cta-sub">{t.home.cta.sub}</p>
+  </PageCta>
+</Base>
+
+<style>
+  .cta-sub {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 640px;
+    margin: 0 auto 30px;
+  }
+</style>

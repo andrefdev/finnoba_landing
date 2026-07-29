@@ -1,0 +1,45 @@
+---
+interface Props {
+  label: string;
+  value: string;
+  sub?: string;
+  /** Highlights the sub-line — used for the target-yield stat. */
+  accent?: boolean;
+}
+
+const { label, value, sub, accent } = Astro.props;
+---
+
+<div class="stat">
+  <div class="label">{label}</div>
+  <div class="value">{value}</div>
+  {sub && <div class:list={["sub", { "is-accent": accent }]}>{sub}</div>}
+</div>
+
+<style>
+  .stat { font-family: var(--font); }
+
+  .label {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .value {
+    font-weight: 800;
+    font-size: 34px;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+  }
+
+  .sub {
+    margin-top: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted);
+  }
+  .is-accent { color: var(--green-ink); }
+</style>

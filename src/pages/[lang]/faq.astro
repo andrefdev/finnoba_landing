@@ -1,0 +1,89 @@
+---
+import Base from "../../layouts/Base.astro";
+import PageHero from "../../components/common/PageHero.astro";
+import Section from "../../components/common/Section.astro";
+import SectionHeading from "../../components/common/SectionHeading.astro";
+import PageCta from "../../components/common/PageCta.astro";
+import { dict, localeParams, type Lang } from "../../lib/i18n";
+import { faqLd } from "../../lib/seo";
+import { CONTACT_HREF } from "../../consts";
+
+export const getStaticPaths = localeParams;
+
+const { lang } = Astro.props as { lang: Lang };
+const f = dict(lang).faq;
+---
+
+<Base
+  lang={lang}
+  path="/faq"
+  title={f.meta.title}
+  description={f.meta.description}
+  schema={[faqLd(lang)]}
+>
+  <PageHero title={f.h1} subtitle={f.sub} />
+
+  <Section topRound paddingY="48px">
+    {f.groups.map((g, gi) => (
+      <div class:list={["group", { "is-later": gi > 0 }]}>
+        <SectionHeading eyebrow={String(gi + 1).padStart(2, "0")} title={g.title} size="compact" />
+        {g.items.map((it) => (
+          <details class="qa">
+            <summary>
+              <span>{it.q}</span>
+              <span class="mark" aria-hidden="true">+</span>
+            </summary>
+            <p class="answer">{it.a}</p>
+          </details>
+        ))}
+      </div>
+    ))}
+  </Section>
+
+  <PageCta lang={lang} title={f.cta} primary={f.cta} href={CONTACT_HREF} />
+</Base>
+
+<style>
+  .is-later { margin-top: 56px; }
+
+  .qa {
+    border-bottom: 1px solid var(--line);
+    padding: 20px 0;
+  }
+
+  .qa > summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--ink);
+  }
+  .qa > summary::-webkit-details-marker { display: none; }
+
+  .mark {
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1;
+    display: inline-block;
+    transition: transform 180ms var(--ease);
+  }
+  .qa[open] .mark { transform: rotate(45deg); }
+
+  .answer {
+    margin-top: 14px;
+    font-family: var(--font);
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-2);
+    max-width: 760px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mark { transition: none; }
+  }
+</style>

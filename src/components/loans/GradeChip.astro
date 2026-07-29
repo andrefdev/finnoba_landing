@@ -1,0 +1,14 @@
+---
+import Chip from "../common/Chip.astro";
+import type { GradeKey } from "../../lib/loans";
+
+interface Props {
+  grade: GradeKey;
+  label?: string;
+}
+
+const TONE: Record<GradeKey, "mint" | "sky" | "butter"> = { A: "mint", B: "sky", C: "butter" };
+const { grade, label = "Grade" } = Astro.props;
+---
+
+<Chip tone={TONE[grade]}>{label} {grade}</Chip>

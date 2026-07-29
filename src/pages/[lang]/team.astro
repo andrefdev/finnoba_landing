@@ -1,0 +1,105 @@
+---
+import Base from "../../layouts/Base.astro";
+import PageHero from "../../components/common/PageHero.astro";
+import Section from "../../components/common/Section.astro";
+import SectionHeading from "../../components/common/SectionHeading.astro";
+import Card from "../../components/common/Card.astro";
+import PageCta from "../../components/common/PageCta.astro";
+import { dict, localeParams, type Lang } from "../../lib/i18n";
+
+export const getStaticPaths = localeParams;
+
+const { lang } = Astro.props as { lang: Lang };
+const tm = dict(lang).team;
+---
+
+<Base lang={lang} path="/team" title={tm.meta.title} description={tm.meta.description}>
+  <PageHero title={tm.h1} subtitle={tm.sub} />
+
+  <Section topRound>
+    <SectionHeading eyebrow="01" title={tm.foundersTitle} />
+    <div class="grid">
+      {tm.founders.map((f) => (
+        <Card class="person">
+          <span class="face" aria-hidden="true"></span>
+          <h3 class="name">{f.name}</h3>
+          <p class="role">{f.role}</p>
+          <p class="body">{f.body}</p>
+        </Card>
+      ))}
+    </div>
+  </Section>
+
+  <Section paddingY="32px">
+    <SectionHeading eyebrow="02" title={tm.ecosystemTitle} lead={tm.ecosystemSub} />
+    <div class="grid wide">
+      {tm.ecosystem.map((eco) => (
+        <Card class="person">
+          <h3 class="name">{eco.name}</h3>
+          <p class="body">{eco.body}</p>
+        </Card>
+      ))}
+    </div>
+  </Section>
+
+  <Section>
+    <SectionHeading eyebrow="03" title={tm.philosophyTitle} />
+    <div class="stack">
+      {tm.philosophy.map((p) => <Card variant="lilac"><p class="quote">{p}</p></Card>)}
+    </div>
+  </Section>
+
+  <PageCta lang={lang} title={tm.cta} primary={tm.cta} href="/thesis" />
+</Base>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .wide { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+
+  .person { padding: 24px; }
+
+  .face {
+    display: block;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6d54e8, #2d7ff9);
+    margin-bottom: 16px;
+  }
+
+  .name {
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .role {
+    font-family: var(--font);
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--violet);
+    margin-bottom: 12px;
+  }
+
+  .body {
+    font-family: var(--font);
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+
+  .stack { display: grid; gap: 14px; max-width: 820px; }
+
+  .quote {
+    font-family: var(--font);
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: var(--ink-2);
+  }
+</style>

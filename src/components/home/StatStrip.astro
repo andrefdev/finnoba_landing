@@ -1,0 +1,34 @@
+---
+import Card from "../common/Card.astro";
+import Stat from "../common/Stat.astro";
+import { dict, type Lang } from "../../lib/i18n";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const stats = dict(lang).home.stats;
+---
+
+<section class="strip">
+  <div class="inner">
+    <Card variant="glass" class="panel">
+      {stats.map((s) => (
+        <Stat label={s.label} value={s.value} sub={s.sub} accent={"subColor" in s} />
+      ))}
+    </Card>
+  </div>
+</section>
+
+<style>
+  .strip { padding: 0 var(--container-pad) 24px; }
+  .inner { max-width: var(--container-max); margin: 0 auto; }
+
+  .panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 28px;
+    padding: 26px 28px;
+  }
+</style>

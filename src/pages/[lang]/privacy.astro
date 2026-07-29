@@ -1,0 +1,14 @@
+---
+import Base from "../../layouts/Base.astro";
+import LegalDoc from "../../components/common/LegalDoc.astro";
+import { dict, localeParams, type Lang } from "../../lib/i18n";
+
+export const getStaticPaths = localeParams;
+
+const { lang } = Astro.props as { lang: Lang };
+const l = dict(lang).legal;
+---
+
+<Base lang={lang} path="/privacy" title={l.privacyTitle} description={l.placeholderBody}>
+  <LegalDoc title={l.privacyTitle} status={l.placeholderTitle} body={l.placeholderBody} />
+</Base>

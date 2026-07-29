@@ -1,0 +1,104 @@
+---
+import Button from "../common/Button.astro";
+import DashboardPreview from "./DashboardPreview.astro";
+import { dict, localePath, type Lang } from "../../lib/i18n";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const h = dict(lang).home.hero;
+---
+
+<section class="hero">
+  <div class="inner">
+    <h1 class="h-hero title">{h.h1}</h1>
+    <p class="sub">{h.sub}</p>
+
+    <div class="actions">
+      <Button variant="ink" size="lg" href={localePath(lang, "/investors")}>{h.primary}</Button>
+      <Button variant="soft" size="lg" href={localePath(lang, "/how-it-works")}>{h.secondary}</Button>
+    </div>
+
+    <ul class="badges">
+      {h.badges.map((b, i) => (
+        <li>{i === 0 && <span class="dot" aria-hidden="true"></span>}{b}</li>
+      ))}
+    </ul>
+  </div>
+
+  <DashboardPreview lang={lang} />
+</section>
+
+<style>
+  .hero {
+    padding: 44px var(--container-pad) 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .inner {
+    max-width: 880px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .title {
+    view-transition-name: page-title;
+    font-family: var(--font);
+    color: var(--ink);
+    max-width: 820px;
+    margin: 0 auto 20px;
+  }
+
+  .sub {
+    font-family: var(--font);
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink-2);
+    max-width: 600px;
+    margin: 0 auto 28px;
+  }
+
+  .actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .badges {
+    list-style: none;
+    padding: 0;
+    margin-top: 24px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .badges li {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* Separator dots between badges, drawn in CSS instead of markup. */
+  .badges li + li::before {
+    content: "·";
+    margin-right: 16px;
+    color: var(--faint);
+  }
+
+  .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+  }
+</style>

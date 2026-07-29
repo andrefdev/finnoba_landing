@@ -1,0 +1,78 @@
+---
+/** Key/value rows rendered as a real <table> so screen readers and crawlers
+ *  read it as tabular data rather than a pile of divs. */
+interface Props {
+  rows: ReadonlyArray<ReadonlyArray<string>>;
+  header?: ReadonlyArray<string>;
+  class?: string;
+}
+
+const { rows, header, class: className } = Astro.props;
+const cols = header?.length || rows[0]?.length || 2;
+---
+
+<div class:list={["wrap", className]} style={{ "--cols": String(cols) }}>
+  <table>
+    {header && (
+      <thead>
+        <tr>{header.map((h) => <th scope="col">{h}</th>)}</tr>
+      </thead>
+    )}
+    <tbody>
+      {rows.map((row) => (
+        <tr>
+          {row.map((cell, j) => (j === 0 ? <th scope="row">{cell}</th> : <td>{cell}</td>))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .wrap {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font);
+    font-size: 14.5px;
+    text-align: left;
+  }
+
+  thead th {
+    padding: 14px 22px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  tbody tr + tr th,
+  tbody tr + tr td { border-top: 1px solid var(--line); }
+
+  tbody th,
+  tbody td {
+    padding: 16px 22px;
+    vertical-align: middle;
+    width: calc(100% / var(--cols));
+  }
+
+  tbody th {
+    color: var(--ink-2);
+    font-weight: 500;
+  }
+
+  tbody td {
+    color: var(--ink);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+</style>

@@ -1,0 +1,97 @@
+---
+import Button from "../common/Button.astro";
+import Eyebrow from "../common/Eyebrow.astro";
+import Icon from "../common/Icon.astro";
+import LoanCard from "../loans/LoanCard.astro";
+import { LOANS } from "../../lib/loans";
+import { dict, localePath, type Lang } from "../../lib/i18n";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const m = dict(lang).home.markets;
+const loans = LOANS.slice(0, 6);
+
+const labels = {
+  yieldLabel: m.yieldLabel,
+  exampleLabel: m.exampleLabel,
+  termSuffix: m.termSuffix,
+  gradeLabel: m.gradeLabel,
+};
+---
+
+<section class="markets">
+  <div class="inner">
+    <div class="head">
+      <div>
+        <Eyebrow>{m.eyebrow}</Eyebrow>
+        <h2 class="h-display title">{m.title}</h2>
+        <p class="sub">{m.sub}</p>
+        <p class="disclaimer">{m.disclaimer}</p>
+      </div>
+      <Button variant="soft" size="md" href={localePath(lang, "/investors")}>
+        {m.browse}<Icon name="arrow-right" size={16} />
+      </Button>
+    </div>
+
+    <div class="grid">
+      {loans.map((l) => <LoanCard {...l} lang={lang} labels={labels} />)}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* The home page's equivalent of Section's rounded sheet — same transition
+     name, so navigating home ↔ inner page slides the white edge instead of
+     cross-fading it. */
+  .markets {
+    view-transition-name: page-sheet;
+    padding: 64px var(--container-pad);
+    background: var(--white);
+    border-radius: 40px 40px 0 0;
+    margin-top: 24px;
+  }
+
+  .inner { max-width: var(--container-max); margin: 0 auto; }
+
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  .title {
+    font-family: var(--font);
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+
+  .sub {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 580px;
+  }
+
+  /* Deliberately prominent: these cards are fictional and must read as such. */
+  .disclaimer {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    max-width: 580px;
+    margin-top: 14px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: rgba(20, 21, 26, 0.05);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+  }
+</style>

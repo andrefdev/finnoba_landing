@@ -1,0 +1,98 @@
+---
+import Card from "../common/Card.astro";
+import Chip from "../common/Chip.astro";
+import Eyebrow from "../common/Eyebrow.astro";
+import NumberBadge from "../common/NumberBadge.astro";
+import { dict, type Lang } from "../../lib/i18n";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const h = dict(lang).home.how;
+---
+
+<section class="how">
+  <div class="inner">
+    <Eyebrow>{h.eyebrow}</Eyebrow>
+    <h2 class="h-display title">{h.title}</h2>
+
+    <div class="grid">
+      {h.columns.map((col) => (
+        <Card class="column">
+          <Chip tone="soft" class="tag">
+            <span class="dot" style={{ "--c": col.color }} aria-hidden="true"></span>
+            {col.tag}
+          </Chip>
+          <ol class="steps">
+            {col.steps.map((step, i) => (
+              <li>
+                <NumberBadge n={i + 1} size="sm" />
+                <div>
+                  <p class="step-title">{step.t}</p>
+                  <p class="step-body">{step.d}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .how {
+    background: var(--white);
+    padding: 0 var(--container-pad) 72px;
+  }
+
+  .inner { max-width: var(--container-max); margin: 0 auto; }
+
+  .title {
+    font-family: var(--font);
+    color: var(--ink);
+    margin-bottom: 40px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 18px;
+  }
+
+  .column { padding: 28px; }
+  .tag { margin-bottom: 22px; }
+
+  .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--c);
+  }
+
+  .steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .steps li { display: flex; gap: 14px; }
+
+  .step-title {
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--ink);
+  }
+
+  .step-body {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+</style>

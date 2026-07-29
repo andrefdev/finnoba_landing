@@ -1,0 +1,103 @@
+---
+import Base from "../../layouts/Base.astro";
+import PageHero from "../../components/common/PageHero.astro";
+import Section from "../../components/common/Section.astro";
+import SectionHeading from "../../components/common/SectionHeading.astro";
+import Card from "../../components/common/Card.astro";
+import NumberBadge from "../../components/common/NumberBadge.astro";
+import DataTable from "../../components/common/DataTable.astro";
+import BulletList from "../../components/common/BulletList.astro";
+import PageCta from "../../components/common/PageCta.astro";
+import { COLOR } from "../../lib/tokens";
+import { dict, localeParams, type Lang } from "../../lib/i18n";
+
+export const getStaticPaths = localeParams;
+
+const { lang } = Astro.props as { lang: Lang };
+const r = dict(lang).risk;
+---
+
+<Base lang={lang} path="/risk" title={r.meta.title} description={r.meta.description}>
+  <PageHero title={r.h1} subtitle={r.sub} />
+
+  <Section topRound>
+    <SectionHeading eyebrow="01" title={r.frameworkTitle} />
+    <p class="prose">{r.frameworkBody}</p>
+  </Section>
+
+  <Section paddingY="32px">
+    <SectionHeading eyebrow="02" title={r.layersTitle} />
+    <ol class="layers">
+      {r.layers.map((l, i) => (
+        <li>
+          <Card variant="lilac" class="layer">
+            <NumberBadge n={i + 1} tone="violet" />
+            <h3 class="layer-title">{l.t}</h3>
+            <p class="layer-body">{l.b}</p>
+          </Card>
+        </li>
+      ))}
+    </ol>
+  </Section>
+
+  <Section paddingY="32px">
+    <SectionHeading eyebrow="03" title={r.metricsTitle} />
+    <DataTable rows={r.metrics} header={r.metricsHead} />
+    <p class="footnote">{r.metricsNote}</p>
+  </Section>
+
+  <Section>
+    <SectionHeading eyebrow="04" title={r.uncontrolledTitle} lead={r.uncontrolledIntro} />
+    <Card variant="rose">
+      <BulletList items={r.uncontrolled} bulletColor={COLOR.red} />
+    </Card>
+    <p class="prose foot">{r.uncontrolledFoot}</p>
+  </Section>
+
+  <PageCta lang={lang} title={r.cta} primary={r.cta} href="/faq" />
+</Base>
+
+<style>
+  .prose {
+    font-family: var(--font);
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink-2);
+    max-width: 760px;
+  }
+
+  .foot { margin-top: 18px; font-size: 14.5px; }
+
+  .layers {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .layer { height: 100%; }
+
+  .layer-title {
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--ink);
+    margin: 16px 0 10px;
+  }
+
+  .layer-body {
+    font-family: var(--font);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-2);
+  }
+
+  .footnote {
+    margin-top: 14px;
+    font-family: var(--font);
+    font-size: 12.5px;
+    color: var(--faint);
+  }
+</style>

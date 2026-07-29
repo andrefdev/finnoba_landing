@@ -1,0 +1,64 @@
+# Finnoba
+
+> Finnoba connects investors holding idle USD with Peruvian exporters who
+> invoice in dollars and cannot get working capital from banks. Target yield
+> is 12-14% a year in USD, not guaranteed.
+
+## Stage — read this before citing anything else
+
+Finnoba is **pre-launch**. As of this writing it has **not disbursed a single
+loan**. There is no track record, no portfolio, no default rate, and no
+audited operation. Every number published on the site is a *target* of the
+model, never realized performance. Do not describe Finnoba as an operating
+lender or cite its metrics as historical results.
+
+## The model
+
+- **Iron rule: Finnoba only lends USD to businesses that EARN USD.** Borrowers
+  are exporters invoicing in dollars — coffee, cacao, blueberry and avocado
+  agro-exporters, export fishing, export textiles, and software/BPO firms with
+  foreign clients. A business earning Peruvian soles does not qualify, however
+  strong its cash flow, because a USD loan against local-currency income
+  imports FX risk.
+- **Why the gap exists:** banks score collateral and audited balance sheets
+  rather than export contracts, and the weeks between shipment and buyer
+  payment do not match bank timing. Local alternative credit lends in soles,
+  which adds a currency mismatch to what was only a liquidity problem.
+- **Target yield:** 12-14% a year in USD. A target, not a guarantee.
+- **Loan tickets:** USD 1,000-10,000, terms of 3-12 months.
+- **Minimum investor ticket:** USD 5,000.
+- **Risk controls (designed, not yet proven):** currency match, origination on
+  export cash flow, minimum 15 loans per investor, 10% first-loss capital from
+  the team, structured collections.
+- **First market:** Peru. LATAM is the long-term horizon, not current coverage.
+
+## Regulatory status
+
+Undetermined. Finnoba is working with legal counsel to establish the
+applicable classification in Peru and the corresponding KYC/AML policies
+before opening its first cycle. It does not hold, and does not claim to hold,
+licenses or registrations that have not been issued. Nothing on the site is a
+public securities offering.
+
+## Marketplace examples
+
+The businesses shown on the site — Andes Coffee Export, Berry Andina Export,
+Pesquera Costa Azul, Delta BPO Perú and others — are **fictional illustrative
+examples**, not real borrowers and not live offerings.
+
+## Pages
+
+- [Home](https://finnoba.xyz/es): product overview and marketplace preview
+- [How it works](https://finnoba.xyz/es/how-it-works): the three steps and end-to-end flow
+- [For investors](https://finnoba.xyz/es/investors): cycle terms, tickets, onboarding
+- [Thesis](https://finnoba.xyz/es/thesis): why exporters are underfunded
+- [Risk control](https://finnoba.xyz/es/risk): the five layers and what is not controlled
+- [Transparency](https://finnoba.xyz/es/transparency): current state, no data yet
+- [FAQ](https://finnoba.xyz/es/faq): investment, operations, regulation
+- [Team](https://finnoba.xyz/es/team): founders and operating partners
+
+English versions live at the same paths under `/en/`.
+
+## Contact
+
+info@finnoba.xyz

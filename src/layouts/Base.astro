@@ -1,0 +1,103 @@
+---
+import { ClientRouter } from "astro:transitions";
+import "@fontsource-variable/plus-jakarta-sans";
+import "../styles/global.css";
+
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import { dict, localePath, HTML_LANG, OG_LOCALE, otherLocale, type Lang } from "../lib/i18n";
+import { jsonLdGraph, organizationLd, webSiteLd, webPageLd, breadcrumbLd } from "../lib/seo";
+import { SITE_URL, SITE_NAME, OG_IMAGE } from "../consts";
+
+interface Props {
+  lang: Lang;
+  /** Locale-less route, e.g. "/risk". "/" for the home page. */
+  path: string;
+  title: string;
+  description: string;
+  /** Extra schema.org nodes merged into the page @graph (e.g. FAQPage). */
+  schema?: Array<object | null>;
+  /** Keeps utility pages (404) out of the index and out of the schema graph. */
+  noindex?: boolean;
+}
+
+const { lang, path, title, description, schema = [], noindex } = Astro.props;
+
+const t = dict(lang);
+const isHome = path === "/";
+// Home keeps its full brand title; inner pages use the "%s · Finnoba" template.
+const fullTitle = isHome ? t.home.meta.title : `${title} · ${SITE_NAME}`;
+
+// The 404 has no localised twin, so its language switch points at the home page.
+const switchPath = noindex ? "/" : path;
+
+const canonical = `${SITE_URL}${localePath(lang, path)}`;
+const esUrl = `${SITE_URL}${localePath("es", path)}`;
+const enUrl = `${SITE_URL}${localePath("en", path)}`;
+
+const ld = noindex
+  ? null
+  : jsonLdGraph([
+      organizationLd(lang),
+      webSiteLd(lang),
+      webPageLd(lang, path, fullTitle, description),
+      breadcrumbLd(lang, path, title),
+      ...schema,
+    ]);
+---
+
+<!doctype html>
+<html lang={HTML_LANG[lang]}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+
+    {
+      noindex ? (
+        <meta name="robots" content="noindex, follow" />
+      ) : (
+        <>
+          <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+          <link rel="canonical" href={canonical} />
+          <link rel="alternate" hreflang="es" href={esUrl} />
+          <link rel="alternate" hreflang="en" href={enUrl} />
+          <link rel="alternate" hreflang="x-default" href={esUrl} />
+        </>
+      )
+    }
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:locale" content={OG_LOCALE[lang]} />
+    <meta property="og:locale:alternate" content={OG_LOCALE[otherLocale(lang)]} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={OG_IMAGE} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={SITE_NAME} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={OG_IMAGE} />
+
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    {ld && <script type="application/ld+json" is:inline set:html={ld} />}
+
+    <ClientRouter />
+  </head>
+  <body>
+    <div class="shell">
+      <Nav lang={lang} path={path} />
+      <main><slot /></main>
+    </div>
+    <Footer lang={lang} path={switchPath} />
+  </body>
+</html>

@@ -1,0 +1,83 @@
+---
+import Card from "../common/Card.astro";
+import Eyebrow from "../common/Eyebrow.astro";
+import { dict, type Lang } from "../../lib/i18n";
+
+interface Props {
+  lang: Lang;
+}
+
+// Tint per pillar. Keyed by the `tint` field the dictionary already carries.
+const TINT: Record<string, { bg: string; fg: string }> = {
+  mint: { bg: "#FBE0FA", fg: "#B02BC9" },
+  peach: { bg: "#F1E1FC", fg: "#8B3DF0" },
+  sky: { bg: "#E4E5FB", fg: "#4B40D6" },
+  lilac: { bg: "#EDE8FC", fg: "#6D54E8" },
+};
+
+const { lang } = Astro.props;
+const w = dict(lang).home.why;
+---
+
+<section class="why">
+  <div class="inner">
+    <Eyebrow>{w.eyebrow}</Eyebrow>
+    <h2 class="h-display title">{w.title}</h2>
+
+    <div class="grid">
+      {w.items.map((it) => (
+        <Card variant="bare" bg={TINT[it.tint]?.bg} class="pillar">
+          <p class="kicker" style={{ "--fg": TINT[it.tint]?.fg }}>{it.eyebrow}</p>
+          <h3 class="name">{it.title}</h3>
+          <p class="body">{it.body}</p>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .why {
+    background: var(--white);
+    padding: 24px var(--container-pad) 80px;
+  }
+
+  .inner { max-width: var(--container-max); margin: 0 auto; }
+
+  .title {
+    font-family: var(--font);
+    color: var(--ink);
+    max-width: 760px;
+    margin-bottom: 40px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+
+  .kicker {
+    font-family: var(--font);
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--fg, var(--violet));
+    margin-bottom: 12px;
+  }
+
+  .name {
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+
+  .body {
+    color: var(--ink-2);
+    font-size: 14px;
+    line-height: 1.55;
+  }
+</style>

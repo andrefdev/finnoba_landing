@@ -1,0 +1,106 @@
+---
+import Base from "../../layouts/Base.astro";
+import PageHero from "../../components/common/PageHero.astro";
+import Section from "../../components/common/Section.astro";
+import SectionHeading from "../../components/common/SectionHeading.astro";
+import Card from "../../components/common/Card.astro";
+import Eyebrow from "../../components/common/Eyebrow.astro";
+import NumberBadge from "../../components/common/NumberBadge.astro";
+import DataTable from "../../components/common/DataTable.astro";
+import PageCta from "../../components/common/PageCta.astro";
+import { dict, localeParams, type Lang } from "../../lib/i18n";
+
+export const getStaticPaths = localeParams;
+
+const { lang } = Astro.props as { lang: Lang };
+const c = dict(lang).how;
+---
+
+<Base lang={lang} path="/how-it-works" title={c.meta.title} description={c.meta.description}>
+  <PageHero title={c.h1} subtitle={c.sub} />
+
+  <Section topRound>
+    <SectionHeading eyebrow="01" title={c.stepsTitle} />
+    <div class="grid steps">
+      {c.steps.map((s, i) => (
+        <Card class="step">
+          <NumberBadge n={i + 1} />
+          <h3 class="step-title">{s.t}</h3>
+          <p class="step-body">{s.b}</p>
+        </Card>
+      ))}
+    </div>
+  </Section>
+
+  <Section paddingY="32px">
+    <SectionHeading eyebrow="02" title={c.flowTitle} />
+    <ol class="grid flow">
+      {c.flow.map((node, i) => (
+        <li>
+          <Card class="node">
+            <Eyebrow tone="muted">{`0${i + 1}`}</Eyebrow>
+            <p class="node-title">{node.t}</p>
+            <p class="node-body">{node.b}</p>
+          </Card>
+        </li>
+      ))}
+    </ol>
+  </Section>
+
+  <Section>
+    <SectionHeading eyebrow="03" title={c.tableTitle} />
+    <DataTable rows={c.table} class="narrow" />
+  </Section>
+
+  <PageCta lang={lang} title={c.cta} primary={c.cta} href="/investors" />
+</Base>
+
+<style>
+  .grid { display: grid; gap: 16px; }
+  .steps { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+
+  .flow {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .step { padding: 28px; }
+
+  .step-title {
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin: 18px 0 10px;
+  }
+
+  .step-body {
+    font-family: var(--font);
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+
+  .node { padding: 20px; height: 100%; }
+
+  .node-title {
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .node-body {
+    font-family: var(--font);
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+
+  .narrow { max-width: 720px; }
+</style>

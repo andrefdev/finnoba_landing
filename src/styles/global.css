@@ -1,0 +1,168 @@
+@font-face {
+  font-family: "Plus Jakarta Sans Fallback";
+  src: local("Segoe UI"), local("Helvetica Neue"), local("Arial");
+  size-adjust: 100%;
+  ascent-override: 96%;
+}
+
+:root {
+  --font: "Plus Jakarta Sans Variable", "Plus Jakarta Sans Fallback", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --ink: #14151a;
+  --ink-2: #3c3e47;
+  --muted: #71747e;
+  --faint: #a7aab3;
+  --line: rgba(20, 21, 26, 0.08);
+  --line-strong: rgba(20, 21, 26, 0.14);
+
+  --white: #fff;
+  --surface: #f3f4f7;
+
+  --violet: #6d54e8;
+  --violet-ink: #5b43d6;
+  --orange: #fb7b1e;
+  --blue: #2d7ff9;
+  --green: #1fb36b;
+  --green-ink: #157a47;
+  --red: #e5484d;
+
+  --tint-peach: #fcebdd;
+  --tint-sky: #e7f0fd;
+  --tint-mint: #e7f5ec;
+  --tint-lilac: #eeeafc;
+  --tint-rose: #fce7eb;
+
+  --radius-sm: 12px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+  --radius-xxl: 32px;
+  --radius-pill: 9999px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --container-max: 1200px;
+  --container-pad: clamp(20px, 4vw, 64px);
+
+  --aurora: linear-gradient(
+    165deg,
+    #f8d4fa 0%, #efcffa 13%, #dfd0f9 25%, #cfd2f7 37%,
+    #d9daf6 45%, #ebeaf7 52%, #f3f4f7 100%
+  );
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--surface);
+  line-height: 1.55;
+}
+
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, h4, h5, h6, p { margin: 0; }
+button { font-family: inherit; }
+
+::selection { background: rgba(109, 84, 232, 0.18); color: var(--ink); }
+
+:where(a, button, summary):focus-visible {
+  outline: 2px solid var(--violet);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Page shell — the aurora backdrop every route sits on. */
+.shell {
+  min-height: 100vh;
+  display: flow-root;
+  background: var(--aurora);
+}
+
+/* Shared heading scale, so pages stop redeclaring the same clamp(). */
+.h-hero {
+  font-weight: 800;
+  font-size: clamp(2rem, 4.4vw, 3.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.h-section {
+  font-weight: 800;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  letter-spacing: -0.03em;
+  max-width: 760px;
+}
+.h-display {
+  font-weight: 800;
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  letter-spacing: -0.03em;
+}
+
+/* ---------------------------------------------------------------------------
+   View Transitions
+
+   Four named groups survive a navigation instead of cross-fading with the
+   page: the nav, the footer, the white content sheet and the page title.
+   Everything else falls into `root` and gets the fade-and-rise below.
+
+   Names are assigned in each component's scoped style block (the element that
+   owns the name declares it). A name must be unique per document — each of
+   these renders exactly once per page.
+
+   Deliberately NOT using `transition:persist`: nav and footer copy is
+   localised, so persisting the DOM node would carry Spanish chrome onto an
+   English page. Naming them morphs position and size while the text
+   cross-fades in place, which is what we want on a locale switch anyway.
+--------------------------------------------------------------------------- */
+
+/* Cross-document fallback for when the client router hasn't loaded. */
+@view-transition { navigation: auto; }
+
+::view-transition-old(root) { animation: vt-out 160ms var(--ease) both; }
+::view-transition-new(root) { animation: vt-in 300ms var(--ease) both; }
+
+@keyframes vt-out { to { opacity: 0; } }
+@keyframes vt-in { from { opacity: 0; transform: translateY(10px); } }
+
+/* Chrome and the content sheet: morph geometry, cross-fade contents quickly
+   so identical elements read as "stayed put" rather than "redrew". */
+::view-transition-group(site-nav),
+::view-transition-group(site-footer),
+::view-transition-group(page-sheet),
+::view-transition-group(page-title) {
+  animation-duration: 300ms;
+  animation-timing-function: var(--ease);
+}
+
+::view-transition-old(site-nav),
+::view-transition-old(site-footer),
+::view-transition-old(page-sheet),
+::view-transition-old(page-title) {
+  animation: vt-out 110ms linear both;
+}
+
+::view-transition-new(site-nav),
+::view-transition-new(site-footer),
+::view-transition-new(page-sheet),
+::view-transition-new(page-title) {
+  animation: vt-quick-in 220ms var(--ease) both;
+}
+
+@keyframes vt-quick-in { from { opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,44 @@
+---
+import Eyebrow from "./Eyebrow.astro";
+
+/**
+ * The numbered eyebrow + section title that opens every block on the inner
+ * pages. Replaces the `h2Style` object that was copy-pasted across six pages.
+ */
+interface Props {
+  /** Step number ("01") or a worded eyebrow. */
+  eyebrow?: string;
+  title: string;
+  /** Lead paragraph under the title. */
+  lead?: string;
+  size?: "section" | "display" | "compact";
+}
+
+const { eyebrow, title, lead, size = "section" } = Astro.props;
+const headingClass = size === "display" ? "h-display" : size === "compact" ? "h-compact" : "h-section";
+---
+
+<header class="heading">
+  {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
+  <h2 class:list={[headingClass, "title"]}>{title}</h2>
+  {lead && <p class="lead">{lead}</p>}
+  <slot />
+</header>
+
+<style>
+  .heading { margin-bottom: 32px; }
+  .title { font-family: var(--font); color: var(--ink); }
+
+  .h-compact {
+    font-weight: 800;
+    font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+    letter-spacing: -0.03em;
+  }
+
+  .lead {
+    margin-top: 18px;
+    font-size: 18px;
+    color: var(--ink-2);
+    max-width: 760px;
+  }
+</style>

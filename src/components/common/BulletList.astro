@@ -1,0 +1,44 @@
+---
+import { COLOR } from "../../lib/tokens";
+
+interface Props {
+  items: readonly string[];
+  bulletColor?: string;
+}
+
+const { items, bulletColor = COLOR.violet } = Astro.props;
+---
+
+<ul class="list" style={{ "--bullet": bulletColor }}>
+  {items.map((it) => (
+    <li><span class="dot" /><span>{it}</span></li>
+  ))}
+</ul>
+
+<style>
+  .list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 14px;
+  }
+
+  li {
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    gap: 12px;
+    font-family: var(--font);
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--bullet);
+    margin-top: 9px;
+  }
+</style>

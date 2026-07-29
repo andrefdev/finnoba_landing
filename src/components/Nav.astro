@@ -1,0 +1,165 @@
+---
+import Button from "./common/Button.astro";
+import Icon from "./common/Icon.astro";
+import Wordmark from "./common/Wordmark.astro";
+import { dict, localePath, type Lang } from "../lib/i18n";
+import { APP_URL } from "../consts";
+
+interface Props {
+  lang: Lang;
+  path: string;
+}
+
+const { lang, path } = Astro.props;
+const t = dict(lang);
+
+const LINKS = [
+  { key: "how", href: "/how-it-works" },
+  { key: "investors", href: "/investors" },
+  { key: "thesis", href: "/thesis" },
+  { key: "faq", href: "/faq" },
+] as const;
+---
+
+<nav id="site-nav" aria-label="Main">
+  <a href={localePath(lang, "/")} class="brand" aria-label="Finnoba">
+    <Wordmark size={32} priority />
+  </a>
+
+  <div class="links">
+    {LINKS.map((l) => (
+      <a href={localePath(lang, l.href)} class="link" aria-current={path === l.href ? "page" : undefined}>
+        {t.nav[l.key]}
+      </a>
+    ))}
+    <Button variant="ink" size="sm" href={APP_URL}>{t.nav.app}</Button>
+  </div>
+
+  <!-- Mobile drawer: native <details>, so no state and no JS. -->
+  <details class="mobile">
+    <summary aria-label="Menu">
+      <span class="i-open"><Icon name="menu" size={18} /></span>
+      <span class="i-close"><Icon name="x" size={18} /></span>
+    </summary>
+    <div class="drawer">
+      {LINKS.map((l) => (
+        <a href={localePath(lang, l.href)} class="drawer-link">{t.nav[l.key]}</a>
+      ))}
+      <div class="drawer-actions">
+        <Button variant="ink" size="md" href={APP_URL} full>{t.nav.app}</Button>
+      </div>
+    </div>
+  </details>
+</nav>
+
+<style>
+  nav {
+    /* Survives navigation as its own group — see the View Transitions block
+       in global.css. */
+    view-transition-name: site-nav;
+    position: sticky;
+    top: 14px;
+    z-index: 50;
+    margin: 14px auto 0;
+    width: calc(100% - clamp(28px, 6vw, 64px));
+    max-width: 1600px;
+    padding: 10px 12px 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: var(--radius-pill);
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(20px) saturate(1.4);
+    -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: max-width 240ms var(--ease), background 240ms var(--ease),
+      box-shadow 240ms var(--ease), margin-top 240ms var(--ease);
+  }
+
+  nav.scrolled {
+    max-width: 880px;
+    margin-top: 18px;
+    background: rgba(255, 255, 255, 0.78);
+    box-shadow: 0 8px 32px rgba(16, 24, 40, 0.1);
+  }
+
+  .brand { display: inline-flex; align-items: center; }
+
+  .links { display: flex; align-items: center; gap: 4px; }
+
+  .link {
+    font-family: var(--font);
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--ink-2);
+    padding: 8px 14px;
+    border-radius: var(--radius-pill);
+    transition: background 160ms var(--ease);
+  }
+  .link:hover { background: rgba(20, 21, 26, 0.05); }
+  .link[aria-current="page"] { color: var(--ink); }
+
+  .mobile { display: none; position: relative; }
+
+  .mobile > summary {
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-pill);
+    background: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+  }
+  .mobile > summary::-webkit-details-marker { display: none; }
+  .mobile > summary .i-close { display: none; }
+  .mobile[open] > summary .i-open { display: none; }
+  .mobile[open] > summary .i-close { display: inline-flex; }
+
+  .drawer {
+    position: absolute;
+    top: calc(100% + 14px);
+    right: 0;
+    width: min(78vw, 320px);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px) saturate(1.4);
+    -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: var(--radius-xl);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    box-shadow: 0 24px 64px rgba(16, 24, 40, 0.18);
+  }
+
+  .drawer-link {
+    font-family: var(--font);
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--ink);
+    padding: 12px 14px;
+    border-radius: var(--radius-md);
+  }
+
+  .drawer-actions { display: flex; margin-top: 12px; }
+
+  @media (max-width: 760px) {
+    .links { display: none; }
+    .mobile { display: block; }
+  }
+</style>
+
+<script>
+  // ponytail: vanilla instead of a scroll hook. The listener is registered once
+  // at module scope and re-queries the nav, because ClientRouter swaps the body
+  // on every navigation — re-adding it per page-load would leak a listener
+  // pointing at a detached node each time.
+  const sync = () => {
+    document.getElementById("site-nav")?.classList.toggle("scrolled", window.scrollY > 40);
+  };
+  window.addEventListener("scroll", sync, { passive: true });
+  document.addEventListener("astro:page-load", sync);
+  sync();
+</script>

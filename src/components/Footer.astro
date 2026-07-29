@@ -1,0 +1,164 @@
+---
+import Wordmark from "./common/Wordmark.astro";
+import { dict, localePath, LOCALES, type Lang } from "../lib/i18n";
+
+interface Props {
+  lang: Lang;
+  /** Locale-less route, so the switch lands on the same page in the other language. */
+  path: string;
+}
+
+const { lang, path } = Astro.props;
+const f = dict(lang).footer;
+
+const columns = [
+  { title: f.productTitle, links: f.product },
+  { title: f.resourcesTitle, links: f.resources },
+  { title: f.communityTitle, links: f.community },
+  { title: f.legalTitle, links: f.legalLinks },
+];
+---
+
+<footer>
+  <div class="grid">
+    <div>
+      <Wordmark size={30} />
+      <p class="tagline">{f.tagline}</p>
+    </div>
+
+    {columns.map((col) => (
+      <nav aria-label={col.title}>
+        <h2 class="col-title">{col.title}</h2>
+        {col.links.map((it) =>
+          "e" in it && it.e ? (
+            <a href={it.h} target="_blank" rel="noopener noreferrer" class="link">{it.l}</a>
+          ) : (
+            <a href={localePath(lang, it.h)} class="link">{it.l}</a>
+          )
+        )}
+      </nav>
+    ))}
+  </div>
+
+  <div class="bottom">
+    <p class="legal">{f.legalBase}</p>
+
+    <nav class="lang" aria-label={f.lang}>
+      <span class="lang-label">{f.lang}</span>
+      {LOCALES.map((code) => (
+        <a
+          href={localePath(code, path)}
+          hreflang={code}
+          lang={code}
+          class="lang-option"
+          aria-current={code === lang ? "true" : undefined}
+        >{code.toUpperCase()}</a>
+      ))}
+    </nav>
+  </div>
+</footer>
+
+<style>
+  footer {
+    view-transition-name: site-footer;
+    background: var(--white);
+    padding: 0 var(--container-pad) 48px;
+  }
+
+  .grid {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr repeat(4, 1fr);
+    gap: 32px;
+    padding-top: 48px;
+    border-top: 1px solid var(--line);
+  }
+
+  .tagline {
+    margin-top: 14px;
+    font-size: 13px;
+    line-height: 1.6;
+    max-width: 300px;
+    color: var(--muted);
+  }
+
+  .col-title {
+    color: var(--ink);
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .link {
+    display: block;
+    color: var(--muted);
+    font-size: 13px;
+    padding: 4px 0;
+    font-family: var(--font);
+    font-weight: 500;
+  }
+  .link:hover { color: var(--ink); }
+
+  .bottom {
+    max-width: var(--container-max);
+    margin: 32px auto 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .legal {
+    flex: 1;
+    min-width: 280px;
+    font-size: 12px;
+    color: var(--faint);
+    line-height: 1.6;
+  }
+
+  .lang {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+    padding: 4px;
+    border-radius: var(--radius-pill);
+    background: var(--surface);
+  }
+
+  .lang-label {
+    font-family: var(--font);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+    padding: 0 8px 0 10px;
+  }
+
+  .lang-option {
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    padding: 6px 12px;
+    border-radius: var(--radius-pill);
+    transition: background 160ms var(--ease), color 160ms var(--ease);
+  }
+  .lang-option:hover { color: var(--ink); }
+
+  .lang-option[aria-current="true"] {
+    background: var(--white);
+    color: var(--ink);
+    box-shadow: 0 1px 3px rgba(16, 24, 40, 0.1);
+  }
+
+  @media (max-width: 960px) { .grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 540px) {
+    .grid { grid-template-columns: 1fr; }
+    .bottom { flex-direction: column-reverse; align-items: stretch; }
+    .lang { align-self: flex-start; }
+    .legal { min-width: 0; }
+  }
+</style>

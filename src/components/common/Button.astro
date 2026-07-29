@@ -1,0 +1,57 @@
+---
+/**
+ * Renders an <a> when given an href and a <button> otherwise, so the clickable
+ * thing is the interactive element itself — no <span> nested inside a link.
+ */
+interface Props {
+  variant?: "ink" | "soft" | "on-dark";
+  size?: "sm" | "md" | "lg";
+  href?: string;
+  full?: boolean;
+  type?: "button" | "submit";
+  class?: string;
+}
+
+const { variant = "ink", size = "md", href, full, type = "button", class: className } = Astro.props;
+const Tag = href ? "a" : "button";
+const rest = href ? { href } : { type };
+---
+
+<Tag class:list={["btn", `is-${variant}`, `is-${size}`, { "is-full": full }, className]} {...rest}>
+  <slot />
+</Tag>
+
+<style>
+  .btn {
+    font-family: var(--font);
+    font-weight: 600;
+    border: 0;
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
+    transition: background 200ms var(--ease);
+  }
+
+  .is-sm { padding: 8px 14px; font-size: 13px; }
+  .is-md { padding: 12px 20px; font-size: 15px; }
+  .is-lg { padding: 15px 26px; font-size: 16px; }
+
+  .is-full { width: 100%; }
+
+  .is-ink { background: var(--ink); color: var(--white); }
+  .is-ink:hover { background: #2a2b33; }
+
+  .is-soft {
+    background: var(--white);
+    color: var(--ink);
+    box-shadow: inset 0 0 0 1px var(--line-strong);
+  }
+  .is-soft:hover { background: #fafafc; }
+
+  .is-on-dark { background: var(--white); color: var(--ink); }
+  .is-on-dark:hover { background: #f0f0f3; }
+</style>

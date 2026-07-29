@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets";
+import logo from "../../assets/logo.png";
+
+interface Props {
+  size?: number;
+  priority?: boolean;
+}
+
+const { size = 26, priority } = Astro.props;
+const width = Math.round((logo.width / logo.height) * size);
+---
+
+<Image
+  src={logo}
+  alt="Finnoba"
+  width={width}
+  height={size}
+  loading={priority ? "eager" : "lazy"}
+  style={{ height: `${size}px`, width: "auto", display: "block" }}
+/>

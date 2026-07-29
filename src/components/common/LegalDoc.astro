@@ -1,0 +1,30 @@
+---
+import PageHero from "./PageHero.astro";
+import Section from "./Section.astro";
+import Card from "./Card.astro";
+
+/** Shared body for the terms and privacy placeholders. */
+interface Props {
+  title: string;
+  status: string;
+  body: string;
+}
+
+const { title, status, body } = Astro.props;
+---
+
+<PageHero title={title} subtitle={status} />
+<Section topRound>
+  <Card class="doc"><p>{body}</p></Card>
+</Section>
+
+<style>
+  .doc { padding: 32px; max-width: 760px; }
+
+  .doc p {
+    font-family: var(--font);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-2);
+  }
+</style>

@@ -1,0 +1,63 @@
+---
+import Icon from "../common/Icon.astro";
+import { CATEGORY, type CategoryKey } from "../../lib/loans";
+
+interface Props {
+  category: CategoryKey;
+  size?: number;
+  /** Flat tinted circle used inside the dashboard mockup rows. */
+  flat?: boolean;
+}
+
+const { category, size = 52, flat } = Astro.props;
+const c = CATEGORY[category];
+---
+
+<span
+  class:list={["badge", { "is-flat": flat }]}
+  style={{ "--c": c.color, "--size": `${size}px` }}
+>
+  {!flat && <span class="halo" aria-hidden="true"></span>}
+  <span class="disc">
+    <Icon name={c.icon} size={Math.round(size * (flat ? 0.5 : 0.42))} stroke={2.2} />
+  </span>
+</span>
+
+<style>
+  .badge {
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+  }
+
+  .halo {
+    position: absolute;
+    width: calc(var(--size) * 1.5);
+    height: calc(var(--size) * 1.5);
+    border-radius: 50%;
+    background: radial-gradient(circle, color-mix(in srgb, var(--c) 33%, transparent) 0%, transparent 68%);
+    filter: blur(4px);
+  }
+
+  .disc {
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: var(--white);
+    background: linear-gradient(150deg, var(--c), color-mix(in srgb, var(--c) 80%, black));
+    box-shadow: 0 8px 20px color-mix(in srgb, var(--c) 25%, transparent),
+      inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  }
+
+  .is-flat .disc {
+    background: color-mix(in srgb, var(--c) 10%, transparent);
+    color: var(--c);
+    box-shadow: none;
+  }
+</style>

@@ -1,0 +1,28 @@
+---
+/** The rounded numeral that prefixes steps, layers and onboarding items. */
+interface Props {
+  n: number;
+  tone?: "ink" | "violet";
+  size?: "sm" | "md";
+}
+
+const { n, tone = "ink", size = "md" } = Astro.props;
+---
+
+<span class:list={["badge", `is-${tone}`, `is-${size}`]}>{n}</span>
+
+<style>
+  .badge {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    color: var(--white);
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .is-sm { width: 30px; height: 30px; border-radius: 10px; }
+  .is-md { width: 36px; height: 36px; border-radius: var(--radius-sm); }
+  .is-ink { background: var(--ink); }
+  .is-violet { background: var(--violet); }
+</style>
