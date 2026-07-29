@@ -1,5 +1,5 @@
 import { Card } from "../common/Card";
-import { ProgressBar } from "../common/ProgressBar";
+import { Chip } from "../common/Chip";
 import { Sparkline } from "../common/Sparkline";
 import { COLOR, FONT } from "../common/tokens";
 import { CATEGORY, type Loan } from "./data";
@@ -9,14 +9,14 @@ import { GradeChip } from "./GradeChip";
 type Props = Loan & {
   onClick?: () => void;
   yieldLabel: string;
-  fundedLabel: string;
+  exampleLabel: string;
   termSuffix: string;
   gradeLabel: string;
 };
 
 export function LoanCard({
-  business, category, city, amount, term, yld, grade, funded, trend,
-  onClick, yieldLabel, fundedLabel, termSuffix, gradeLabel,
+  business, category, city, amount, term, yld, grade, trend,
+  onClick, yieldLabel, exampleLabel, termSuffix, gradeLabel,
 }: Props) {
   const c = CATEGORY[category];
   return (
@@ -59,13 +59,9 @@ export function LoanCard({
         </div>
       </div>
 
-      <div>
-        <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, fontWeight: 600, color: COLOR.muted, marginBottom: 6 }}>
-          <span>{funded}% {fundedLabel}</span>
-          <span>${Math.round((amount * funded) / 100).toLocaleString()} / ${amount.toLocaleString()}</span>
-        </div>
-        <ProgressBar value={funded} color={c.color} height={6} />
-      </div>
+      <Chip style={{ alignSelf: "flex-start", fontSize: 11, fontWeight: 600, color: COLOR.muted }}>
+        {exampleLabel}
+      </Chip>
     </Card>
   );
 }

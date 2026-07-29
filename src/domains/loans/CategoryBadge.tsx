@@ -1,9 +1,9 @@
-import { Store, Utensils, Wrench, ShoppingCart, Truck, Scissors, Laptop, Coffee, type LucideIcon } from "lucide-react";
+import { Coffee, Grape, Fish, Laptop, Sprout, Leaf, Shirt, Wheat, type LucideIcon } from "lucide-react";
 import { CATEGORY, type CategoryKey } from "./data";
 
 const ICONS: Record<string, LucideIcon> = {
-  store: Store, utensils: Utensils, wrench: Wrench, "shopping-cart": ShoppingCart,
-  truck: Truck, scissors: Scissors, laptop: Laptop, coffee: Coffee,
+  coffee: Coffee, grape: Grape, fish: Fish, laptop: Laptop,
+  sprout: Sprout, leaf: Leaf, shirt: Shirt, wheat: Wheat,
 };
 
 export function CategoryBadge({ category, size = 52 }: { category: CategoryKey; size?: number }) {

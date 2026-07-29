@@ -39,6 +39,20 @@ export function MarketsSection() {
               {m.title}
             </h2>
             <p style={{ fontSize: 18, color: COLOR.muted, maxWidth: 580, margin: 0 }}>{m.sub}</p>
+            <p
+              style={{
+                fontSize: 13,
+                fontWeight: 600,
+                color: COLOR.muted,
+                maxWidth: 580,
+                margin: "14px 0 0",
+                padding: "8px 12px",
+                borderRadius: 10,
+                background: "rgba(20,21,26,.05)",
+              }}
+            >
+              {m.disclaimer}
+            </p>
           </div>
           <Link href="/investors">
             <Button variant="soft" size="md" iconRight={<ArrowRight size={16} />}>
@@ -52,7 +66,7 @@ export function MarketsSection() {
               key={l.business}
               {...l}
               yieldLabel={m.yieldLabel}
-              fundedLabel={m.fundedLabel}
+              exampleLabel={m.exampleLabel}
               termSuffix={m.termSuffix}
               gradeLabel={m.gradeLabel}
             />

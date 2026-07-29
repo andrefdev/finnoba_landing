@@ -13,18 +13,18 @@ export const DICTIONARIES = {
       meta: {
         title: "Finnoba — Crédito productivo en USD para LATAM",
         description:
-          "Conectamos capital con los negocios que los bancos no atienden. Inversores ganan 20–30% en USD; los negocios obtienen crédito en minutos — sin colateral, sin banco.",
+          "Conectamos capital con los exportadores que los bancos no atienden. Yield objetivo de 12–14% en USD; evaluación ágil basada en flujo de caja — sin colateral, sin banco.",
       },
       hero: {
-        tag: "Operando desde 2026 · v0.1 activa · Cupos limitados",
+        tag: "Piloto 2026 · Perú · Cupos limitados",
         h1: "Rendimiento real en USD. Negocios reales. Un solo marketplace.",
-        sub: "Finnoba conecta a inversores con USD ocioso con los negocios que los bancos ignoran. Los inversores ganan 20–30% en USD; los negocios reciben crédito en minutos — sin colateral, sin banco.",
+        sub: "Finnoba conecta a inversores con USD ocioso con exportadores que facturan en dólares y los bancos ignoran. Yield objetivo de 12–14% en USD; evaluación ágil basada en flujo de caja — sin colateral, sin banco.",
         primary: "Empezar a invertir",
         secondary: "Solicitar crédito USD",
-        badges: ["Denominado en USD", "Decisiones en minutos", "Tasa de default <5%"],
+        badges: ["Denominado en USD", "Evaluación por flujo de caja", "Default objetivo <5%"],
       },
       preview: {
-        url: "app.finnoba.com",
+        url: "app.finnoba.xyz",
         search: "Buscar negocios",
         addFunds: "Añadir fondos",
         title: "Marketplace",
@@ -32,18 +32,19 @@ export const DICTIONARIES = {
         headers: { business: "NEGOCIO", amount: "MONTO", term: "PLAZO", yield: "USD YIELD", grade: "GRADO" },
       },
       stats: [
-        { label: "Capital desplegado", value: "$12.4M", sub: "en LATAM" },
-        { label: "Préstamos financiados", value: "1,840", sub: "tickets de $1K–$10K" },
-        { label: "Yield promedio", value: "24%", sub: "en USD", subColor: "#157A47" },
-        { label: "Tasa de default", value: "< 5%", sub: "y bajando", subColor: "#157A47" },
+        { label: "Etapa", value: "Piloto 2026", sub: "pre-lanzamiento" },
+        { label: "Yield objetivo", value: "12–14%", sub: "en USD · no garantizado", subColor: "#157A47" },
+        { label: "Primer mercado", value: "Perú", sub: "exportadores que facturan en USD" },
       ],
       markets: {
-        eyebrow: "Marketplace en vivo",
-        title: "Financia negocios reales. Gana USD real.",
-        sub: "Cada préstamo está verificado, calificado y respaldado por flujo de caja. Diversifica tu capital en decenas de negocios de la región.",
-        browse: "Ver todos",
+        eyebrow: "Vista previa del marketplace",
+        title: "Financia exportadores reales. Cobra en USD.",
+        sub: "Así se verá el marketplace: cada préstamo verificado, calificado y respaldado por flujo de caja en dólares.",
+        browse: "Ver términos",
         yieldLabel: "Yield USD objetivo",
-        fundedLabel: "financiado",
+        exampleLabel: "Ejemplo ilustrativo",
+        disclaimer:
+          "Ejemplos ilustrativos: negocios ficticios, no son ofertas vigentes. Finnoba aún no ha desembolsado préstamos.",
         termSuffix: "meses",
         gradeLabel: "Grado",
       },
@@ -58,21 +59,21 @@ export const DICTIONARIES = {
             tint: "mint",
           },
           {
-            eyebrow: "Minutos, no semanas",
+            eyebrow: "Ágil, no burocrático",
             title: "100% digital, de la solicitud al pago",
-            body: "Identidad, scoring y firma online. Decisión en minutos y USD en la cuenta — no una visita a la sucursal.",
+            body: "Identidad, scoring y firma online. Evaluación ágil basada en flujo de caja real — sin visita a la sucursal.",
             tint: "peach",
           },
           {
-            eyebrow: "Yield real",
-            title: "20–30% en USD, respaldado por préstamos",
-            body: "Los retornos del inversor los pagan negocios reales devolviendo préstamos reales — no especulación, nunca cripto.",
+            eyebrow: "Yield objetivo",
+            title: "12–14% objetivo en USD, respaldado por préstamos",
+            body: "Los retornos del inversor los pagan negocios reales devolviendo préstamos reales — no especulación, nunca cripto. El rendimiento es objetivo, no garantizado.",
             tint: "sky",
           },
           {
-            eyebrow: "Hecho para LATAM",
-            title: "Donde los bancos no llegan",
-            body: "Finnoba sirve a las pymes, freelancers e independientes que el sistema formal ignora, a lo largo de la región.",
+            eyebrow: "Regla de hierro",
+            title: "Solo prestamos USD a quien gana USD",
+            body: "Financiamos exportadores que facturan en dólares: café, cacao, arándano, palta, pesca, textil, software y BPO. Préstamo e ingreso en la misma moneda, sin riesgo cambiario importado. Empezamos por Perú; LATAM es el horizonte.",
             tint: "lilac",
           },
         ],
@@ -87,14 +88,14 @@ export const DICTIONARIES = {
             steps: [
               { t: "Añade USD a tu cuenta", d: "Carga tu balance y define cuánto quieres poner a trabajar." },
               { t: "Elige préstamos o auto-diversifica", d: "Tú escoges los negocios, o Finnoba te diversifica entre muchos." },
-              { t: "Gana mientras pagan", d: "Los negocios pagan mensualmente en USD — tú cobras 20–30% al año." },
+              { t: "Gana mientras pagan", d: "Los negocios pagan mensualmente en USD — el yield objetivo es 12–14% anual." },
             ],
           },
           {
             tag: "Para negocios",
             color: "#1FB36B",
             steps: [
-              { t: "Aplica en minutos", d: "Cuéntanos de tu negocio y conecta tu historial de flujo." },
+              { t: "Aplica online", d: "Cuéntanos de tu negocio exportador y conecta tu historial de facturación en USD." },
               { t: "Recibe una decisión rápida", d: "Te calificamos por performance real — sin colateral, sin banco." },
               { t: "Recibe USD, paga mensualmente", d: "Los fondos llegan a tu cuenta; pagas en cuotas mensuales fijas." },
             ],
@@ -102,8 +103,8 @@ export const DICTIONARIES = {
         ],
       },
       cta: {
-        title: "Empieza en minutos.",
-        sub: "Ya sea para poner a trabajar USD ocioso o para hacer crecer un negocio, Finnoba te lleva rápido — 100% digital.",
+        title: "Empieza hoy.",
+        sub: "Ya sea para poner a trabajar USD ocioso o para financiar tu próximo embarque de exportación, el proceso es 100% digital.",
         primary: "Empezar",
       },
     },
@@ -120,12 +121,12 @@ export const DICTIONARIES = {
         {
           k: "01",
           t: "Reservas tu cupo",
-          b: "Aplicas al ciclo de inversión activo. Validamos perfil del inversor, firmamos términos y abrimos tu posición con el monto que decidas asignar. Onboarding completo en 24-48 horas.",
+          b: "Aplicas al primer ciclo de inversión. Validamos perfil del inversor, firmamos términos y abrimos tu posición con el monto que decidas asignar.",
         },
         {
           k: "02",
           t: "El capital se diversifica automáticamente",
-          b: "Tu inversión se reparte entre los préstamos activos del pool según el algoritmo de diversificación. Cada préstamo pasa previamente por nuestro proceso de originación y scoring antes de ser fondeado. Tiempo objetivo de fondeo de cada préstamo: <24h.",
+          b: "Tu inversión se reparte entre los préstamos del pool según el criterio de diversificación. Cada préstamo pasa previamente por nuestro proceso de originación y scoring antes de ser fondeado.",
         },
         {
           k: "03",
@@ -135,19 +136,19 @@ export const DICTIONARIES = {
       ],
       flowTitle: "El flujo, de extremo a extremo",
       flow: [
-        { t: "Inversor", b: "Aporta capital al ciclo activo." },
+        { t: "Inversor", b: "Aporta capital al primer ciclo." },
         { t: "Pool diversificado", b: "Asignación automática entre 15–25 préstamos." },
         { t: "Originación", b: "Scoring y verificación previa al fondeo." },
-        { t: "Borrowers", b: "Emprendedores y profesionales con flujo real." },
+        { t: "Borrowers", b: "Exportadores peruanos que facturan en USD." },
         { t: "Cobranza", b: "Pagos mensuales y escalamiento estructurado." },
         { t: "Pagos al inversor", b: "Distribución mensual proporcional." },
       ],
-      tableTitle: "Frecuencia y plazos",
+      tableTitle: "Frecuencia y plazos objetivo",
       table: [
         ["Plazo promedio de préstamo", "3-6 meses"],
         ["Frecuencia de pagos al inversor", "Mensual"],
-        ["Tiempo de onboarding", "24-48h"],
-        ["Tiempo de fondeo de un préstamo", "<24h"],
+        ["Tiempo de onboarding (objetivo)", "24-48h"],
+        ["Tiempo de fondeo de un préstamo (objetivo)", "<24h"],
         ["Reporte mensual", "Día 5 del mes siguiente"],
       ],
       cta: "Ver términos para inversores",
@@ -156,14 +157,16 @@ export const DICTIONARIES = {
       meta: {
         title: "Para inversores",
         description:
-          "Términos, tickets y onboarding del ciclo activo de Finnoba para inversores LATAM.",
+          "Términos, tickets y onboarding del primer ciclo de Finnoba para inversores LATAM.",
       },
       h1: "Para inversores que buscan rendimiento productivo.",
-      sub: "Términos, tickets y proceso de onboarding del ciclo activo.",
-      termsTitle: "Términos del ciclo activo",
+      sub: "Términos, tickets y proceso de onboarding del primer ciclo.",
+      termsTitle: "Términos del primer ciclo",
       terms: [
         ["Ticket mínimo", "$5,000 USD"],
         ["Ticket máximo recomendado", "$250,000 USD por ciclo"],
+        ["Yield objetivo", "12–14% anual en USD (no garantizado)"],
+        ["Perfil del borrower", "Exportadores peruanos que facturan en USD"],
         ["Plazo de inversión", "3-6 meses (alineado a préstamos del portafolio)"],
         ["Frecuencia de pagos", "Mensual"],
         ["Liquidez anticipada", "Caso por caso"],
@@ -195,7 +198,7 @@ export const DICTIONARIES = {
         "Reservas tu cupo en el formulario de aplicación",
         "Te contactamos para una llamada de 20 minutos donde validamos perfil y resolvemos preguntas",
         "Firmamos términos y enviamos instrucciones de transferencia",
-        "Tu capital se asigna al pool del ciclo activo",
+        "Tu capital se asigna al pool del primer ciclo",
         "Recibes confirmación con tu portafolio diversificado y fecha del primer pago",
       ],
       cta: "Reservar mi lugar",
@@ -227,14 +230,14 @@ export const DICTIONARIES = {
       ],
       whyFinnobaTitle: "Por qué Finnoba puede",
       whyFinnoba: [
-        "Originación basada en flujo real y reputación de comunidades validadas. Vemos lo que un banco no mira.",
-        "Tickets pequeños ($300–800) que reducen riesgo individual y permiten alta diversificación por inversor.",
+        "Originación basada en flujo real de exportación y reputación de comunidades validadas. Vemos lo que un banco no mira.",
+        "Tickets acotados ($1K–$10K) que reducen riesgo individual y permiten alta diversificación por inversor.",
         "Operación lean con tecnología propia que mantiene los costos bajos y permite tasas justas para ambos lados de la mesa.",
       ],
       stateTitle: "El estado actual",
       stateBody:
-        "Finnoba opera desde 2026 con su versión v0.1 activa. Las primeras operaciones están colocadas, los flujos están en cobranza y los reportes mensuales se entregan al inversor inicial. El siguiente ciclo abre capacidad ampliada para inversores externos.",
-      cta: "Reservar mi lugar en el próximo ciclo",
+        "Finnoba está en etapa pre-lanzamiento. Aún no hemos desembolsado préstamos: estamos cerrando el piloto en Perú, construyendo el pipeline de originación con exportadores que facturan en USD y estructurando el primer ciclo de inversión. Las métricas de esta web se publicarán con data real desde el primer desembolso.",
+      cta: "Reservar mi lugar en el primer ciclo",
     },
     risk: {
       meta: {
@@ -243,51 +246,58 @@ export const DICTIONARIES = {
           "Cómo controlamos el riesgo en Finnoba: originación, diversificación, capital first-loss y cobranza estructurada.",
       },
       h1: "Cómo controlamos el riesgo.",
-      sub: "Rendimiento alto no significa riesgo ciego. Estos son los mecanismos estructurales que protegen el capital invertido.",
+      sub: "Un rendimiento objetivo sostenible no significa riesgo ciego. Estos son los mecanismos estructurales diseñados para proteger el capital invertido.",
       frameworkTitle: "Marco general",
       frameworkBody:
-        "Toda inversión productiva implica riesgo. Nuestro trabajo no es esconderlo, sino estructurarlo, medirlo y reportarlo. Trabajamos en cuatro capas: originación, diversificación, capital first-loss y cobranza.",
-      layersTitle: "Las cuatro capas",
+        "Toda inversión productiva implica riesgo. Nuestro trabajo no es esconderlo, sino estructurarlo, medirlo y reportarlo. Trabajamos en cinco capas: calce de moneda, originación, diversificación, capital first-loss y cobranza.",
+      layersTitle: "Las cinco capas",
       layers: [
         {
           k: "01",
-          t: "Originación",
-          b: "Cada préstamo pasa por evaluación de flujo de caja, propósito del crédito y referencias activas en comunidades productivas validadas. Rechazamos más solicitudes de las que aprobamos. Tasa de aprobación actual: [POR DEFINIR]%.",
+          t: "Calce de moneda (regla de hierro)",
+          b: "Solo prestamos USD a negocios que GANAN USD: agroexportadores de café, cacao, arándano y palta, pesca de exportación, manufactura textil de exportación y software/BPO con clientes en el extranjero. El préstamo y el ingreso del borrower están en la misma moneda, así una devaluación del sol no convierte una cuota manejable en una impagable. Un negocio local que factura en soles no califica, aunque su flujo sea excelente.",
         },
         {
           k: "02",
-          t: "Diversificación",
-          b: "Ningún inversor está expuesto a un solo préstamo. La asignación mínima es 15 préstamos por inversor; el promedio del v0.1 es [X] préstamos. Esto convierte un default individual en una pérdida marginal del portafolio.",
+          t: "Originación",
+          b: "Cada préstamo pasa por evaluación de flujo de caja, verificación de facturación de exportación, propósito del crédito y referencias activas en comunidades productivas validadas. Esperamos rechazar más solicitudes de las que aprobamos; la tasa de aprobación objetivo es 15-25%.",
         },
         {
           k: "03",
-          t: "Capital first-loss",
-          b: "El equipo mantiene capital propio en cada pool que absorbe las primeras pérdidas antes de que afecten a los inversores. Porcentaje actual: 10% del pool.",
+          t: "Diversificación",
+          b: "Ningún inversor estará expuesto a un solo préstamo. La asignación mínima es 15 préstamos por inversor. Esto convierte un default individual en una pérdida marginal del portafolio.",
         },
         {
           k: "04",
+          t: "Capital first-loss",
+          b: "El equipo mantendrá capital propio en cada pool para absorber las primeras pérdidas antes de que afecten a los inversores. Porcentaje objetivo: 10% del pool.",
+        },
+        {
+          k: "05",
           t: "Cobranza estructurada",
           b: "Escalamiento progresivo de cobranza con reportes transparentes de mora. La estructura está diseñada para recuperar capital sin destruir la relación con el borrower productivo, lo cual reduce defaults futuros.",
         },
       ],
-      metricsTitle: "Métricas objetivo y reales",
-      metricsHead: ["Métrica", "Objetivo", "v0.1 actual"],
+      metricsTitle: "Métricas objetivo",
+      metricsHead: ["Métrica", "Objetivo", "Real"],
       metrics: [
-        ["Default rate", "<5%", "[X]%"],
-        ["Tasa de aprobación", "15-25%", "[X]%"],
-        ["Diversificación promedio", "15+ préstamos", "[X]"],
-        ["Recovery rate post-mora", "60%+", "[X]%"],
-        ["Plazo promedio", "3-6 meses", "[X] meses"],
+        ["Default rate", "<5%", "Sin data"],
+        ["Tasa de aprobación", "15-25%", "Sin data"],
+        ["Diversificación promedio", "15+ préstamos", "Sin data"],
+        ["Recovery rate post-mora", "60%+", "Sin data"],
+        ["Plazo promedio", "3-6 meses", "Sin data"],
       ],
       metricsNote:
-        "Las métricas de v0.1 corresponden a un ciclo de operación inicial con muestra reducida. La consolidación estadística se alcanza con [X] préstamos colocados.",
+        "Finnoba aún no ha desembolsado préstamos, por lo que no existe data real que reportar. Estas son las métricas objetivo del modelo; publicaremos las reales en esta tabla desde el primer ciclo y actualizaremos mensualmente.",
       uncontrolledTitle: "Lo que NO controlamos",
       uncontrolledIntro:
         "Hay riesgos que están fuera de nuestro control y queremos ser explícitos sobre ellos:",
       uncontrolled: [
         "Crisis macroeconómicas regionales que afecten capacidad de pago generalizada",
+        "Caídas de precio internacional o cierres de mercado que golpeen los ingresos de exportación del borrower",
         "Cambios regulatorios que modifiquen la operación",
         "Eventos de fraude individuales no detectados por los procesos de originación",
+        "Riesgo de ejecución propio de una operación en etapa pre-lanzamiento, sin historial de desempeño",
       ],
       uncontrolledFoot:
         "Mitigamos exposición operativa, no riesgo sistémico. Por eso ningún inversor debería asignar a Finnoba capital que no pueda permitirse perder en su totalidad.",
@@ -320,7 +330,7 @@ export const DICTIONARIES = {
         },
       ],
       ecosystemTitle: "Ecosistema operativo",
-      ecosystemSub: "Partners operativos del ciclo actual.",
+      ecosystemSub: "Partners operativos del piloto.",
       ecosystem: [
         {
           name: "Indrox",
@@ -361,7 +371,7 @@ export const DICTIONARIES = {
           items: [
             {
               q: "¿Cuál es el ticket mínimo y cómo recibo los rendimientos?",
-              a: "El ticket mínimo del ciclo activo es $5,000 USD. Los rendimientos se acreditan mensualmente, proporcionales a los pagos recibidos de los préstamos en tu portafolio.",
+              a: "El ticket mínimo del primer ciclo es $5,000 USD. Los rendimientos se acreditarán mensualmente, proporcionales a los pagos recibidos de los préstamos en tu portafolio. El yield objetivo es 12–14% anual en USD, no garantizado.",
             },
             {
               q: "¿Qué pasa si un emprendedor no paga su préstamo?",
@@ -385,20 +395,24 @@ export const DICTIONARIES = {
           title: "Sobre la operación",
           items: [
             {
-              q: "¿Cómo eligen a los emprendedores que reciben crédito?",
-              a: "Combinamos un scoring propio con verificación de reputación en comunidades productivas validadas. Cada solicitante pasa por evaluación de flujo de caja, propósito del crédito y referencias activas. No replicamos los criterios bancarios tradicionales porque excluyen al perfil que queremos servir.",
+              q: "¿Cómo eligen a los negocios que reciben crédito?",
+              a: "Primero aplicamos nuestra regla de hierro: solo prestamos USD a negocios que ganan USD, es decir exportadores con facturación en dólares. Sobre ese universo combinamos scoring propio con verificación de reputación en comunidades productivas validadas, evaluación de flujo de caja, propósito del crédito y referencias activas. No replicamos los criterios bancarios tradicionales porque excluyen al perfil que queremos servir.",
             },
             {
-              q: "¿Cómo está custodiado el capital?",
-              a: "El capital de los inversores se mantiene en cuentas segregadas con custodia institucional. Los flujos de pago son auditados y los reportes se entregan a cada inversor con detalle préstamo por préstamo.",
+              q: "¿Por qué solo exportadores?",
+              a: "Porque prestar dólares a un negocio que factura en soles importa riesgo cambiario que puede quebrar el libro: si el sol se devalúa, la cuota en USD se vuelve impagable aunque el negocio siga sano. Financiando exportadores de café, cacao, arándano, palta, pesca, textil y software/BPO, el ingreso del borrower y su deuda están en la misma moneda.",
+            },
+            {
+              q: "¿Cómo estará custodiado el capital?",
+              a: "El capital de los inversores se mantendrá en cuentas segregadas, con reportes préstamo por préstamo para cada inversor. La estructura de custodia definitiva se está cerrando junto con la asesoría legal y se detallará en la documentación del primer ciclo.",
             },
             {
               q: "¿En qué países operan?",
-              a: "El ciclo actual cubre [POR DEFINIR: lista de países]. Estamos expandiendo cobertura a medida que validamos capacidad de originación y cobranza local.",
+              a: "El piloto corre en Perú y ahí se coloca el primer ciclo. LATAM es el horizonte de largo plazo: expandiremos a medida que validemos capacidad de originación y cobranza local en cada mercado.",
             },
             {
               q: "¿En qué tecnología está construida la plataforma?",
-              a: "La infraestructura combina rieles tradicionales con tecnología blockchain para liquidación y trazabilidad. Esto nos permite reducir costos operativos y entregar reportes con auditoría granular. La complejidad técnica es nuestra; la experiencia del inversor es la de un producto financiero tradicional.",
+              a: "La plataforma se está construyendo in-house sobre rieles financieros tradicionales. Hoy la operación es manual y asistida por nuestro equipo; automatizamos originación y reportería a medida que el piloto valida el proceso. Finnoba no es un producto cripto ni ofrece exposición a activos digitales.",
             },
           ],
         },
@@ -406,8 +420,8 @@ export const DICTIONARIES = {
           title: "Sobre la regulación",
           items: [
             {
-              q: "¿Hay regulación?",
-              a: "Operamos como Proveedor de Servicios de Activos Virtuales registrado ante la UIF Perú, con políticas KYC/AML alineadas a estándares SBS. La estructura completa de compliance se detalla en la documentación del ciclo, disponible bajo NDA.",
+              q: "¿Cuál es su situación regulatoria?",
+              a: "Estamos trabajando con asesoría legal especializada para definir la clasificación regulatoria aplicable en Perú y las políticas KYC/AML correspondientes antes de abrir el primer ciclo. No afirmamos contar hoy con licencias ni registros que aún no estén emitidos; publicaremos el detalle en cuanto esté confirmado.",
             },
             {
               q: "¿Esto es una oferta pública de valores?",
@@ -415,7 +429,7 @@ export const DICTIONARIES = {
             },
             {
               q: "¿Necesito ser inversionista acreditado?",
-              a: "El ciclo actual está dirigido a inversores con capacidad de evaluar riesgo crediticio y comprometer capital durante el plazo del producto. Validamos perfil en la entrevista de onboarding.",
+              a: "El primer ciclo está dirigido a inversores con capacidad de evaluar riesgo crediticio y comprometer capital durante el plazo del producto. Validamos perfil en la entrevista de onboarding.",
             },
           ],
         },
@@ -426,32 +440,32 @@ export const DICTIONARIES = {
       meta: {
         title: "Transparencia",
         description:
-          "Métricas reales del v0.1 de Finnoba actualizadas mensualmente: portafolio, distribución, reportes y auditoría.",
+          "El estado real de Finnoba: etapa pre-lanzamiento, sin préstamos desembolsados. Métricas de portafolio y reportes desde el primer ciclo.",
       },
       h1: "Transparencia operativa.",
-      sub: "Métricas reales del v0.1 actualizadas mensualmente.",
+      sub: "Finnoba está en pre-lanzamiento y aún no ha desembolsado préstamos. Esta página no muestra data inventada: cada métrica se publicará cuando exista, y se actualizará mensualmente desde el primer ciclo.",
       portfolioTitle: "Métricas del portafolio",
       portfolio: [
-        ["Capital colocado total", "$[X]"],
-        ["Préstamos activos", "[X]"],
-        ["Préstamos pagados completamente", "[X]"],
-        ["Default rate actual", "[X]%"],
-        ["APR neto promedio", "[X]%"],
-        ["Geografías cubiertas", "[LISTA]"],
+        ["Capital colocado total", "$0 — sin desembolsos"],
+        ["Préstamos activos", "0"],
+        ["Préstamos pagados completamente", "0"],
+        ["Default rate actual", "Sin data"],
+        ["APR neto promedio", "Sin data"],
+        ["Geografías cubiertas", "Perú (piloto)"],
       ],
       distributionTitle: "Distribución del portafolio",
       distribution: [
-        ["Por país", "[POR DEFINIR]"],
-        ["Por sector productivo del borrower", "[POR DEFINIR]"],
-        ["Por tamaño de préstamo", "[POR DEFINIR]"],
-        ["Por plazo", "[POR DEFINIR]"],
+        ["Por país", "Disponible desde el primer ciclo"],
+        ["Por sector productivo del borrower", "Disponible desde el primer ciclo"],
+        ["Por tamaño de préstamo", "Disponible desde el primer ciclo"],
+        ["Por plazo", "Disponible desde el primer ciclo"],
       ],
       reportsTitle: "Reporte mensual",
       reportsBody:
-        "Próximamente. Los reportes mensuales en PDF se publicarán a partir del cierre del primer trimestre de operación ampliada.",
+        "Aún no hay reportes que publicar. Los reportes mensuales en PDF se publicarán a partir del cierre del primer trimestre de operación.",
       auditTitle: "Auditoría",
       auditBody:
-        "La operación es auditada por [POR DEFINIR]. Los reportes trimestrales están disponibles para inversores activos.",
+        "Todavía no hay operación auditada. Definiremos auditor externo antes de abrir el primer ciclo y publicaremos aquí los reportes trimestrales.",
       cta: "Reservar mi lugar",
     },
     legal: {
@@ -459,7 +473,7 @@ export const DICTIONARIES = {
       privacyTitle: "Política de privacidad",
       placeholderTitle: "Documento legal en preparación",
       placeholderBody:
-        "Este documento está siendo preparado por nuestro equipo legal. Contacta a hola@finnoba.xyz para recibir la versión vigente del contrato del ciclo activo.",
+        "Este documento está siendo preparado por nuestro equipo legal. Contacta a info@finnoba.xyz para recibir la versión vigente del contrato del primer ciclo.",
     },
     footer: {
       tagline:
@@ -483,7 +497,7 @@ export const DICTIONARIES = {
         { l: "LinkedIn", h: "https://www.linkedin.com", e: true },
         { l: "X / Twitter", h: "https://x.com", e: true },
         { l: "Newsletter", h: "https://substack.com", e: true },
-        { l: "Contacto", h: "mailto:hola@finnoba.xyz", e: true },
+        { l: "Contacto", h: "mailto:info@finnoba.xyz", e: true },
       ],
       legalTitle: "Legal",
       legalLinks: [
@@ -508,18 +522,18 @@ export const DICTIONARIES = {
       meta: {
         title: "Finnoba — USD productive credit for LATAM",
         description:
-          "We connect capital to the businesses banks overlook. Investors earn 20–30% in USD; businesses get credit in minutes — no collateral, no bank.",
+          "We connect capital to the exporters banks overlook. Target yield of 12–14% in USD; fast, cash-flow based evaluation — no collateral, no bank.",
       },
       hero: {
-        tag: "Operating since 2026 · v0.1 active · Limited seats",
+        tag: "2026 pilot · Peru · Limited seats",
         h1: "Real USD yield. Real businesses. One marketplace.",
-        sub: "Finnoba connects investors with idle USD to the businesses banks overlook. Investors earn 20–30% in USD; businesses get credit in minutes — no collateral, no bank.",
+        sub: "Finnoba connects investors with idle USD to the exporters who invoice in dollars and banks overlook. Target yield of 12–14% in USD; fast, cash-flow based evaluation — no collateral, no bank.",
         primary: "Start investing",
         secondary: "Get USD credit",
-        badges: ["USD-denominated", "Decisions in minutes", "Default rate under 5%"],
+        badges: ["USD-denominated", "Cash-flow based evaluation", "Target default under 5%"],
       },
       preview: {
-        url: "app.finnoba.com",
+        url: "app.finnoba.xyz",
         search: "Search businesses",
         addFunds: "Add funds",
         title: "Marketplace",
@@ -527,18 +541,19 @@ export const DICTIONARIES = {
         headers: { business: "BUSINESS", amount: "AMOUNT", term: "TERM", yield: "USD YIELD", grade: "GRADE" },
       },
       stats: [
-        { label: "Capital deployed", value: "$12.4M", sub: "across LATAM" },
-        { label: "Loans funded", value: "1,840", sub: "$1K–$10K tickets" },
-        { label: "Avg. investor yield", value: "24%", sub: "in USD", subColor: "#157A47" },
-        { label: "Default rate", value: "< 5%", sub: "and falling", subColor: "#157A47" },
+        { label: "Stage", value: "2026 pilot", sub: "pre-launch" },
+        { label: "Target yield", value: "12–14%", sub: "in USD · not guaranteed", subColor: "#157A47" },
+        { label: "First market", value: "Peru", sub: "exporters that invoice in USD" },
       ],
       markets: {
-        eyebrow: "Live marketplace",
-        title: "Fund real businesses. Earn real USD.",
-        sub: "Every loan is vetted, scored and backed by cash flow. Spread your capital across dozens of businesses around the region.",
-        browse: "Browse all",
+        eyebrow: "Marketplace preview",
+        title: "Fund real exporters. Get paid in USD.",
+        sub: "This is what the marketplace will look like: every loan vetted, scored and backed by cash flow in dollars.",
+        browse: "See terms",
         yieldLabel: "Target USD yield",
-        fundedLabel: "funded",
+        exampleLabel: "Illustrative example",
+        disclaimer:
+          "Illustrative examples: fictional businesses, not live offerings. Finnoba has not disbursed any loans yet.",
         termSuffix: "mo term",
         gradeLabel: "Grade",
       },
@@ -553,21 +568,21 @@ export const DICTIONARIES = {
             tint: "mint",
           },
           {
-            eyebrow: "Minutes, not weeks",
+            eyebrow: "Agile, not bureaucratic",
             title: "Fully digital, apply to payout",
-            body: "Identity, scoring and signature happen online. A decision in minutes and USD in the account — not a branch visit.",
+            body: "Identity, scoring and signature happen online. Fast evaluation based on real cash flow — not a branch visit.",
             tint: "peach",
           },
           {
-            eyebrow: "Real yield",
-            title: "20–30% in USD, backed by loans",
-            body: "Investor returns are paid by real businesses repaying real loans — not speculation, and never crypto.",
+            eyebrow: "Target yield",
+            title: "12–14% target in USD, backed by loans",
+            body: "Investor returns are paid by real businesses repaying real loans — not speculation, and never crypto. The yield is a target, not a guarantee.",
             tint: "sky",
           },
           {
-            eyebrow: "Built for LATAM",
-            title: "Where banks won't go",
-            body: "Finnoba serves the SMEs, freelancers and independents the formal system overlooks, across the region.",
+            eyebrow: "Iron rule",
+            title: "We only lend USD to businesses that earn USD",
+            body: "We finance exporters that invoice in dollars: coffee, cacao, blueberry, avocado, fishing, textiles, software and BPO. Loan and income in the same currency, no imported FX risk. We start in Peru; LATAM is the horizon.",
             tint: "lilac",
           },
         ],
@@ -582,14 +597,14 @@ export const DICTIONARIES = {
             steps: [
               { t: "Add USD to your account", d: "Fund your balance and set how much you want to put to work." },
               { t: "Pick loans or auto-diversify", d: "Choose businesses yourself, or let Finnoba spread you across many." },
-              { t: "Earn as they repay", d: "Businesses repay monthly in USD — you collect 20–30% a year." },
+              { t: "Earn as they repay", d: "Businesses repay monthly in USD — the target yield is 12–14% a year." },
             ],
           },
           {
             tag: "For businesses",
             color: "#1FB36B",
             steps: [
-              { t: "Apply in minutes", d: "Tell us about your business and connect your cash-flow history." },
+              { t: "Apply online", d: "Tell us about your export business and connect your USD invoicing history." },
               { t: "Get a decision fast", d: "We score you on real performance — no collateral, no bank required." },
               { t: "Receive USD, repay monthly", d: "Funds land in your account; you repay in fixed monthly installments." },
             ],
@@ -597,8 +612,8 @@ export const DICTIONARIES = {
         ],
       },
       cta: {
-        title: "Start in minutes.",
-        sub: "Whether you're putting idle USD to work or growing a business, Finnoba gets you there fast — fully digital.",
+        title: "Get started today.",
+        sub: "Whether you're putting idle USD to work or financing your next export shipment, the process is fully digital.",
         primary: "Get started",
       },
     },
@@ -615,12 +630,12 @@ export const DICTIONARIES = {
         {
           k: "01",
           t: "You reserve your seat",
-          b: "You apply to the active investment cycle. We validate investor profile, sign terms and open your position with the amount you decide. Full onboarding in 24-48 hours.",
+          b: "You apply to the first investment cycle. We validate investor profile, sign terms and open your position with the amount you decide.",
         },
         {
           k: "02",
           t: "Capital diversifies automatically",
-          b: "Your investment is split across active pool loans according to the diversification algorithm. Every loan goes through our origination and scoring process before being funded. Target loan funding time: <24h.",
+          b: "Your investment is split across pool loans according to the diversification criteria. Every loan goes through our origination and scoring process before being funded.",
         },
         {
           k: "03",
@@ -630,19 +645,19 @@ export const DICTIONARIES = {
       ],
       flowTitle: "The flow, end to end",
       flow: [
-        { t: "Investor", b: "Allocates capital to the active cycle." },
+        { t: "Investor", b: "Allocates capital to the first cycle." },
         { t: "Diversified pool", b: "Automatic allocation across 15–25 loans." },
         { t: "Origination", b: "Scoring and verification before funding." },
-        { t: "Borrowers", b: "Entrepreneurs and professionals with real cash flow." },
+        { t: "Borrowers", b: "Peruvian exporters that invoice in USD." },
         { t: "Collections", b: "Monthly payments and structured escalation." },
         { t: "Investor payouts", b: "Pro-rata monthly distribution." },
       ],
-      tableTitle: "Frequency and terms",
+      tableTitle: "Target frequency and terms",
       table: [
         ["Average loan term", "3-6 months"],
         ["Investor payment frequency", "Monthly"],
-        ["Onboarding time", "24-48h"],
-        ["Loan funding time", "<24h"],
+        ["Onboarding time (target)", "24-48h"],
+        ["Loan funding time (target)", "<24h"],
         ["Monthly report", "5th of the following month"],
       ],
       cta: "See investor terms",
@@ -651,14 +666,16 @@ export const DICTIONARIES = {
       meta: {
         title: "For investors",
         description:
-          "Active cycle terms, tickets and onboarding for Finnoba LATAM investors.",
+          "First cycle terms, tickets and onboarding for Finnoba LATAM investors.",
       },
       h1: "For investors looking for productive returns.",
-      sub: "Terms, tickets and onboarding process for the active cycle.",
-      termsTitle: "Active cycle terms",
+      sub: "Terms, tickets and onboarding process for the first cycle.",
+      termsTitle: "First cycle terms",
       terms: [
         ["Minimum ticket", "$5,000 USD"],
         ["Recommended max ticket", "$250,000 USD per cycle"],
+        ["Target yield", "12–14% a year in USD (not guaranteed)"],
+        ["Borrower profile", "Peruvian exporters that invoice in USD"],
         ["Investment term", "3-6 months (aligned to portfolio loans)"],
         ["Payment frequency", "Monthly"],
         ["Early liquidity", "Case by case"],
@@ -690,7 +707,7 @@ export const DICTIONARIES = {
         "Reserve your seat in the application form",
         "We contact you for a 20-minute call to validate profile and answer questions",
         "We sign terms and send transfer instructions",
-        "Your capital is allocated to the active cycle pool",
+        "Your capital is allocated to the first cycle pool",
         "You get confirmation with your diversified portfolio and first payment date",
       ],
       cta: "Reserve my spot",
@@ -722,14 +739,14 @@ export const DICTIONARIES = {
       ],
       whyFinnobaTitle: "Why Finnoba can",
       whyFinnoba: [
-        "Origination based on real cash flow and reputation in validated communities. We see what a bank doesn't look at.",
-        "Small tickets ($300–800) that reduce individual risk and allow high diversification per investor.",
+        "Origination based on real export cash flow and reputation in validated communities. We see what a bank doesn't look at.",
+        "Contained tickets ($1K–$10K) that reduce individual risk and allow high diversification per investor.",
         "Lean operation with proprietary technology that keeps costs low and enables fair rates on both sides of the table.",
       ],
       stateTitle: "Current state",
       stateBody:
-        "Finnoba operates since 2026 with v0.1 active. The first operations are deployed, cash flows are in collection and monthly reports are delivered to the initial investor. The next cycle opens expanded capacity to external investors.",
-      cta: "Reserve my spot in the next cycle",
+        "Finnoba is pre-launch. We have not disbursed any loans yet: we are closing the pilot in Peru, building the origination pipeline with exporters that invoice in USD, and structuring the first investment cycle. The metrics on this site will be published with real data from the first disbursement onward.",
+      cta: "Reserve my spot in the first cycle",
     },
     risk: {
       meta: {
@@ -738,51 +755,58 @@ export const DICTIONARIES = {
           "How we control risk at Finnoba: origination, diversification, first-loss capital and structured collections.",
       },
       h1: "How we control risk.",
-      sub: "High returns don't mean blind risk. These are the structural mechanisms that protect invested capital.",
+      sub: "A sustainable target return doesn't mean blind risk. These are the structural mechanisms designed to protect invested capital.",
       frameworkTitle: "General framework",
       frameworkBody:
-        "Every productive investment carries risk. Our job is not to hide it but to structure, measure and report it. We work in four layers: origination, diversification, first-loss capital and collections.",
-      layersTitle: "The four layers",
+        "Every productive investment carries risk. Our job is not to hide it but to structure, measure and report it. We work in five layers: currency match, origination, diversification, first-loss capital and collections.",
+      layersTitle: "The five layers",
       layers: [
         {
           k: "01",
-          t: "Origination",
-          b: "Every loan goes through evaluation of cash flow, credit purpose and active references in validated productive communities. We reject more requests than we approve. Current approval rate: [TBD]%.",
+          t: "Currency match (iron rule)",
+          b: "We only lend USD to businesses that EARN USD: coffee, cacao, blueberry and avocado agro-exporters, export fishing, export textile manufacturing, and software/BPO with foreign clients. The loan and the borrower's income sit in the same currency, so a devaluation of the sol doesn't turn a manageable installment into an impossible one. A local business invoicing in soles does not qualify, however good its cash flow.",
         },
         {
           k: "02",
-          t: "Diversification",
-          b: "No investor is exposed to a single loan. Minimum allocation is 15 loans per investor; v0.1 average is [X] loans. This turns an individual default into a marginal portfolio loss.",
+          t: "Origination",
+          b: "Every loan goes through evaluation of cash flow, verification of export invoicing, credit purpose and active references in validated productive communities. We expect to reject more requests than we approve; the target approval rate is 15-25%.",
         },
         {
           k: "03",
-          t: "First-loss capital",
-          b: "The team keeps proprietary capital in every pool that absorbs first losses before they affect investors. Current percentage: 10% of pool.",
+          t: "Diversification",
+          b: "No investor will be exposed to a single loan. Minimum allocation is 15 loans per investor. This turns an individual default into a marginal portfolio loss.",
         },
         {
           k: "04",
+          t: "First-loss capital",
+          b: "The team will keep proprietary capital in every pool to absorb first losses before they affect investors. Target percentage: 10% of pool.",
+        },
+        {
+          k: "05",
           t: "Structured collections",
           b: "Progressive collections escalation with transparent delinquency reporting. The structure is designed to recover capital without destroying the relationship with the productive borrower, which reduces future defaults.",
         },
       ],
-      metricsTitle: "Target and actual metrics",
-      metricsHead: ["Metric", "Target", "v0.1 actual"],
+      metricsTitle: "Target metrics",
+      metricsHead: ["Metric", "Target", "Actual"],
       metrics: [
-        ["Default rate", "<5%", "[X]%"],
-        ["Approval rate", "15-25%", "[X]%"],
-        ["Avg diversification", "15+ loans", "[X]"],
-        ["Post-delinquency recovery", "60%+", "[X]%"],
-        ["Average term", "3-6 months", "[X] months"],
+        ["Default rate", "<5%", "No data"],
+        ["Approval rate", "15-25%", "No data"],
+        ["Avg diversification", "15+ loans", "No data"],
+        ["Post-delinquency recovery", "60%+", "No data"],
+        ["Average term", "3-6 months", "No data"],
       ],
       metricsNote:
-        "v0.1 metrics correspond to an initial operating cycle with reduced sample size. Statistical consolidation is reached at [X] loans deployed.",
+        "Finnoba has not disbursed any loans yet, so there is no actual data to report. These are the model's target metrics; we will publish the real ones in this table from the first cycle onward and update monthly.",
       uncontrolledTitle: "What we do NOT control",
       uncontrolledIntro:
         "There are risks outside our control and we want to be explicit about them:",
       uncontrolled: [
         "Regional macroeconomic crises affecting widespread payment capacity",
+        "International price drops or market closures that hit the borrower's export revenue",
         "Regulatory changes that modify operations",
         "Individual fraud events undetected by origination processes",
+        "Execution risk inherent to a pre-launch operation with no performance track record",
       ],
       uncontrolledFoot:
         "We mitigate operational exposure, not systemic risk. That's why no investor should allocate capital to Finnoba that they cannot afford to lose entirely.",
@@ -815,7 +839,7 @@ export const DICTIONARIES = {
         },
       ],
       ecosystemTitle: "Operating ecosystem",
-      ecosystemSub: "Operating partners of the current cycle.",
+      ecosystemSub: "Operating partners of the pilot.",
       ecosystem: [
         {
           name: "Indrox",
@@ -856,7 +880,7 @@ export const DICTIONARIES = {
           items: [
             {
               q: "What is the minimum ticket and how do I receive returns?",
-              a: "The minimum ticket of the active cycle is $5,000 USD. Returns are credited monthly, pro-rata to payments received from loans in your portfolio.",
+              a: "The minimum ticket of the first cycle is $5,000 USD. Returns will be credited monthly, pro-rata to payments received from loans in your portfolio. The target yield is 12–14% a year in USD, not guaranteed.",
             },
             {
               q: "What happens if an entrepreneur doesn't pay their loan?",
@@ -880,20 +904,24 @@ export const DICTIONARIES = {
           title: "About operations",
           items: [
             {
-              q: "How are entrepreneurs selected for credit?",
-              a: "We combine proprietary scoring with reputation verification in validated productive communities. Each applicant goes through cash flow evaluation, credit purpose and active references. We don't replicate traditional banking criteria because they exclude the profile we want to serve.",
+              q: "How are businesses selected for credit?",
+              a: "First we apply our iron rule: we only lend USD to businesses that earn USD, meaning exporters with dollar invoicing. Within that universe we combine proprietary scoring with reputation verification in validated productive communities, cash flow evaluation, credit purpose and active references. We don't replicate traditional banking criteria because they exclude the profile we want to serve.",
             },
             {
-              q: "How is capital custodied?",
-              a: "Investor capital is held in segregated accounts with institutional custody. Payment flows are audited and reports are delivered to each investor with loan-by-loan detail.",
+              q: "Why exporters only?",
+              a: "Because lending dollars to a business that invoices in soles imports FX risk that can break the book: if the sol devalues, the USD installment becomes unpayable even if the business is healthy. By financing exporters of coffee, cacao, blueberry, avocado, fish, textiles and software/BPO, the borrower's income and their debt sit in the same currency.",
+            },
+            {
+              q: "How will capital be custodied?",
+              a: "Investor capital will be held in segregated accounts, with loan-by-loan reporting for each investor. The definitive custody structure is being finalized together with legal counsel and will be detailed in the first cycle documentation.",
             },
             {
               q: "Which countries do you operate in?",
-              a: "The current cycle covers [TBD: country list]. We're expanding coverage as we validate origination and local collection capacity.",
+              a: "The pilot runs in Peru and that is where the first cycle is deployed. LATAM is the long-term horizon: we will expand as we validate origination and local collection capacity in each market.",
             },
             {
               q: "What technology is the platform built on?",
-              a: "The infrastructure combines traditional rails with blockchain technology for settlement and traceability. This lets us reduce operating costs and deliver granular audit reporting. Technical complexity is ours; the investor experience is that of a traditional financial product.",
+              a: "The platform is being built in-house on traditional financial rails. Today the operation is manual and assisted by our team; we automate origination and reporting as the pilot validates the process. Finnoba is not a crypto product and does not offer exposure to digital assets.",
             },
           ],
         },
@@ -901,8 +929,8 @@ export const DICTIONARIES = {
           title: "About regulation",
           items: [
             {
-              q: "Is there regulation?",
-              a: "We operate as a Virtual Asset Service Provider registered with UIF Peru, with KYC/AML policies aligned to SBS standards. The full compliance structure is detailed in cycle documentation, available under NDA.",
+              q: "What is your regulatory situation?",
+              a: "We are working with specialized legal counsel to determine the applicable regulatory classification in Peru and the corresponding KYC/AML policies before opening the first cycle. We do not claim to currently hold licenses or registrations that have not yet been issued; we will publish the detail as soon as it is confirmed.",
             },
             {
               q: "Is this a public securities offering?",
@@ -910,7 +938,7 @@ export const DICTIONARIES = {
             },
             {
               q: "Do I need to be an accredited investor?",
-              a: "The current cycle is for investors with capacity to evaluate credit risk and commit capital during the product term. We validate profile in the onboarding interview.",
+              a: "The first cycle is for investors with capacity to evaluate credit risk and commit capital during the product term. We validate profile in the onboarding interview.",
             },
           ],
         },
@@ -921,32 +949,32 @@ export const DICTIONARIES = {
       meta: {
         title: "Transparency",
         description:
-          "Real v0.1 metrics from Finnoba updated monthly: portfolio, distribution, reports and audit.",
+          "Finnoba's real state: pre-launch, no loans disbursed. Portfolio metrics and reports from the first cycle onward.",
       },
       h1: "Operating transparency.",
-      sub: "Real v0.1 metrics updated monthly.",
+      sub: "Finnoba is pre-launch and has not disbursed any loans yet. This page shows no invented data: every metric will be published once it exists, and updated monthly from the first cycle onward.",
       portfolioTitle: "Portfolio metrics",
       portfolio: [
-        ["Total capital deployed", "$[X]"],
-        ["Active loans", "[X]"],
-        ["Loans fully repaid", "[X]"],
-        ["Current default rate", "[X]%"],
-        ["Average net APR", "[X]%"],
-        ["Geographies covered", "[LIST]"],
+        ["Total capital deployed", "$0 — no disbursements"],
+        ["Active loans", "0"],
+        ["Loans fully repaid", "0"],
+        ["Current default rate", "No data"],
+        ["Average net APR", "No data"],
+        ["Geographies covered", "Peru (pilot)"],
       ],
       distributionTitle: "Portfolio distribution",
       distribution: [
-        ["By country", "[TBD]"],
-        ["By borrower productive sector", "[TBD]"],
-        ["By loan size", "[TBD]"],
-        ["By term", "[TBD]"],
+        ["By country", "Available from the first cycle"],
+        ["By borrower productive sector", "Available from the first cycle"],
+        ["By loan size", "Available from the first cycle"],
+        ["By term", "Available from the first cycle"],
       ],
       reportsTitle: "Monthly report",
       reportsBody:
-        "Coming soon. PDF monthly reports will be published from the close of the first expanded operating quarter.",
+        "There are no reports to publish yet. PDF monthly reports will be published from the close of the first operating quarter.",
       auditTitle: "Audit",
       auditBody:
-        "Operations are audited by [TBD]. Quarterly reports are available to active investors.",
+        "There is no audited operation yet. We will appoint an external auditor before opening the first cycle and publish the quarterly reports here.",
       cta: "Reserve my spot",
     },
     legal: {
@@ -954,7 +982,7 @@ export const DICTIONARIES = {
       privacyTitle: "Privacy policy",
       placeholderTitle: "Legal document in preparation",
       placeholderBody:
-        "This document is being prepared by our legal team. Contact hola@finnoba.xyz to receive the current version of the active cycle agreement.",
+        "This document is being prepared by our legal team. Contact info@finnoba.xyz to receive the current version of the first cycle agreement.",
     },
     footer: {
       tagline:
@@ -978,7 +1006,7 @@ export const DICTIONARIES = {
         { l: "LinkedIn", h: "https://www.linkedin.com", e: true },
         { l: "X / Twitter", h: "https://x.com", e: true },
         { l: "Newsletter", h: "https://substack.com", e: true },
-        { l: "Contact", h: "mailto:hola@finnoba.xyz", e: true },
+        { l: "Contact", h: "mailto:info@finnoba.xyz", e: true },
       ],
       legalTitle: "Legal",
       legalLinks: [
