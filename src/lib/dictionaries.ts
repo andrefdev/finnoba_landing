@@ -496,9 +496,252 @@ export const DICTIONARIES = {
     legal: {
       termsTitle: "Términos y condiciones",
       privacyTitle: "Política de privacidad",
-      placeholderTitle: "Documento legal en preparación",
-      placeholderBody:
-        "Este documento está siendo preparado por nuestro equipo legal. Contacta a info@finnoba.xyz para recibir la versión vigente del contrato del primer ciclo.",
+      privacyStatus: "Versión piloto 2026 · Última actualización: 30 de julio de 2026",
+      privacyMeta:
+        "Cómo Finnoba trata tus datos personales: qué recogemos, para qué, con quién lo compartimos, cuánto lo guardamos y cómo ejerces tus derechos en Perú.",
+      privacy: [
+        {
+          h: "1. Quién trata tus datos",
+          p: [
+            "El responsable del tratamiento es [POR DEFINIR] (“Finnoba”, “nosotros”), sociedad constituida en Perú, con domicilio en Lima. Puedes escribirnos a info@finnoba.xyz para cualquier tema relacionado con tus datos.",
+            "Esta política aplica al sitio finnoba.xyz, a la aplicación app.finnoba.xyz y a los formularios y canales de contacto que ofrecemos.",
+          ],
+        },
+        {
+          h: "2. Qué datos recogemos",
+          p: ["Según cómo uses la plataforma, tratamos:"],
+          ul: [
+            "Identificación y contacto: nombre, documento de identidad, fecha de nacimiento, nacionalidad, país de residencia, correo, teléfono y dirección.",
+            "Datos de verificación: copia de tu documento, selfie o prueba de vida cuando corresponda, residencia fiscal, origen de los fondos y resultado de la revisión en listas internacionales de sanciones.",
+            "Datos financieros: cuentas bancarias para enviar o recibir dinero, montos prestados o solicitados, pagos y su historial.",
+            "Si pides financiamiento para tu negocio: RUC, ventas de los últimos meses, facturas o contratos de exportación, deudas vigentes y destino de los fondos.",
+            "Datos de uso: correos y mensajes que intercambiamos contigo, y registros técnicos del servidor como tu dirección IP, navegador y fecha de acceso.",
+          ],
+        },
+        {
+          h: "3. Para qué los usamos y con qué base legal",
+          ul: [
+            "Para atender tu registro, evaluar tu perfil y ejecutar los contratos que firmemos contigo: base legal, la ejecución del contrato y las gestiones previas que pides.",
+            "Para verificar tu identidad, el origen de los fondos y cumplir la normativa de prevención de lavado de activos y financiamiento del terrorismo, además de las obligaciones tributarias y contables: base legal, el cumplimiento de obligaciones legales.",
+            "Para evaluar el riesgo crediticio de un negocio y hacer seguimiento a los pagos: base legal, la ejecución del contrato y nuestro interés legítimo en cobrar lo prestado.",
+            "Para enviarte novedades del piloto y comunicaciones comerciales: base legal, tu consentimiento. Puedes retirarlo cuando quieras.",
+            "Para operar, mantener y proteger la plataforma frente a fraude y abusos: base legal, nuestro interés legítimo.",
+          ],
+          after: [
+            "No tomamos decisiones automatizadas que produzcan efectos jurídicos sobre ti sin revisión humana: hoy la evaluación de cada solicitud la hace el equipo.",
+          ],
+        },
+        {
+          h: "4. Qué pasa si no nos das tus datos",
+          p: [
+            "Los datos de identificación, verificación y financieros son necesarios para operar: sin ellos no podemos abrirte una cuenta, recibir tu dinero ni desembolsar un préstamo, porque la ley nos obliga a verificarlos. Los datos que pedimos para enviarte novedades son opcionales y negarlos no afecta el resto.",
+          ],
+        },
+        {
+          h: "5. Con quién los compartimos",
+          p: ["No vendemos tus datos. Los compartimos solo con:"],
+          ul: [
+            "Proveedores que trabajan por encargo nuestro y bajo contrato: hosting e infraestructura, verificación de identidad, correo electrónico, procesamiento de pagos y contabilidad. Solo acceden a lo necesario para prestar su servicio.",
+            "Autoridades competentes, cuando la ley nos obliga a informar o responder un requerimiento.",
+            "Centrales de riesgo y empresas de cobranza, en el caso de negocios prestatarios con pagos atrasados, según lo pactado en el contrato individual.",
+            "Auditores externos y asesores legales, sujetos a deber de confidencialidad.",
+          ],
+        },
+        {
+          h: "6. Datos que salen del Perú",
+          p: [
+            "Parte de nuestros proveedores tiene servidores fuera del Perú, principalmente en Estados Unidos y la Unión Europea. Eso implica un flujo transfronterizo de tus datos. Cuando ocurre, exigimos a esos proveedores garantías contractuales de protección equivalentes a las que manda la ley peruana. Al aceptar esta política consientes ese flujo.",
+          ],
+        },
+        {
+          h: "7. Cuánto tiempo los guardamos",
+          p: [
+            "Mantenemos tus datos mientras dure la relación y, después, durante los plazos que exige la normativa de prevención de lavado de activos, la tributaria y la comercial, que en general no bajan de cinco años desde el cierre de la operación.",
+            "Si solo te registraste para recibir novedades y nunca operaste, borramos tus datos a los dos años del último contacto o antes si lo pides.",
+          ],
+        },
+        {
+          h: "8. Cómo los protegemos",
+          p: [
+            "Aplicamos medidas técnicas y organizativas razonables: cifrado en tránsito, acceso restringido por rol, registro de accesos y proveedores que cumplen estándares de seguridad reconocidos.",
+            "Ningún sistema es infalible. Si ocurre un incidente que afecte tus datos, te avisamos y notificamos a la autoridad cuando corresponda.",
+          ],
+        },
+        {
+          h: "9. Tus derechos",
+          p: [
+            "Puedes pedirnos acceso a tus datos, su rectificación, su cancelación o supresión, oponerte a determinados tratamientos, pedir que se limite el uso de tus datos y retirar tu consentimiento cuando el tratamiento se base en él.",
+            "Escríbenos a info@finnoba.xyz desde el correo que registraste, indicando qué derecho quieres ejercer. Podemos pedirte que acredites tu identidad. Respondemos dentro de los plazos que fija la ley: veinte días hábiles para el acceso y diez días hábiles para los demás derechos.",
+            "Hay solicitudes que no podemos atender del todo mientras exista una obligación legal de conservar la información, como la de prevención de lavado de activos. Cuando pase, te lo explicamos por escrito.",
+          ],
+        },
+        {
+          h: "10. Cookies y registros técnicos",
+          p: [
+            "Este sitio no usa cookies de analítica, de perfilado ni de publicidad. Nuestro proveedor de hosting guarda registros técnicos —dirección IP, navegador, fecha— por motivos de seguridad y funcionamiento.",
+            "La aplicación usa cookies estrictamente necesarias para mantener tu sesión iniciada. Si en el futuro añadimos herramientas de analítica, lo anunciamos en esta página y pedimos tu consentimiento antes de activarlas.",
+          ],
+        },
+        {
+          h: "11. Menores de edad",
+          p: [
+            "La plataforma no está dirigida a menores de 18 años y no recogemos sus datos a sabiendas. Si detectamos una cuenta de un menor, la cerramos y eliminamos la información.",
+          ],
+        },
+        {
+          h: "12. Cambios en esta política",
+          p: [
+            "Podemos actualizar esta política. La versión vigente es siempre la publicada en esta página, con su fecha de actualización. Si el cambio es relevante, te avisamos por correo antes de que entre en vigor.",
+          ],
+        },
+        {
+          h: "13. Reclamos",
+          p: [
+            "Si crees que no tratamos bien tus datos, escríbenos primero a info@finnoba.xyz: queremos resolverlo. También puedes presentar un reclamo ante la Autoridad Nacional de Protección de Datos Personales del Ministerio de Justicia y Derechos Humanos del Perú.",
+          ],
+        },
+      ],
+      termsStatus: "Versión piloto 2026 · Última actualización: 30 de julio de 2026",
+      termsMeta:
+        "Términos y condiciones de uso de Finnoba: qué es la plataforma, quién puede usarla, qué implica prestar o pedir prestado en dólares, y las reglas que aplican en Perú.",
+      terms: [
+        {
+          h: "1. Quién opera Finnoba",
+          p: [
+            "Finnoba es una plataforma operada por [POR DEFINIR] (“Finnoba”, “nosotros”), sociedad constituida en Perú. Estos términos regulan el uso del sitio finnoba.xyz, de la aplicación app.finnoba.xyz y de los formularios y canales de contacto que ofrecemos (en conjunto, “la plataforma”).",
+            "La razón social, el RUC y el domicilio fiscal definitivos se publican en esta misma página antes de abrir el primer ciclo.",
+          ],
+        },
+        {
+          h: "2. Al usar la plataforma aceptas estos términos",
+          p: [
+            "Si usas la plataforma, aceptas estos términos. Si no estás de acuerdo, no la uses.",
+            "Estos términos regulan el uso de la plataforma. Cada préstamo se rige además por el contrato individual que firmas para ese préstamo. Si algo del contrato individual contradice estos términos, manda el contrato.",
+          ],
+        },
+        {
+          h: "3. Qué es Finnoba y qué no es",
+          ul: [
+            "Finnoba conecta a personas que quieren prestar dólares con negocios peruanos que exportan y ya cobran en dólares.",
+            "Finnoba no es un banco ni una entidad financiera: no recibimos depósitos, no pagamos intereses por saldos y no garantizamos ningún rendimiento.",
+            "Esto no es una oferta pública de valores. El acceso es privado, sujeto a revisión de perfil y a la firma de un contrato individual.",
+            "Nada de lo que publicamos es asesoría financiera, legal ni tributaria. La decisión de prestar o de endeudarte es tuya.",
+            "Estamos en piloto: a la fecha de esta versión, Finnoba no ha desembolsado ningún préstamo. Los negocios, montos, tasas y plazos que aparecen como ejemplo en el sitio son ficticios y no son ofertas vigentes.",
+          ],
+          after: [
+            "Estamos definiendo con asesoría legal bajo qué figura opera Finnoba en Perú y qué autorizaciones le corresponden. No afirmamos contar con licencias, registros ni supervisión que hoy no tenemos. Cuando existan, se publican aquí.",
+          ],
+        },
+        {
+          h: "4. Quién puede usar Finnoba",
+          p: ["Para operar con nosotros necesitas:"],
+          ul: [
+            "Tener 18 años o más y capacidad legal para obligarte.",
+            "Actuar por cuenta propia y con fondos de origen lícito.",
+            "Completar la verificación de identidad y, si vives fuera de Perú, acreditar tu residencia fiscal.",
+            "No figurar en listas internacionales de sanciones ni en listas vinculadas a lavado de activos o financiamiento del terrorismo.",
+            "Si eres un negocio que solicita financiamiento: RUC activo y habido en SUNAT.",
+          ],
+        },
+        {
+          h: "5. Si vas a prestar",
+          ul: [
+            "El monto mínimo es de US$ 100 por préstamo. Tu participación se documenta en un contrato individual que detalla monto, plazo, tasa y forma de pago antes de que pongas dinero.",
+            "El rendimiento no está garantizado. Depende de que los negocios financiados paguen. Un préstamo puede pagarse tarde, pagarse en parte o no pagarse.",
+            "Puedes perder todo el capital. No pongas en Finnoba dinero que no puedas permitirte perder por completo.",
+            "Tu dinero no es líquido: queda comprometido hasta el vencimiento del préstamo. No hay mercado secundario ni retiro anticipado, salvo que el contrato individual diga otra cosa.",
+            "El equipo aporta capital propio que absorbe las primeras pérdidas, con el objetivo de que sea el 10% del total. Es un objetivo de diseño, no una garantía ni un seguro.",
+            "Repartir tu dinero entre varios préstamos reduce el impacto de un impago, pero no elimina el riesgo.",
+          ],
+        },
+        {
+          h: "6. Si vas a pedir prestado",
+          ul: [
+            "Prestamos solo en dólares y solo a negocios que ya cobran en dólares. Un negocio que factura únicamente en soles no califica.",
+            "El primer préstamo de cualquier negocio es de US$ 500 y a plazo corto. El monto, el plazo y la tasa mejoran con el historial de pago, según la escalera de niveles publicada en el sitio.",
+            "La tasa se te informa por escrito antes de que aceptes, y siempre por debajo del tope que fija el Banco Central de Reserva del Perú para operaciones en moneda extranjera.",
+            "La información que nos entregas —ventas, facturas, contratos, deudas vigentes y destino de los fondos— debe ser veraz, completa y actual. Entregar información falsa es causal de rechazo, de resolución del contrato y de exigir el pago total de inmediato.",
+            "Debes usar el dinero para el destino declarado.",
+            "El atraso genera los intereses y gastos que indique el contrato individual, y puede derivar en cobranza, reporte a centrales de riesgo y acciones judiciales.",
+          ],
+        },
+        {
+          h: "7. Verificación, prevención de lavado de activos y sanciones",
+          p: [
+            "Antes de recibir o entregar dinero verificamos tu identidad, el origen de los fondos y tu presencia en listas internacionales de sanciones. Este control es obligatorio y no se omite con nadie.",
+            "Podemos pedirte documentación adicional en cualquier momento, y suspender o rechazar una operación mientras la revisamos o si no logramos completar la verificación. Reportamos a las autoridades competentes lo que la ley nos obligue a reportar.",
+          ],
+        },
+        {
+          h: "8. Comisiones e impuestos",
+          p: [
+            "Registrarte, navegar el sitio y recibir información no tiene costo. Finnoba cobra una comisión por originar y administrar los préstamos: el monto, la forma de cálculo y el momento del cobro se detallan por escrito en el contrato individual antes de que firmes. No cobramos comisiones que no estén en ese documento.",
+            "Los impuestos que correspondan a tus rendimientos o a tu negocio son responsabilidad tuya.",
+          ],
+        },
+        {
+          h: "9. Tu cuenta",
+          p: [
+            "Eres responsable de mantener la confidencialidad de tus credenciales y de la actividad que ocurra con ellas. Avísanos de inmediato a info@finnoba.xyz si detectas un uso no autorizado. Podemos suspender el acceso por motivos de seguridad, por incumplimiento de estos términos o por mandato legal.",
+          ],
+        },
+        {
+          h: "10. Uso permitido",
+          p: [
+            "No puedes usar la plataforma para actividades ilícitas, ni intentar vulnerar su seguridad, extraer datos de forma automatizada, suplantar a otra persona o publicar información falsa. Cualquiera de estas conductas termina en la suspensión del acceso.",
+          ],
+        },
+        {
+          h: "11. Contenido y disponibilidad",
+          p: [
+            "Los contenidos del sitio son informativos y pueden cambiar sin aviso previo. Los ejemplos de negocios, montos, tasas y plazos son ilustrativos y no constituyen ofertas.",
+            "Hacemos un esfuerzo razonable por mantener la plataforma disponible, pero no garantizamos una operación ininterrumpida ni libre de errores. Podemos suspenderla por mantenimiento o por causas fuera de nuestro control.",
+          ],
+        },
+        {
+          h: "12. Propiedad intelectual",
+          p: [
+            "La marca Finnoba, el sitio, la aplicación, sus textos, diseños y código son de titularidad de Finnoba o de sus licenciantes. Puedes usarlos para operar en la plataforma; no puedes copiarlos, distribuirlos ni explotarlos comercialmente sin nuestra autorización escrita.",
+          ],
+        },
+        {
+          h: "13. Datos personales",
+          p: [
+            "El tratamiento de tus datos personales se rige por nuestra Política de privacidad y por la Ley N.º 29733, Ley de Protección de Datos Personales, y su reglamento. Al usar la plataforma aceptas ese tratamiento.",
+          ],
+        },
+        {
+          h: "14. Comunicaciones y firma electrónica",
+          p: [
+            "Aceptas que te contactemos por correo electrónico y por los canales que registres, y que los contratos y avisos se firmen y notifiquen por medios electrónicos. Esas comunicaciones y firmas tienen plena validez entre las partes.",
+            "Mantén tus datos de contacto actualizados: las notificaciones enviadas al último correo que registraste se consideran recibidas.",
+          ],
+        },
+        {
+          h: "15. Responsabilidad",
+          p: [
+            "Finnoba responde por las obligaciones que asume expresamente en estos términos y en cada contrato individual. No respondemos por el incumplimiento de pago de un negocio financiado, ni por las decisiones de inversión o de endeudamiento que tomes, ni por daños derivados de fallas de servicios de terceros, fuerza mayor o caso fortuito.",
+            "Nada de esta cláusula limita la responsabilidad que la ley peruana no permite limitar, en particular la que nace de dolo o culpa inexcusable.",
+          ],
+        },
+        {
+          h: "16. Cambios en estos términos",
+          p: [
+            "Podemos actualizar estos términos. La versión vigente es siempre la publicada en esta página, con su fecha de actualización. Si el cambio es relevante, te avisamos por correo con antelación razonable. Los contratos individuales ya firmados se rigen por la versión vigente al momento de su firma.",
+          ],
+        },
+        {
+          h: "17. Ley aplicable y controversias",
+          p: [
+            "Estos términos se rigen por las leyes de la República del Perú. Cualquier controversia se somete a los jueces y tribunales del distrito judicial de Lima, sin perjuicio de las vías que la ley franquee al consumidor.",
+            "Antes de llegar ahí, escríbenos: casi todo se resuelve conversando.",
+          ],
+        },
+        {
+          h: "18. Contacto",
+          p: ["info@finnoba.xyz — Finnoba, Lima, Perú."],
+        },
+      ],
     },
     footer: {
       tagline:
@@ -1030,9 +1273,252 @@ export const DICTIONARIES = {
     legal: {
       termsTitle: "Terms and conditions",
       privacyTitle: "Privacy policy",
-      placeholderTitle: "Legal document in preparation",
-      placeholderBody:
-        "This document is being prepared by our legal team. Contact info@finnoba.xyz to receive the current version of the first cycle agreement.",
+      privacyStatus: "2026 pilot version · Last updated: 30 July 2026",
+      privacyMeta:
+        "How Finnoba handles your personal data: what we collect, what for, who we share it with, how long we keep it and how you exercise your rights in Peru.",
+      privacy: [
+        {
+          h: "1. Who handles your data",
+          p: [
+            "The data controller is [TO BE DEFINED] (“Finnoba”, “we”), a company incorporated in Peru, based in Lima. Write to info@finnoba.xyz about anything related to your data.",
+            "This policy covers the finnoba.xyz site, the app.finnoba.xyz application, and the forms and contact channels we offer.",
+          ],
+        },
+        {
+          h: "2. What data we collect",
+          p: ["Depending on how you use the platform, we process:"],
+          ul: [
+            "Identity and contact: name, ID document, date of birth, nationality, country of residence, email, phone and address.",
+            "Verification data: a copy of your ID, a selfie or liveness check where applicable, tax residency, source of funds and the result of the international sanctions-list screening.",
+            "Financial data: bank accounts used to send or receive money, amounts lent or requested, payments and their history.",
+            "If you apply for business financing: RUC, recent months' sales, export invoices or contracts, outstanding debt and use of funds.",
+            "Usage data: the emails and messages we exchange with you, and technical server logs such as your IP address, browser and access time.",
+          ],
+        },
+        {
+          h: "3. What we use it for, and on what legal basis",
+          ul: [
+            "To handle your registration, review your profile and perform the agreements we sign with you: legal basis, performance of the contract and the pre-contractual steps you request.",
+            "To verify your identity and source of funds, and to comply with anti-money-laundering and counter-terrorist-financing rules as well as tax and accounting obligations: legal basis, compliance with legal obligations.",
+            "To assess a business's credit risk and follow up on payments: legal basis, performance of the contract and our legitimate interest in collecting what was lent.",
+            "To send you pilot updates and commercial communications: legal basis, your consent. You can withdraw it at any time.",
+            "To run, maintain and protect the platform against fraud and abuse: legal basis, our legitimate interest.",
+          ],
+          after: [
+            "We don't make automated decisions with legal effects on you without human review: today every application is assessed by the team.",
+          ],
+        },
+        {
+          h: "4. What happens if you don't give us your data",
+          p: [
+            "Identity, verification and financial data are necessary to operate: without them we can't open an account, receive your money or disburse a loan, because the law requires us to verify them. The data we ask for to send you updates is optional, and declining it doesn't affect anything else.",
+          ],
+        },
+        {
+          h: "5. Who we share it with",
+          p: ["We don't sell your data. We share it only with:"],
+          ul: [
+            "Providers acting on our instructions and under contract: hosting and infrastructure, identity verification, email, payment processing and accounting. They only access what they need to deliver their service.",
+            "Competent authorities, where the law requires us to report or to answer a request.",
+            "Credit bureaus and collection agencies, in the case of borrowing businesses with overdue payments, as set out in the individual agreement.",
+            "External auditors and legal advisors, bound by confidentiality.",
+          ],
+        },
+        {
+          h: "6. Data that leaves Peru",
+          p: [
+            "Some of our providers host servers outside Peru, mainly in the United States and the European Union. That means a cross-border transfer of your data. Where it happens, we require those providers to give contractual guarantees equivalent to what Peruvian law demands. By accepting this policy you consent to that transfer.",
+          ],
+        },
+        {
+          h: "7. How long we keep it",
+          p: [
+            "We keep your data for as long as the relationship lasts and, afterwards, for the periods required by anti-money-laundering, tax and commercial rules, which generally are no less than five years from the close of the operation.",
+            "If you only signed up for updates and never operated, we delete your data two years after the last contact, or sooner if you ask.",
+          ],
+        },
+        {
+          h: "8. How we protect it",
+          p: [
+            "We apply reasonable technical and organisational measures: encryption in transit, role-based access, access logging and providers that meet recognised security standards.",
+            "No system is infallible. If an incident affects your data, we'll tell you and notify the authority where required.",
+          ],
+        },
+        {
+          h: "9. Your rights",
+          p: [
+            "You can ask us for access to your data, its correction, its cancellation or deletion, object to certain processing, ask us to restrict the use of your data, and withdraw your consent where the processing relies on it.",
+            "Write to info@finnoba.xyz from the email you registered, saying which right you want to exercise. We may ask you to prove your identity. We respond within the periods set by law: twenty business days for access and ten business days for the other rights.",
+            "Some requests we can't fully honour while a legal duty to retain the information applies, such as anti-money-laundering record-keeping. When that happens, we explain it to you in writing.",
+          ],
+        },
+        {
+          h: "10. Cookies and technical logs",
+          p: [
+            "This site uses no analytics, profiling or advertising cookies. Our hosting provider keeps technical logs — IP address, browser, timestamp — for security and operational reasons.",
+            "The application uses strictly necessary cookies to keep you signed in. If we add analytics tooling in the future, we'll announce it on this page and ask for your consent before switching it on.",
+          ],
+        },
+        {
+          h: "11. Minors",
+          p: [
+            "The platform isn't aimed at people under 18 and we don't knowingly collect their data. If we find an account belonging to a minor, we close it and delete the information.",
+          ],
+        },
+        {
+          h: "12. Changes to this policy",
+          p: [
+            "We may update this policy. The version in force is always the one published on this page, with its update date. If a change is material, we'll email you before it takes effect.",
+          ],
+        },
+        {
+          h: "13. Complaints",
+          p: [
+            "If you think we're mishandling your data, write to us first at info@finnoba.xyz — we want to fix it. You can also file a complaint with Peru's National Authority for Personal Data Protection, at the Ministry of Justice and Human Rights.",
+          ],
+        },
+      ],
+      termsStatus: "2026 pilot version · Last updated: 30 July 2026",
+      termsMeta:
+        "Finnoba's terms of use: what the platform is, who can use it, what lending or borrowing in dollars involves, and the rules that apply in Peru.",
+      terms: [
+        {
+          h: "1. Who operates Finnoba",
+          p: [
+            "Finnoba is a platform operated by [TO BE DEFINED] (“Finnoba”, “we”), a company incorporated in Peru. These terms govern the use of the finnoba.xyz site, the app.finnoba.xyz application, and the forms and contact channels we offer (together, “the platform”).",
+            "The final legal name, tax ID and registered address will be published on this page before the first cycle opens.",
+          ],
+        },
+        {
+          h: "2. Using the platform means accepting these terms",
+          p: [
+            "If you use the platform, you accept these terms. If you don't agree with them, don't use it.",
+            "These terms govern the use of the platform. Each loan is also governed by the individual agreement you sign for that loan. If anything in the individual agreement contradicts these terms, the agreement prevails.",
+          ],
+        },
+        {
+          h: "3. What Finnoba is and what it isn't",
+          ul: [
+            "Finnoba connects people who want to lend dollars with Peruvian businesses that export and already get paid in dollars.",
+            "Finnoba is not a bank or a financial institution: we don't take deposits, we don't pay interest on balances, and we don't guarantee any return.",
+            "This is not a public offering of securities. Access is private, subject to a profile review and to signing an individual agreement.",
+            "Nothing we publish is financial, legal or tax advice. The decision to lend or to borrow is yours.",
+            "We're in pilot stage: as of this version, Finnoba has not disbursed any loan. The businesses, amounts, rates and terms shown as examples on the site are fictitious and are not live offers.",
+          ],
+          after: [
+            "We're working with legal counsel to define under which framework Finnoba operates in Peru and which authorisations apply to it. We don't claim licences, registrations or supervision we don't currently have. Once they exist, they go up here.",
+          ],
+        },
+        {
+          h: "4. Who can use Finnoba",
+          p: ["To operate with us you need to:"],
+          ul: [
+            "Be 18 or older and legally able to enter into binding agreements.",
+            "Act on your own behalf and with funds of lawful origin.",
+            "Complete identity verification and, if you live outside Peru, evidence your tax residency.",
+            "Not appear on international sanctions lists or on lists tied to money laundering or terrorist financing.",
+            "If you're a business applying for financing: an active, compliant RUC with SUNAT.",
+          ],
+        },
+        {
+          h: "5. If you're going to lend",
+          ul: [
+            "The minimum is US$ 100 per loan. Your participation is documented in an individual agreement setting out amount, term, rate and repayment before you put money in.",
+            "The return is not guaranteed. It depends on the financed businesses paying. A loan can be repaid late, repaid in part, or not repaid at all.",
+            "You can lose all of your capital. Don't put money into Finnoba that you can't afford to lose entirely.",
+            "Your money is not liquid: it stays committed until the loan matures. There is no secondary market and no early withdrawal, unless the individual agreement says otherwise.",
+            "The team commits its own capital, which absorbs the first losses, targeting 10% of the total. That's a design target, not a guarantee or an insurance policy.",
+            "Spreading your money across several loans reduces the impact of a default, but doesn't remove the risk.",
+          ],
+        },
+        {
+          h: "6. If you're going to borrow",
+          ul: [
+            "We lend only in dollars and only to businesses already paid in dollars. A business invoicing solely in soles doesn't qualify.",
+            "Any business's first loan is US$ 500 over a short term. Amount, term and rate improve with repayment history, following the level ladder published on the site.",
+            "The rate is given to you in writing before you accept anything, and always below the cap set by the Central Reserve Bank of Peru for foreign-currency lending.",
+            "The information you give us — sales, invoices, contracts, outstanding debt and use of funds — must be truthful, complete and current. False information is grounds for rejection, for terminating the agreement and for demanding immediate repayment in full.",
+            "You must use the money for the stated purpose.",
+            "Late payment accrues the interest and costs set out in the individual agreement, and can lead to collections, reporting to credit bureaus and legal action.",
+          ],
+        },
+        {
+          h: "7. Verification, anti-money-laundering and sanctions",
+          p: [
+            "Before receiving or releasing money we verify your identity, the source of funds and your presence on international sanctions lists. This check is mandatory and we don't skip it for anyone.",
+            "We may request additional documentation at any time, and suspend or reject an operation while we review it or if we can't complete verification. We report to the competent authorities whatever the law requires us to report.",
+          ],
+        },
+        {
+          h: "8. Fees and taxes",
+          p: [
+            "Signing up, browsing the site and receiving information is free. Finnoba charges a fee for originating and servicing loans: the amount, how it's calculated and when it's charged are set out in writing in the individual agreement before you sign. We don't charge fees that aren't in that document.",
+            "Any taxes on your returns or on your business are your responsibility.",
+          ],
+        },
+        {
+          h: "9. Your account",
+          p: [
+            "You're responsible for keeping your credentials confidential and for the activity that happens under them. Tell us immediately at info@finnoba.xyz if you spot unauthorised use. We can suspend access for security reasons, for breach of these terms, or where the law requires it.",
+          ],
+        },
+        {
+          h: "10. Acceptable use",
+          p: [
+            "You may not use the platform for unlawful activity, or attempt to breach its security, scrape data, impersonate someone else or post false information. Any of these ends in suspension of access.",
+          ],
+        },
+        {
+          h: "11. Content and availability",
+          p: [
+            "Site content is informational and can change without prior notice. Example businesses, amounts, rates and terms are illustrative and are not offers.",
+            "We make reasonable efforts to keep the platform available, but we don't guarantee uninterrupted or error-free operation. We may suspend it for maintenance or for reasons outside our control.",
+          ],
+        },
+        {
+          h: "12. Intellectual property",
+          p: [
+            "The Finnoba brand, the site, the application, its copy, designs and code belong to Finnoba or its licensors. You may use them to operate on the platform; you may not copy, distribute or commercially exploit them without our written permission.",
+          ],
+        },
+        {
+          h: "13. Personal data",
+          p: [
+            "The processing of your personal data is governed by our Privacy policy and by Peruvian Law No. 29733 on Personal Data Protection and its regulations. By using the platform you accept that processing.",
+          ],
+        },
+        {
+          h: "14. Communications and electronic signature",
+          p: [
+            "You agree that we may contact you by email and through the channels you register, and that agreements and notices may be signed and served electronically. Those communications and signatures are fully valid between the parties.",
+            "Keep your contact details up to date: notices sent to the last email you registered count as received.",
+          ],
+        },
+        {
+          h: "15. Liability",
+          p: [
+            "Finnoba is liable for the obligations it expressly assumes in these terms and in each individual agreement. We are not liable for a financed business failing to repay, for the investment or borrowing decisions you make, or for damage arising from third-party service failures, force majeure or unforeseeable events.",
+            "Nothing in this clause limits liability that Peruvian law does not allow to be limited, in particular liability arising from wilful misconduct or gross negligence.",
+          ],
+        },
+        {
+          h: "16. Changes to these terms",
+          p: [
+            "We may update these terms. The version in force is always the one published on this page, with its update date. If a change is material, we'll email you with reasonable notice. Individual agreements already signed are governed by the version in force when they were signed.",
+          ],
+        },
+        {
+          h: "17. Governing law and disputes",
+          p: [
+            "These terms are governed by the laws of the Republic of Peru. Any dispute is submitted to the courts of the Lima judicial district, without prejudice to the remedies the law grants consumers.",
+            "Before it gets there, write to us: almost everything gets sorted out by talking.",
+          ],
+        },
+        {
+          h: "18. Contact",
+          p: ["info@finnoba.xyz — Finnoba, Lima, Peru."],
+        },
+      ],
     },
     footer: {
       tagline:

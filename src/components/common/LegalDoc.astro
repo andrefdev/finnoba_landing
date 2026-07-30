@@ -3,28 +3,71 @@ import PageHero from "./PageHero.astro";
 import Section from "./Section.astro";
 import Card from "./Card.astro";
 
-/** Shared body for the terms and privacy placeholders. */
+/** Shared body for the legal pages: a list of sections, each with paragraphs and/or bullets. */
+export interface LegalSection {
+  readonly h?: string;
+  readonly p?: readonly string[];
+  readonly ul?: readonly string[];
+  /** Paragraphs that close the section, below the bullets. */
+  readonly after?: readonly string[];
+}
+
 interface Props {
   title: string;
   status: string;
-  body: string;
+  sections: readonly LegalSection[];
 }
 
-const { title, status, body } = Astro.props;
+const { title, status, sections } = Astro.props;
 ---
 
 <PageHero title={title} subtitle={status} />
 <Section topRound>
-  <Card class="doc"><p>{body}</p></Card>
+  <Card class="doc">
+    {
+      sections.map((s) => (
+        <section>
+          {s.h && <h2>{s.h}</h2>}
+          {s.p?.map((t) => <p>{t}</p>)}
+          {s.ul && (
+            <ul>
+              {s.ul.map((t) => (
+                <li>{t}</li>
+              ))}
+            </ul>
+          )}
+          {s.after?.map((t) => <p>{t}</p>)}
+        </section>
+      ))
+    }
+  </Card>
 </Section>
 
 <style>
-  .doc { padding: 32px; max-width: 760px; }
-
-  .doc p {
+  .doc {
+    padding: 32px;
+    max-width: 760px;
     font-family: var(--font);
+    color: var(--ink-2);
     font-size: 16px;
     line-height: 1.7;
-    color: var(--ink-2);
   }
+
+  .doc section + section { margin-top: 28px; }
+
+  .doc h2 {
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+
+  .doc p + p,
+  .doc ul,
+  .doc ul + p { margin-top: 10px; }
+
+  .doc ul { padding-left: 20px; }
+
+  .doc li + li { margin-top: 6px; }
 </style>

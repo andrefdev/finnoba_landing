@@ -9,6 +9,6 @@ const { lang } = Astro.props as { lang: Lang };
 const l = dict(lang).legal;
 ---
 
-<Base lang={lang} path="/privacy" title={l.privacyTitle} description={l.placeholderBody}>
-  <LegalDoc title={l.privacyTitle} status={l.placeholderTitle} body={l.placeholderBody} />
+<Base lang={lang} path="/privacy" title={l.privacyTitle} description={l.privacyMeta}>
+  <LegalDoc title={l.privacyTitle} status={l.privacyStatus} sections={l.privacy} />
 </Base>
