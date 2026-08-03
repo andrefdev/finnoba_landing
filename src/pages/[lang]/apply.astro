@@ -1,0 +1,376 @@
+---
+import Base from "../../layouts/Base.astro";
+import PageHero from "../../components/common/PageHero.astro";
+import Section from "../../components/common/Section.astro";
+import SectionHeading from "../../components/common/SectionHeading.astro";
+import Card from "../../components/common/Card.astro";
+import DataTable from "../../components/common/DataTable.astro";
+import Button from "../../components/common/Button.astro";
+import { OPTIONS } from "../../lib/form";
+import { countView } from "../../lib/leads";
+import { N1, usd } from "../../lib/loans";
+import { dict, localePath, LOCALES, type Lang } from "../../lib/i18n";
+
+/**
+ * The phase-1 instrument. Rendered on demand rather than prerendered for one
+ * reason: metric 6 needs a count of visits to divide submissions by, and a
+ * server-side tally avoids adding analytics cookies to a site whose privacy
+ * policy says it has none.
+ */
+export const prerender = false;
+
+// A rewrite to the prerendered /404 isn't allowed from an on-demand route, so
+// an unknown locale gets a plain status instead of the styled page.
+const lang = Astro.params.lang as Lang;
+if (!LOCALES.includes(lang)) return new Response("Not found", { status: 404 });
+
+const t = dict(lang);
+const a = t.apply;
+
+const params = Astro.url.searchParams;
+const ok = params.get("ok");
+const errorCode = params.get("e");
+const error = errorCode && errorCode in a.errors ? a.errors[errorCode as keyof typeof a.errors] : null;
+
+// A view is a visitor arriving at the form, not a bounce back from POST.
+if (!ok) await countView().catch(() => {});
+
+// Carried through the POST so a submission can be traced to its campaign.
+const utm = Object.fromEntries(
+  [...params.entries()].filter(([k]) => k.startsWith("utm_")),
+);
+
+const priceRows = [
+  ...N1.rows.map((r, i) => [
+    `${t.how.scheduleHead[0]} ${i + 1}`,
+    usd(r.capital),
+    usd(r.interest),
+    usd(r.payment),
+  ]),
+  [
+    t.how.scheduleTotalLabel,
+    usd(N1.totals.capital),
+    usd(N1.totals.interest),
+    usd(N1.totals.payment),
+  ],
+];
+
+const selects = ["sector", "facturacion", "antiguedad", "monto", "destino", "urgencia", "alternativa"] as const;
+const label = (field: keyof typeof a.options, key: string) =>
+  (a.options[field] as Record<string, string>)[key];
+---
+
+<Base lang={lang} path="/apply" title={a.meta.title} description={a.meta.description}>
+  {
+    ok ? (
+      <>
+        <PageHero
+          title={ok === "urgent" ? a.okUrgentTitle : a.okTitle}
+          subtitle={ok === "urgent" ? a.okUrgentBody : a.okBody}
+        />
+        <Section topRound>
+          <Button href={localePath(lang, "/")} size="lg">{a.back}</Button>
+        </Section>
+      </>
+    ) : (
+      <>
+        <PageHero title={a.h1} subtitle={a.sub} />
+
+        <Section topRound>
+          <SectionHeading eyebrow="01" title={a.priceTitle} lead={a.priceLead} />
+          <DataTable header={t.how.scheduleHead} rows={priceRows} class="narrow" />
+          <p class="footnote">{t.how.scheduleFoot}</p>
+          <Card variant="lilac" class="stage">
+            <p class="stage-text">{a.stageNote}</p>
+          </Card>
+        </Section>
+
+        <Section paddingY="32px">
+          <SectionHeading eyebrow="02" title={a.formTitle} />
+
+          {error && (
+            <Card variant="rose" class="error">
+              <p class="error-title">{a.errorTitle}</p>
+              <p class="error-body">{error}</p>
+            </Card>
+          )}
+
+          <form method="POST" action="/api/apply" class="form">
+            <input type="hidden" name="lang" value={lang} />
+            {Object.entries(utm).map(([k, v]) => <input type="hidden" name={k} value={v} />)}
+
+            {/* Honeypot: hidden from people, irresistible to bots. A filled
+                value is answered with a normal confirmation and dropped. */}
+            <div class="trap" aria-hidden="true">
+              <label for="sitio-web">No completar</label>
+              <input id="sitio-web" name="sitio_web" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <fieldset>
+              <legend>{a.legends.business}</legend>
+              <label class="field">
+                <span class="label">{a.f.razonSocial}</span>
+                <input name="razonSocial" type="text" required minlength="3" autocomplete="organization" />
+              </label>
+              <label class="field">
+                <span class="label">{a.f.ruc}</span>
+                <input
+                  name="ruc"
+                  type="text"
+                  required
+                  inputmode="numeric"
+                  pattern="(10|20)[0-9]{9}"
+                  placeholder="20123456789"
+                />
+                <span class="hint">{a.f.rucHint}</span>
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>{a.legends.contact}</legend>
+              <label class="field">
+                <span class="label">{a.f.contacto}</span>
+                <input name="contacto" type="text" required autocomplete="name" />
+              </label>
+              <label class="field">
+                <span class="label">{a.f.cargo} <em>· {a.optional}</em></span>
+                <input name="cargo" type="text" autocomplete="organization-title" />
+              </label>
+              <label class="field">
+                <span class="label">{a.f.email}</span>
+                <input name="email" type="email" required autocomplete="email" />
+              </label>
+              <label class="field">
+                <span class="label">{a.f.whatsapp}</span>
+                <input name="whatsapp" type="tel" required value="+51" autocomplete="tel" />
+                <span class="hint">{a.f.whatsappHint}</span>
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>{a.legends.operation}</legend>
+
+              <div class="field">
+                <span class="label">{a.f.cobraUsd}</span>
+                <div class="choices">
+                  {OPTIONS.cobraUsd.map((key) => (
+                    <label class="choice">
+                      <input type="radio" name="cobraUsd" value={key} required />
+                      {label("cobraUsd", key)}
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              <div class="field">
+                <span class="label">{a.f.mercados}</span>
+                {/* At-least-one isn't expressible in HTML, so the server is
+                    what actually enforces it. */}
+                <div class="choices">
+                  {OPTIONS.mercados.map((key) => (
+                    <label class="choice">
+                      <input type="checkbox" name="mercados" value={key} />
+                      {label("mercados", key)}
+                    </label>
+                  ))}
+                </div>
+                <span class="hint">{a.f.mercadosHint}</span>
+              </div>
+
+              <div class="field">
+                <span class="label">{a.f.ocSinFactura}</span>
+                <div class="choices">
+                  {OPTIONS.ocSinFactura.map((key) => (
+                    <label class="choice">
+                      <input type="radio" name="ocSinFactura" value={key} required />
+                      {label("ocSinFactura", key)}
+                    </label>
+                  ))}
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>{a.legends.need}</legend>
+              {selects.map((field) => (
+                <label class="field">
+                  <span class="label">{a.f[field]}</span>
+                  <select name={field} required>
+                    <option value="" selected disabled>{a.f.choose}</option>
+                    {OPTIONS[field].map((key) => (
+                      <option value={key}>{label(field, key)}</option>
+                    ))}
+                  </select>
+                </label>
+              ))}
+            </fieldset>
+
+            <label class="consent">
+              <input type="checkbox" name="consent" value="1" required />
+              <span>
+                {a.consent}{" "}
+                <a href={localePath(lang, "/privacy")}>{a.consentLink}</a>.
+              </span>
+            </label>
+
+            <Button type="submit" size="lg" class="submit">{a.submit}</Button>
+          </form>
+        </Section>
+      </>
+    )
+  }
+</Base>
+
+<style>
+  .narrow { max-width: 720px; }
+
+  .footnote {
+    margin-top: 20px;
+    max-width: 720px;
+    font-family: var(--font);
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+
+  .stage { margin-top: 28px; max-width: 720px; padding: 22px; }
+
+  .stage-text {
+    font-family: var(--font);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-2);
+  }
+
+  .error { max-width: 720px; padding: 20px; margin-bottom: 24px; }
+
+  .error-title {
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .error-body {
+    font-family: var(--font);
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+
+  .form { max-width: 720px; }
+
+  /* Off-screen rather than display:none — bots skip what isn't rendered. */
+  .trap {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  fieldset {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 26px;
+    margin-bottom: 18px;
+  }
+
+  legend {
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0 8px;
+  }
+
+  .field { display: block; margin-bottom: 20px; }
+  .field:last-child { margin-bottom: 0; }
+
+  .label {
+    display: block;
+    font-family: var(--font);
+    font-weight: 600;
+    font-size: 14.5px;
+    line-height: 1.45;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .label em { font-style: normal; font-weight: 500; color: var(--faint); }
+
+  .hint {
+    display: block;
+    margin-top: 6px;
+    font-family: var(--font);
+    font-size: 12.5px;
+    color: var(--faint);
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    font-family: var(--font);
+    font-size: 15px;
+    color: var(--ink);
+  }
+
+  input:focus-visible,
+  select:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 1px;
+  }
+
+  /* :invalid alone would scold every empty field on first paint. */
+  input:not(:placeholder-shown):invalid { border-color: var(--red, #e5484d); }
+
+  .choices { display: flex; flex-wrap: wrap; gap: 10px; }
+
+  .choice {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 14px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-pill);
+    font-family: var(--font);
+    font-size: 14px;
+    color: var(--ink-2);
+    cursor: pointer;
+  }
+
+  .choice:has(input:checked) {
+    border-color: var(--ink);
+    background: var(--surface);
+    color: var(--ink);
+  }
+
+  .consent {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin: 4px 0 24px;
+    font-family: var(--font);
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--ink-2);
+  }
+
+  .consent input { margin-top: 3px; flex-shrink: 0; }
+  .consent a { color: var(--ink); }
+
+  .submit { width: 100%; }
+
+  @media (min-width: 620px) {
+    .submit { width: auto; }
+  }
+</style>

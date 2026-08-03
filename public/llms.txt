@@ -25,30 +25,50 @@ lender or cite its figures as historical results.
   The weeks between shipping and the buyer paying do not match bank timing.
   Local alternatives lend in soles, adding a currency mismatch to what was
   only a liquidity problem.
-- **Lender's return:** not published as a headline figure. The rate is
-  confirmed in writing per cycle before a lender commits, and it is never
-  guaranteed. Do not attribute a specific percentage to Finnoba from any
-  older source. In the pilot, Finnoba's own capital sits first in line to
-  absorb losses.
+- **Finnoba's commission:** 40% of the interest accrued on every instalment.
+  The remaining 60% is the lender's return. The commission is charged for
+  originating, verifying and servicing the loan — it is fee income, not
+  interest income, and Finnoba is not lending its own money.
+- **Who the creditor is:** the lender. The loan contract is between the lender
+  and the business. Finnoba acts as agent — it originates, verifies, services
+  and collects on the lender's behalf — and is neither party to the loan nor
+  creditor of the debt.
+- **No first-loss capital.** Finnoba commits no capital of its own to cover
+  defaults and guarantees neither capital nor return. Credit risk sits
+  entirely with the lender. Any older source describing ~10% first-loss
+  capital from the team is out of date: that feature was removed from the
+  pilot.
+- **Lender's return:** not published as a headline figure. The 60/40 split of
+  interest is published; the resulting yield is confirmed in writing per cycle
+  before a lender commits, and is never guaranteed. Do not attribute a
+  specific percentage return to Finnoba from any source.
 - **Minimum for a lender:** USD 100 per loan. A USD 500 loan is assembled from
-  several lenders' contributions.
+  several lenders' contributions, up to 20 participants per loan.
 - **When lenders are paid:** at each loan's maturity — capital and return
   together. Money is committed for the loan's term (2-6 months); there is no
-  monthly payout and no guaranteed early exit.
-- **Diversification:** optional, not a rule. There is no minimum number of
-  loans per lender. The $100 minimum makes spreading cheap, but a lender who
-  puts everything into one loan carries that concentration alone.
+  monthly payout, no partial withdrawal, no secondary market and no resale of
+  positions. Cash that is not placed earns nothing.
+- **Lenders do not choose loans.** Assignment is automatic and in order of
+  arrival. Diversification is forced, not optional: no single loan may take
+  more than 10% of a lender's deposit. All participants in a loan are repaid
+  and bear losses pari passu, in the same proportion.
 - **Borrower level ladder — fixed amounts and terms, earned not chosen:**
-  Level 1 = USD 500 over 2-3 months; Level 2 = USD 1,200 over 3 months;
+  Level 1 = USD 500 over 2 months; Level 2 = USD 1,200 over 3 months;
   Level 3 = USD 3,000 over 4 months; Level 4 = USD 7,000 over 4 months;
   Level 5 = USD 15,000 over 6 months. Everyone starts at Level 1. The
-  borrower's interest rate falls at each level and is not published on the
-  site — it is agreed in writing with each business and stays within the cap
-  set by Peruvian law.
+  borrower's interest rate falls at each level.
+- **Level 1 price, published in full:** USD 500 over 2 months at 5% a month on
+  the OUTSTANDING balance (never flat). Instalment 1 = USD 275.00 (250 capital
+  + 25 interest); instalment 2 = USD 262.50 (250 capital + 12.50 interest);
+  USD 537.50 repaid in total. TCEA (annual effective rate) 79.59%, below the
+  BCRP cap of 99.84% for foreign currency in force May-October 2026. Rates for
+  Levels 2-5 are agreed in writing with each business.
 - **Risk controls (designed, not yet proven):** same-currency lending, checks
-  before lending (tax ID active and in good standing, recent sales, proof a
-  foreign client pays in dollars, stated use of funds, existing debts),
-  starting small at Level 1, and roughly 10% first-loss capital from the team.
+  before lending (tax ID active and in good standing, 24 months of formal
+  trading, legal-representative match, document and liveness verification,
+  recent sales, proof a foreign client pays in dollars, stated use of funds,
+  existing debts), disbursement only to a bank account held under the same tax
+  ID, starting small at Level 1, and forced spreading across loans.
 - **First market:** Peru. LATAM is the long-term horizon, not current coverage.
 
 ## Regulatory status

@@ -25,10 +25,9 @@ export const DICTIONARIES = {
       },
       preview: {
         url: "app.finnoba.xyz",
-        search: "Buscar negocios",
         addFunds: "Añadir fondos",
-        title: "Negocios disponibles",
-        sub: "Presta a exportadores verificados y cobra en dólares.",
+        title: "Tu portafolio",
+        sub: "Tu dinero repartido entre exportadores verificados que cobran en dólares.",
         headers: { business: "NEGOCIO", amount: "MONTO", term: "PLAZO", grade: "NIVEL" },
       },
       stats: [
@@ -67,7 +66,7 @@ export const DICTIONARIES = {
           {
             eyebrow: "De dónde sale el rendimiento",
             title: "Lo paga un negocio que vendió, no un mercado que subió",
-            body: "Lo que ganas viene de exportadores devolviendo préstamos en dólares. No hay especulación de por medio. La tasa de cada ciclo te la confirmamos por escrito antes de que pongas nada, y no es una garantía: un préstamo puede no devolverse.",
+            body: "Lo que ganas viene de exportadores devolviendo préstamos en dólares. No hay especulación de por medio. De los intereses que paga la empresa, el 60% es tu rendimiento y el 40% es la comisión de Finnoba. Te lo confirmamos por escrito antes de que pongas nada, y no es una garantía: un préstamo puede no devolverse y nosotros no lo reponemos.",
             tint: "sky",
           },
           {
@@ -87,7 +86,7 @@ export const DICTIONARIES = {
             color: "#6D54E8",
             steps: [
               { t: "Pones tu dinero", d: "Defines cuánto quieres prestar y firmamos las condiciones." },
-              { t: "Eliges en qué negocios entrar", d: "Desde $100 por préstamo, así que con poco puedes estar en varios y no depender de uno solo." },
+              { t: "Tu dinero se reparte solo", d: "Tu dinero se reparte entre varios préstamos, para que no dependas de uno solo. Cada tramo es de $100 y ninguno se lleva más del 10% de lo que pusiste." },
               { t: "Cobras al vencimiento", d: "Cuando el préstamo termina recuperas tu capital más lo que rindió, en dólares." },
             ],
           },
@@ -97,7 +96,7 @@ export const DICTIONARIES = {
             steps: [
               { t: "Nos cuentas de tu negocio", d: "Tu RUC, tus ventas de los últimos meses y una factura o contrato que muestre que te pagan en dólares." },
               { t: "Revisamos y te respondemos", d: "Verificamos que el negocio exista, que exporte y que pueda pagar. Sin garantías ni visitas a una sucursal." },
-              { t: "Recibes el dinero y subes de nivel", d: "Empiezas en $500. Cada préstamo bien pagado te sube de nivel: más monto, más plazo y una tasa más baja." },
+              { t: "Recibes el dinero y subes de nivel", d: "El desembolso va únicamente a una cuenta bancaria a nombre del mismo RUC. Empiezas en $500. Cada préstamo bien pagado te sube de nivel: más monto, más plazo y una tasa más baja." },
             ],
           },
         ],
@@ -125,8 +124,8 @@ export const DICTIONARIES = {
         },
         {
           k: "02",
-          t: "Entras a los préstamos que elijas",
-          b: "Desde $100 por préstamo. Un préstamo de $500 se arma entre varias personas, así que con poco dinero puedes estar en varios negocios a la vez en lugar de depender de uno. Cada negocio pasa antes por nuestra revisión.",
+          t: "Tu dinero se reparte entre varios préstamos",
+          b: "La asignación es automática y por orden de llegada: tú no eliges préstamo. Cada tramo es de $100, un préstamo de $500 se arma entre varias personas, y ningún préstamo se lleva más del 10% de lo que pusiste. Todos los tramos de un mismo préstamo cobran y pierden en la misma proporción. Cada negocio pasa antes por nuestra revisión.",
         },
         {
           k: "03",
@@ -136,14 +135,23 @@ export const DICTIONARIES = {
       ],
       levelsTitle: "Si vas a pedir: la escalera",
       levelsIntro:
-        "Nadie empieza pidiendo mucho. Tu primer préstamo son $500 a pocos meses. Cuando lo pagas completo, subes de nivel: te prestamos más, por más tiempo y a una tasa más baja. La tasa no la eliges, te la ganas pagando.",
+        "Nadie empieza pidiendo mucho. Tu primer préstamo son $500 a 2 meses. Cuando lo pagas completo, subes de nivel: te prestamos más, por más tiempo y a una tasa más baja. La tasa no la eliges, te la ganas pagando.",
       levelsFoot:
-        "La tasa baja en cada nivel. Te la decimos por escrito antes de que aceptes nada, y siempre por debajo del tope legal: el Banco Central fija un máximo de 99,84% anual en moneda extranjera para el periodo mayo-octubre 2026.",
+        "La tasa baja en cada nivel. El Nivel 1 está publicado completo aquí abajo, con montos exactos y sin necesidad de agendar una llamada. Los niveles siguientes te los confirmamos por escrito antes de que aceptes nada.",
+      scheduleTitle: "Cuánto cuesta el Nivel 1",
+      scheduleLead:
+        "$500 a 2 meses, 5% mensual sobre el saldo que aún debes. Estos son los montos exactos.",
+      scheduleHead: ["Cuota", "Capital", "Interés", "Total a pagar"],
+      scheduleTotalLabel: "Total devuelto",
+      scheduleCta: "Solicitar financiamiento",
+      scheduleFoot:
+        "TCEA 79,59%. El interés se calcula siempre sobre el saldo insoluto —lo que todavía debes— y nunca sobre el monto original: por eso la segunda cuota es más barata que la primera. El tope legal que fija el Banco Central para moneda extranjera es 99,84% anual, vigente de mayo a octubre de 2026.",
       requirementsTitle: "Qué te pedimos",
       requirements: [
         "RUC activo y habido en SUNAT",
         "Tus ventas de los últimos 6 a 12 meses",
         "Una factura o contrato que muestre que un cliente del exterior te paga en dólares",
+        "Una cuenta bancaria en dólares a nombre del mismo RUC: el desembolso no va a ninguna otra",
         "Para qué vas a usar el dinero",
         "Si tienes otras deudas en curso",
       ],
@@ -169,20 +177,46 @@ export const DICTIONARIES = {
       meta: {
         title: "Para inversores",
         description:
-          "Condiciones del primer ciclo de Finnoba: montos, plazos, rendimiento objetivo y cómo entrar.",
+          "Condiciones del primer ciclo de Finnoba: montos, plazos, comisiones y cómo entrar.",
       },
       h1: "Para quien tiene dólares parados.",
       sub: "Estas son las condiciones del primer ciclo y cómo se entra.",
+      disclosureTitle: "Antes de nada, tres cosas",
+      disclosures: [
+        {
+          t: "De cada cuota, el 40% del interés es nuestro",
+          b: "De los intereses que paga la empresa, el 60% es tu rendimiento y el 40% es la comisión de Finnoba por originar, verificar y administrar el crédito. Lo ves desglosado en cada cuota, no solo en el total.",
+        },
+        {
+          t: "El acreedor eres tú, no Finnoba",
+          b: "El contrato de préstamo se celebra entre el lender y la empresa. Finnoba actúa como mandatario: origina, verifica, administra y cobra, pero no es parte del crédito ni acreedor de la deuda.",
+        },
+        {
+          t: "No ponemos capital propio para cubrir impagos",
+          b: "Finnoba no aporta capital propio para cubrir incumplimientos ni garantiza el capital ni el rendimiento. El riesgo de crédito lo asume el lender, y es la razón por la que el rendimiento es el que es.",
+        },
+      ],
       termsTitle: "Condiciones del primer ciclo",
       terms: [
         ["Monto mínimo por préstamo", "$100"],
         ["Monto máximo sugerido", "$10,000 por ciclo"],
         ["A quién se le presta", "Exportadores peruanos que cobran en dólares"],
-        ["Cuánto dura", "2 a 6 meses, según los préstamos que elijas"],
+        ["Cuánto dura", "2 a 6 meses, según los préstamos en los que entres"],
+        ["Cómo se asigna", "Automático y por orden de llegada. Tú no eliges préstamo"],
+        ["Cuánto entra en un solo préstamo", "Como máximo el 10% de tu depósito"],
         ["Cuándo cobras", "Capital y rendimiento al vencimiento de cada préstamo"],
-        ["Salir antes", "Se evalúa caso por caso"],
-        ["En cuántos préstamos entras", "Los que quieras. Desde $100 cada uno"],
+        ["Salir antes", "No. El capital queda comprometido hasta el vencimiento"],
+        ["Comisión de Finnoba", "40% del interés de cada cuota. El 60% restante es tuyo"],
+        ["Quién es el acreedor", "Tú. Finnoba administra, pero no es parte del crédito"],
+        ["Efectivo sin colocar", "No rinde. Solo rinde el capital efectivamente prestado"],
       ],
+      feeTitle: "Cómo se reparte una cuota",
+      feeLead:
+        "Ejemplo de un préstamo de Nivel 1: $500 a 2 meses. Así se reparte el interés de cada cuota entre tu rendimiento y nuestra comisión.",
+      feeHead: ["Cuota", "Interés que paga la empresa", "Comisión Finnoba (40%)", "Tu parte (60%)"],
+      feeTotalLabel: "Total",
+      feeFoot:
+        "El capital ($500) se devuelve entero además de esa cifra. El interés se calcula sobre el saldo que la empresa aún debe, no sobre el monto original. El ejemplo asume que paga completo: si no paga, no hay interés que repartir y el capital tampoco vuelve.",
       ladderTitle: "Qué financia tu dinero",
       ladderBody:
         "Préstamos pequeños y cortos a exportadores peruanos. Nadie entra pidiendo el máximo: todos empiezan en $500 y solo suben de monto cuando devolvieron lo anterior completo. Eso mantiene acotado lo que puede costarte cada negocio, y hace que para cuando alguien llega a $15.000 ya tenga cuatro préstamos pagados detrás.",
@@ -212,7 +246,7 @@ export const DICTIONARIES = {
         "Hablamos 20 minutos: te contamos el detalle y resolvemos tus dudas",
         "Verificamos tu identidad y el origen de los fondos, y revisamos las listas internacionales de sanciones. Es obligatorio y no lo saltamos con nadie",
         "Firmamos las condiciones y te enviamos los datos para transferir",
-        "Tu dinero se reparte entre los préstamos del primer ciclo y te confirmamos la fecha de tu primer cobro",
+        "Tu dinero se reparte automáticamente entre los préstamos del primer ciclo, por orden de llegada, y te confirmamos la fecha de tu primer cobro",
       ],
       cta: "Reservar mi lugar",
     },
@@ -257,13 +291,16 @@ export const DICTIONARIES = {
       meta: {
         title: "Control de riesgo",
         description:
-          "Cómo cuidamos el dinero prestado: misma moneda, montos pequeños al inicio, repartir entre varios y poner capital propio primero.",
+          "Cómo cuidamos el dinero prestado: misma moneda, montos pequeños al inicio, reparto forzado entre varios préstamos y controles antifraude antes de desembolsar.",
       },
       h1: "Cómo cuidamos tu dinero.",
       sub: "Prestar siempre tiene riesgo. Lo que sí podemos hacer es reducirlo, medirlo y contarlo sin adornos.",
+      noLossTitle: "Lo primero: no cubrimos las pérdidas",
+      noLossBody:
+        "Finnoba no aporta capital propio para cubrir incumplimientos ni garantiza el capital ni el rendimiento. El riesgo de crédito lo asume el lender, y es la razón por la que el rendimiento es el que es. Todo lo que viene abajo reduce la probabilidad de que algo salga mal; ninguna de esas defensas te devuelve el dinero si sale mal igual.",
       frameworkTitle: "La idea general",
       frameworkBody:
-        "No vamos a decirte que esto no tiene riesgo, porque lo tiene. Lo que hacemos es atacarlo por cinco lados: prestar en la misma moneda que el negocio cobra, revisar bien a quién le prestamos, empezar con montos pequeños, repartir tu dinero entre varios préstamos y poner capital nuestro para absorber las primeras pérdidas.",
+        "No vamos a decirte que esto no tiene riesgo, porque lo tiene. Lo que hacemos es atacarlo por cinco lados: prestar en la misma moneda que el negocio cobra, revisar bien a quién le prestamos, empezar con montos pequeños, repartir tu dinero a la fuerza entre varios préstamos y frenar el fraude antes de que el dinero salga.",
       layersTitle: "Las cinco defensas",
       layers: [
         {
@@ -283,14 +320,25 @@ export const DICTIONARIES = {
         },
         {
           k: "04",
-          t: "Puedes repartir desde $100",
-          b: "Un préstamo de $500 se arma entre varias personas, así que entrar cuesta $100. Con $1.000 puedes estar en diez negocios distintos en vez de uno. No te obligamos a repartir, pero decimos lo obvio: si pones todo en un solo préstamo, ese riesgo es entero tuyo.",
+          t: "Repartimos tu dinero a la fuerza",
+          b: "Un préstamo de $500 se arma entre varias personas, así que cada tramo cuesta $100. No es opcional: el motor no deja que un solo préstamo se lleve más del 10% de lo que depositaste, aunque quieras. La asignación es automática y por orden de llegada, y todos los tramos de un mismo préstamo cobran y pierden en la misma proporción.",
         },
         {
           k: "05",
-          t: "Ponemos capital nuestro primero",
-          b: "El equipo pone dinero propio en cada ciclo, y ese es el primero que se pierde si algo sale mal. Recién después te tocaría a ti. El objetivo es que sea el 10% del total.",
+          t: "Frenamos el fraude antes de desembolsar",
+          b: "Validamos el RUC en SUNAT, exigimos 24 meses de operación formal, cruzamos al representante legal contra su DNI, verificamos documento con prueba de vida y —el control más fuerte— solo desembolsamos a una cuenta bancaria a nombre del mismo RUC. Antes de que salga el dinero hay además consulta a central de riesgo, verificación de facturación electrónica, huella de dispositivo, 24 horas de enfriamiento y una llamada de verificación.",
         },
+      ],
+      collectionsTitle: "Qué pasa cuando alguien no paga",
+      collectionsIntro:
+        "Es la primera pregunta que hace todo el mundo, así que va escrita y no en una llamada:",
+      collections: [
+        "Hay días de gracia acordados en el contrato. Dentro de ese plazo no hay penalidad, solo recordatorios.",
+        "Pasados los días de gracia arranca la gestión de cobranza: contacto directo, acuerdo de pago cuando el negocio sigue siendo viable, y escalamiento cuando no.",
+        "La mora genera un interés moratorio adicional al compensatorio, y como máximo el 15% de la tasa máxima que fija el Banco Central. No inventamos cargos por encima de eso.",
+        "La escalera se congela con mora abierta. Nadie sube de nivel debiendo una cuota, por buen historial que tenga antes.",
+        "El atraso se reporta a centrales de riesgo y puede derivar en acciones judiciales, según lo pactado en el contrato individual.",
+        "Lo que se recupere se reparte a prorrata entre todos los que pusieron dinero en ese préstamo, en la misma proporción en la que habrían cobrado.",
       ],
       metricsTitle: "A qué apuntamos",
       metricsHead: ["Indicador", "Objetivo", "Real"],
@@ -384,15 +432,23 @@ export const DICTIONARIES = {
           items: [
             {
               q: "¿Cuánto es lo mínimo y cuándo cobro?",
-              a: "Entras desde $100 por préstamo. Un préstamo de $500 se arma entre varias personas, por eso el mínimo es bajo. Cobras al vencimiento: cuando el negocio termina de pagar recuperas tu capital junto con lo que rindió.",
+              a: "Entras desde $100 por préstamo. Un préstamo de $500 se arma entre varias personas, por eso el mínimo es bajo. Tú no eliges en qué préstamos entrar: la asignación es automática y por orden de llegada, y ningún préstamo se lleva más del 10% de lo que pusiste. Cobras al vencimiento: cuando el negocio termina de pagar recuperas tu capital junto con lo que rindió.",
+            },
+            {
+              q: "¿Cuánto cobra Finnoba?",
+              a: "El 40% del interés de cada cuota. El 60% restante es tu rendimiento. Cobramos por originar, verificar y administrar el crédito, y lo ves desglosado cuota por cuota en el detalle de cada préstamo, no solo en el total. Cualquier otro cargo tendría que estar en el contrato individual antes de que firmes; hoy no hay ninguno.",
+            },
+            {
+              q: "¿Quién es el acreedor de mi préstamo?",
+              a: "Tú. El contrato de préstamo se celebra entre el lender y la empresa. Finnoba actúa como mandatario: origina, verifica, administra y cobra en tu nombre, pero no es parte del crédito ni acreedor de la deuda. La redacción definitiva del contrato la estamos cerrando con asesoría legal.",
             },
             {
               q: "¿Qué pasa si un negocio no paga?",
-              a: "Ponemos capital nuestro que absorbe las primeras pérdidas antes de que te toquen a ti. Y como puedes entrar desde $100, con poco dinero estás en varios préstamos en vez de depender de uno. Apuntamos a que falle menos del 5%, pero es un objetivo sin historial detrás.",
+              a: "Lo pierdes tú. Finnoba no aporta capital propio para cubrir incumplimientos: gestionamos la cobranza, aplicamos el interés moratorio y reportamos a centrales de riesgo, pero no reponemos lo que no vuelve. Lo que sí hacemos es que ningún préstamo se lleve más del 10% de tu dinero, así que un impago te toca en parte y no entero. Apuntamos a que falle menos del 5%, pero es un objetivo sin historial detrás.",
             },
             {
               q: "¿Puedo sacar mi dinero antes?",
-              a: "No mientras el préstamo corre. Tu dinero queda comprometido hasta que el negocio termine de pagar, entre 2 y 6 meses según el préstamo. Si necesitas salir antes, lo vemos caso por caso, pero no lo prometemos.",
+              a: "No. Tu capital queda comprometido hasta el vencimiento del préstamo, entre 2 y 6 meses. En el piloto no hay retiros parciales, no hay mercado secundario y no puedes revenderle tu posición a otra persona. Si puedes necesitar ese dinero antes, este no es el sitio.",
             },
             {
               q: "¿Y los impuestos?",
@@ -400,7 +456,7 @@ export const DICTIONARIES = {
             },
             {
               q: "¿Cuánto voy a ganar y está garantizado?",
-              a: "La tasa depende del nivel del negocio al que entres y te la confirmamos por escrito antes de que comprometas nada. Garantizado no está: prestar dinero nunca lo está. Poner capital nuestro primero y que puedas repartir desde $100 reduce el riesgo, no lo elimina.",
+              a: "De los intereses que paga la empresa, el 60% es tuyo y el 40% es la comisión de Finnoba. Cuánto sale de ahí depende del nivel de los negocios en los que entres, y te lo confirmamos por escrito antes de que comprometas nada. Garantizado no está: prestar dinero nunca lo está, y nosotros no reponemos lo que no vuelve.",
             },
           ],
         },
@@ -414,6 +470,10 @@ export const DICTIONARIES = {
             {
               q: "¿Por qué solo exportadores?",
               a: "Porque prestarle dólares a un negocio que cobra en soles es meterle un problema que no tenía. Si el dólar sube, la cuota se le vuelve impagable aunque el negocio esté sano. Financiando a quien ya cobra en dólares —café, cacao, arándano, palta, pesca, textil, software— la deuda y los ingresos van en la misma moneda.",
+            },
+            {
+              q: "¿Cuánto le cuesta el préstamo a la empresa?",
+              a: "El Nivel 1 son $500 a 2 meses, al 5% mensual sobre saldo insoluto: cuota 1 de $275.00, cuota 2 de $262.50, total devuelto $537.50. Eso es una TCEA de 79,59%, por debajo del tope de 99,84% que fija el Banco Central para moneda extranjera. Está publicado entero en Cómo funciona, sin necesidad de agendar una llamada.",
             },
             {
               q: "¿Por qué empiezan con $500 y no con más?",
@@ -493,6 +553,130 @@ export const DICTIONARIES = {
         "Todavía no hay operación que auditar. Elegiremos un auditor externo antes de abrir el primer ciclo y publicaremos aquí sus reportes.",
       cta: "Reservar mi lugar",
     },
+    apply: {
+      meta: {
+        title: "Solicita financiamiento",
+        description:
+          "Cuéntanos de tu negocio exportador. Estamos armando el primer grupo de empresas del piloto de Finnoba en Perú.",
+      },
+      h1: "Cuéntanos de tu negocio.",
+      sub: "Estamos armando el primer grupo de empresas del piloto. Toma tres minutos, todavía no te pedimos documentos y no afecta tu historial crediticio.",
+      priceTitle: "Antes de llenar nada: lo que cuesta",
+      priceLead:
+        "No queremos que descubras el precio después de una llamada. Este es el Nivel 1 completo, $500 a 2 meses.",
+      stageNote:
+        "Finnoba está en fase de estructuración y todavía no ha desembolsado ningún préstamo. Este formulario no es una solicitud de crédito ni una preaprobación: sirve para saber si lo que estamos armando resuelve un problema real, y para invitarte al primer grupo cuando abramos.",
+      formTitle: "El formulario",
+      legends: {
+        business: "Tu empresa",
+        contact: "Cómo te contactamos",
+        operation: "Cómo opera",
+        need: "Qué necesitas",
+      },
+      f: {
+        razonSocial: "Razón social",
+        ruc: "RUC",
+        rucHint: "11 dígitos, empieza en 10 o en 20",
+        contacto: "Nombre del contacto",
+        cargo: "Cargo",
+        email: "Email",
+        whatsapp: "WhatsApp",
+        whatsappHint: "Con código de país",
+        cobraUsd: "¿Tu cliente final te paga en dólares?",
+        sector: "Sector",
+        mercados: "Mercados de destino",
+        mercadosHint: "Puedes marcar varios",
+        facturacion: "Facturación mensual en USD",
+        antiguedad: "Meses de operación formal",
+        monto: "¿Cuánto necesitas?",
+        destino: "¿Para qué lo necesitas?",
+        urgencia: "¿Para cuándo lo necesitas?",
+        ocSinFactura:
+          "¿Tienes una orden de compra o contrato firmado, pero todavía no has emitido la factura?",
+        alternativa: "¿Cuál es tu alternativa hoy?",
+        choose: "Elige una opción",
+      },
+      options: {
+        cobraUsd: { si: "Sí", no: "No", parcial: "Parcialmente" },
+        sector: {
+          agro: "Agroexportación",
+          pesca: "Pesca",
+          textil: "Textil",
+          software: "Software o BPO",
+          turismo: "Turismo receptivo",
+          otro: "Otro",
+        },
+        mercados: {
+          eeuu: "EE.UU.",
+          europa: "Europa",
+          asia: "Asia",
+          latam: "LatAm",
+          otro: "Otro",
+        },
+        facturacion: {
+          "<3k": "Menos de $3K",
+          "3-10k": "$3K - $10K",
+          "10-30k": "$10K - $30K",
+          "30-100k": "$30K - $100K",
+          ">100k": "Más de $100K",
+        },
+        antiguedad: {
+          "<12": "Menos de 12",
+          "12-24": "12 a 24",
+          "24-48": "24 a 48",
+          ">48": "Más de 48",
+        },
+        monto: {
+          "500-1.5k": "$500 - $1.5K",
+          "1.5-3k": "$1.5K - $3K",
+          "3-7k": "$3K - $7K",
+          "7-15k": "$7K - $15K",
+          ">15k": "Más de $15K",
+        },
+        destino: {
+          insumos: "Compra de insumos",
+          proveedores: "Pago a proveedores",
+          flete: "Flete y logística",
+          cosecha: "Campaña de cosecha",
+          planilla: "Planilla",
+          otro: "Otro",
+        },
+        urgencia: {
+          semana: "Esta semana",
+          mes: "Este mes",
+          "3meses": "Próximos 3 meses",
+          explorando: "Solo explorando",
+        },
+        ocSinFactura: { si: "Sí", no: "No", nose: "No estoy seguro" },
+        alternativa: {
+          banco: "Banco",
+          caja: "Caja municipal",
+          factoring: "Factoring",
+          informal: "Prestamista informal",
+          familiares: "Familiares",
+          ninguna: "Ninguna",
+        },
+      },
+      submit: "Enviar",
+      optional: "opcional",
+      consent:
+        "Autorizo a Finnoba a tratar estos datos con la finalidad de evaluar la demanda de su piloto de financiamiento y contactarme al respecto, conforme a la Ley N.º 29733. Puedo revocar esta autorización escribiendo a info@finnoba.xyz. He leído la",
+      consentLink: "política de privacidad",
+      errorTitle: "No pudimos enviar el formulario",
+      errors: {
+        ruc: "Ese RUC no es válido. Son 11 dígitos y empieza en 10 o en 20; revisa que no falte ninguno.",
+        invalid: "Faltan campos por responder o alguno quedó incompleto. Revisa y vuelve a enviar.",
+        rate: "Recibimos varios envíos desde tu conexión hace poco. Espera un rato y vuelve a intentarlo.",
+        server: "Algo falló de nuestro lado. Escríbenos a info@finnoba.xyz y lo resolvemos.",
+      },
+      okTitle: "Recibido.",
+      okBody:
+        "Gracias. Vamos a revisar tu caso y te escribimos a los datos que dejaste. Todavía no estamos desembolsando: cuando abramos el primer grupo, te contactamos.",
+      okUrgentTitle: "Recibido, pero seamos claros con los tiempos.",
+      okUrgentBody:
+        "No vamos a poder ayudarte esta semana, pero si tu necesidad se repite o puedes esperar unas semanas, quiero tenerte en el primer batch.",
+      back: "Volver al inicio",
+    },
     legal: {
       termsTitle: "Términos y condiciones",
       privacyTitle: "Política de privacidad",
@@ -515,6 +699,7 @@ export const DICTIONARIES = {
             "Datos de verificación: copia de tu documento, selfie o prueba de vida cuando corresponda, residencia fiscal, origen de los fondos y resultado de la revisión en listas internacionales de sanciones.",
             "Datos financieros: cuentas bancarias para enviar o recibir dinero, montos prestados o solicitados, pagos y su historial.",
             "Si pides financiamiento para tu negocio: RUC, ventas de los últimos meses, facturas o contratos de exportación, deudas vigentes y destino de los fondos.",
+            "Si completas el formulario de solicitud: razón social, RUC, nombre y cargo del contacto, correo, WhatsApp, sector, mercados de destino, rango de facturación mensual, meses de operación formal, monto y destino del financiamiento que necesitas, urgencia, si tienes una orden de compra pendiente de facturar y qué alternativa de financiamiento usas hoy.",
             "Datos de uso: correos y mensajes que intercambiamos contigo, y registros técnicos del servidor como tu dirección IP, navegador y fecha de acceso.",
           ],
         },
@@ -524,6 +709,7 @@ export const DICTIONARIES = {
             "Para atender tu registro, evaluar tu perfil y ejecutar los contratos que firmemos contigo: base legal, la ejecución del contrato y las gestiones previas que pides.",
             "Para verificar tu identidad, el origen de los fondos y cumplir la normativa de prevención de lavado de activos y financiamiento del terrorismo, además de las obligaciones tributarias y contables: base legal, el cumplimiento de obligaciones legales.",
             "Para evaluar el riesgo crediticio de un negocio y hacer seguimiento a los pagos: base legal, la ejecución del contrato y nuestro interés legítimo en cobrar lo prestado.",
+            "Para medir la demanda de nuestro piloto y contactarte sobre él, cuando completas el formulario de solicitud: base legal, tu consentimiento expreso. El formulario no evalúa ni preaprueba nada; solo recoge información.",
             "Para enviarte novedades del piloto y comunicaciones comerciales: base legal, tu consentimiento. Puedes retirarlo cuando quieras.",
             "Para operar, mantener y proteger la plataforma frente a fraude y abusos: base legal, nuestro interés legítimo.",
           ],
@@ -579,6 +765,7 @@ export const DICTIONARIES = {
           h: "10. Cookies y registros técnicos",
           p: [
             "Este sitio no usa cookies de analítica, de perfilado ni de publicidad. Nuestro proveedor de hosting guarda registros técnicos —dirección IP, navegador, fecha— por motivos de seguridad y funcionamiento.",
+            "En la página del formulario de solicitud llevamos una cuenta diaria de visitas: un solo número por día, sin cookie y sin ningún dato que te identifique. Nos sirve para saber qué proporción de quienes abren el formulario llega a enviarlo. De tu dirección IP guardamos únicamente un hash con sal, que solo permite limitar envíos repetidos desde una misma conexión y no permite recuperar la dirección.",
             "La aplicación usa cookies estrictamente necesarias para mantener tu sesión iniciada. Si en el futuro añadimos herramientas de analítica, lo anunciamos en esta página y pedimos tu consentimiento antes de activarlas.",
           ],
         },
@@ -646,11 +833,14 @@ export const DICTIONARIES = {
         {
           h: "5. Si vas a prestar",
           ul: [
+            "El contrato de préstamo se celebra entre ti y la empresa financiada. Finnoba actúa como mandatario —origina, verifica, administra y cobra por tu cuenta— y no es parte del crédito ni acreedor de la deuda.",
             "El monto mínimo es de US$ 100 por préstamo. Tu participación se documenta en un contrato individual que detalla monto, plazo, tasa y forma de pago antes de que pongas dinero.",
+            "La asignación a préstamos es automática y por orden de llegada: no seleccionas préstamo. Ningún préstamo recibe más del 10% de tu depósito, y todos los participantes de un mismo préstamo cobran y soportan pérdidas a prorrata, en la misma proporción.",
             "El rendimiento no está garantizado. Depende de que los negocios financiados paguen. Un préstamo puede pagarse tarde, pagarse en parte o no pagarse.",
             "Puedes perder todo el capital. No pongas en Finnoba dinero que no puedas permitirte perder por completo.",
-            "Tu dinero no es líquido: queda comprometido hasta el vencimiento del préstamo. No hay mercado secundario ni retiro anticipado, salvo que el contrato individual diga otra cosa.",
-            "El equipo aporta capital propio que absorbe las primeras pérdidas, con el objetivo de que sea el 10% del total. Es un objetivo de diseño, no una garantía ni un seguro.",
+            "Tu dinero no es líquido: queda comprometido hasta el vencimiento del préstamo. No hay mercado secundario, ni retiro anticipado, ni cesión de tu posición a terceros.",
+            "El efectivo que no llegue a colocarse no genera rendimiento. Solo rinde el capital efectivamente prestado.",
+            "Finnoba no aporta capital propio para cubrir incumplimientos ni garantiza el capital ni el rendimiento. El riesgo de crédito lo asume íntegramente el lender.",
             "Repartir tu dinero entre varios préstamos reduce el impacto de un impago, pero no elimina el riesgo.",
           ],
         },
@@ -658,8 +848,8 @@ export const DICTIONARIES = {
           h: "6. Si vas a pedir prestado",
           ul: [
             "Prestamos solo en dólares y solo a negocios que ya cobran en dólares. Un negocio que factura únicamente en soles no califica.",
-            "El primer préstamo de cualquier negocio es de US$ 500 y a plazo corto. El monto, el plazo y la tasa mejoran con el historial de pago, según la escalera de niveles publicada en el sitio.",
-            "La tasa se te informa por escrito antes de que aceptes, y siempre por debajo del tope que fija el Banco Central de Reserva del Perú para operaciones en moneda extranjera.",
+            "El primer préstamo de cualquier negocio es de US$ 500 a 2 meses. El monto, el plazo y la tasa mejoran con el historial de pago, según la escalera de niveles publicada en el sitio.",
+            "El interés se calcula sobre el saldo insoluto, nunca sobre el monto original. El cronograma completo del Nivel 1 está publicado en el sitio; el de los niveles siguientes se te informa por escrito antes de que aceptes. En todos los casos por debajo del tope que fija el Banco Central de Reserva del Perú para operaciones en moneda extranjera.",
             "La información que nos entregas —ventas, facturas, contratos, deudas vigentes y destino de los fondos— debe ser veraz, completa y actual. Entregar información falsa es causal de rechazo, de resolución del contrato y de exigir el pago total de inmediato.",
             "Debes usar el dinero para el destino declarado.",
             "El atraso genera los intereses y gastos que indique el contrato individual, y puede derivar en cobranza, reporte a centrales de riesgo y acciones judiciales.",
@@ -675,7 +865,7 @@ export const DICTIONARIES = {
         {
           h: "8. Comisiones e impuestos",
           p: [
-            "Registrarte, navegar el sitio y recibir información no tiene costo. Finnoba cobra una comisión por originar y administrar los préstamos: el monto, la forma de cálculo y el momento del cobro se detallan por escrito en el contrato individual antes de que firmes. No cobramos comisiones que no estén en ese documento.",
+            "Registrarte, navegar el sitio y recibir información no tiene costo. Finnoba cobra una comisión por originar, verificar y administrar los préstamos, equivalente al 40% del interés devengado en cada cuota; el 60% restante corresponde al lender. El detalle se recoge por escrito en el contrato individual antes de que firmes, y no cobramos comisiones que no estén en ese documento.",
             "Los impuestos que correspondan a tus rendimientos o a tu negocio son responsabilidad tuya.",
           ],
         },
@@ -757,14 +947,13 @@ export const DICTIONARIES = {
       resources: [
         { l: "Preguntas", h: "/faq" },
         { l: "Transparencia", h: "/transparency" },
-        { l: "Documentación", h: "https://www.notion.so", e: true },
         { l: "Equipo", h: "/team" },
       ],
+      // Documentación, LinkedIn, X y Newsletter apuntaban a homepages
+      // genéricas. Vuelven cuando existan los destinos, no antes.
       communityTitle: "Comunidad",
       community: [
-        { l: "LinkedIn", h: "https://www.linkedin.com", e: true },
-        { l: "X / Twitter", h: "https://x.com", e: true },
-        { l: "Newsletter", h: "https://substack.com", e: true },
+        { l: "Solicitar financiamiento", h: "/apply" },
         { l: "Contacto", h: "mailto:info@finnoba.xyz", e: true },
       ],
       legalTitle: "Legal",
@@ -802,10 +991,9 @@ export const DICTIONARIES = {
       },
       preview: {
         url: "app.finnoba.xyz",
-        search: "Search businesses",
         addFunds: "Add funds",
-        title: "Available businesses",
-        sub: "Lend to vetted exporters and get paid in dollars.",
+        title: "Your portfolio",
+        sub: "Your money spread across vetted exporters that get paid in dollars.",
         headers: { business: "BUSINESS", amount: "AMOUNT", term: "TERM", grade: "LEVEL" },
       },
       stats: [
@@ -844,7 +1032,7 @@ export const DICTIONARIES = {
           {
             eyebrow: "Where the return comes from",
             title: "It's paid by a business that sold, not a market that rose",
-            body: "What you earn comes from exporters repaying loans in dollars. No speculation involved. We confirm each cycle's rate in writing before you commit anything, and it isn't a guarantee: a loan may not come back.",
+            body: "What you earn comes from exporters repaying loans in dollars. No speculation involved. Of the interest the business pays, 60% is your return and 40% is Finnoba's commission. We confirm it in writing before you commit anything, and it isn't a guarantee: a loan may not come back, and we don't make it good.",
             tint: "sky",
           },
           {
@@ -864,7 +1052,7 @@ export const DICTIONARIES = {
             color: "#6D54E8",
             steps: [
               { t: "You put your money in", d: "You decide how much to lend and we sign the terms." },
-              { t: "You pick which businesses to back", d: "From $100 a loan, so even a small amount can sit across several instead of depending on one." },
+              { t: "Your money spreads itself", d: "Your money is spread across several loans, so you never depend on just one. Each slot is $100 and no single loan takes more than 10% of what you put in." },
               { t: "You collect at maturity", d: "When the loan ends you get your capital back plus what it earned, in dollars." },
             ],
           },
@@ -874,7 +1062,7 @@ export const DICTIONARIES = {
             steps: [
               { t: "Tell us about your business", d: "Your tax ID, your sales over recent months, and an invoice or contract showing a foreign client pays you in dollars." },
               { t: "We check and get back to you", d: "We verify the business exists, that it exports and that it can repay. No collateral, no branch visits." },
-              { t: "You get the money and move up", d: "You start at $500. Every loan repaid on time moves you up a level: more money, more time and a lower rate." },
+              { t: "You get the money and move up", d: "Funds go only to a bank account held under that same tax ID. You start at $500. Every loan repaid on time moves you up a level: more money, more time and a lower rate." },
             ],
           },
         ],
@@ -902,8 +1090,8 @@ export const DICTIONARIES = {
         },
         {
           k: "02",
-          t: "You join the loans you choose",
-          b: "From $100 a loan. A $500 loan is put together by several people, so a small amount can sit across several businesses instead of depending on one. Every business is checked first.",
+          t: "Your money is spread across several loans",
+          b: "Assignment is automatic and in order of arrival: you don't pick loans. Each slot is $100, a $500 loan is put together by several people, and no single loan takes more than 10% of what you put in. Every slot in a loan is repaid — and takes losses — in the same proportion. Every business is checked first.",
         },
         {
           k: "03",
@@ -913,14 +1101,23 @@ export const DICTIONARIES = {
       ],
       levelsTitle: "If you're going to borrow: the ladder",
       levelsIntro:
-        "Nobody starts big. Your first loan is $500 over a few months. Repay it in full and you move up a level: we lend you more, for longer, at a lower rate. You don't choose the rate — you earn it by paying.",
+        "Nobody starts big. Your first loan is $500 over 2 months. Repay it in full and you move up a level: we lend you more, for longer, at a lower rate. You don't choose the rate — you earn it by paying.",
       levelsFoot:
-        "The rate drops at every level. We put it in writing before you accept anything, and always below the legal cap: the central bank sets a maximum of 99.84% a year in foreign currency for May-October 2026.",
+        "The rate drops at every level. Level 1 is published in full below, with exact figures and no call to book. The levels above it are confirmed in writing before you accept anything.",
+      scheduleTitle: "What Level 1 costs",
+      scheduleLead:
+        "$500 over 2 months, 5% a month on the balance you still owe. These are the exact figures.",
+      scheduleHead: ["Instalment", "Capital", "Interest", "Total due"],
+      scheduleTotalLabel: "Total repaid",
+      scheduleCta: "Apply for financing",
+      scheduleFoot:
+        "TCEA (annual effective rate) 79.59%. Interest is always charged on the outstanding balance — what you still owe — and never on the original amount: that's why the second instalment costs less than the first. The central bank's legal cap for foreign currency is 99.84% a year, in force May to October 2026.",
       requirementsTitle: "What we ask for",
       requirements: [
         "An active, in-good-standing tax ID (RUC) with SUNAT",
         "Your sales over the last 6 to 12 months",
         "An invoice or contract showing a foreign client pays you in dollars",
+        "A dollar bank account held under that same tax ID: funds go nowhere else",
         "What you're going to use the money for",
         "Whether you have other loans outstanding",
       ],
@@ -946,20 +1143,46 @@ export const DICTIONARIES = {
       meta: {
         title: "For investors",
         description:
-          "Finnoba's first cycle: amounts, terms, target return and how to get in.",
+          "Finnoba's first cycle: amounts, terms, commissions and how to get in.",
       },
       h1: "For people with idle dollars.",
       sub: "These are the terms of the first cycle and how you get in.",
+      disclosureTitle: "Three things up front",
+      disclosures: [
+        {
+          t: "40% of the interest on every instalment is ours",
+          b: "Of the interest the business pays, 60% is your return and 40% is Finnoba's commission for originating, verifying and administering the loan. You see it broken out on every instalment, not just in the total.",
+        },
+        {
+          t: "You are the creditor, not Finnoba",
+          b: "The loan contract is between the lender and the business. Finnoba acts as agent: it originates, verifies, administers and collects, but it is not party to the loan and not the creditor of the debt.",
+        },
+        {
+          t: "We put up no capital of our own to cover defaults",
+          b: "Finnoba does not commit its own capital to cover defaults, and guarantees neither your capital nor your return. Credit risk sits with the lender — and that is why the return is what it is.",
+        },
+      ],
       termsTitle: "First cycle terms",
       terms: [
         ["Minimum per loan", "$100"],
         ["Suggested maximum", "$10,000 per cycle"],
         ["Who we lend to", "Peruvian exporters paid in dollars"],
-        ["How long it lasts", "2 to 6 months, depending on the loans you pick"],
+        ["How long it lasts", "2 to 6 months, depending on the loans you're in"],
+        ["How it's assigned", "Automatic, in order of arrival. You don't pick loans"],
+        ["Most that goes into one loan", "10% of your deposit, at most"],
         ["When you collect", "Capital and return at each loan's maturity"],
-        ["Leaving early", "Assessed case by case"],
-        ["How many loans you join", "As many as you like. From $100 each"],
+        ["Leaving early", "No. Capital is committed until maturity"],
+        ["Finnoba's commission", "40% of the interest on every instalment. The other 60% is yours"],
+        ["Who the creditor is", "You. Finnoba administers, but is not party to the loan"],
+        ["Uninvested cash", "Earns nothing. Only capital actually lent earns a return"],
       ],
+      feeTitle: "How an instalment splits",
+      feeLead:
+        "An example Level 1 loan: $500 over 2 months. This is how the interest on each instalment splits between your return and our commission.",
+      feeHead: ["Instalment", "Interest the business pays", "Finnoba commission (40%)", "Your share (60%)"],
+      feeTotalLabel: "Total",
+      feeFoot:
+        "Capital ($500) comes back to you in full on top of that figure. Interest is charged on the balance the business still owes, not on the original amount. The example assumes it repays in full: if it doesn't, there is no interest to split and the capital doesn't come back either.",
       ladderTitle: "What your money funds",
       ladderBody:
         "Small, short loans to Peruvian exporters. Nobody walks in asking for the maximum: everyone starts at $500 and only moves up once they've repaid in full. That keeps what any one business can cost you contained, and means that by the time someone reaches $15,000 they have four repaid loans behind them.",
@@ -989,7 +1212,7 @@ export const DICTIONARIES = {
         "We talk for 20 minutes: we walk you through the detail and answer your questions",
         "We verify your identity and the source of your funds, and screen you against international sanctions lists. It's mandatory and we skip it for no one",
         "We sign the terms and send you the transfer details",
-        "Your money spreads across the loans in the first cycle and we confirm your first payment date",
+        "Your money is spread automatically across the loans in the first cycle, in order of arrival, and we confirm your first payment date",
       ],
       cta: "Reserve my spot",
     },
@@ -1034,13 +1257,16 @@ export const DICTIONARIES = {
       meta: {
         title: "Risk control",
         description:
-          "How we look after the money lent: same currency, small amounts at first, spread across many, and our own capital first in line.",
+          "How we look after the money lent: same currency, small amounts at first, forced spreading across several loans, and fraud controls before any money leaves.",
       },
       h1: "How we look after your money.",
       sub: "Lending always carries risk. What we can do is reduce it, measure it and tell you about it without dressing it up.",
+      noLossTitle: "First things first: we don't cover the losses",
+      noLossBody:
+        "Finnoba does not commit its own capital to cover defaults, and guarantees neither your capital nor your return. Credit risk sits with the lender — and that is why the return is what it is. Everything below lowers the odds of something going wrong; none of those defences hands your money back if it goes wrong anyway.",
       frameworkTitle: "The general idea",
       frameworkBody:
-        "We're not going to tell you this is risk-free, because it isn't. What we do is attack it from five sides: lend in the same currency the business gets paid in, check who we lend to, start with small amounts, spread your money across several loans, and put our own capital in to absorb the first losses.",
+        "We're not going to tell you this is risk-free, because it isn't. What we do is attack it from five sides: lend in the same currency the business gets paid in, check who we lend to, start with small amounts, force your money to spread across several loans, and stop fraud before the money goes out.",
       layersTitle: "The five defences",
       layers: [
         {
@@ -1060,14 +1286,25 @@ export const DICTIONARIES = {
         },
         {
           k: "04",
-          t: "You can spread from $100",
-          b: "A $500 loan is assembled by several people, so joining costs $100. With $1,000 you can sit across ten different businesses instead of one. We don't force you to spread, but we'll say the obvious: put it all in one loan and that risk is entirely yours.",
+          t: "We spread your money whether you like it or not",
+          b: "A $500 loan is assembled by several people, so each slot costs $100. It isn't optional: the engine won't let a single loan take more than 10% of what you deposited, even if you want it to. Assignment is automatic and in order of arrival, and every slot in a loan is repaid — and takes losses — in the same proportion.",
         },
         {
           k: "05",
-          t: "Our capital goes first",
-          b: "The team puts its own money into every cycle, and that's the first to be lost if something goes wrong. Only after that would it reach you. The target is 10% of the total.",
+          t: "We stop fraud before any money goes out",
+          b: "We validate the tax ID with SUNAT, require 24 months of formal trading, match the legal representative against their national ID, verify documents with a liveness check and — the strongest control of all — only disburse to a bank account held under that same tax ID. Before money moves there's also a credit bureau check, electronic invoicing verification, device fingerprinting, a 24-hour cooling-off window and a verification call.",
         },
+      ],
+      collectionsTitle: "What happens when someone doesn't pay",
+      collectionsIntro:
+        "It's the first thing everybody asks, so it's written down rather than saved for a call:",
+      collections: [
+        "There are grace days agreed in the contract. Within that window there's no penalty, only reminders.",
+        "After the grace days collections begin: direct contact, a payment plan where the business is still viable, and escalation where it isn't.",
+        "Arrears accrue late interest on top of the ordinary interest, capped at 15% of the maximum rate set by the central bank. We don't invent charges above that.",
+        "The ladder freezes while anything is in arrears. Nobody moves up a level owing an instalment, however good their record was before.",
+        "Late payment is reported to credit bureaus and can lead to legal action, as agreed in the individual contract.",
+        "Whatever is recovered is shared pari passu among everyone who put money into that loan, in the same proportion they would have been paid.",
       ],
       metricsTitle: "What we're aiming for",
       metricsHead: ["Indicator", "Target", "Actual"],
@@ -1161,15 +1398,23 @@ export const DICTIONARIES = {
           items: [
             {
               q: "What's the minimum and when do I get paid?",
-              a: "You join from $100 a loan. A $500 loan is assembled by several people, which is why the minimum is low. You collect at maturity: once the business finishes repaying you get your capital back along with what it earned.",
+              a: "You join from $100 a loan. A $500 loan is assembled by several people, which is why the minimum is low. You don't pick which loans you're in: assignment is automatic and in order of arrival, and no single loan takes more than 10% of what you put in. You collect at maturity: once the business finishes repaying you get your capital back along with what it earned.",
+            },
+            {
+              q: "What does Finnoba charge?",
+              a: "40% of the interest on every instalment. The other 60% is your return. We charge for originating, verifying and administering the loan, and you see it broken out instalment by instalment in each loan's detail, not just in the total. Any other charge would have to be in the individual contract before you sign; today there is none.",
+            },
+            {
+              q: "Who is the creditor on my loan?",
+              a: "You are. The loan contract is between the lender and the business. Finnoba acts as agent: it originates, verifies, administers and collects on your behalf, but it is not party to the loan and not the creditor of the debt. We're finalising the definitive contract wording with legal counsel.",
             },
             {
               q: "What if a business doesn't pay?",
-              a: "We put in our own capital, which absorbs the first losses before they reach you. And since you can join from $100, a small amount sits across several loans instead of depending on one. We're aiming for under 5% to fail, but that's a target with no track record behind it.",
+              a: "You take the loss. Finnoba commits no capital of its own to cover defaults: we run collections, apply late interest and report to credit bureaus, but we do not make good what doesn't come back. What we do is make sure no single loan takes more than 10% of your money, so a default costs you part of it rather than all of it. We're aiming for under 5% to fail, but that's a target with no track record behind it.",
             },
             {
               q: "Can I take my money out early?",
-              a: "Not while the loan is running. Your money is committed until the business finishes repaying, 2 to 6 months depending on the loan. If you need to exit sooner we'll look at it case by case, but we don't promise it.",
+              a: "No. Your capital is committed until the loan matures, 2 to 6 months. In the pilot there are no partial withdrawals, no secondary market, and you can't resell your position to someone else. If you might need that money sooner, this isn't the place.",
             },
             {
               q: "What about taxes?",
@@ -1177,7 +1422,7 @@ export const DICTIONARIES = {
             },
             {
               q: "How much will I earn, and is it guaranteed?",
-              a: "The rate depends on the level of the business you back, and we confirm it in writing before you commit anything. Guaranteed it is not — lending never is. Putting our capital in first and letting you spread from $100 cuts the risk; it doesn't remove it.",
+              a: "Of the interest the business pays, 60% is yours and 40% is Finnoba's commission. What that adds up to depends on the level of the businesses you end up in, and we confirm it in writing before you commit anything. Guaranteed it is not — lending never is, and we do not make good what doesn't come back.",
             },
           ],
         },
@@ -1191,6 +1436,10 @@ export const DICTIONARIES = {
             {
               q: "Why exporters only?",
               a: "Because lending dollars to a business paid in soles hands it a problem it didn't have. If the dollar rises, the instalment becomes unpayable even though the business is healthy. By financing those already paid in dollars — coffee, cacao, blueberry, avocado, fish, textiles, software — debt and income sit in the same currency.",
+            },
+            {
+              q: "What does the loan cost the business?",
+              a: "Level 1 is $500 over 2 months at 5% a month on the outstanding balance: instalment 1 of $275.00, instalment 2 of $262.50, $537.50 repaid in total. That's a TCEA (annual effective rate) of 79.59%, below the 99.84% cap the central bank sets for foreign currency. It's published in full on How it works — no call to book.",
             },
             {
               q: "Why start at $500 and not more?",
@@ -1270,6 +1519,130 @@ export const DICTIONARIES = {
         "There's no operation to audit yet. We'll appoint an external auditor before opening the first cycle and publish their reports here.",
       cta: "Reserve my spot",
     },
+    apply: {
+      meta: {
+        title: "Apply for financing",
+        description:
+          "Tell us about your export business. We're putting together the first group of companies for Finnoba's pilot in Peru.",
+      },
+      h1: "Tell us about your business.",
+      sub: "We're putting together the first group of companies for the pilot. It takes three minutes, we don't ask for documents yet, and it doesn't touch your credit record.",
+      priceTitle: "Before you fill anything in: what it costs",
+      priceLead:
+        "We'd rather you didn't find out the price after a call. This is Level 1 in full — $500 over 2 months.",
+      stageNote:
+        "Finnoba is still being structured and has not disbursed a single loan. This form is not a credit application and not a pre-approval: it exists to find out whether what we're building solves a real problem, and to invite you to the first group when we open.",
+      formTitle: "The form",
+      legends: {
+        business: "Your company",
+        contact: "How we reach you",
+        operation: "How it operates",
+        need: "What you need",
+      },
+      f: {
+        razonSocial: "Registered company name",
+        ruc: "Tax ID (RUC)",
+        rucHint: "11 digits, starting with 10 or 20",
+        contacto: "Contact name",
+        cargo: "Role",
+        email: "Email",
+        whatsapp: "WhatsApp",
+        whatsappHint: "With country code",
+        cobraUsd: "Does your end client pay you in dollars?",
+        sector: "Sector",
+        mercados: "Destination markets",
+        mercadosHint: "Pick as many as apply",
+        facturacion: "Monthly revenue in USD",
+        antiguedad: "Months trading formally",
+        monto: "How much do you need?",
+        destino: "What do you need it for?",
+        urgencia: "When do you need it?",
+        ocSinFactura:
+          "Do you have a signed purchase order or contract, but haven't issued the invoice yet?",
+        alternativa: "What's your alternative today?",
+        choose: "Choose an option",
+      },
+      options: {
+        cobraUsd: { si: "Yes", no: "No", parcial: "Partly" },
+        sector: {
+          agro: "Agro-export",
+          pesca: "Fishing",
+          textil: "Textiles",
+          software: "Software or BPO",
+          turismo: "Inbound tourism",
+          otro: "Other",
+        },
+        mercados: {
+          eeuu: "USA",
+          europa: "Europe",
+          asia: "Asia",
+          latam: "LatAm",
+          otro: "Other",
+        },
+        facturacion: {
+          "<3k": "Under $3K",
+          "3-10k": "$3K - $10K",
+          "10-30k": "$10K - $30K",
+          "30-100k": "$30K - $100K",
+          ">100k": "Over $100K",
+        },
+        antiguedad: {
+          "<12": "Under 12",
+          "12-24": "12 to 24",
+          "24-48": "24 to 48",
+          ">48": "Over 48",
+        },
+        monto: {
+          "500-1.5k": "$500 - $1.5K",
+          "1.5-3k": "$1.5K - $3K",
+          "3-7k": "$3K - $7K",
+          "7-15k": "$7K - $15K",
+          ">15k": "Over $15K",
+        },
+        destino: {
+          insumos: "Buying inputs",
+          proveedores: "Paying suppliers",
+          flete: "Freight and logistics",
+          cosecha: "Harvest season",
+          planilla: "Payroll",
+          otro: "Other",
+        },
+        urgencia: {
+          semana: "This week",
+          mes: "This month",
+          "3meses": "Next 3 months",
+          explorando: "Just exploring",
+        },
+        ocSinFactura: { si: "Yes", no: "No", nose: "Not sure" },
+        alternativa: {
+          banco: "A bank",
+          caja: "A municipal savings bank",
+          factoring: "Factoring",
+          informal: "An informal lender",
+          familiares: "Family",
+          ninguna: "None",
+        },
+      },
+      submit: "Send",
+      optional: "optional",
+      consent:
+        "I authorise Finnoba to process this data in order to assess demand for its financing pilot and to contact me about it, under Peru's Law 29733. I can withdraw this authorisation by writing to info@finnoba.xyz. I have read the",
+      consentLink: "privacy policy",
+      errorTitle: "We couldn't send the form",
+      errors: {
+        ruc: "That tax ID isn't valid. It's 11 digits starting with 10 or 20 — check none are missing.",
+        invalid: "Some answers are missing or incomplete. Have a look and send it again.",
+        rate: "We've had several submissions from your connection recently. Give it a while and try again.",
+        server: "Something broke on our side. Write to info@finnoba.xyz and we'll sort it out.",
+      },
+      okTitle: "Got it.",
+      okBody:
+        "Thank you. We'll go through your case and write to the details you left. We aren't disbursing yet: when the first group opens, we'll be in touch.",
+      okUrgentTitle: "Got it — but let's be straight about timing.",
+      okUrgentBody:
+        "We won't be able to help you this week. But if this need comes round again, or you can wait a few weeks, I want you in the first batch.",
+      back: "Back to the homepage",
+    },
     legal: {
       termsTitle: "Terms and conditions",
       privacyTitle: "Privacy policy",
@@ -1292,6 +1665,7 @@ export const DICTIONARIES = {
             "Verification data: a copy of your ID, a selfie or liveness check where applicable, tax residency, source of funds and the result of the international sanctions-list screening.",
             "Financial data: bank accounts used to send or receive money, amounts lent or requested, payments and their history.",
             "If you apply for business financing: RUC, recent months' sales, export invoices or contracts, outstanding debt and use of funds.",
+            "If you complete the application form: registered company name, RUC, contact name and role, email, WhatsApp, sector, destination markets, monthly revenue band, months trading formally, the amount and purpose of the financing you need, urgency, whether you hold a signed purchase order not yet invoiced, and what financing alternative you use today.",
             "Usage data: the emails and messages we exchange with you, and technical server logs such as your IP address, browser and access time.",
           ],
         },
@@ -1301,6 +1675,7 @@ export const DICTIONARIES = {
             "To handle your registration, review your profile and perform the agreements we sign with you: legal basis, performance of the contract and the pre-contractual steps you request.",
             "To verify your identity and source of funds, and to comply with anti-money-laundering and counter-terrorist-financing rules as well as tax and accounting obligations: legal basis, compliance with legal obligations.",
             "To assess a business's credit risk and follow up on payments: legal basis, performance of the contract and our legitimate interest in collecting what was lent.",
+            "To measure demand for our pilot and contact you about it, when you complete the application form: legal basis, your express consent. The form neither assesses nor pre-approves anything; it only collects information.",
             "To send you pilot updates and commercial communications: legal basis, your consent. You can withdraw it at any time.",
             "To run, maintain and protect the platform against fraud and abuse: legal basis, our legitimate interest.",
           ],
@@ -1356,6 +1731,7 @@ export const DICTIONARIES = {
           h: "10. Cookies and technical logs",
           p: [
             "This site uses no analytics, profiling or advertising cookies. Our hosting provider keeps technical logs — IP address, browser, timestamp — for security and operational reasons.",
+            "On the application form page we keep a daily visit count: a single number per day, with no cookie and nothing that identifies you. It tells us what share of the people who open the form go on to send it. Of your IP address we store only a salted hash, which serves solely to rate-limit repeated submissions from one connection and cannot be turned back into the address.",
             "The application uses strictly necessary cookies to keep you signed in. If we add analytics tooling in the future, we'll announce it on this page and ask for your consent before switching it on.",
           ],
         },
@@ -1423,11 +1799,14 @@ export const DICTIONARIES = {
         {
           h: "5. If you're going to lend",
           ul: [
+            "The loan agreement is between you and the financed business. Finnoba acts as agent — originating, verifying, servicing and collecting on your behalf — and is not party to the loan nor creditor of the debt.",
             "The minimum is US$ 100 per loan. Your participation is documented in an individual agreement setting out amount, term, rate and repayment before you put money in.",
+            "Assignment to loans is automatic and in order of arrival: you do not select loans. No loan receives more than 10% of your deposit, and all participants in a loan are repaid and bear losses pari passu, in the same proportion.",
             "The return is not guaranteed. It depends on the financed businesses paying. A loan can be repaid late, repaid in part, or not repaid at all.",
             "You can lose all of your capital. Don't put money into Finnoba that you can't afford to lose entirely.",
-            "Your money is not liquid: it stays committed until the loan matures. There is no secondary market and no early withdrawal, unless the individual agreement says otherwise.",
-            "The team commits its own capital, which absorbs the first losses, targeting 10% of the total. That's a design target, not a guarantee or an insurance policy.",
+            "Your money is not liquid: it stays committed until the loan matures. There is no secondary market, no early withdrawal and no transfer of your position to third parties.",
+            "Cash that isn't placed earns no return. Only capital actually lent earns anything.",
+            "Finnoba commits no capital of its own to cover defaults and guarantees neither capital nor return. Credit risk sits entirely with the lender.",
             "Spreading your money across several loans reduces the impact of a default, but doesn't remove the risk.",
           ],
         },
@@ -1435,8 +1814,8 @@ export const DICTIONARIES = {
           h: "6. If you're going to borrow",
           ul: [
             "We lend only in dollars and only to businesses already paid in dollars. A business invoicing solely in soles doesn't qualify.",
-            "Any business's first loan is US$ 500 over a short term. Amount, term and rate improve with repayment history, following the level ladder published on the site.",
-            "The rate is given to you in writing before you accept anything, and always below the cap set by the Central Reserve Bank of Peru for foreign-currency lending.",
+            "Any business's first loan is US$ 500 over 2 months. Amount, term and rate improve with repayment history, following the level ladder published on the site.",
+            "Interest is charged on the outstanding balance, never on the original amount. The full Level 1 schedule is published on the site; the schedule for higher levels is given to you in writing before you accept. In all cases below the cap set by the Central Reserve Bank of Peru for foreign-currency lending.",
             "The information you give us — sales, invoices, contracts, outstanding debt and use of funds — must be truthful, complete and current. False information is grounds for rejection, for terminating the agreement and for demanding immediate repayment in full.",
             "You must use the money for the stated purpose.",
             "Late payment accrues the interest and costs set out in the individual agreement, and can lead to collections, reporting to credit bureaus and legal action.",
@@ -1452,7 +1831,7 @@ export const DICTIONARIES = {
         {
           h: "8. Fees and taxes",
           p: [
-            "Signing up, browsing the site and receiving information is free. Finnoba charges a fee for originating and servicing loans: the amount, how it's calculated and when it's charged are set out in writing in the individual agreement before you sign. We don't charge fees that aren't in that document.",
+            "Signing up, browsing the site and receiving information is free. Finnoba charges a fee for originating, verifying and servicing loans, equal to 40% of the interest accrued on each instalment; the remaining 60% belongs to the lender. The detail is set out in writing in the individual agreement before you sign, and we don't charge fees that aren't in that document.",
             "Any taxes on your returns or on your business are your responsibility.",
           ],
         },
@@ -1534,14 +1913,11 @@ export const DICTIONARIES = {
       resources: [
         { l: "Questions", h: "/faq" },
         { l: "Transparency", h: "/transparency" },
-        { l: "Documentation", h: "https://www.notion.so", e: true },
         { l: "Team", h: "/team" },
       ],
       communityTitle: "Community",
       community: [
-        { l: "LinkedIn", h: "https://www.linkedin.com", e: true },
-        { l: "X / Twitter", h: "https://x.com", e: true },
-        { l: "Newsletter", h: "https://substack.com", e: true },
+        { l: "Apply for financing", h: "/apply" },
         { l: "Contact", h: "mailto:info@finnoba.xyz", e: true },
       ],
       legalTitle: "Legal",

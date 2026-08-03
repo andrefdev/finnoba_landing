@@ -10,6 +10,7 @@ import BulletList from "../../components/common/BulletList.astro";
 import LevelLadder from "../../components/loans/LevelLadder.astro";
 import PageCta from "../../components/common/PageCta.astro";
 import { COLOR } from "../../lib/tokens";
+import { N1, usd } from "../../lib/loans";
 import { dict, localeParams, type Lang } from "../../lib/i18n";
 import { CONTACT_HREF } from "../../consts";
 
@@ -19,23 +20,53 @@ const { lang } = Astro.props as { lang: Lang };
 const t = dict(lang);
 const i = t.investors;
 const monthWord = lang === "es" ? "meses" : "months";
+
+// The 40/60 split shown per instalment, not just as an aggregate. Capital is
+// deliberately left out of this table — it isn't split, it just comes back.
+const feeRows = [
+  ...N1.rows.map((r, n) => [
+    `${i.feeHead[0]} ${n + 1}`,
+    usd(r.interest),
+    usd(r.fee),
+    usd(r.lender),
+  ]),
+  [i.feeTotalLabel, usd(N1.totals.interest), usd(N1.totals.fee), usd(N1.totals.lender)],
+];
 ---
 
 <Base lang={lang} path="/investors" title={i.meta.title} description={i.meta.description}>
   <PageHero title={i.h1} subtitle={i.sub} />
 
   <Section topRound>
-    <SectionHeading eyebrow="01" title={i.termsTitle} />
+    <SectionHeading eyebrow="01" title={i.disclosureTitle} />
+    <div class="disclosures">
+      {i.disclosures.map((d) => (
+        <Card class="disclosure">
+          <h3 class="card-title">{d.t}</h3>
+          <p class="disclosure-body">{d.b}</p>
+        </Card>
+      ))}
+    </div>
+  </Section>
+
+  <Section paddingY="32px">
+    <SectionHeading eyebrow="02" title={i.termsTitle} />
     <DataTable rows={i.terms} class="terms" />
   </Section>
 
   <Section paddingY="32px">
-    <SectionHeading eyebrow="02" title={i.ladderTitle} lead={i.ladderBody} />
+    <SectionHeading eyebrow="03" title={i.feeTitle} lead={i.feeLead} />
+    <DataTable header={i.feeHead} rows={feeRows} class="terms" />
+    <p class="footnote">{i.feeFoot}</p>
+  </Section>
+
+  <Section paddingY="32px">
+    <SectionHeading eyebrow="04" title={i.ladderTitle} lead={i.ladderBody} />
     <LevelLadder levelWord={t.home.markets.levelLabel} monthWord={monthWord} />
   </Section>
 
   <Section paddingY="32px">
-    <SectionHeading eyebrow="03" title={i.profileTitle} lead={i.profileBody} />
+    <SectionHeading eyebrow="05" title={i.profileTitle} lead={i.profileBody} />
     <div class="split">
       <Card variant="mint">
         <h3 class="card-title">{i.profileFor.title}</h3>
@@ -49,7 +80,7 @@ const monthWord = lang === "es" ? "meses" : "months";
   </Section>
 
   <Section>
-    <SectionHeading eyebrow="04" title={i.onboardingTitle} />
+    <SectionHeading eyebrow="06" title={i.onboardingTitle} />
     <ol class="steps">
       {i.onboarding.map((step, idx) => (
         <li>
@@ -67,6 +98,30 @@ const monthWord = lang === "es" ? "meses" : "months";
 
 <style>
   .terms { max-width: 880px; }
+
+  .disclosures {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .disclosure { padding: 26px; }
+
+  .disclosure-body {
+    font-family: var(--font);
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--ink-2);
+  }
+
+  .footnote {
+    margin-top: 20px;
+    max-width: 720px;
+    font-family: var(--font);
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
 
   .split {
     display: grid;

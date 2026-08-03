@@ -21,12 +21,19 @@ const r = dict(lang).risk;
   <PageHero title={r.h1} subtitle={r.sub} />
 
   <Section topRound>
-    <SectionHeading eyebrow="01" title={r.frameworkTitle} />
+    <SectionHeading eyebrow="01" title={r.noLossTitle} />
+    <Card variant="rose">
+      <p class="prose">{r.noLossBody}</p>
+    </Card>
+  </Section>
+
+  <Section paddingY="32px">
+    <SectionHeading eyebrow="02" title={r.frameworkTitle} />
     <p class="prose">{r.frameworkBody}</p>
   </Section>
 
   <Section paddingY="32px">
-    <SectionHeading eyebrow="02" title={r.layersTitle} />
+    <SectionHeading eyebrow="03" title={r.layersTitle} />
     <ol class="layers">
       {r.layers.map((l, i) => (
         <li>
@@ -41,13 +48,20 @@ const r = dict(lang).risk;
   </Section>
 
   <Section paddingY="32px">
-    <SectionHeading eyebrow="03" title={r.metricsTitle} />
+    <SectionHeading eyebrow="04" title={r.collectionsTitle} lead={r.collectionsIntro} />
+    <Card>
+      <BulletList items={r.collections} />
+    </Card>
+  </Section>
+
+  <Section paddingY="32px">
+    <SectionHeading eyebrow="05" title={r.metricsTitle} />
     <DataTable rows={r.metrics} header={r.metricsHead} />
     <p class="footnote">{r.metricsNote}</p>
   </Section>
 
   <Section>
-    <SectionHeading eyebrow="04" title={r.uncontrolledTitle} lead={r.uncontrolledIntro} />
+    <SectionHeading eyebrow="06" title={r.uncontrolledTitle} lead={r.uncontrolledIntro} />
     <Card variant="rose">
       <BulletList items={r.uncontrolled} bulletColor={COLOR.red} />
     </Card>

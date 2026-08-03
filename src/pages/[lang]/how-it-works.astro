@@ -10,7 +10,9 @@ import DataTable from "../../components/common/DataTable.astro";
 import BulletList from "../../components/common/BulletList.astro";
 import LevelLadder from "../../components/loans/LevelLadder.astro";
 import PageCta from "../../components/common/PageCta.astro";
-import { dict, localeParams, type Lang } from "../../lib/i18n";
+import Button from "../../components/common/Button.astro";
+import { N1, usd } from "../../lib/loans";
+import { dict, localeParams, localePath, type Lang } from "../../lib/i18n";
 
 export const getStaticPaths = localeParams;
 
@@ -18,8 +20,24 @@ const { lang } = Astro.props as { lang: Lang };
 const t = dict(lang);
 const c = t.how;
 
-// Rates are deliberately absent from the ladder — they are agreed in writing
-// with each business, not advertised.
+// Level 1 is published in full — it's the only level the pilot originates, and
+// a borrower shouldn't need a call to find out what the money costs. Higher
+// levels stay off the ladder; they're agreed in writing per business.
+const scheduleRows = [
+  ...N1.rows.map((r, i) => [
+    `${c.scheduleHead[0]} ${i + 1}`,
+    usd(r.capital),
+    usd(r.interest),
+    usd(r.payment),
+  ]),
+  [
+    c.scheduleTotalLabel,
+    usd(N1.totals.capital),
+    usd(N1.totals.interest),
+    usd(N1.totals.payment),
+  ],
+];
+
 const monthWord = lang === "es" ? "meses" : "months";
 ---
 
@@ -43,6 +61,12 @@ const monthWord = lang === "es" ? "meses" : "months";
     <SectionHeading eyebrow="02" title={c.levelsTitle} lead={c.levelsIntro} />
     <LevelLadder levelWord={t.home.markets.levelLabel} monthWord={monthWord} />
     <p class="footnote">{c.levelsFoot}</p>
+
+    <h3 class="sub-title">{c.scheduleTitle}</h3>
+    <p class="lead">{c.scheduleLead}</p>
+    <DataTable header={c.scheduleHead} rows={scheduleRows} class="narrow" />
+    <p class="footnote">{c.scheduleFoot}</p>
+    <Button href={localePath(lang, "/apply")} class="schedule-cta">{c.scheduleCta}</Button>
 
     <h3 class="sub-title">{c.requirementsTitle}</h3>
     <BulletList items={c.requirements} />
@@ -127,6 +151,17 @@ const monthWord = lang === "es" ? "meses" : "months";
     font-size: 13px;
     line-height: 1.6;
     color: var(--muted);
+  }
+
+  .schedule-cta { margin-top: 20px; }
+
+  .lead {
+    max-width: 620px;
+    margin: -8px 0 18px;
+    font-family: var(--font);
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-2);
   }
 
   .sub-title {
